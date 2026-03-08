@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V2 — AI Marketing Intelligence Hub</title>
+<title>V3 — AI Marketing Intelligence Hub</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -261,6 +261,12 @@
     border-color: rgba(244,63,94,0.5);
     color: var(--rose);
   }
+
+  @keyframes stackPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0); }
+    50% { box-shadow: 0 0 14px 3px rgba(99,102,241,0.35); }
+  }
+  .stack-glow { animation: stackPulse 2s ease-in-out infinite; }
 
   .stack-count {
     background: var(--indigo);
@@ -826,6 +832,235 @@
     flex-shrink: 0;
   }
 
+  /* ── CHECKOUT BUTTON ── */
+  .checkout-btn {
+    display: none;
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, var(--indigo), var(--cyan));
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 14px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 0 20px rgba(99,102,241,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .checkout-btn.visible { display: block; }
+  .checkout-btn:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(99,102,241,0.5); }
+  .checkout-hint { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 7px; display: none; }
+  .checkout-hint.visible { display: block; }
+
+  /* ── CHECKOUT PAGE ── */
+  #checkoutPage {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 500;
+    overflow-y: auto;
+    animation: fadeIn 0.25s ease;
+  }
+  #checkoutPage.open { display: block; }
+
+  .co-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .co-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--card-border);
+    color: var(--text);
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .co-back-btn:hover { background: rgba(255,255,255,0.1); }
+  .co-pdf-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--indigo), var(--cyan));
+    border: none;
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(99,102,241,0.3);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .co-pdf-btn:hover { transform: translateY(-1px); box-shadow: 0 0 24px rgba(99,102,241,0.5); }
+
+  .co-body { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .co-hero { text-align: center; margin-bottom: 40px; }
+  .co-hero-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--indigo); margin-bottom: 14px; font-weight: 600; }
+  .co-hero h1 {
+    font-size: clamp(22px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #e2e8f0, var(--indigo) 50%, var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+  .co-hero-sub { font-size: 14px; color: var(--text-dim); margin-bottom: 22px; }
+  .co-hero-cta {
+    display: inline-block;
+    padding: 11px 26px;
+    background: linear-gradient(135deg, var(--indigo), var(--cyan));
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 0 18px rgba(99,102,241,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .co-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(99,102,241,0.5); }
+
+  .co-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 600px) { .co-stats { grid-template-columns: repeat(2, 1fr); } }
+  .co-stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .co-stat-num { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, var(--indigo), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .co-stat-lbl { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .co-dim-section { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px; margin-bottom: 32px; }
+  .co-dim-title { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+  .co-dim-bar-wrap { display: flex; height: 28px; border-radius: 8px; overflow: hidden; gap: 2px; }
+  .co-dim-seg { display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.85); transition: flex 0.6s ease; min-width: 0; overflow: hidden; }
+  .co-dim-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+  .co-dim-legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-dim); }
+  .co-dim-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  .co-cat-section { margin-bottom: 32px; }
+  .co-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px 10px 0 0;
+    border-left: 4px solid;
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .co-cat-count { background: rgba(255,255,255,0.1); border-radius: 100px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
+
+  .co-tool-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-top: none;
+    transition: background 0.15s;
+    page-break-inside: avoid;
+  }
+  .co-tool-row:last-child { border-radius: 0 0 10px 10px; }
+  .co-tool-row:hover { background: #1a1a28; }
+
+  .co-ring-wrap { flex-shrink: 0; width: 64px; text-align: center; }
+  .co-ring-score { font-size: 16px; font-weight: 800; }
+  .co-ring-tier { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+  .co-tool-info { flex: 1; min-width: 0; }
+  .co-tool-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+  .co-tool-name { font-size: 16px; font-weight: 700; color: var(--text); }
+  .co-tool-desc { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; line-height: 1.5; }
+  .co-bars { display: flex; flex-direction: column; gap: 4px; }
+  .co-bar-row { display: flex; align-items: center; gap: 6px; }
+  .co-bar-label { font-size: 10px; color: var(--text-muted); width: 100px; flex-shrink: 0; }
+  .co-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+  .co-bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+  .co-bar-val { font-size: 10px; color: var(--text-muted); width: 20px; text-align: right; flex-shrink: 0; }
+
+  .co-tool-links { flex-shrink: 0; display: flex; flex-direction: column; gap: 6px; width: 130px; }
+  @media (max-width: 640px) { .co-tool-links { display: none; } }
+  .co-link { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 7px 10px; border-radius: 7px; font-size: 11px; font-weight: 600; text-decoration: none; transition: background 0.15s; }
+  .co-link-site { background: rgba(99,102,241,0.1); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.2); }
+  .co-link-site:hover { background: rgba(99,102,241,0.22); }
+  .co-link-api { background: rgba(6,182,212,0.1); color: #67e8f9; border: 1px solid rgba(6,182,212,0.2); }
+  .co-link-api:hover { background: rgba(6,182,212,0.22); }
+
+  .co-footer { text-align: center; padding: 40px 0 20px; border-top: 1px solid var(--card-border); margin-top: 20px; }
+  .co-footer h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .co-footer p { color: var(--text-dim); font-size: 14px; margin-bottom: 20px; }
+  .co-footer-small { font-size: 11px; color: var(--text-muted); margin-top: 16px; }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    @page { size: A4; margin: 0.65in; }
+
+    body, #checkoutPage { background: #fff !important; color: #111 !important; }
+    #checkoutPage { position: static !important; overflow: visible !important; display: block !important; }
+    .co-topbar { display: none !important; }
+    .co-body { max-width: 100% !important; padding: 0 !important; }
+    .co-hero h1 { -webkit-text-fill-color: #111 !important; background: none !important; color: #111 !important; font-size: 28px !important; }
+    .co-hero-eyebrow { color: #6366f1 !important; }
+    .co-hero-sub { color: #555 !important; }
+    .co-hero-cta { background: #6366f1 !important; color: #fff !important; text-decoration: none !important; }
+    .co-stat-card { background: #f8f8f8 !important; border: 1px solid #ddd !important; }
+    .co-stat-num { -webkit-text-fill-color: #6366f1 !important; background: none !important; color: #6366f1 !important; }
+    .co-stat-lbl { color: #666 !important; }
+    .co-dim-section { background: #f8f8f8 !important; border: 1px solid #ddd !important; }
+    .co-dim-title { color: #666 !important; }
+    .co-dim-legend-item { color: #444 !important; }
+    .co-cat-header { border-left-width: 4px !important; background: #f0f0f8 !important; color: #111 !important; }
+    .co-tool-row { background: #fff !important; border-color: #e0e0e0 !important; page-break-inside: avoid !important; }
+    .co-tool-row:hover { background: #fff !important; }
+    .co-tool-name { color: #111 !important; }
+    .co-tool-desc { color: #555 !important; }
+    .co-bar-label { color: #666 !important; }
+    .co-bar-track { background: #e8e8e8 !important; }
+    .co-bar-val { color: #666 !important; }
+    .co-ring-score { color: #6366f1 !important; -webkit-text-fill-color: #6366f1 !important; }
+    .co-ring-tier { color: #888 !important; }
+    .co-link { border-color: #ccc !important; color: #6366f1 !important; background: #f0f0ff !important; }
+    .co-link-api { color: #0891b2 !important; background: #f0faff !important; }
+    .co-link::after { content: ' (' attr(href) ')'; font-size: 8px; color: #888; word-break: break-all; display: block; }
+    .co-footer { border-top: 1px solid #ddd !important; }
+    .co-footer h3 { color: #111 !important; }
+    .co-footer p { color: #555 !important; }
+    .co-footer-small { color: #888 !important; }
+    .api-badge, .pricing-badge { border-color: #ccc !important; }
+    .tier-badge { border: 1px solid #ccc !important; }
+    header, .controls, #grid, footer, #sidebar, #overlay, #compareBar,
+    .modal-backdrop, #templatesModal, #compareModal { display: none !important; }
+  }
+
   .coverage-title {
     font-size: 12px; font-weight: 700; color: var(--text-muted);
     text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
@@ -1347,6 +1582,37 @@
     </div>
     <div class="coverage-title">Category Coverage</div>
     <div id="coverageBars"></div>
+    <button class="checkout-btn" id="checkoutBtn">Checkout Stack →</button>
+    <div class="checkout-hint" id="checkoutHint">Generate a downloadable PDF report</div>
+  </div>
+</div>
+
+<!-- CHECKOUT PAGE -->
+<div id="checkoutPage">
+  <div class="co-topbar">
+    <button class="co-back-btn" id="coBackBtn">← Back to Hub</button>
+    <button class="co-pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+  <div class="co-body">
+    <div class="co-hero">
+      <div class="co-hero-eyebrow">V3 — Curated by Ryan Shaw</div>
+      <h1>MY AI MARKETING STACK</h1>
+      <div class="co-hero-sub" id="coHeroSub">Loading stack...</div>
+      <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="co-hero-cta">Get the Ultimate Marketing AI Playbook Now →</a>
+    </div>
+    <div class="co-stats" id="coStats"></div>
+    <div class="co-dim-section">
+      <div class="co-dim-title">Combined Stack Strength</div>
+      <div class="co-dim-bar-wrap" id="coDimBar"></div>
+      <div class="co-dim-legend" id="coDimLegend"></div>
+    </div>
+    <div id="coToolSections"></div>
+    <div class="co-footer">
+      <h3>Ready to implement your AI stack?</h3>
+      <p>Get step-by-step guidance on deploying every tool in your stack.</p>
+      <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="co-hero-cta">Get the Ultimate Marketing AI Playbook Now →</a>
+      <div class="co-footer-small">Curated by Ryan Shaw &nbsp;·&nbsp; AI Marketing Intelligence Hub V3 &nbsp;·&nbsp; rhinoweb.github.io/ai-marketing-stack</div>
+    </div>
   </div>
 </div>
 
@@ -2069,6 +2335,163 @@ function closeAllModals() {
   closeSidebar();
   document.body.style.overflow = '';
 }
+
+// ── CHECKOUT ─────────────────────────────────────────────────────────────────
+const DIM_COLORS = {
+  'Revenue Impact':   '#6366f1',
+  'Automation Power': '#06b6d4',
+  'Creative Output':  '#a855f7',
+  'API Integration':  '#f59e0b',
+  'Cost Efficiency':  '#22c55e'
+};
+const DIM_MAXES = { 'Revenue Impact': 30, 'Automation Power': 25, 'Creative Output': 20, 'API Integration': 15, 'Cost Efficiency': 10 };
+
+function coSmallRing(tool) {
+  const r = 26, cx = 32, cy = 32, circ = 2 * Math.PI * r;
+  const pct = tool.total / 100;
+  const dash = circ * pct;
+  const col = tierColor(tool.tier);
+  return `<svg width="64" height="64" viewBox="0 0 64 64">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-width="5"
+      stroke-dasharray="${dash} ${circ}" stroke-dashoffset="${circ * 0.25}"
+      stroke-linecap="round" transform="rotate(-90 ${cx} ${cy})"/>
+    <text x="${cx}" y="${cy+1}" text-anchor="middle" dominant-baseline="middle"
+      font-size="12" font-weight="800" fill="${col}">${tool.total}</text>
+  </svg>`;
+}
+
+function buildCheckoutPage() {
+  const stackTools = TOOLS.filter(t => stack.has(t.name)).sort((a,b) => b.total - a.total);
+  if (!stackTools.length) return;
+
+  const date = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  const avgScore = Math.round(stackTools.reduce((s,t) => s+t.total, 0) / stackTools.length);
+  const sTier = stackTools.filter(t => t.tier === 'S').length;
+  const cats = new Set(stackTools.map(t => t.category)).size;
+
+  document.getElementById('coHeroSub').textContent = `${stackTools.length} Tools Selected · Generated ${date}`;
+
+  document.getElementById('coStats').innerHTML = [
+    { num: stackTools.length, lbl: 'Tools Selected' },
+    { num: avgScore,          lbl: 'Avg Score' },
+    { num: sTier,             lbl: 'S-Tier Tools' },
+    { num: cats,              lbl: 'Categories' }
+  ].map(s => `<div class="co-stat-card"><div class="co-stat-num">${s.num}</div><div class="co-stat-lbl">${s.lbl}</div></div>`).join('');
+
+  // Dimension strength bar
+  const dimTotals = { 'Revenue Impact': 0, 'Automation Power': 0, 'Creative Output': 0, 'API Integration': 0, 'Cost Efficiency': 0 };
+  const dimFields = { 'Revenue Impact': 'revenue', 'Automation Power': 'automation', 'Creative Output': 'creative', 'API Integration': 'api', 'Cost Efficiency': 'cost' };
+  stackTools.forEach(t => {
+    Object.keys(dimTotals).forEach(d => { dimTotals[d] += t[dimFields[d]]; });
+  });
+  const dimTotal = Object.values(dimTotals).reduce((a,b) => a+b, 0) || 1;
+  document.getElementById('coDimBar').innerHTML = Object.entries(dimTotals).map(([name, val]) => {
+    const pct = (val / dimTotal * 100).toFixed(1);
+    return `<div class="co-dim-seg" style="flex:${pct};background:${DIM_COLORS[name]}" title="${name}: ${pct}%">${pct > 8 ? pct+'%' : ''}</div>`;
+  }).join('');
+  document.getElementById('coDimLegend').innerHTML = Object.keys(dimTotals).map(name =>
+    `<div class="co-dim-legend-item"><div class="co-dim-dot" style="background:${DIM_COLORS[name]}"></div>${name}</div>`
+  ).join('');
+
+  // Group by category
+  const byCategory = {};
+  stackTools.forEach(t => {
+    if (!byCategory[t.category]) byCategory[t.category] = [];
+    byCategory[t.category].push(t);
+  });
+
+  document.getElementById('coToolSections').innerHTML = Object.entries(byCategory).map(([catName, tools]) => {
+    const cat = CATEGORIES[catName] || {};
+    const col = cat.color || '#6366f1';
+    const icon = cat.icon || '◆';
+    const pricingColor = { 'Free': '#22c55e', 'Freemium': '#f59e0b', 'Paid': '#6366f1', 'Enterprise': '#a855f7' };
+
+    const rows = tools.map(t => {
+      const bars = [
+        { label: 'Revenue',    val: t.revenue,    max: 30, color: '#6366f1' },
+        { label: 'Automation', val: t.automation, max: 25, color: '#06b6d4' },
+        { label: 'Creative',   val: t.creative,   max: 20, color: '#a855f7' },
+        { label: 'API',        val: t.api,        max: 15, color: '#f59e0b' },
+        { label: 'Cost',       val: t.cost,       max: 10, color: '#22c55e' }
+      ];
+      const pc = pricingColor[t.pricing] || '#6366f1';
+      const barsHTML = bars.map(b =>
+        `<div class="co-bar-row">
+          <div class="co-bar-label">${b.label}</div>
+          <div class="co-bar-track"><div class="co-bar-fill" style="width:${(b.val/b.max*100).toFixed(1)}%;background:${b.color}"></div></div>
+          <div class="co-bar-val">${b.val}</div>
+        </div>`).join('');
+      return `<div class="co-tool-row">
+        <div class="co-ring-wrap">
+          ${coSmallRing(t)}
+          <div class="co-ring-tier" style="color:${tierColor(t.tier)}">${t.tier}-Tier</div>
+        </div>
+        <div class="co-tool-info">
+          <div class="co-tool-name-row">
+            <span class="co-tool-name">${t.name}</span>
+            <span class="tier-badge ${t.tier.toLowerCase()}">${t.tier}</span>
+            <span class="pricing-badge" style="background:${pc}18;color:${pc};border:1px solid ${pc}40">${t.pricing}</span>
+            ${t.hasAPI ? '<span class="api-badge has-api">✓ API</span>' : ''}
+          </div>
+          <div class="co-tool-desc">${t.description}</div>
+          <div class="co-bars">${barsHTML}</div>
+        </div>
+        <div class="co-tool-links">
+          <a href="${t.mainUrl}" target="_blank" rel="noopener" class="co-link co-link-site">🌐 Website</a>
+          <a href="${t.apiUrl}" target="_blank" rel="noopener" class="co-link co-link-api">🔑 API Keys</a>
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="co-cat-section">
+      <div class="co-cat-header" style="background:${col}12;border-left-color:${col};color:${col}">
+        ${icon} ${catName} <span class="co-cat-count">${tools.length}</span>
+      </div>
+      ${rows}
+    </div>`;
+  }).join('');
+}
+
+function openCheckout() {
+  if (!stack.size) return;
+  buildCheckoutPage();
+  document.getElementById('checkoutPage').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  window.location.hash = 'checkout';
+  // Animate bars after paint
+  setTimeout(() => {
+    document.querySelectorAll('.co-bar-fill').forEach(el => {
+      const w = el.style.width; el.style.width = '0';
+      requestAnimationFrame(() => setTimeout(() => { el.style.width = w; }, 30));
+    });
+  }, 100);
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutPage').classList.remove('open');
+  document.body.style.overflow = '';
+  if (window.location.hash === '#checkout') history.pushState('', '', window.location.pathname);
+}
+
+document.getElementById('checkoutBtn').addEventListener('click', () => { closeSidebar(); openCheckout(); });
+document.getElementById('coBackBtn').addEventListener('click', closeCheckout);
+window.addEventListener('hashchange', () => { if (window.location.hash !== '#checkout') closeCheckout(); });
+
+// Show checkout button when stack has tools
+const _origUpdateStackUI = updateStackUI;
+updateStackUI = function() {
+  _origUpdateStackUI();
+  const has = stack.size > 0;
+  document.getElementById('checkoutBtn').classList.toggle('visible', has);
+  document.getElementById('checkoutHint').classList.toggle('visible', has);
+  // Glow stack toggle when 3+ tools
+  document.getElementById('stackToggle').classList.toggle('stack-glow', stack.size >= 3);
+};
+
+// ESC also closes checkout
+const _origCloseAll = closeAllModals;
+closeAllModals = function() { _origCloseAll(); closeCheckout(); };
 
 // INIT
 buildPills();
