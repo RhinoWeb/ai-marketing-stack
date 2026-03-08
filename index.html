@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Marketing Intelligence Hub</title>
+<title>V2 — AI Marketing Intelligence Hub</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,6 +23,10 @@
     --a-tier: #6366f1;
     --b-tier: #06b6d4;
     --c-tier: #64748b;
+    --price-free: #22c55e;
+    --price-freemium: #f59e0b;
+    --price-paid: #6366f1;
+    --price-enterprise: #a855f7;
   }
 
   html { scroll-behavior: smooth; }
@@ -35,13 +39,12 @@
     overflow-x: hidden;
   }
 
-  /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: #2a2a3e; border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--indigo); }
 
-  /* ── HEADER ── */
+  /* HEADER */
   header {
     position: relative;
     padding: 48px 24px 32px;
@@ -67,6 +70,21 @@
     font-weight: 600;
   }
 
+  .v2-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--indigo), var(--cyan));
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
   header h1 {
     font-size: clamp(24px, 5vw, 52px);
     font-weight: 800;
@@ -82,7 +100,7 @@
   header p {
     font-size: 15px;
     color: var(--text-dim);
-    max-width: 560px;
+    max-width: 640px;
     margin: 0 auto 32px;
     line-height: 1.6;
   }
@@ -92,6 +110,7 @@
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    margin-top: 24px;
   }
 
   .stat-pill {
@@ -107,33 +126,26 @@
     font-weight: 600;
   }
 
-  .stat-pill .stat-num {
-    font-size: 17px;
-    font-weight: 800;
-  }
-
+  .stat-pill .stat-num { font-size: 17px; font-weight: 800; }
   .stat-pill.total .stat-num { color: var(--text); }
   .stat-pill.s-stat .stat-num { color: var(--s-tier); }
   .stat-pill.a-stat .stat-num { color: var(--a-tier); }
   .stat-pill.avg-stat .stat-num { color: var(--cyan); }
 
-  .stat-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-  }
+  .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
   .s-stat .stat-dot { background: var(--s-tier); box-shadow: 0 0 6px var(--s-tier); }
   .a-stat .stat-dot { background: var(--a-tier); box-shadow: 0 0 6px var(--a-tier); }
   .avg-stat .stat-dot { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
 
-  /* ── CONTROLS ── */
+  /* CONTROLS */
   .controls {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10,10,15,0.85);
+    background: rgba(10,10,15,0.92);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--card-border);
-    padding: 16px 24px;
+    padding: 14px 24px;
   }
 
   .controls-inner {
@@ -141,12 +153,12 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   .controls-top {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -186,6 +198,13 @@
 
   #searchInput::placeholder { color: var(--text-muted); }
 
+  .search-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    padding-left: 2px;
+  }
+
   .sort-group {
     display: flex;
     gap: 4px;
@@ -215,11 +234,11 @@
     box-shadow: 0 2px 8px rgba(99,102,241,0.4);
   }
 
-  .stack-btn {
+  .ctrl-btn {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 18px;
+    padding: 10px 16px;
     border-radius: 10px;
     border: 1px solid rgba(99,102,241,0.4);
     background: rgba(99,102,241,0.1);
@@ -231,10 +250,16 @@
     white-space: nowrap;
   }
 
-  .stack-btn:hover {
+  .ctrl-btn:hover {
     background: rgba(99,102,241,0.2);
     border-color: var(--indigo);
     box-shadow: 0 0 16px rgba(99,102,241,0.2);
+  }
+
+  .ctrl-btn.active-mode {
+    background: rgba(244,63,94,0.15);
+    border-color: rgba(244,63,94,0.5);
+    color: var(--rose);
   }
 
   .stack-count {
@@ -248,19 +273,36 @@
     text-align: center;
   }
 
-  /* Category pills */
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .filter-row-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-right: 10px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
   .pills-wrap {
     display: flex;
     gap: 6px;
     overflow-x: auto;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
     scrollbar-width: none;
+    flex: 1;
   }
   .pills-wrap::-webkit-scrollbar { display: none; }
 
   .pill {
     flex-shrink: 0;
-    padding: 6px 14px;
+    padding: 5px 13px;
     border-radius: 100px;
     border: 1px solid var(--card-border);
     background: transparent;
@@ -279,7 +321,12 @@
     border-color: transparent;
   }
 
-  /* ── MAIN ── */
+  .usecase-pill.active {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    box-shadow: 0 0 12px rgba(168,85,247,0.4);
+  }
+
+  /* MAIN */
   main {
     max-width: 1400px;
     margin: 0 auto;
@@ -309,7 +356,7 @@
 
   .no-results h3 { font-size: 20px; margin-bottom: 8px; color: var(--text); }
 
-  /* ── CARD ── */
+  /* CARD */
   .card {
     position: relative;
     background: var(--card-bg);
@@ -332,11 +379,56 @@
     border-color: rgba(99,102,241,0.3);
   }
 
-  .card-top-bar {
-    height: 4px;
-    width: 100%;
-    flex-shrink: 0;
+  .card-select-overlay {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
   }
+
+  .compare-mode .card-select-overlay { display: block; }
+
+  .card-select-cb {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid var(--card-border);
+    background: var(--card-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: transparent;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .card.selected-for-compare .card-select-cb {
+    background: var(--indigo);
+    border-color: var(--indigo);
+    color: white;
+    box-shadow: 0 0 10px rgba(99,102,241,0.4);
+  }
+
+  .card.selected-for-compare {
+    border-color: var(--indigo);
+    box-shadow: 0 0 20px rgba(99,102,241,0.2);
+  }
+
+  .card.uc-dim {
+    opacity: 0.28;
+    filter: grayscale(0.4);
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .card.uc-highlight {
+    border-color: rgba(168,85,247,0.4);
+  }
+
+  .card-top-bar { height: 4px; width: 100%; flex-shrink: 0; }
 
   .card-header {
     display: flex;
@@ -367,6 +459,16 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .tool-name:hover { color: #a5b4fc; }
+
+  .badges-row {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
   }
 
   .api-badge {
@@ -392,6 +494,22 @@
     border: 1px solid rgba(100,116,139,0.2);
   }
 
+  .pricing-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    letter-spacing: 0.2px;
+  }
+
+  .pricing-badge.Free       { background: rgba(34,197,94,0.12);  color: var(--price-free);       border: 1px solid rgba(34,197,94,0.25); }
+  .pricing-badge.Freemium   { background: rgba(245,158,11,0.12); color: var(--price-freemium);   border: 1px solid rgba(245,158,11,0.25); }
+  .pricing-badge.Paid       { background: rgba(99,102,241,0.12); color: var(--price-paid);       border: 1px solid rgba(99,102,241,0.25); }
+  .pricing-badge.Enterprise { background: rgba(168,85,247,0.12); color: var(--price-enterprise); border: 1px solid rgba(168,85,247,0.25); }
+
   .tier-badge {
     flex-shrink: 0;
     width: 40px;
@@ -405,31 +523,12 @@
     border: 2px solid;
   }
 
-  .tier-badge.s {
-    background: rgba(245,158,11,0.12);
-    border-color: rgba(245,158,11,0.5);
-    color: var(--s-tier);
-    box-shadow: 0 0 16px rgba(245,158,11,0.2);
-  }
-  .tier-badge.a {
-    background: rgba(99,102,241,0.12);
-    border-color: rgba(99,102,241,0.5);
-    color: var(--a-tier);
-    box-shadow: 0 0 16px rgba(99,102,241,0.2);
-  }
-  .tier-badge.b {
-    background: rgba(6,182,212,0.12);
-    border-color: rgba(6,182,212,0.5);
-    color: var(--b-tier);
-    box-shadow: 0 0 16px rgba(6,182,212,0.2);
-  }
-  .tier-badge.c {
-    background: rgba(100,116,139,0.12);
-    border-color: rgba(100,116,139,0.5);
-    color: var(--c-tier);
-  }
+  .tier-badge.s { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.5); color: var(--s-tier); box-shadow: 0 0 16px rgba(245,158,11,0.2); }
+  .tier-badge.a { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.5); color: var(--a-tier); box-shadow: 0 0 16px rgba(99,102,241,0.2); }
+  .tier-badge.b { background: rgba(6,182,212,0.12);  border-color: rgba(6,182,212,0.5);  color: var(--b-tier); box-shadow: 0 0 16px rgba(6,182,212,0.2); }
+  .tier-badge.c { background: rgba(100,116,139,0.12); border-color: rgba(100,116,139,0.5); color: var(--c-tier); }
 
-  /* Score circle */
+  /* Score ring */
   .score-section {
     display: flex;
     align-items: center;
@@ -437,32 +536,20 @@
     padding: 20px 16px 8px;
   }
 
-  .score-ring-wrap {
+  .score-ring-wrap, .detail-score-ring-wrap {
     position: relative;
-    width: 90px;
-    height: 90px;
   }
 
-  .score-ring-wrap svg {
-    width: 90px;
-    height: 90px;
-    transform: rotate(-90deg);
-  }
+  .score-ring-wrap { width: 90px; height: 90px; }
+  .detail-score-ring-wrap { width: 120px; height: 120px; }
 
-  .score-ring-bg {
-    fill: none;
-    stroke: rgba(255,255,255,0.06);
-    stroke-width: 6;
-  }
+  .score-ring-wrap svg { width: 90px; height: 90px; transform: rotate(-90deg); }
+  .detail-score-ring-wrap svg { width: 120px; height: 120px; transform: rotate(-90deg); }
 
-  .score-ring-fill {
-    fill: none;
-    stroke-width: 6;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1);
-  }
+  .score-ring-bg { fill: none; stroke: rgba(255,255,255,0.06); }
+  .score-ring-fill { fill: none; stroke-linecap: round; transition: stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1); }
 
-  .score-text-wrap {
+  .score-text-wrap, .detail-score-text-wrap {
     position: absolute;
     inset: 0;
     display: flex;
@@ -472,18 +559,11 @@
     gap: 1px;
   }
 
-  .score-num {
-    font-size: 22px;
-    font-weight: 900;
-    line-height: 1;
-  }
+  .score-num { font-size: 22px; font-weight: 900; line-height: 1; }
+  .score-tier-lbl { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 
-  .score-tier-lbl {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  .detail-score-num { font-size: 32px; font-weight: 900; line-height: 1; }
+  .detail-score-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 
   /* Description */
   .card-desc {
@@ -542,9 +622,61 @@
     font-size: 11px;
   }
 
-  /* Add to stack btn */
+  /* Card bottom */
+  .card-links {
+    display: flex;
+    gap: 8px;
+    margin: 0 16px 8px;
+  }
+
+  .card-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.18s, transform 0.15s;
+  }
+
+  .site-link { background: rgba(99,102,241,0.1); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.2); }
+  .site-link:hover { background: rgba(99,102,241,0.22); transform: translateY(-1px); }
+
+  .api-link { background: rgba(6,182,212,0.1); color: #67e8f9; border: 1px solid rgba(6,182,212,0.2); }
+  .api-link:hover { background: rgba(6,182,212,0.22); transform: translateY(-1px); }
+
+  .card-actions {
+    padding: 0 16px 14px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .view-details-btn {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .view-details-btn:hover {
+    border-color: var(--indigo);
+    color: var(--indigo);
+    background: rgba(99,102,241,0.08);
+  }
+
   .add-btn {
-    margin: 0 16px 16px;
+    flex: 1;
     padding: 9px;
     border-radius: 9px;
     border: 1px solid var(--card-border);
@@ -576,7 +708,7 @@
     background: rgba(244,63,94,0.08);
   }
 
-  /* ── STACK SIDEBAR ── */
+  /* SIDEBAR */
   .sidebar-overlay {
     position: fixed;
     inset: 0;
@@ -588,16 +720,11 @@
     transition: opacity 0.3s;
   }
 
-  .sidebar-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-  }
+  .sidebar-overlay.open { opacity: 1; pointer-events: all; }
 
   .sidebar {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; right: 0; bottom: 0;
     width: min(420px, 100vw);
     background: #0e0e17;
     border-left: 1px solid var(--card-border);
@@ -628,11 +755,7 @@
     background-clip: text;
   }
 
-  .sidebar-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
+  .sidebar-actions { display: flex; gap: 8px; align-items: center; }
 
   .clear-btn {
     padding: 5px 12px;
@@ -662,17 +785,9 @@
 
   .close-sidebar:hover { color: var(--text); border-color: var(--text-muted); }
 
-  .sidebar-body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px;
-  }
+  .sidebar-body { flex: 1; overflow-y: auto; padding: 16px; }
 
-  .empty-stack {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-muted);
-  }
+  .empty-stack { text-align: center; padding: 60px 20px; color: var(--text-muted); }
   .empty-stack h3 { margin-bottom: 8px; color: var(--text-dim); font-size: 16px; }
   .empty-stack p { font-size: 13px; line-height: 1.5; }
 
@@ -688,44 +803,20 @@
     animation: fadeUp 0.2s both;
   }
 
-  .stack-item-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
+  .stack-item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .stack-item-info { flex: 1; min-width: 0; }
 
   .stack-item-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 13px; font-weight: 700; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
 
-  .stack-item-cat {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-
-  .stack-item-score {
-    font-size: 15px;
-    font-weight: 800;
-    flex-shrink: 0;
-  }
+  .stack-item-cat { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .stack-item-score { font-size: 15px; font-weight: 800; flex-shrink: 0; }
 
   .stack-remove {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    cursor: pointer;
-    font-size: 16px;
-    padding: 2px;
-    line-height: 1;
-    transition: color 0.15s;
+    background: none; border: none; color: var(--text-muted);
+    cursor: pointer; font-size: 16px; padding: 2px; line-height: 1; transition: color 0.15s;
   }
   .stack-remove:hover { color: var(--rose); }
 
@@ -736,73 +827,330 @@
   }
 
   .coverage-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+    font-size: 12px; font-weight: 700; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;
   }
 
   .coverage-bar-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-    font-size: 11px;
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 6px; font-size: 11px;
   }
 
   .cov-label {
-    width: 100px;
-    color: var(--text-muted);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex-shrink: 0;
+    width: 100px; color: var(--text-muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0;
   }
 
-  .cov-track {
-    flex: 1;
-    height: 4px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 100px;
-    overflow: hidden;
-  }
-
-  .cov-fill {
-    height: 100%;
-    border-radius: 100px;
-    transition: width 0.4s ease;
-  }
-
-  .cov-count {
-    color: var(--text-dim);
-    font-weight: 600;
-    width: 16px;
-    text-align: right;
-    flex-shrink: 0;
-  }
+  .cov-track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 100px; overflow: hidden; }
+  .cov-fill { height: 100%; border-radius: 100px; transition: width 0.4s ease; }
+  .cov-count { color: var(--text-dim); font-weight: 600; width: 16px; text-align: right; flex-shrink: 0; }
 
   .stack-total-score {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    border-radius: 10px;
-    background: rgba(99,102,241,0.08);
-    border: 1px solid rgba(99,102,241,0.2);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px; border-radius: 10px;
+    background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2);
     margin-bottom: 16px;
   }
 
   .stack-total-label { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+  .stack-total-val { font-size: 18px; font-weight: 900; color: var(--indigo); }
 
-  .stack-total-val {
-    font-size: 18px;
-    font-weight: 900;
-    color: var(--indigo);
+  /* MODAL BASE */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    backdrop-filter: blur(8px);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
   }
 
-  /* ── FOOTER ── */
+  .modal-backdrop.open { opacity: 1; pointer-events: all; }
+
+  .modal-box {
+    background: #13131a;
+    border: 1px solid #2a2a3e;
+    border-radius: 20px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a3e transparent;
+  }
+
+  .modal-backdrop.open .modal-box { transform: translateY(0) scale(1); }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: rgba(255,255,255,0.04);
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    z-index: 10;
+  }
+
+  .modal-close:hover { color: var(--text); border-color: var(--text-muted); background: rgba(255,255,255,0.08); }
+
+  /* DETAIL MODAL */
+  #detailModal .modal-box { max-width: 560px; }
+
+  .detail-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .detail-top-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+    align-items: center;
+  }
+
+  .detail-name { font-size: 26px; font-weight: 900; color: var(--text); }
+
+  .detail-body { padding: 24px 28px; }
+
+  .detail-score-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  .detail-bars { flex: 1; display: flex; flex-direction: column; gap: 9px; }
+
+  .detail-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 22px;
+    padding: 14px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+  }
+
+  .detail-links { display: flex; gap: 10px; }
+  .detail-links .card-link { padding: 11px 16px; font-size: 13px; }
+
+  /* TEMPLATES MODAL */
+  #templatesModal .modal-box { max-width: 880px; }
+
+  .templates-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .templates-title {
+    font-size: 22px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--text), var(--indigo));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+
+  .templates-subtitle { font-size: 13px; color: var(--text-muted); }
+
+  .templates-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px 28px;
+  }
+
+  @media (max-width: 640px) { .templates-grid { grid-template-columns: 1fr; } }
+
+  .template-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 18px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .template-card:hover {
+    border-color: rgba(99,102,241,0.35);
+    box-shadow: 0 0 20px rgba(99,102,241,0.1);
+  }
+
+  .template-card-title { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 5px; }
+  .template-card-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; }
+  .template-tools-count { font-size: 11px; color: var(--indigo); font-weight: 700; margin-bottom: 8px; }
+
+  .template-tool-list {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px;
+  }
+
+  .template-tool-chip {
+    font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 100px;
+    background: rgba(99,102,241,0.1); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.2);
+  }
+
+  .load-template-btn {
+    width: 100%;
+    padding: 9px;
+    border-radius: 9px;
+    border: 1px solid rgba(99,102,241,0.4);
+    background: rgba(99,102,241,0.12);
+    color: var(--indigo);
+    font-size: 12px; font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  .load-template-btn:hover {
+    background: rgba(99,102,241,0.22);
+    border-color: var(--indigo);
+    box-shadow: 0 0 12px rgba(99,102,241,0.25);
+  }
+
+  .load-template-btn.loaded {
+    background: rgba(34,197,94,0.1);
+    border-color: rgba(34,197,94,0.4);
+    color: var(--green);
+  }
+
+  /* COMPARE BAR */
+  #compareBar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #0e0e17;
+    border-top: 1px solid #2a2a3e;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 150;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  #compareBar.visible { transform: translateY(0); }
+
+  .compare-bar-text { font-size: 14px; font-weight: 600; color: var(--text-dim); }
+  .compare-bar-text strong { color: var(--text); }
+
+  .compare-view-btn {
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, var(--indigo), #4f46e5);
+    color: white;
+    font-size: 13px; font-weight: 700;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 12px rgba(99,102,241,0.4);
+  }
+
+  .compare-view-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(99,102,241,0.5);
+  }
+
+  .compare-view-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  /* COMPARE MODAL */
+  #compareModal .modal-box { max-width: 900px; }
+
+  .compare-modal-header {
+    padding: 24px 28px 18px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .compare-modal-title { font-size: 20px; font-weight: 900; color: var(--text); }
+
+  .compare-table-wrap { padding: 20px 28px 28px; overflow-x: auto; }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .compare-table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text);
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--card-border);
+    white-space: nowrap;
+  }
+
+  .compare-table th:first-child {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .compare-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-dim);
+    vertical-align: middle;
+  }
+
+  .compare-table td:first-child {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .compare-table td.winner {
+    color: var(--green) !important;
+    font-weight: 800;
+    background: rgba(34,197,94,0.06);
+    border-radius: 4px;
+  }
+
+  .compare-table td.score-cell { font-size: 18px; font-weight: 900; }
+
+  .compare-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: background 0.15s;
+    margin: 2px;
+  }
+
+  .compare-link.site { background: rgba(99,102,241,0.1); color: #a5b4fc; }
+  .compare-link.api  { background: rgba(6,182,212,0.1);  color: #67e8f9; }
+
+  /* FOOTER */
   footer {
     text-align: center;
     padding: 32px 24px;
@@ -813,43 +1161,6 @@
   }
 
   footer span { color: var(--indigo); font-weight: 600; }
-
-  .card-links {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-  .card-link {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 7px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.18s, transform 0.15s;
-  }
-  .site-link {
-    background: rgba(99,102,241,0.1);
-    color: #a5b4fc;
-    border: 1px solid rgba(99,102,241,0.2);
-  }
-  .site-link:hover {
-    background: rgba(99,102,241,0.22);
-    transform: translateY(-1px);
-  }
-  .api-link {
-    background: rgba(6,182,212,0.1);
-    color: #67e8f9;
-    border: 1px solid rgba(6,182,212,0.2);
-  }
-  .api-link:hover {
-    background: rgba(6,182,212,0.22);
-    transform: translateY(-1px);
-  }
 
   .cta-btn {
     display: inline-block;
@@ -865,18 +1176,19 @@
     box-shadow: 0 0 24px rgba(99,102,241,0.35), 0 4px 16px rgba(0,0,0,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
   }
+
   .cta-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 36px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.4);
   }
 
-  /* ── HOVER GLOW BY TIER ── */
+  /* HOVER GLOW BY TIER */
   .card[data-tier="S"]:hover { box-shadow: 0 0 30px rgba(245,158,11,0.12), 0 8px 32px rgba(0,0,0,0.4); }
   .card[data-tier="A"]:hover { box-shadow: 0 0 30px rgba(99,102,241,0.15), 0 8px 32px rgba(0,0,0,0.4); }
   .card[data-tier="B"]:hover { box-shadow: 0 0 30px rgba(6,182,212,0.12), 0 8px 32px rgba(0,0,0,0.4); }
   .card[data-tier="C"]:hover { box-shadow: 0 0 20px rgba(100,116,139,0.1), 0 8px 32px rgba(0,0,0,0.4); }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     #grid { grid-template-columns: 1fr 1fr; }
     .controls-top { flex-wrap: wrap; }
@@ -890,13 +1202,11 @@
     .stat-pill { padding: 6px 12px; font-size: 12px; }
   }
 
-  /* Gradient definitions for score rings */
-  .ring-s  { stroke: url(#grad-s); }
-  .ring-a  { stroke: url(#grad-a); }
-  .ring-b  { stroke: url(#grad-b); }
-  .ring-c  { stroke: url(#grad-c); }
+  .ring-s { stroke: url(#grad-s); }
+  .ring-a { stroke: url(#grad-a); }
+  .ring-b { stroke: url(#grad-b); }
+  .ring-c { stroke: url(#grad-c); }
 
-  /* Stagger delays */
   .card:nth-child(1)  { animation-delay: 0ms; }
   .card:nth-child(2)  { animation-delay: 30ms; }
   .card:nth-child(3)  { animation-delay: 60ms; }
@@ -905,7 +1215,6 @@
   .card:nth-child(6)  { animation-delay: 150ms; }
   .card:nth-child(n+7) { animation-delay: 180ms; }
 
-  /* Animated gradient border on hover */
   .card::after {
     content: '';
     position: absolute;
@@ -921,53 +1230,49 @@
 </head>
 <body>
 
-<!-- SVG gradient defs (hidden) -->
+<!-- SVG gradient defs -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
     <linearGradient id="grad-s" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#fbbf24"/>
+      <stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#fbbf24"/>
     </linearGradient>
     <linearGradient id="grad-a" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
+      <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
     <linearGradient id="grad-b" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4"/>
-      <stop offset="100%" stop-color="#0ea5e9"/>
+      <stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
     <linearGradient id="grad-c" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#64748b"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
+      <stop offset="0%" stop-color="#64748b"/><stop offset="100%" stop-color="#94a3b8"/>
     </linearGradient>
   </defs>
 </svg>
 
 <!-- HEADER -->
 <header>
-  <div class="header-eyebrow">Curated by Ryan Shaw</div>
+  <div class="header-eyebrow"><span class="v2-badge">V2</span> Curated by Ryan Shaw</div>
   <h1>AI MARKETING INTELLIGENCE HUB</h1>
-  <p>Comprehensive scoring of 87 AI tools for online marketing agencies — weighted by revenue impact, automation power, creative output, API integration, and cost efficiency.</p>
-  <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="cta-btn">Get the Ultimate Marketing AI Playbook Now →</a>
+  <p>Comprehensive scoring of 87 AI tools for online marketing agencies — now with pricing tiers, use-case filters, stack templates, tool detail views, and side-by-side comparison. Weighted by revenue impact, automation power, creative output, API integration, and cost efficiency.</p>
+  <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="cta-btn">Get the Ultimate Marketing AI Playbook Now &rarr;</a>
   <div class="stats-row">
     <div class="stat-pill total">
       <div class="stat-dot" style="background:#e2e8f0"></div>
-      <span class="stat-num" id="statTotal">61</span>
+      <span class="stat-num" id="statTotal">87</span>
       <span>Total Tools</span>
     </div>
     <div class="stat-pill s-stat">
       <div class="stat-dot"></div>
-      <span class="stat-num" id="statS">—</span>
+      <span class="stat-num" id="statS">&mdash;</span>
       <span>S-Tier</span>
     </div>
     <div class="stat-pill a-stat">
       <div class="stat-dot"></div>
-      <span class="stat-num" id="statA">—</span>
+      <span class="stat-num" id="statA">&mdash;</span>
       <span>A-Tier</span>
     </div>
     <div class="stat-pill avg-stat">
       <div class="stat-dot"></div>
-      <span class="stat-num" id="statAvg">—</span>
+      <span class="stat-num" id="statAvg">&mdash;</span>
       <span>Avg Score</span>
     </div>
   </div>
@@ -978,20 +1283,30 @@
   <div class="controls-inner">
     <div class="controls-top">
       <div class="search-wrap">
-        <span class="search-icon">⌕</span>
+        <span class="search-icon">&#8981;</span>
         <input type="text" id="searchInput" placeholder="Search tools...">
+        <div class="search-hint">Press / to focus search</div>
       </div>
       <div class="sort-group">
         <button class="sort-btn active" data-sort="score">Score</button>
-        <button class="sort-btn" data-sort="az">A–Z</button>
+        <button class="sort-btn" data-sort="az">A&ndash;Z</button>
         <button class="sort-btn" data-sort="category">Category</button>
       </div>
-      <button class="stack-btn" id="stackToggle">
-        <span>⬡ My Stack</span>
+      <button class="ctrl-btn" id="templatesBtn">&#128203; Templates</button>
+      <button class="ctrl-btn" id="compareToggle">&#9878; Compare</button>
+      <button class="ctrl-btn" id="stackToggle">
+        <span>&#11041; My Stack</span>
         <span class="stack-count" id="stackCount">0</span>
       </button>
     </div>
-    <div class="pills-wrap" id="pillsWrap"></div>
+    <div class="filter-row">
+      <span class="filter-row-label">USE CASES</span>
+      <div class="pills-wrap" id="usecasePillsWrap"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-row-label">CATEGORY</span>
+      <div class="pills-wrap" id="pillsWrap"></div>
+    </div>
   </div>
 </div>
 
@@ -1003,195 +1318,248 @@
 
 <!-- FOOTER -->
 <footer>
-  Curated by <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" style="color:var(--indigo);font-weight:700;text-decoration:none;">Ryan Shaw</a> &nbsp;·&nbsp; <span>Agency Intelligence Hub</span> &nbsp;·&nbsp; Weighted Scoring System &nbsp;·&nbsp; 87 AI Tools
+  Curated by <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" style="color:var(--indigo);font-weight:700;text-decoration:none;">Ryan Shaw</a> &nbsp;&middot;&nbsp; <span>Agency Intelligence Hub V2</span> &nbsp;&middot;&nbsp; Weighted Scoring System &nbsp;&middot;&nbsp; 87 AI Tools
   <br><br>
-  <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="cta-btn" style="font-size:13px;padding:10px 24px;">Get the Ultimate Marketing AI Playbook Now →</a>
+  <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="cta-btn" style="font-size:13px;padding:10px 24px;">Get the Ultimate Marketing AI Playbook Now &rarr;</a>
 </footer>
 
 <!-- STACK SIDEBAR -->
 <div class="sidebar-overlay" id="overlay"></div>
 <div class="sidebar" id="sidebar">
   <div class="sidebar-header">
-    <div class="sidebar-title">⬡ My Stack</div>
+    <div class="sidebar-title">&#11041; My Stack</div>
     <div class="sidebar-actions">
       <button class="clear-btn" id="clearStack">Clear All</button>
-      <button class="close-sidebar" id="closeSidebar">✕</button>
+      <button class="close-sidebar" id="closeSidebar">&#10005;</button>
     </div>
   </div>
   <div class="sidebar-body" id="sidebarBody">
     <div class="empty-stack" id="emptyStack">
       <h3>Stack is empty</h3>
-      <p>Click "+ Add to Stack" on any tool card to start building your AI marketing stack.</p>
+      <p>Click &ldquo;+ Add to Stack&rdquo; on any tool card to start building your AI marketing stack.</p>
     </div>
     <div id="stackList"></div>
   </div>
   <div class="sidebar-footer" id="sidebarFooter" style="display:none">
     <div class="stack-total-score">
       <div class="stack-total-label">Combined Stack Score</div>
-      <div class="stack-total-val" id="stackTotalScore">—</div>
+      <div class="stack-total-val" id="stackTotalScore">&mdash;</div>
     </div>
     <div class="coverage-title">Category Coverage</div>
     <div id="coverageBars"></div>
   </div>
 </div>
 
-<script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
+<!-- COMPARE BAR -->
+<div id="compareBar">
+  <div class="compare-bar-text">
+    <strong id="compareCountText">0</strong> / 3 tools selected
+  </div>
+  <button class="compare-view-btn" id="viewCompareBtn" disabled>View Comparison</button>
+</div>
 
+<!-- DETAIL MODAL -->
+<div class="modal-backdrop" id="detailModal">
+  <div class="modal-box">
+    <button class="modal-close" id="detailModalClose">&#10005;</button>
+    <div id="detailModalContent"></div>
+  </div>
+</div>
+
+<!-- TEMPLATES MODAL -->
+<div class="modal-backdrop" id="templatesModal">
+  <div class="modal-box">
+    <button class="modal-close" id="templatesModalClose">&#10005;</button>
+    <div class="templates-header">
+      <div class="templates-title">&#128203; Stack Templates</div>
+      <div class="templates-subtitle">Pre-built agency stacks &mdash; click &ldquo;Load Template&rdquo; to add all tools to your Stack Builder.</div>
+    </div>
+    <div class="templates-grid" id="templatesGrid"></div>
+  </div>
+</div>
+
+<!-- COMPARE MODAL -->
+<div class="modal-backdrop" id="compareModal">
+  <div class="modal-box">
+    <button class="modal-close" id="compareModalClose">&#10005;</button>
+    <div class="compare-modal-header">
+      <div class="compare-modal-title">&#9878; Side-by-Side Comparison</div>
+    </div>
+    <div class="compare-table-wrap" id="compareTableWrap"></div>
+  </div>
+</div>
+
+<script>
+// DATA
 const CATEGORIES = {
-  "Foundation AI":       { icon: "🧠", color: "#6366f1" },
-  "Image Generation":    { icon: "🎨", color: "#a855f7" },
-  "Video Generation":    { icon: "🎬", color: "#ec4899" },
-  "Voice & Audio":       { icon: "🎙️", color: "#06b6d4" },
-  "AI Calling":          { icon: "📞", color: "#14b8a6" },
-  "Automation":          { icon: "🤖", color: "#f59e0b" },
-  "Outreach & CRM":      { icon: "📧", color: "#f97316" },
-  "SEO & Analytics":     { icon: "📊", color: "#22c55e" },
-  "Social & Content":    { icon: "📱", color: "#3b82f6" },
-  "Music & Podcast":     { icon: "🎵", color: "#f43f5e" },
-  "Speech Recognition":  { icon: "🔊", color: "#0ea5e9" },
-  "Infrastructure":      { icon: "🏗️", color: "#64748b" },
+  "Foundation AI":       { icon: "\uD83E\uDDE0", color: "#6366f1" },
+  "Image Generation":    { icon: "\uD83C\uDFA8", color: "#a855f7" },
+  "Video Generation":    { icon: "\uD83C\uDFAC", color: "#ec4899" },
+  "Voice & Audio":       { icon: "\uD83C\uDF99\uFE0F", color: "#06b6d4" },
+  "AI Calling":          { icon: "\uD83D\uDCDE", color: "#14b8a6" },
+  "Automation":          { icon: "\uD83E\uDD16", color: "#f59e0b" },
+  "Outreach & CRM":      { icon: "\uD83D\uDCE7", color: "#f97316" },
+  "SEO & Analytics":     { icon: "\uD83D\uDCCA", color: "#22c55e" },
+  "Social & Content":    { icon: "\uD83D\uDCF1", color: "#3b82f6" },
+  "Music & Podcast":     { icon: "\uD83C\uDFB5", color: "#f43f5e" },
+  "Speech Recognition":  { icon: "\uD83D\uDD0A", color: "#0ea5e9" },
+  "Infrastructure":      { icon: "\uD83C\uDFD7\uFE0F", color: "#64748b" },
 };
 
+// Fields: name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, mainUrl, apiUrl
 const RAW = [
-  ["OpenAI","Foundation AI",25,21,18,13,8,"Core LLM powering content, code, and automation at scale",true,"https://openai.com","https://platform.openai.com/api-keys"],
-  ["Anthropic (Claude)","Foundation AI",30,25,20,15,9,"Advanced reasoning and long-context AI for complex campaigns",true,"https://anthropic.com","https://console.anthropic.com/keys"],
-  ["Gemini (Google)","Foundation AI",26,21,18,14,9,"Multimodal AI with deep Google ecosystem integration",true,"https://gemini.google.com","https://aistudio.google.com/app/apikey"],
-  ["Midjourney","Image Generation",26,14,20,8,8,"Industry-leading image quality for ad creatives and branding",false,"https://midjourney.com","https://docs.midjourney.com"],
-  ["Stability AI","Image Generation",22,19,17,15,9,"Open-source image generation with full API control",true,"https://stability.ai","https://platform.stability.ai/account/keys"],
-  ["Runway ML","Video Generation",25,18,19,12,7,"AI video generation and editing for high-end content production",true,"https://runwayml.com","https://dev.runwayml.com"],
-  ["HeyGen","Video Generation",28,20,18,13,7,"Realistic AI avatar videos for personalized client outreach",true,"https://heygen.com","https://app.heygen.com/settings?nav=API"],
-  ["Synthesia","Video Generation",27,19,18,12,7,"Enterprise AI video with 140+ avatar presenters",true,"https://synthesia.io","https://docs.synthesia.io"],
-  ["Higgsfield AI","Video Generation",25,20,18,13,8,"Physics-aware video generation for dynamic ad content",true,"https://higgsfield.ai","https://higgsfield.ai/docs"],
-  ["Remotion","Video Generation",18,20,15,14,9,"Code-based video automation for programmatic content at scale",true,"https://remotion.dev","https://www.remotion.dev/docs/lambda"],
-  ["ElevenLabs","Voice & Audio",24,19,18,13,8,"Best-in-class voice cloning and synthesis for any content",true,"https://elevenlabs.io","https://elevenlabs.io/app/settings/api-keys"],
-  ["Murf AI","Voice & Audio",21,19,17,12,8,"Studio-quality AI voiceovers for ads and presentations",true,"https://murf.ai","https://murf.ai/api"],
-  ["PlayHT","Voice & Audio",21,20,17,13,8,"Real-time voice synthesis with extensive voice library",true,"https://play.ht","https://docs.play.ht"],
-  ["Bland AI","AI Calling",26,24,15,13,8,"AI phone agents for automated lead qualification and follow-up",true,"https://bland.ai","https://app.bland.ai/home?page=api-keys"],
-  ["Vapi","AI Calling",24,23,15,14,8,"Developer-first voice AI platform for call automation",true,"https://vapi.ai","https://dashboard.vapi.ai/keys"],
-  ["Retell AI","AI Calling",23,22,15,14,8,"Human-like AI voice agents for sales and support calls",true,"https://retellai.com","https://beta.retellai.com/apiKey"],
-  ["AdCreative.ai","Image Generation",27,21,18,12,8,"AI-powered ad creative generation optimized for conversions",true,"https://adcreative.ai","https://adcreative.ai/api"],
-  ["Jasper AI","Social & Content",24,20,17,12,7,"AI content platform with brand voice training for teams",true,"https://jasper.ai","https://developers.jasper.ai"],
-  ["Copy.ai","Social & Content",23,21,16,12,8,"GTM-focused AI writing for sales and marketing copy",true,"https://copy.ai","https://app.copy.ai/account/api-access"],
-  ["Surfer SEO","SEO & Analytics",25,19,17,11,8,"AI-driven content optimization for top search rankings",true,"https://surferseo.com","https://developers.surferseo.com"],
-  ["Semrush","SEO & Analytics",26,18,18,13,7,"All-in-one SEO, PPC, and competitive intelligence platform",true,"https://semrush.com","https://developer.semrush.com"],
-  ["Instantly.ai","Outreach & CRM",27,24,15,13,9,"AI-powered cold email at scale with smart sending",true,"https://instantly.ai","https://app.instantly.ai/app/settings/integrations"],
-  ["ManyChat","Automation",25,23,15,13,9,"Conversational marketing automation for DMs and chat",true,"https://manychat.com","https://developers.manychat.com"],
-  ["Make","Automation",18,19,12,10,6,"Visual automation platform connecting 1,500+ apps with AI",true,"https://make.com","https://www.make.com/en/api-documentation"],
-  ["Voiceflow","Automation",23,22,15,13,8,"No-code AI agent builder for customer-facing workflows",true,"https://voiceflow.com","https://docs.voiceflow.com"],
-  ["Perplexity AI","Foundation AI",22,17,16,13,8,"Real-time AI research and market intelligence with citations",true,"https://perplexity.ai","https://www.perplexity.ai/settings/api"],
-  ["Grok (xAI)","Foundation AI",22,18,16,12,8,"X-integrated AI for real-time social and market insights",true,"https://x.ai","https://console.x.ai"],
-  ["Mistral AI","Foundation AI",20,18,15,14,10,"Efficient open-weight models for cost-effective AI deployment",true,"https://mistral.ai","https://console.mistral.ai/api-keys"],
-  ["Leonardo AI","Image Generation",23,18,18,13,9,"Fine-tuned image models for consistent brand visual output",true,"https://leonardo.ai","https://app.leonardo.ai/settings/api-keys"],
-  ["Ideogram","Image Generation",21,17,18,12,9,"Superior text-in-image generation for ad copy overlays",true,"https://ideogram.ai","https://developer.ideogram.ai"],
-  ["Kling AI","Video Generation",22,16,18,11,8,"High-quality AI video from text and images for campaigns",true,"https://klingai.com","https://developer.klingai.com"],
-  ["Luma AI (Dream Machine)","Video Generation",23,16,18,12,8,"Cinematic AI video generation for premium content",true,"https://lumalabs.ai","https://lumalabs.ai/dream-machine/api"],
-  ["Pika Labs","Video Generation",21,16,17,11,8,"Fast AI video creation and editing for social content",true,"https://pika.art","https://pika.art/api"],
-  ["Sora (OpenAI)","Video Generation",24,14,20,9,6,"OpenAI's flagship video model for Hollywood-quality content",true,"https://sora.com","https://platform.openai.com/docs/api-reference"],
-  ["Descript","Social & Content",26,21,18,10,8,"AI video and podcast editing with text-based workflow",true,"https://descript.com","https://www.descript.com/developers"],
-  ["Opus Clip","Social & Content",25,22,16,10,8,"AI short-form video repurposing from long-form content",true,"https://opus.pro","https://www.opus.pro/opus-api"],
-  ["Captions AI","Social & Content",22,21,16,10,8,"AI auto-captions and video enhancement for social media",true,"https://captions.ai","https://docs.captions.ai"],
-  ["Wondercraft AI","Music & Podcast",18,18,15,10,8,"AI podcast and audio ad production platform",true,"https://wondercraft.ai","https://docs.wondercraft.ai"],
-  ["Suno AI","Music & Podcast",17,16,17,10,9,"Text-to-music generation for branded content and ads",true,"https://suno.com","https://suno.com/blog/api"],
-  ["Udio","Music & Podcast",16,15,17,10,9,"High-fidelity AI music generation for creative campaigns",true,"https://udio.com","https://www.udio.com/api"],
-  ["Deepgram","Speech Recognition",22,21,16,15,9,"Real-time speech-to-text API for call analysis and CRM",true,"https://deepgram.com","https://console.deepgram.com"],
-  ["AssemblyAI","Speech Recognition",21,21,16,15,9,"AI transcription and audio intelligence for content ops",true,"https://assemblyai.com","https://www.assemblyai.com/app/account"],
-  ["Cartesia AI","Voice & Audio",20,19,16,14,8,"Ultra-low latency voice synthesis for real-time applications",true,"https://cartesia.ai","https://play.cartesia.ai/keys"],
-  ["Typeface","Social & Content",23,19,18,11,7,"Enterprise brand AI for on-brand content at scale",true,"https://typeface.ai","https://typeface.ai/api"],
-  ["Smartlead","Outreach & CRM",26,23,14,13,9,"Unlimited email outreach with AI warmup and sequencing",true,"https://smartlead.ai","https://smartlead.ai/app/api"],
-  ["Taplio","Social & Content",23,21,16,11,8,"AI-powered LinkedIn growth and content scheduling",true,"https://taplio.com","https://taplio.com/api"],
-  ["Podcastle","Music & Podcast",17,17,15,9,8,"AI podcast recording and production suite",true,"https://podcastle.ai","https://podcastle.ai/api"],
-  ["Publer","Social & Content",19,20,13,12,9,"AI social media scheduling and analytics platform",true,"https://publer.io","https://publer.io/help/api"],
-  ["Triple Whale","SEO & Analytics",24,18,16,12,7,"AI attribution and ecommerce analytics for ad spend",true,"https://triplewhale.com","https://developers.triplewhale.com"],
-  ["Zapier (AI Workflows)","Automation",25,25,13,14,9,"No-code automation with 6,000+ app integrations and AI",true,"https://zapier.com","https://zapier.com/l/api"],
-  ["Clay.com","Outreach & CRM",27,23,15,13,8,"AI-powered GTM data enrichment and personalization at scale",true,"https://clay.com","https://docs.clay.com"],
-  ["Phantom Buster","Outreach & CRM",23,22,13,13,8,"LinkedIn and social media lead generation automation",true,"https://phantombuster.com","https://phantombuster.com/api"],
-  ["Railway.app","Infrastructure",16,18,13,14,9,"Deploy AI apps and agents with zero-config infrastructure",true,"https://railway.app","https://docs.railway.app/reference/public-api"],
-  ["Graft","Infrastructure",15,17,13,13,8,"Enterprise AI workflow automation and model deployment",true,"https://graft.com","https://graft.com/api"],
-  ["MCPHub","Infrastructure",14,16,12,13,8,"MCP server hub for connecting AI agents to any tool",true,"https://mcphub.io","https://mcphub.io/docs"],
-  ["HubSpot","Outreach & CRM",26,21,16,13,7,"AI-enhanced CRM with marketing automation and analytics",true,"https://hubspot.com","https://developers.hubspot.com/docs/api/overview"],
-  ["Apollo API","Outreach & CRM",26,21,15,14,8,"B2B contact data and sales intelligence with AI scoring",true,"https://apollo.io","https://developer.apollo.io"],
-  ["Million Verifier","Outreach & CRM",21,22,13,14,9,"Real-time email verification to protect sender reputation",true,"https://millionverifier.com","https://millionverifier.com/api"],
-  ["Refonic","AI Calling",19,20,13,12,8,"AI-powered SMS and voice campaign automation",true,"https://refonic.com","https://refonic.com/api"],
-  ["Facebook Ads API","SEO & Analytics",28,21,16,13,8,"Direct API access for programmatic ad management at scale",true,"https://business.facebook.com","https://developers.facebook.com/docs/marketing-apis"],
-  ["Super Whisper","Speech Recognition",18,18,15,11,9,"Real-time AI transcription with smart formatting and macros",true,"https://superwhisper.com","https://superwhisper.com/api"],
-  ["Apify","Automation",26,24,14,14,10,"Web scraping and data extraction for lead generation and competitive research",true,"https://apify.com","https://console.apify.com/account/integrations"],
-  ["Google Ads API","SEO & Analytics",29,22,15,15,8,"Programmatic bid management and automated reporting for paid search campaigns",true,"https://ads.google.com","https://developers.google.com/google-ads/api/docs/get-started/introduction"],
-  ["TikTok Ads API","SEO & Analytics",27,21,16,13,8,"Fastest-growing ad platform with API access for social campaign automation",true,"https://ads.tiktok.com","https://ads.tiktok.com/marketing_api/docs"],
-  ["LinkedIn Ads API","SEO & Analytics",26,20,15,13,7,"B2B account-based targeting and lead gen campaign management via API",true,"https://business.linkedin.com","https://developer.linkedin.com/product-catalog"],
-  ["Klaviyo","Outreach & CRM",27,23,15,14,8,"Email and SMS marketing automation with best-in-class ecommerce API",true,"https://klaviyo.com","https://developers.klaviyo.com"],
-  ["ActiveCampaign","Outreach & CRM",25,23,14,13,8,"Full-funnel marketing automation with deep CRM and behavioral triggers",true,"https://activecampaign.com","https://developers.activecampaign.com"],
-  ["Lemlist","Outreach & CRM",25,22,16,13,8,"Personalized cold outreach with AI image and video variable personalization",true,"https://lemlist.com","https://developer.lemlist.com"],
-  ["Hunter.io","Outreach & CRM",23,21,12,14,9,"Email finder and verification API for building targeted prospecting pipelines",true,"https://hunter.io","https://hunter.io/api"],
-  ["Salesforce API","Outreach & CRM",26,21,14,14,6,"Enterprise CRM and marketing cloud integration for large agency clients",true,"https://salesforce.com","https://developer.salesforce.com"],
-  ["Clearbit","Outreach & CRM",24,21,13,13,8,"Real-time B2B data enrichment and firmographic targeting for campaigns",true,"https://clearbit.com","https://dashboard.clearbit.com/api"],
-  ["Ahrefs API","SEO & Analytics",26,19,17,13,8,"Backlink data, keyword research, and competitor gap analysis via API",true,"https://ahrefs.com","https://ahrefs.com/api"],
-  ["Google Analytics 4 API","SEO & Analytics",27,20,14,14,10,"Conversion attribution and audience insights for every client property",true,"https://analytics.google.com","https://developers.google.com/analytics/devguides/reporting/data/v1"],
-  ["Mixpanel","SEO & Analytics",23,18,14,13,8,"Funnel analytics and user behavior tracking for SaaS and app clients",true,"https://mixpanel.com","https://developer.mixpanel.com"],
-  ["Hotjar","SEO & Analytics",21,16,14,12,8,"Heatmaps and session recordings to justify CRO recommendations to clients",true,"https://hotjar.com","https://developer.hotjar.com"],
-  ["Canva API","Image Generation",24,21,18,13,8,"Automated branded template generation and design publishing at scale",true,"https://canva.com","https://www.canva.com/developers"],
-  ["Bannerbear","Image Generation",24,23,16,14,9,"Auto-generate thousands of ad creative variations from reusable templates",true,"https://bannerbear.com","https://developers.bannerbear.com"],
-  ["Photoroom","Image Generation",22,20,18,14,9,"AI product photo editing and background removal for ecommerce clients",true,"https://photoroom.com","https://www.photoroom.com/api"],
-  ["Creatopy","Image Generation",23,22,17,13,8,"Programmatic animated ad creative generation for display campaigns",true,"https://creatopy.com","https://creatopy.com/api"],
-  ["Twilio","Automation",25,23,13,15,8,"SMS, WhatsApp, and voice API backbone for campaign communication flows",true,"https://twilio.com","https://console.twilio.com"],
-  ["Postmark","Automation",21,20,12,14,9,"High-deliverability transactional email API for drip and triggered sends",true,"https://postmarkapp.com","https://account.postmarkapp.com/api_tokens"],
-  ["Groq","Foundation AI",21,20,15,15,10,"Ultra-fast LLM inference API for real-time chatbots and AI agents",true,"https://groq.com","https://console.groq.com/keys"],
-  ["Replicate","Infrastructure",20,19,18,15,9,"Run any image, video, or audio ML model via a single unified API",true,"https://replicate.com","https://replicate.com/account/api-tokens"],
-  ["Cohere","Foundation AI",20,19,15,14,9,"Enterprise embeddings and NLP for semantic search and content classification",true,"https://cohere.com","https://dashboard.cohere.com/api-keys"],
-  ["Writer.com","Social & Content",23,20,17,12,7,"Enterprise brand voice AI with compliance guardrails for agency teams",true,"https://writer.com","https://dev.writer.com"],
-  ["Sprout Social","Social & Content",22,20,14,12,7,"Social listening, scheduling, and analytics with full API access",true,"https://sproutsocial.com","https://developers.sproutsocial.com"],
-  ["ZoomInfo API","Outreach & CRM",26,20,13,13,6,"B2B intent data and verified contact database for ABM campaigns",true,"https://zoominfo.com","https://developer.zoominfo.com"],
+  ["OpenAI","Foundation AI",25,21,18,13,8,"Core LLM powering content, code, and automation at scale",true,"Freemium","https://openai.com","https://platform.openai.com/api-keys"],
+  ["Anthropic (Claude)","Foundation AI",30,25,20,15,9,"Advanced reasoning and long-context AI for complex campaigns",true,"Freemium","https://anthropic.com","https://console.anthropic.com/keys"],
+  ["Gemini (Google)","Foundation AI",26,21,18,14,9,"Multimodal AI with deep Google ecosystem integration",true,"Freemium","https://gemini.google.com","https://aistudio.google.com/app/apikey"],
+  ["Midjourney","Image Generation",26,14,20,8,8,"Industry-leading image quality for ad creatives and branding",false,"Paid","https://midjourney.com","https://docs.midjourney.com"],
+  ["Stability AI","Image Generation",22,19,17,15,9,"Open-source image generation with full API control",true,"Freemium","https://stability.ai","https://platform.stability.ai/account/keys"],
+  ["Runway ML","Video Generation",25,18,19,12,7,"AI video generation and editing for high-end content production",true,"Freemium","https://runwayml.com","https://dev.runwayml.com"],
+  ["HeyGen","Video Generation",28,20,18,13,7,"Realistic AI avatar videos for personalized client outreach",true,"Freemium","https://heygen.com","https://app.heygen.com/settings?nav=API"],
+  ["Synthesia","Video Generation",27,19,18,12,7,"Enterprise AI video with 140+ avatar presenters",true,"Paid","https://synthesia.io","https://docs.synthesia.io"],
+  ["Higgsfield AI","Video Generation",25,20,18,13,8,"Physics-aware video generation for dynamic ad content",true,"Freemium","https://higgsfield.ai","https://higgsfield.ai/docs"],
+  ["Remotion","Video Generation",18,20,15,14,9,"Code-based video automation for programmatic content at scale",true,"Free","https://remotion.dev","https://www.remotion.dev/docs/lambda"],
+  ["ElevenLabs","Voice & Audio",24,19,18,13,8,"Best-in-class voice cloning and synthesis for any content",true,"Freemium","https://elevenlabs.io","https://elevenlabs.io/app/settings/api-keys"],
+  ["Murf AI","Voice & Audio",21,19,17,12,8,"Studio-quality AI voiceovers for ads and presentations",true,"Freemium","https://murf.ai","https://murf.ai/api"],
+  ["PlayHT","Voice & Audio",21,20,17,13,8,"Real-time voice synthesis with extensive voice library",true,"Freemium","https://play.ht","https://docs.play.ht"],
+  ["Bland AI","AI Calling",26,24,15,13,8,"AI phone agents for automated lead qualification and follow-up",true,"Paid","https://bland.ai","https://app.bland.ai/home?page=api-keys"],
+  ["Vapi","AI Calling",24,23,15,14,8,"Developer-first voice AI platform for call automation",true,"Freemium","https://vapi.ai","https://dashboard.vapi.ai/keys"],
+  ["Retell AI","AI Calling",23,22,15,14,8,"Human-like AI voice agents for sales and support calls",true,"Paid","https://retellai.com","https://beta.retellai.com/apiKey"],
+  ["AdCreative.ai","Image Generation",27,21,18,12,8,"AI-powered ad creative generation optimized for conversions",true,"Paid","https://adcreative.ai","https://adcreative.ai/api"],
+  ["Jasper AI","Social & Content",24,20,17,12,7,"AI content platform with brand voice training for teams",true,"Paid","https://jasper.ai","https://developers.jasper.ai"],
+  ["Copy.ai","Social & Content",23,21,16,12,8,"GTM-focused AI writing for sales and marketing copy",true,"Freemium","https://copy.ai","https://app.copy.ai/account/api-access"],
+  ["Surfer SEO","SEO & Analytics",25,19,17,11,8,"AI-driven content optimization for top search rankings",true,"Paid","https://surferseo.com","https://developers.surferseo.com"],
+  ["Semrush","SEO & Analytics",26,18,18,13,7,"All-in-one SEO, PPC, and competitive intelligence platform",true,"Freemium","https://semrush.com","https://developer.semrush.com"],
+  ["Instantly.ai","Outreach & CRM",27,24,15,13,9,"AI-powered cold email at scale with smart sending",true,"Paid","https://instantly.ai","https://app.instantly.ai/app/settings/integrations"],
+  ["ManyChat","Automation",25,23,15,13,9,"Conversational marketing automation for DMs and chat",true,"Freemium","https://manychat.com","https://developers.manychat.com"],
+  ["Make","Automation",18,19,12,10,6,"Visual automation platform connecting 1,500+ apps with AI",true,"Freemium","https://make.com","https://www.make.com/en/api-documentation"],
+  ["Voiceflow","Automation",23,22,15,13,8,"No-code AI agent builder for customer-facing workflows",true,"Freemium","https://voiceflow.com","https://docs.voiceflow.com"],
+  ["Perplexity AI","Foundation AI",22,17,16,13,8,"Real-time AI research and market intelligence with citations",true,"Freemium","https://perplexity.ai","https://www.perplexity.ai/settings/api"],
+  ["Grok (xAI)","Foundation AI",22,18,16,12,8,"X-integrated AI for real-time social and market insights",true,"Freemium","https://x.ai","https://console.x.ai"],
+  ["Mistral AI","Foundation AI",20,18,15,14,10,"Efficient open-weight models for cost-effective AI deployment",true,"Freemium","https://mistral.ai","https://console.mistral.ai/api-keys"],
+  ["Leonardo AI","Image Generation",23,18,18,13,9,"Fine-tuned image models for consistent brand visual output",true,"Freemium","https://leonardo.ai","https://app.leonardo.ai/settings/api-keys"],
+  ["Ideogram","Image Generation",21,17,18,12,9,"Superior text-in-image generation for ad copy overlays",true,"Freemium","https://ideogram.ai","https://developer.ideogram.ai"],
+  ["Kling AI","Video Generation",22,16,18,11,8,"High-quality AI video from text and images for campaigns",true,"Freemium","https://klingai.com","https://developer.klingai.com"],
+  ["Luma AI (Dream Machine)","Video Generation",23,16,18,12,8,"Cinematic AI video generation for premium content",true,"Freemium","https://lumalabs.ai","https://lumalabs.ai/dream-machine/api"],
+  ["Pika Labs","Video Generation",21,16,17,11,8,"Fast AI video creation and editing for social content",true,"Freemium","https://pika.art","https://pika.art/api"],
+  ["Sora (OpenAI)","Video Generation",24,14,20,9,6,"OpenAI's flagship video model for Hollywood-quality content",true,"Paid","https://sora.com","https://platform.openai.com/docs/api-reference"],
+  ["Descript","Social & Content",26,21,18,10,8,"AI video and podcast editing with text-based workflow",true,"Freemium","https://descript.com","https://www.descript.com/developers"],
+  ["Opus Clip","Social & Content",25,22,16,10,8,"AI short-form video repurposing from long-form content",true,"Freemium","https://opus.pro","https://www.opus.pro/opus-api"],
+  ["Captions AI","Social & Content",22,21,16,10,8,"AI auto-captions and video enhancement for social media",true,"Freemium","https://captions.ai","https://docs.captions.ai"],
+  ["Wondercraft AI","Music & Podcast",18,18,15,10,8,"AI podcast and audio ad production platform",true,"Paid","https://wondercraft.ai","https://docs.wondercraft.ai"],
+  ["Suno AI","Music & Podcast",17,16,17,10,9,"Text-to-music generation for branded content and ads",true,"Freemium","https://suno.com","https://suno.com/blog/api"],
+  ["Udio","Music & Podcast",16,15,17,10,9,"High-fidelity AI music generation for creative campaigns",true,"Freemium","https://udio.com","https://www.udio.com/api"],
+  ["Deepgram","Speech Recognition",22,21,16,15,9,"Real-time speech-to-text API for call analysis and CRM",true,"Freemium","https://deepgram.com","https://console.deepgram.com"],
+  ["AssemblyAI","Speech Recognition",21,21,16,15,9,"AI transcription and audio intelligence for content ops",true,"Freemium","https://assemblyai.com","https://www.assemblyai.com/app/account"],
+  ["Cartesia AI","Voice & Audio",20,19,16,14,8,"Ultra-low latency voice synthesis for real-time applications",true,"Freemium","https://cartesia.ai","https://play.cartesia.ai/keys"],
+  ["Typeface","Social & Content",23,19,18,11,7,"Enterprise brand AI for on-brand content at scale",true,"Enterprise","https://typeface.ai","https://typeface.ai/api"],
+  ["Smartlead","Outreach & CRM",26,23,14,13,9,"Unlimited email outreach with AI warmup and sequencing",true,"Paid","https://smartlead.ai","https://smartlead.ai/app/api"],
+  ["Taplio","Social & Content",23,21,16,11,8,"AI-powered LinkedIn growth and content scheduling",true,"Paid","https://taplio.com","https://taplio.com/api"],
+  ["Podcastle","Music & Podcast",17,17,15,9,8,"AI podcast recording and production suite",true,"Freemium","https://podcastle.ai","https://podcastle.ai/api"],
+  ["Publer","Social & Content",19,20,13,12,9,"AI social media scheduling and analytics platform",true,"Freemium","https://publer.io","https://publer.io/help/api"],
+  ["Triple Whale","SEO & Analytics",24,18,16,12,7,"AI attribution and ecommerce analytics for ad spend",true,"Paid","https://triplewhale.com","https://developers.triplewhale.com"],
+  ["Zapier (AI Workflows)","Automation",25,25,13,14,9,"No-code automation with 6,000+ app integrations and AI",true,"Freemium","https://zapier.com","https://zapier.com/l/api"],
+  ["Clay.com","Outreach & CRM",27,23,15,13,8,"AI-powered GTM data enrichment and personalization at scale",true,"Paid","https://clay.com","https://docs.clay.com"],
+  ["Phantom Buster","Outreach & CRM",23,22,13,13,8,"LinkedIn and social media lead generation automation",true,"Freemium","https://phantombuster.com","https://phantombuster.com/api"],
+  ["Railway.app","Infrastructure",16,18,13,14,9,"Deploy AI apps and agents with zero-config infrastructure",true,"Freemium","https://railway.app","https://docs.railway.app/reference/public-api"],
+  ["Graft","Infrastructure",15,17,13,13,8,"Enterprise AI workflow automation and model deployment",true,"Enterprise","https://graft.com","https://graft.com/api"],
+  ["MCPHub","Infrastructure",14,16,12,13,8,"MCP server hub for connecting AI agents to any tool",true,"Free","https://mcphub.io","https://mcphub.io/docs"],
+  ["HubSpot","Outreach & CRM",26,21,16,13,7,"AI-enhanced CRM with marketing automation and analytics",true,"Freemium","https://hubspot.com","https://developers.hubspot.com/docs/api/overview"],
+  ["Apollo API","Outreach & CRM",26,21,15,14,8,"B2B contact data and sales intelligence with AI scoring",true,"Freemium","https://apollo.io","https://developer.apollo.io"],
+  ["Million Verifier","Outreach & CRM",21,22,13,14,9,"Real-time email verification to protect sender reputation",true,"Paid","https://millionverifier.com","https://millionverifier.com/api"],
+  ["Refonic","AI Calling",19,20,13,12,8,"AI-powered SMS and voice campaign automation",true,"Paid","https://refonic.com","https://refonic.com/api"],
+  ["Facebook Ads API","SEO & Analytics",28,21,16,13,8,"Direct API access for programmatic ad management at scale",true,"Free","https://business.facebook.com","https://developers.facebook.com/docs/marketing-apis"],
+  ["Super Whisper","Speech Recognition",18,18,15,11,9,"Real-time AI transcription with smart formatting and macros",true,"Paid","https://superwhisper.com","https://superwhisper.com/api"],
+  ["Apify","Automation",26,24,14,14,10,"Web scraping and data extraction for lead generation and competitive research",true,"Freemium","https://apify.com","https://console.apify.com/account/integrations"],
+  ["Google Ads API","SEO & Analytics",29,22,15,15,8,"Programmatic bid management and automated reporting for paid search campaigns",true,"Free","https://ads.google.com","https://developers.google.com/google-ads/api/docs/get-started/introduction"],
+  ["TikTok Ads API","SEO & Analytics",27,21,16,13,8,"Fastest-growing ad platform with API access for social campaign automation",true,"Free","https://ads.tiktok.com","https://ads.tiktok.com/marketing_api/docs"],
+  ["LinkedIn Ads API","SEO & Analytics",26,20,15,13,7,"B2B account-based targeting and lead gen campaign management via API",true,"Free","https://business.linkedin.com","https://developer.linkedin.com/product-catalog"],
+  ["Klaviyo","Outreach & CRM",27,23,15,14,8,"Email and SMS marketing automation with best-in-class ecommerce API",true,"Freemium","https://klaviyo.com","https://developers.klaviyo.com"],
+  ["ActiveCampaign","Outreach & CRM",25,23,14,13,8,"Full-funnel marketing automation with deep CRM and behavioral triggers",true,"Paid","https://activecampaign.com","https://developers.activecampaign.com"],
+  ["Lemlist","Outreach & CRM",25,22,16,13,8,"Personalized cold outreach with AI image and video variable personalization",true,"Paid","https://lemlist.com","https://developer.lemlist.com"],
+  ["Hunter.io","Outreach & CRM",23,21,12,14,9,"Email finder and verification API for building targeted prospecting pipelines",true,"Freemium","https://hunter.io","https://hunter.io/api"],
+  ["Salesforce API","Outreach & CRM",26,21,14,14,6,"Enterprise CRM and marketing cloud integration for large agency clients",true,"Enterprise","https://salesforce.com","https://developer.salesforce.com"],
+  ["Clearbit","Outreach & CRM",24,21,13,13,8,"Real-time B2B data enrichment and firmographic targeting for campaigns",true,"Paid","https://clearbit.com","https://dashboard.clearbit.com/api"],
+  ["Ahrefs API","SEO & Analytics",26,19,17,13,8,"Backlink data, keyword research, and competitor gap analysis via API",true,"Paid","https://ahrefs.com","https://ahrefs.com/api"],
+  ["Google Analytics 4 API","SEO & Analytics",27,20,14,14,10,"Conversion attribution and audience insights for every client property",true,"Free","https://analytics.google.com","https://developers.google.com/analytics/devguides/reporting/data/v1"],
+  ["Mixpanel","SEO & Analytics",23,18,14,13,8,"Funnel analytics and user behavior tracking for SaaS and app clients",true,"Freemium","https://mixpanel.com","https://developer.mixpanel.com"],
+  ["Hotjar","SEO & Analytics",21,16,14,12,8,"Heatmaps and session recordings to justify CRO recommendations to clients",true,"Freemium","https://hotjar.com","https://developer.hotjar.com"],
+  ["Canva API","Image Generation",24,21,18,13,8,"Automated branded template generation and design publishing at scale",true,"Freemium","https://canva.com","https://www.canva.com/developers"],
+  ["Bannerbear","Image Generation",24,23,16,14,9,"Auto-generate thousands of ad creative variations from reusable templates",true,"Paid","https://bannerbear.com","https://developers.bannerbear.com"],
+  ["Photoroom","Image Generation",22,20,18,14,9,"AI product photo editing and background removal for ecommerce clients",true,"Freemium","https://photoroom.com","https://www.photoroom.com/api"],
+  ["Creatopy","Image Generation",23,22,17,13,8,"Programmatic animated ad creative generation for display campaigns",true,"Paid","https://creatopy.com","https://creatopy.com/api"],
+  ["Twilio","Automation",25,23,13,15,8,"SMS, WhatsApp, and voice API backbone for campaign communication flows",true,"Freemium","https://twilio.com","https://console.twilio.com"],
+  ["Postmark","Automation",21,20,12,14,9,"High-deliverability transactional email API for drip and triggered sends",true,"Paid","https://postmarkapp.com","https://account.postmarkapp.com/api_tokens"],
+  ["Groq","Foundation AI",21,20,15,15,10,"Ultra-fast LLM inference API for real-time chatbots and AI agents",true,"Freemium","https://groq.com","https://console.groq.com/keys"],
+  ["Replicate","Infrastructure",20,19,18,15,9,"Run any image, video, or audio ML model via a single unified API",true,"Paid","https://replicate.com","https://replicate.com/account/api-tokens"],
+  ["Cohere","Foundation AI",20,19,15,14,9,"Enterprise embeddings and NLP for semantic search and content classification",true,"Freemium","https://cohere.com","https://dashboard.cohere.com/api-keys"],
+  ["Writer.com","Social & Content",23,20,17,12,7,"Enterprise brand voice AI with compliance guardrails for agency teams",true,"Enterprise","https://writer.com","https://dev.writer.com"],
+  ["Sprout Social","Social & Content",22,20,14,12,7,"Social listening, scheduling, and analytics with full API access",true,"Paid","https://sproutsocial.com","https://developers.sproutsocial.com"],
+  ["ZoomInfo API","Outreach & CRM",26,20,13,13,6,"B2B intent data and verified contact database for ABM campaigns",true,"Enterprise","https://zoominfo.com","https://developer.zoominfo.com"],
 ];
 
 const TOOLS = RAW.map(r => {
-  const [name, category, revenue, automation, creative, api, cost, description, hasAPI, mainUrl, apiUrl] = r;
+  const [name,category,revenue,automation,creative,api,cost,description,hasAPI,pricing,mainUrl,apiUrl] = r;
   const total = revenue + automation + creative + api + cost;
   const tier = total >= 90 ? 'S' : total >= 80 ? 'A' : total >= 70 ? 'B' : 'C';
-  return { name, category, revenue, automation, creative, api, cost, description, hasAPI, total, tier, mainUrl, apiUrl };
+  return { name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, total, tier, mainUrl, apiUrl };
 });
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
-let currentFilter = 'All';
-let currentSort   = 'score';
-let searchQuery   = '';
-let stack         = new Set();
+const USE_CASES = [
+  { label: "\uD83C\uDFAF Run AI Ads",        tools: ["AdCreative.ai","Facebook Ads API","Google Ads API","TikTok Ads API","LinkedIn Ads API","Canva API","Bannerbear","Creatopy"] },
+  { label: "\uD83D\uDCE7 Automate Outreach", tools: ["Instantly.ai","Smartlead","Clay.com","Apollo API","Lemlist","HubSpot","ActiveCampaign","Klaviyo","Million Verifier","Hunter.io","Phantom Buster"] },
+  { label: "\uD83C\uDFAC Create Video",       tools: ["HeyGen","Synthesia","Runway ML","Opus Clip","Descript","Captions AI","Kling AI","Luma AI (Dream Machine)","Pika Labs","Sora (OpenAI)","Higgsfield AI"] },
+  { label: "\uD83E\uDD16 Build AI Agents",    tools: ["OpenAI","Anthropic (Claude)","Voiceflow","Make","Zapier (AI Workflows)","Vapi","Bland AI","Retell AI","ManyChat","Twilio","Groq","Mistral AI","Apify"] },
+  { label: "\uD83D\uDCC8 SEO at Scale",       tools: ["Surfer SEO","Semrush","Ahrefs API","Google Analytics 4 API","Perplexity AI","Mixpanel","Triple Whale","Hotjar"] },
+  { label: "\uD83C\uDFA8 Generate Visuals",   tools: ["Midjourney","Stability AI","Leonardo AI","Ideogram","AdCreative.ai","Canva API","Photoroom","Bannerbear","Creatopy"] },
+];
 
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
-function tierColor(tier) {
-  return { S: '#f59e0b', A: '#6366f1', B: '#06b6d4', C: '#64748b' }[tier];
-}
+const TEMPLATES = [
+  { name: "Lean Solopreneur",    desc: "Maximum output, minimum spend. The essential AI stack for solo operators.", tools: ["OpenAI","ElevenLabs","Canva API","Instantly.ai","Surfer SEO","Make","Opus Clip"] },
+  { name: "Full-Service Agency", desc: "The complete toolkit for agencies running full-funnel AI campaigns.",        tools: ["Anthropic (Claude)","HeyGen","ElevenLabs","AdCreative.ai","Semrush","Clay.com","HubSpot","Make","Descript","Opus Clip"] },
+  { name: "Ecommerce Growth",    desc: "Paid acquisition, retention, and creative at scale for ecom brands.",       tools: ["Google Ads API","Facebook Ads API","Klaviyo","Triple Whale","Photoroom","AdCreative.ai","Bannerbear","Hotjar"] },
+  { name: "B2B Lead Gen Machine",desc: "Systematic outbound pipeline from data enrichment to booked calls.",        tools: ["Clay.com","Apollo API","Instantly.ai","Smartlead","LinkedIn Ads API","ZoomInfo API","Hunter.io","HubSpot","Bland AI"] },
+  { name: "Content Machine",     desc: "Produce, repurpose, and distribute content at AI scale.",                   tools: ["OpenAI","Anthropic (Claude)","ElevenLabs","HeyGen","Descript","Opus Clip","Captions AI","Taplio","Publer","Suno AI"] },
+  { name: "AI Calling Stack",    desc: "Automated voice outreach and inbound handling for high-volume teams.",      tools: ["Bland AI","Vapi","Retell AI","ElevenLabs","Deepgram","HubSpot","Instantly.ai"] },
+];
 
-function tierLabel(tier) {
-  return { S: 'S-Tier', A: 'A-Tier', B: 'B-Tier', C: 'C-Tier' }[tier];
-}
+// STATE
+let currentFilter  = 'All';
+let currentUseCase = null;
+let currentSort    = 'score';
+let searchQuery    = '';
+let stack          = new Set();
+let compareMode    = false;
+let compareSet     = new Set();
 
-function scoreGradient(tier) {
-  return `url(#grad-${tier.toLowerCase()})`;
-}
+// HELPERS
+function tierColor(t) { return { S:'#f59e0b', A:'#6366f1', B:'#06b6d4', C:'#64748b' }[t]; }
+function tierLabel(t) { return { S:'S-Tier', A:'A-Tier', B:'B-Tier', C:'C-Tier' }[t]; }
 
 function barColor(label) {
   const m = {
-    'Revenue Impact':    'linear-gradient(90deg,#6366f1,#818cf8)',
-    'Automation Power':  'linear-gradient(90deg,#f59e0b,#fbbf24)',
-    'Creative Output':   'linear-gradient(90deg,#a855f7,#c084fc)',
-    'API Integration':   'linear-gradient(90deg,#06b6d4,#38bdf8)',
-    'Cost Efficiency':   'linear-gradient(90deg,#22c55e,#4ade80)',
+    'Revenue Impact':   'linear-gradient(90deg,#6366f1,#818cf8)',
+    'Automation Power': 'linear-gradient(90deg,#f59e0b,#fbbf24)',
+    'Creative Output':  'linear-gradient(90deg,#a855f7,#c084fc)',
+    'API Integration':  'linear-gradient(90deg,#06b6d4,#38bdf8)',
+    'Cost Efficiency':  'linear-gradient(90deg,#22c55e,#4ade80)',
   };
   return m[label] || '#6366f1';
 }
 
-// ─── PILLS ───────────────────────────────────────────────────────────────────
+function getTool(name) { return TOOLS.find(t => t.name === name); }
+
+// PILLS
 function buildPills() {
   const wrap = document.getElementById('pillsWrap');
   const cats = ['All', ...Object.keys(CATEGORIES)];
   wrap.innerHTML = cats.map(c => {
-    const col = CATEGORIES[c] ? CATEGORIES[c].color : null;
+    const col  = CATEGORIES[c] ? CATEGORIES[c].color : null;
     const icon = CATEGORIES[c] ? CATEGORIES[c].icon + ' ' : '';
     const active = c === currentFilter ? 'active' : '';
     const style = c === currentFilter && col
       ? `background:${col};border-color:${col};box-shadow:0 0 12px ${col}40;`
       : c === currentFilter
-      ? `background:#6366f1;border-color:#6366f1;box-shadow:0 0 12px rgba(99,102,241,0.35);`
+      ? 'background:#6366f1;border-color:#6366f1;box-shadow:0 0 12px rgba(99,102,241,0.35);'
       : '';
     return `<button class="pill ${active}" data-cat="${c}" style="${style}">${icon}${c}</button>`;
   }).join('');
@@ -1202,143 +1570,159 @@ function buildPills() {
   }));
 }
 
-// ─── SCORE RING SVG ───────────────────────────────────────────────────────────
-function scoreRing(tool) {
-  const r = 37, cx = 45, cy = 45;
-  const circ = 2 * Math.PI * r;
-  const pct  = tool.total / 100;
-  const dash = circ * pct;
-  const gap  = circ - dash;
-  const ringClass = `ring-${tool.tier.toLowerCase()}`;
-  return `
-    <div class="score-ring-wrap">
-      <svg viewBox="0 0 90 90">
-        <circle class="score-ring-bg" cx="${cx}" cy="${cy}" r="${r}"/>
-        <circle class="score-ring-fill ${ringClass}"
-          cx="${cx}" cy="${cy}" r="${r}"
-          stroke-dasharray="${circ}"
-          stroke-dashoffset="${circ}"
-          data-dash="${dash}"
-          data-gap="${gap}"
-        />
-      </svg>
-      <div class="score-text-wrap">
-        <div class="score-num" style="color:${tierColor(tool.tier)}">${tool.total}</div>
-        <div class="score-tier-lbl" style="color:${tierColor(tool.tier)}">${tierLabel(tool.tier)}</div>
-      </div>
-    </div>`;
+function buildUseCasePills() {
+  const wrap = document.getElementById('usecasePillsWrap');
+  wrap.innerHTML = USE_CASES.map((uc, i) => {
+    const active = currentUseCase === i ? 'active usecase-pill' : 'usecase-pill';
+    return `<button class="pill ${active}" data-uc="${i}">${uc.label}</button>`;
+  }).join('');
+  wrap.querySelectorAll('.pill').forEach(p => p.addEventListener('click', () => {
+    const idx = parseInt(p.dataset.uc);
+    currentUseCase = (currentUseCase === idx) ? null : idx;
+    buildUseCasePills();
+    renderGrid();
+  }));
 }
 
-// ─── CARD HTML ────────────────────────────────────────────────────────────────
-function cardHTML(tool, idx) {
-  const cat  = CATEGORIES[tool.category];
-  const col  = cat ? cat.color : '#6366f1';
-  const icon = cat ? cat.icon  : '◆';
-  const inStack = stack.has(tool.name);
+function applyUseCaseHighlight() {
+  if (currentUseCase === null) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('uc-highlight','uc-dim'));
+    return;
+  }
+  const ucTools = USE_CASES[currentUseCase].tools;
+  document.querySelectorAll('.card').forEach(c => {
+    const inUC = ucTools.includes(c.dataset.name);
+    c.classList.toggle('uc-highlight', inUC);
+    c.classList.toggle('uc-dim', !inUC);
+  });
+}
 
-  const bars = [
-    { label: 'Revenue Impact',   val: tool.revenue,    max: 30 },
-    { label: 'Automation Power', val: tool.automation, max: 25 },
-    { label: 'Creative Output',  val: tool.creative,   max: 20 },
-    { label: 'API Integration',  val: tool.api,        max: 15 },
-    { label: 'Cost Efficiency',  val: tool.cost,       max: 10 },
-  ];
-
-  const barsHTML = bars.map(b => `
-    <div class="bar-row">
-      <div class="bar-label">${b.label}</div>
-      <div class="bar-track">
-        <div class="bar-fill"
-          style="background:${barColor(b.label)}"
-          data-pct="${(b.val / b.max * 100).toFixed(1)}"></div>
-      </div>
-      <div class="bar-val">${b.val}</div>
-    </div>`).join('');
-
-  const apiBadge = tool.hasAPI
-    ? `<span class="api-badge has-api">✓ API</span>`
-    : `<span class="api-badge no-api">— Limited</span>`;
-
-  const addLabel = inStack ? '✓ In Stack' : '+ Add to Stack';
-  const addClass = inStack ? 'add-btn in-stack' : 'add-btn';
-
-  return `
-  <div class="card" data-name="${tool.name}" data-tier="${tool.tier}" data-cat="${tool.category}"
-       style="animation-delay:${Math.min(idx * 30, 300)}ms">
-    <div class="card-top-bar" style="background:linear-gradient(90deg,${col},${col}99)"></div>
-    <div class="card-header">
-      <div class="card-meta">
-        <div class="cat-pill" style="background:${col}18;color:${col};border:1px solid ${col}30">
-          ${icon} ${tool.category}
-        </div>
-        <div class="tool-name">${tool.name}</div>
-        ${apiBadge}
-      </div>
-      <div class="tier-badge ${tool.tier.toLowerCase()}">${tool.tier}</div>
+// SCORE RING
+function scoreRingHTML(tool, size) {
+  const isDetail = size === 120;
+  const r  = isDetail ? 50 : 37;
+  const cx = size / 2, cy = size / 2;
+  const sw = isDetail ? 8 : 6;
+  const circ = 2 * Math.PI * r;
+  const dash = circ * (tool.total / 100);
+  const ringClass = 'ring-' + tool.tier.toLowerCase();
+  const wrapCls  = isDetail ? 'detail-score-ring-wrap' : 'score-ring-wrap';
+  const textCls  = isDetail ? 'detail-score-text-wrap' : 'score-text-wrap';
+  const numCls   = isDetail ? 'detail-score-num' : 'score-num';
+  const lblCls   = isDetail ? 'detail-score-lbl' : 'score-tier-lbl';
+  return `<div class="${wrapCls}">
+    <svg viewBox="0 0 ${size} ${size}">
+      <circle class="score-ring-bg" cx="${cx}" cy="${cy}" r="${r}" stroke-width="${sw}"/>
+      <circle class="score-ring-fill ${ringClass}" cx="${cx}" cy="${cy}" r="${r}" stroke-width="${sw}"
+        stroke-dasharray="${circ}" stroke-dashoffset="${circ}" data-dash="${dash}"/>
+    </svg>
+    <div class="${textCls}">
+      <div class="${numCls}" style="color:${tierColor(tool.tier)}">${tool.total}</div>
+      <div class="${lblCls}" style="color:${tierColor(tool.tier)}">${tierLabel(tool.tier)}</div>
     </div>
-
-    <div class="score-section">${scoreRing(tool)}</div>
-    <div class="card-desc">${tool.description}</div>
-
-    <div class="score-bars">${barsHTML}</div>
-
-    <div class="card-links">
-      <a href="${tool.mainUrl}" target="_blank" rel="noopener" class="card-link site-link">🌐 Website</a>
-      <a href="${tool.apiUrl}" target="_blank" rel="noopener" class="card-link api-link">🔑 API Keys</a>
-    </div>
-    <button class="${addClass}" data-tool="${tool.name}">${addLabel}</button>
   </div>`;
 }
 
-// ─── ANIMATE BARS ─────────────────────────────────────────────────────────────
+// BARS HTML
+function barsHTML(tool) {
+  const rows = [
+    { label:'Revenue Impact',   val:tool.revenue,    max:30 },
+    { label:'Automation Power', val:tool.automation, max:25 },
+    { label:'Creative Output',  val:tool.creative,   max:20 },
+    { label:'API Integration',  val:tool.api,        max:15 },
+    { label:'Cost Efficiency',  val:tool.cost,       max:10 },
+  ];
+  return rows.map(b => `
+    <div class="bar-row">
+      <div class="bar-label">${b.label}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="background:${barColor(b.label)}" data-pct="${(b.val/b.max*100).toFixed(1)}"></div>
+      </div>
+      <div class="bar-val">${b.val}</div>
+    </div>`).join('');
+}
+
+// CARD HTML
+function cardHTML(tool, idx) {
+  const cat    = CATEGORIES[tool.category];
+  const col    = cat ? cat.color : '#6366f1';
+  const icon   = cat ? cat.icon  : '\u25C6';
+  const inStack = stack.has(tool.name);
+  const isSelected = compareSet.has(tool.name);
+  const apiBadge = tool.hasAPI
+    ? '<span class="api-badge has-api">\u2713 API</span>'
+    : '<span class="api-badge no-api">\u2014 Limited</span>';
+  const addLabel = inStack ? '\u2713 In Stack' : '+ Add to Stack';
+  const addCls   = inStack ? 'add-btn in-stack' : 'add-btn';
+
+  return `<div class="card${isSelected ? ' selected-for-compare' : ''}" data-name="${tool.name}" data-tier="${tool.tier}" data-cat="${tool.category}" style="animation-delay:${Math.min(idx*30,300)}ms">
+    <div class="card-select-overlay">
+      <div class="card-select-cb" data-tool="${tool.name}">${isSelected ? '\u2713' : ''}</div>
+    </div>
+    <div class="card-top-bar" style="background:linear-gradient(90deg,${col},${col}99)"></div>
+    <div class="card-header">
+      <div class="card-meta">
+        <div class="cat-pill" style="background:${col}18;color:${col};border:1px solid ${col}30">${icon} ${tool.category}</div>
+        <div class="tool-name" data-tool="${tool.name}">${tool.name}</div>
+        <div class="badges-row">
+          ${apiBadge}
+          <span class="pricing-badge ${tool.pricing}">${tool.pricing}</span>
+        </div>
+      </div>
+      <div class="tier-badge ${tool.tier.toLowerCase()}">${tool.tier}</div>
+    </div>
+    <div class="score-section">${scoreRingHTML(tool, 90)}</div>
+    <div class="card-desc">${tool.description}</div>
+    <div class="score-bars">${barsHTML(tool)}</div>
+    <div class="card-links">
+      <a href="${tool.mainUrl}" target="_blank" rel="noopener" class="card-link site-link">\uD83C\uDF10 Website</a>
+      <a href="${tool.apiUrl}"  target="_blank" rel="noopener" class="card-link api-link">\uD83D\uDD11 API Keys</a>
+    </div>
+    <div class="card-actions">
+      <button class="view-details-btn" data-tool="${tool.name}">View Details</button>
+      <button class="${addCls}" data-tool="${tool.name}">${addLabel}</button>
+    </div>
+  </div>`;
+}
+
+// ANIMATE
 function animateBars(container) {
-  // Bars
   container.querySelectorAll('.bar-fill').forEach(el => {
     const pct = el.dataset.pct;
-    requestAnimationFrame(() => {
-      setTimeout(() => { el.style.width = pct + '%'; }, 50);
-    });
+    requestAnimationFrame(() => setTimeout(() => { el.style.width = pct + '%'; }, 50));
   });
-
-  // Rings
   container.querySelectorAll('.score-ring-fill').forEach(el => {
     const dash = parseFloat(el.dataset.dash);
-    const circ  = 2 * Math.PI * 37;
+    const circ = parseFloat(el.getAttribute('stroke-dasharray'));
     el.style.strokeDashoffset = circ;
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        el.style.transition = 'stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1)';
-        el.style.strokeDashoffset = circ - dash;
-      }, 100);
-    });
+    requestAnimationFrame(() => setTimeout(() => {
+      el.style.transition = 'stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1)';
+      el.style.strokeDashoffset = circ - dash;
+    }, 100));
   });
 }
 
-// ─── RENDER GRID ──────────────────────────────────────────────────────────────
+// GRID
 function getFiltered() {
   let list = TOOLS.slice();
-
-  if (currentFilter !== 'All') {
+  if (currentUseCase !== null) {
+    const ucTools = USE_CASES[currentUseCase].tools;
+    list = list.filter(t => ucTools.includes(t.name));
+  } else if (currentFilter !== 'All') {
     list = list.filter(t => t.category === currentFilter);
   }
-
   if (searchQuery) {
     const q = searchQuery.toLowerCase();
     list = list.filter(t =>
       t.name.toLowerCase().includes(q) ||
       t.category.toLowerCase().includes(q) ||
-      t.description.toLowerCase().includes(q)
+      t.description.toLowerCase().includes(q) ||
+      t.pricing.toLowerCase().includes(q)
     );
   }
-
-  if (currentSort === 'score') {
-    list.sort((a,b) => b.total - a.total);
-  } else if (currentSort === 'az') {
-    list.sort((a,b) => a.name.localeCompare(b.name));
-  } else if (currentSort === 'category') {
-    list.sort((a,b) => a.category.localeCompare(b.category) || b.total - a.total);
-  }
-
+  if (currentSort === 'score') list.sort((a,b) => b.total - a.total);
+  else if (currentSort === 'az') list.sort((a,b) => a.name.localeCompare(b.name));
+  else if (currentSort === 'category') list.sort((a,b) => a.category.localeCompare(b.category) || b.total - a.total);
   return list;
 }
 
@@ -1347,30 +1731,40 @@ function renderGrid() {
   const info = document.getElementById('resultsInfo');
   const list = getFiltered();
 
-  if (list.length === 0) {
-    grid.innerHTML = `<div class="no-results"><h3>No tools found</h3><p>Try a different search or filter.</p></div>`;
+  if (!list.length) {
+    grid.innerHTML = '<div class="no-results"><h3>No tools found</h3><p>Try a different search or filter.</p></div>';
     info.innerHTML = '';
     return;
   }
 
-  info.innerHTML = `Showing <span>${list.length}</span> of <span>61</span> tools`;
-  grid.innerHTML = list.map((t, i) => cardHTML(t, i)).join('');
+  const filterLabel = currentUseCase !== null
+    ? `use case <strong style="color:var(--text)">${USE_CASES[currentUseCase].label}</strong>`
+    : currentFilter !== 'All'
+    ? `category <strong style="color:var(--text)">${currentFilter}</strong>`
+    : 'all categories';
 
-  // Bind add-to-stack buttons
-  grid.querySelectorAll('.add-btn').forEach(btn => {
-    btn.addEventListener('click', () => toggleStack(btn.dataset.tool));
-  });
+  info.innerHTML = `Showing <span>${list.length}</span> of <span>87</span> tools &mdash; ${filterLabel}`;
+  grid.innerHTML = list.map((t,i) => cardHTML(t,i)).join('');
 
-  // Animate
+  if (compareMode) grid.classList.add('compare-mode');
+
+  grid.querySelectorAll('.add-btn').forEach(btn =>
+    btn.addEventListener('click', () => toggleStack(btn.dataset.tool)));
+
+  grid.querySelectorAll('.view-details-btn, .tool-name[data-tool]').forEach(btn =>
+    btn.addEventListener('click', e => { e.stopPropagation(); openDetailModal(btn.dataset.tool); }));
+
+  grid.querySelectorAll('.card-select-cb').forEach(cb =>
+    cb.addEventListener('click', e => { e.stopPropagation(); toggleCompare(cb.dataset.tool); }));
+
   animateBars(grid);
-
-  // Update stats
   updateStats(list);
+  applyUseCaseHighlight();
 }
 
 function updateStats(list) {
-  const s = list.filter(t => t.tier === 'S').length;
-  const a = list.filter(t => t.tier === 'A').length;
+  const s   = list.filter(t => t.tier === 'S').length;
+  const a   = list.filter(t => t.tier === 'A').length;
   const avg = list.length ? Math.round(list.reduce((s,t) => s+t.total, 0)/list.length) : 0;
   document.getElementById('statTotal').textContent = list.length;
   document.getElementById('statS').textContent = s;
@@ -1378,7 +1772,7 @@ function updateStats(list) {
   document.getElementById('statAvg').textContent = avg;
 }
 
-// ─── SORT ─────────────────────────────────────────────────────────────────────
+// SORT
 document.querySelectorAll('.sort-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
@@ -1388,40 +1782,42 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
   });
 });
 
-// ─── SEARCH ───────────────────────────────────────────────────────────────────
+// SEARCH
 document.getElementById('searchInput').addEventListener('input', e => {
   searchQuery = e.target.value.trim();
   renderGrid();
 });
 
-// ─── STACK ────────────────────────────────────────────────────────────────────
-function toggleStack(name) {
-  if (stack.has(name)) {
-    stack.delete(name);
-  } else {
-    stack.add(name);
+// KEYBOARD
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    document.getElementById('searchInput').focus();
   }
+  if (e.key === 'Escape') closeAllModals();
+});
+
+// STACK
+function toggleStack(name) {
+  if (stack.has(name)) stack.delete(name); else stack.add(name);
   updateStackUI();
-  // Update card buttons in grid
   document.querySelectorAll('.add-btn').forEach(btn => {
     if (btn.dataset.tool === name) {
       const inS = stack.has(name);
-      btn.textContent = inS ? '✓ In Stack' : '+ Add to Stack';
+      btn.textContent = inS ? '\u2713 In Stack' : '+ Add to Stack';
       btn.className = inS ? 'add-btn in-stack' : 'add-btn';
     }
   });
 }
 
 function updateStackUI() {
-  const count = stack.size;
+  const count  = stack.size;
   document.getElementById('stackCount').textContent = count;
+  const empty  = document.getElementById('emptyStack');
+  const list   = document.getElementById('stackList');
+  const footer = document.getElementById('sidebarFooter');
 
-  const body  = document.getElementById('sidebarBody');
-  const empty = document.getElementById('emptyStack');
-  const list  = document.getElementById('stackList');
-  const footer= document.getElementById('sidebarFooter');
-
-  if (count === 0) {
+  if (!count) {
     empty.style.display = '';
     list.innerHTML = '';
     footer.style.display = 'none';
@@ -1436,78 +1832,247 @@ function updateStackUI() {
   list.innerHTML = stackTools.map(t => {
     const cat = CATEGORIES[t.category];
     const col = cat ? cat.color : '#6366f1';
-    return `
-    <div class="stack-item">
+    return `<div class="stack-item">
       <div class="stack-item-dot" style="background:${col};box-shadow:0 0 6px ${col}80"></div>
       <div class="stack-item-info">
         <div class="stack-item-name">${t.name}</div>
         <div class="stack-item-cat">${cat ? cat.icon : ''} ${t.category}</div>
       </div>
       <div class="stack-item-score" style="color:${tierColor(t.tier)}">${t.total}</div>
-      <button class="stack-remove" data-tool="${t.name}" title="Remove">✕</button>
+      <button class="stack-remove" data-tool="${t.name}" title="Remove">\u2715</button>
     </div>`;
   }).join('');
 
-  list.querySelectorAll('.stack-remove').forEach(btn => {
-    btn.addEventListener('click', () => toggleStack(btn.dataset.tool));
-  });
+  list.querySelectorAll('.stack-remove').forEach(btn =>
+    btn.addEventListener('click', () => toggleStack(btn.dataset.tool)));
 
-  // Total
-  const totalScore = Math.round(stackTools.reduce((s,t) => s+t.total, 0) / stackTools.length);
-  document.getElementById('stackTotalScore').textContent = `${totalScore} avg`;
+  const avg = Math.round(stackTools.reduce((s,t) => s+t.total, 0) / stackTools.length);
+  document.getElementById('stackTotalScore').textContent = avg + ' avg';
 
-  // Coverage
   const catCounts = {};
-  stackTools.forEach(t => {
-    catCounts[t.category] = (catCounts[t.category] || 0) + 1;
-  });
-  const maxCount = Math.max(...Object.values(catCounts), 1);
+  stackTools.forEach(t => { catCounts[t.category] = (catCounts[t.category] || 0) + 1; });
+  const maxCnt = Math.max(...Object.values(catCounts), 1);
+
   document.getElementById('coverageBars').innerHTML = Object.entries(catCounts)
     .sort((a,b) => b[1]-a[1])
     .map(([cat, cnt]) => {
       const c = CATEGORIES[cat];
       const col = c ? c.color : '#6366f1';
-      const icon = c ? c.icon : '';
-      const pct = (cnt / maxCount * 100).toFixed(0);
-      return `
-      <div class="coverage-bar-row">
-        <div class="cov-label">${icon} ${cat}</div>
-        <div class="cov-track">
-          <div class="cov-fill" style="width:${pct}%;background:${col}"></div>
-        </div>
+      return `<div class="coverage-bar-row">
+        <div class="cov-label">${c ? c.icon : ''} ${cat}</div>
+        <div class="cov-track"><div class="cov-fill" style="width:${(cnt/maxCnt*100).toFixed(0)}%;background:${col}"></div></div>
         <div class="cov-count" style="color:${col}">${cnt}</div>
       </div>`;
     }).join('');
 }
 
-// ─── SIDEBAR TOGGLE ───────────────────────────────────────────────────────────
-function openSidebar() {
-  document.getElementById('sidebar').classList.add('open');
-  document.getElementById('overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
+// SIDEBAR
+function openSidebar()  { document.getElementById('sidebar').classList.add('open'); document.getElementById('overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeSidebar() { document.getElementById('sidebar').classList.remove('open'); document.getElementById('overlay').classList.remove('open'); document.body.style.overflow = ''; }
 
 document.getElementById('stackToggle').addEventListener('click', openSidebar);
 document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
 document.getElementById('overlay').addEventListener('click', closeSidebar);
 document.getElementById('clearStack').addEventListener('click', () => {
-  stack.clear();
-  updateStackUI();
-  // Reset all card buttons
-  document.querySelectorAll('.add-btn').forEach(btn => {
-    btn.textContent = '+ Add to Stack';
-    btn.className = 'add-btn';
-  });
+  stack.clear(); updateStackUI();
+  document.querySelectorAll('.add-btn').forEach(btn => { btn.textContent = '+ Add to Stack'; btn.className = 'add-btn'; });
 });
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
+// DETAIL MODAL
+function openDetailModal(name) {
+  const tool = getTool(name);
+  if (!tool) return;
+  const cat  = CATEGORIES[tool.category];
+  const col  = cat ? cat.color : '#6366f1';
+  const icon = cat ? cat.icon  : '\u25C6';
+  const apiBadge = tool.hasAPI
+    ? '<span class="api-badge has-api">\u2713 API</span>'
+    : '<span class="api-badge no-api">\u2014 Limited</span>';
+
+  document.getElementById('detailModalContent').innerHTML = `
+    <div class="detail-header">
+      <div class="detail-top-badges">
+        <div class="cat-pill" style="background:${col}18;color:${col};border:1px solid ${col}30">${icon} ${tool.category}</div>
+        ${apiBadge}
+        <span class="pricing-badge ${tool.pricing}">${tool.pricing}</span>
+        <span class="tier-badge ${tool.tier.toLowerCase()}" style="width:auto;height:auto;padding:3px 12px;font-size:11px;">${tool.tier}-Tier</span>
+      </div>
+      <div class="detail-name">${tool.name}</div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-score-row">
+        ${scoreRingHTML(tool, 120)}
+        <div class="detail-bars">${barsHTML(tool)}</div>
+      </div>
+      <div class="detail-desc">${tool.description}</div>
+      <div class="detail-links">
+        <a href="${tool.mainUrl}" target="_blank" rel="noopener" class="card-link site-link">\uD83C\uDF10 Website</a>
+        <a href="${tool.apiUrl}"  target="_blank" rel="noopener" class="card-link api-link">\uD83D\uDD11 API Keys</a>
+      </div>
+    </div>`;
+
+  const modal = document.getElementById('detailModal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  animateBars(modal);
+}
+
+document.getElementById('detailModalClose').addEventListener('click', () => {
+  document.getElementById('detailModal').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('detailModal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) { e.currentTarget.classList.remove('open'); document.body.style.overflow = ''; }
+});
+
+// TEMPLATES MODAL
+function buildTemplatesGrid() {
+  const grid = document.getElementById('templatesGrid');
+  grid.innerHTML = TEMPLATES.map((tpl, i) => `
+    <div class="template-card">
+      <div class="template-card-title">${tpl.name}</div>
+      <div class="template-card-desc">${tpl.desc}</div>
+      <div class="template-tools-count">${tpl.tools.length} tools</div>
+      <div class="template-tool-list">${tpl.tools.map(t => `<span class="template-tool-chip">${t}</span>`).join('')}</div>
+      <button class="load-template-btn" data-tpl="${i}">Load Template &rarr;</button>
+    </div>`).join('');
+
+  grid.querySelectorAll('.load-template-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tpl = TEMPLATES[parseInt(btn.dataset.tpl)];
+      tpl.tools.forEach(n => stack.add(n));
+      updateStackUI();
+      document.querySelectorAll('.add-btn').forEach(b => {
+        if (tpl.tools.includes(b.dataset.tool)) { b.textContent = '\u2713 In Stack'; b.className = 'add-btn in-stack'; }
+      });
+      btn.textContent = '\u2713 Loaded!';
+      btn.classList.add('loaded');
+      setTimeout(() => { btn.textContent = 'Load Template \u2192'; btn.classList.remove('loaded'); }, 2000);
+    });
+  });
+}
+
+document.getElementById('templatesBtn').addEventListener('click', () => {
+  buildTemplatesGrid();
+  document.getElementById('templatesModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('templatesModalClose').addEventListener('click', () => {
+  document.getElementById('templatesModal').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('templatesModal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) { e.currentTarget.classList.remove('open'); document.body.style.overflow = ''; }
+});
+
+// COMPARE MODE
+document.getElementById('compareToggle').addEventListener('click', () => {
+  compareMode = !compareMode;
+  const btn = document.getElementById('compareToggle');
+  if (compareMode) {
+    btn.classList.add('active-mode');
+    btn.textContent = '\u2715 Exit Compare';
+    document.getElementById('grid').classList.add('compare-mode');
+    document.getElementById('compareBar').classList.add('visible');
+  } else {
+    btn.classList.remove('active-mode');
+    btn.textContent = '\u2696 Compare';
+    document.getElementById('grid').classList.remove('compare-mode');
+    compareSet.clear();
+    updateCompareBar();
+    renderGrid();
+  }
+});
+
+function toggleCompare(name) {
+  if (!compareMode) return;
+  if (compareSet.has(name)) {
+    compareSet.delete(name);
+  } else {
+    if (compareSet.size >= 3) return;
+    compareSet.add(name);
+  }
+  document.querySelectorAll('.card').forEach(c => {
+    if (c.dataset.name === name) {
+      const sel = compareSet.has(name);
+      c.classList.toggle('selected-for-compare', sel);
+      const cb = c.querySelector('.card-select-cb');
+      if (cb) cb.textContent = sel ? '\u2713' : '';
+    }
+  });
+  updateCompareBar();
+}
+
+function updateCompareBar() {
+  const cnt = compareSet.size;
+  document.getElementById('compareCountText').textContent = cnt;
+  document.getElementById('compareBar').classList.toggle('visible', compareMode);
+  document.getElementById('viewCompareBtn').disabled = cnt < 2;
+}
+
+document.getElementById('viewCompareBtn').addEventListener('click', openCompareModal);
+
+function openCompareModal() {
+  const tools = [...compareSet].map(n => getTool(n)).filter(Boolean);
+  if (tools.length < 2) return;
+
+  const rows = [
+    { label:'Category',         fn: t => t.category },
+    { label:'Tier',             fn: t => tierLabel(t.tier) },
+    { label:'Pricing',          fn: t => `<span class="pricing-badge ${t.pricing}">${t.pricing}</span>` },
+    { label:'Revenue Impact',   fn: t => t.revenue,    numeric:true, max:30 },
+    { label:'Automation Power', fn: t => t.automation, numeric:true, max:25 },
+    { label:'Creative Output',  fn: t => t.creative,   numeric:true, max:20 },
+    { label:'API Integration',  fn: t => t.api,        numeric:true, max:15 },
+    { label:'Cost Efficiency',  fn: t => t.cost,       numeric:true, max:10 },
+    { label:'Total Score',      fn: t => t.total,      numeric:true, score:true },
+    { label:'Website',          fn: t => `<a href="${t.mainUrl}" target="_blank" rel="noopener" class="compare-link site">\uD83C\uDF10 Visit</a>` },
+    { label:'API Keys',         fn: t => `<a href="${t.apiUrl}"  target="_blank" rel="noopener" class="compare-link api">\uD83D\uDD11 Keys</a>` },
+  ];
+
+  const thead = '<tr><th></th>' + tools.map(t => `<th>${t.name}</th>`).join('') + '</tr>';
+  const tbody = rows.map(row => {
+    const vals = tools.map(t => row.fn(t));
+    let winnerIdx = -1;
+    if (row.numeric) {
+      const nums = vals.map(v => Number(v));
+      winnerIdx = nums.indexOf(Math.max(...nums));
+    }
+    const cells = vals.map((v, i) => {
+      const isWin = row.numeric && i === winnerIdx;
+      const cls = [isWin ? 'winner' : '', row.score ? 'score-cell' : ''].filter(Boolean).join(' ');
+      const style = isWin ? `style="color:${tierColor(tools[i].tier)}"` : '';
+      return `<td class="${cls}" ${style}>${v}</td>`;
+    }).join('');
+    return `<tr><td>${row.label}</td>${cells}</tr>`;
+  }).join('');
+
+  document.getElementById('compareTableWrap').innerHTML =
+    `<table class="compare-table"><thead>${thead}</thead><tbody>${tbody}</tbody></table>`;
+
+  document.getElementById('compareModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('compareModalClose').addEventListener('click', () => {
+  document.getElementById('compareModal').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('compareModal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) { e.currentTarget.classList.remove('open'); document.body.style.overflow = ''; }
+});
+
+// CLOSE ALL
+function closeAllModals() {
+  ['detailModal','templatesModal','compareModal'].forEach(id =>
+    document.getElementById(id).classList.remove('open'));
+  closeSidebar();
+  document.body.style.overflow = '';
+}
+
+// INIT
 buildPills();
+buildUseCasePills();
 renderGrid();
 </script>
 </body>
