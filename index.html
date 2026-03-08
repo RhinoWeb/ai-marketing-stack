@@ -208,15 +208,68 @@ header h1{
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:1px;
-  padding:7px 12px;
+  padding:7px 14px;
   cursor:pointer;
-  transition:all 0.15s;
+  transition:all 0.18s;
   white-space:nowrap;
   border-radius:0;
   position:relative;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
-.ctrl-sq-btn:hover{border-color:var(--gold-dim);color:var(--text)}
-.ctrl-sq-btn.active-mode{border-color:var(--gold);color:var(--gold);background:var(--gold-bg)}
+/* Templates — blue accent */
+#templatesBtn{
+  border-color:rgba(59,130,246,0.4);
+  color:#3b82f6;
+}
+#templatesBtn:hover{
+  background:rgba(59,130,246,0.12);
+  border-color:#3b82f6;
+  color:#93c5fd;
+}
+/* Compare — purple accent */
+#compareToggle{
+  border-color:rgba(168,85,247,0.4);
+  color:#a855f7;
+}
+#compareToggle:hover{
+  background:rgba(168,85,247,0.12);
+  border-color:#a855f7;
+  color:#c084fc;
+}
+#compareToggle.active-mode{
+  border-color:#a855f7;
+  color:#c084fc;
+  background:rgba(168,85,247,0.18);
+}
+/* Stack — gold, solid fill, most prominent */
+#stackToggle{
+  border-color:var(--gold);
+  color:var(--bg);
+  background:var(--gold);
+  font-weight:700;
+  padding:7px 16px;
+}
+#stackToggle:hover{
+  background:#d4b97e;
+  border-color:#d4b97e;
+}
+.stack-count-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--bg);
+  color:var(--gold);
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  font-weight:700;
+  padding:1px 5px;
+  min-width:18px;
+  text-align:center;
+}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(200,169,110,0)}50%{box-shadow:0 0 0 5px rgba(200,169,110,0.35)}}
+.badge-pulse{animation:badgePulse 1.8s ease-in-out infinite}
 .stack-count-badge{
   display:inline-block;
   background:var(--gold);
@@ -1116,10 +1169,10 @@ footer{
         </div>
       </div>
       <div class="controls-right">
-        <button class="ctrl-sq-btn" id="templatesBtn">Templates</button>
-        <button class="ctrl-sq-btn" id="compareToggle">Compare</button>
+        <button class="ctrl-sq-btn" id="templatesBtn">📋 Templates</button>
+        <button class="ctrl-sq-btn" id="compareToggle">⚖ Compare</button>
         <button class="ctrl-sq-btn" id="stackToggle">
-          Stack <span class="stack-count-badge" id="stackCount">0</span>
+          ◈ My Stack <span class="stack-count-badge" id="stackCount">0</span>
         </button>
       </div>
     </div>
@@ -1335,7 +1388,6 @@ const RAW = [
   ["Creatopy","Image Generation",23,22,17,13,8,"Programmatic animated ad creative generation for display campaigns",true,"Paid","https://creatopy.com","https://creatopy.com/api"],
   ["Twilio","Automation",25,23,13,15,8,"SMS, WhatsApp, and voice API backbone for campaign communication flows",true,"Freemium","https://twilio.com","https://console.twilio.com"],
   ["Postmark","Automation",21,20,12,14,9,"High-deliverability transactional email API for drip and triggered sends",true,"Paid","https://postmarkapp.com","https://account.postmarkapp.com/api_tokens"],
-  ["Groq","Foundation AI",21,20,15,15,10,"Ultra-fast LLM inference API for real-time chatbots and AI agents",true,"Freemium","https://groq.com","https://console.groq.com/keys"],
   ["Replicate","Infrastructure",20,19,18,15,9,"Run any image, video, or audio ML model via a single unified API",true,"Paid","https://replicate.com","https://replicate.com/account/api-tokens"],
   ["Cohere","Foundation AI",20,19,15,14,9,"Enterprise embeddings and NLP for semantic search and content classification",true,"Freemium","https://cohere.com","https://dashboard.cohere.com/api-keys"],
   ["Writer.com","Social & Content",23,20,17,12,7,"Enterprise brand voice AI with compliance guardrails for agency teams",true,"Enterprise","https://writer.com","https://dev.writer.com"],
@@ -1354,7 +1406,7 @@ const USE_CASES = [
   { label: "\uD83C\uDFAF Run AI Ads",        tools: ["AdCreative.ai","Facebook Ads API","Google Ads API","TikTok Ads API","LinkedIn Ads API","Canva API","Bannerbear","Creatopy"] },
   { label: "\uD83D\uDCE7 Automate Outreach", tools: ["Instantly.ai","Smartlead","Clay.com","Apollo API","Lemlist","HubSpot","ActiveCampaign","Klaviyo","Million Verifier","Hunter.io","Phantom Buster"] },
   { label: "\uD83C\uDFAC Create Video",       tools: ["HeyGen","Synthesia","Runway ML","Opus Clip","Descript","Captions AI","Kling AI","Luma AI (Dream Machine)","Pika Labs","Sora (OpenAI)","Higgsfield AI"] },
-  { label: "\uD83E\uDD16 Build AI Agents",    tools: ["OpenAI","Anthropic (Claude)","Voiceflow","Make","Zapier (AI Workflows)","Vapi","Bland AI","Retell AI","ManyChat","Twilio","Groq","Mistral AI","Apify"] },
+  { label: "\uD83E\uDD16 Build AI Agents",    tools: ["OpenAI","Anthropic (Claude)","Voiceflow","Make","Zapier (AI Workflows)","Vapi","Bland AI","Retell AI","ManyChat","Twilio","Mistral AI","Apify"] },
   { label: "\uD83D\uDCC8 SEO at Scale",       tools: ["Surfer SEO","Semrush","Ahrefs API","Google Analytics 4 API","Perplexity AI","Mixpanel","Triple Whale","Hotjar"] },
   { label: "\uD83C\uDFA8 Generate Visuals",   tools: ["Midjourney","Stability AI","Leonardo AI","Ideogram","AdCreative.ai","Canva API","Photoroom","Bannerbear","Creatopy"] },
 ];
