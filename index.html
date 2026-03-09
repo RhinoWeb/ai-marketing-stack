@@ -1166,6 +1166,33 @@ footer{
   .tr-price-badge,.tr-api-badge{display:none}
 }
 
+.tr-usp {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-left: 2px solid var(--gold);
+  background: rgba(200,169,110,0.05);
+}
+.tr-usp-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold-dim);
+  white-space: nowrap;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.tr-usp-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 /* PRINT */
 @media print{
   @page{size:A4;margin:0.65in}
@@ -1207,7 +1234,7 @@ footer{
     <div class="header-right">
       <div class="stats-row-right">
         <div class="stat-block">
-          <span class="stat-num" id="statTotal">87</span>
+          <span class="stat-num" id="statTotal">111</span>
           <span class="stat-lbl">Tools</span>
         </div>
         <div class="stat-block">
@@ -1227,7 +1254,7 @@ footer{
 <div id="controls">
   <div class="controls-inner">
     <div class="controls-top">
-      <input type="text" id="searchInput" placeholder="Search 87 intelligence assets...">
+      <input type="text" id="searchInput" placeholder="Search 111 intelligence assets...">
       <div class="controls-center">
         <div style="display:flex;align-items:center;gap:6px">
           <span class="pills-label">Category</span>
@@ -1263,7 +1290,7 @@ footer{
   <div class="footer-quote">Intelligence built for those who move first.</div>
   <div class="footer-sub">
     Curated by <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener">Ryan Shaw</a>
-    &nbsp;&middot;&nbsp; AI Marketing Intelligence Hub &nbsp;&middot;&nbsp; 87 Tools Scored
+    &nbsp;&middot;&nbsp; AI Marketing Intelligence Hub &nbsp;&middot;&nbsp; 111 Tools Scored
   </div>
   <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="footer-cta">Get the Ultimate Marketing AI Playbook &rarr;</a>
   <button class="footer-suggest" id="openSuggestBtn">+ Suggest a Tool</button>
@@ -1432,101 +1459,126 @@ const CATEGORIES = {
   "Infrastructure":     { icon: "\uD83C\uDFD7\uFE0F", color: "#64748b" },
 };
 
-// Fields: name,category,revenue,automation,creative,api,cost,description,hasAPI,pricing,mainUrl,apiUrl
+// Fields: name,category,revenue,automation,creative,api,cost,description,hasAPI,pricing,mainUrl,apiUrl,usp
 const RAW = [
-  ["OpenAI","Foundation AI",25,21,18,13,8,"Core LLM powering content, code, and automation at scale",true,"Freemium","https://openai.com","https://platform.openai.com/api-keys"],
-  ["Anthropic (Claude)","Foundation AI",30,25,20,15,9,"Advanced reasoning and long-context AI for complex campaigns",true,"Freemium","https://anthropic.com","https://console.anthropic.com/keys"],
-  ["Gemini (Google)","Foundation AI",26,21,18,14,9,"Multimodal AI with deep Google ecosystem integration",true,"Freemium","https://gemini.google.com","https://aistudio.google.com/app/apikey"],
-  ["Midjourney","Image Generation",26,14,20,8,8,"Industry-leading image quality for ad creatives and branding",false,"Paid","https://midjourney.com","https://docs.midjourney.com"],
-  ["Stability AI","Image Generation",22,19,17,15,9,"Open-source image generation with full API control",true,"Freemium","https://stability.ai","https://platform.stability.ai/account/keys"],
-  ["Runway ML","Video Generation",25,18,19,12,7,"AI video generation and editing for high-end content production",true,"Freemium","https://runwayml.com","https://dev.runwayml.com"],
-  ["HeyGen","Video Generation",28,20,18,13,7,"Realistic AI avatar videos for personalized client outreach",true,"Freemium","https://heygen.com","https://app.heygen.com/settings?nav=API"],
-  ["Synthesia","Video Generation",27,19,18,12,7,"Enterprise AI video with 140+ avatar presenters",true,"Paid","https://synthesia.io","https://docs.synthesia.io"],
-  ["Higgsfield AI","Video Generation",25,20,18,13,8,"Physics-aware video generation for dynamic ad content",true,"Freemium","https://higgsfield.ai","https://higgsfield.ai/docs"],
-  ["Remotion","Video Generation",18,20,15,14,9,"Code-based video automation for programmatic content at scale",true,"Free","https://remotion.dev","https://www.remotion.dev/docs/lambda"],
-  ["ElevenLabs","Voice & Audio",24,19,18,13,8,"Best-in-class voice cloning and synthesis for any content",true,"Freemium","https://elevenlabs.io","https://elevenlabs.io/app/settings/api-keys"],
-  ["Murf AI","Voice & Audio",21,19,17,12,8,"Studio-quality AI voiceovers for ads and presentations",true,"Freemium","https://murf.ai","https://murf.ai/api"],
-  ["PlayHT","Voice & Audio",21,20,17,13,8,"Real-time voice synthesis with extensive voice library",true,"Freemium","https://play.ht","https://docs.play.ht"],
-  ["Bland AI","AI Calling",26,24,15,13,8,"AI phone agents for automated lead qualification and follow-up",true,"Paid","https://bland.ai","https://app.bland.ai/home?page=api-keys"],
-  ["Vapi","AI Calling",24,23,15,14,8,"Developer-first voice AI platform for call automation",true,"Freemium","https://vapi.ai","https://dashboard.vapi.ai/keys"],
-  ["Retell AI","AI Calling",23,22,15,14,8,"Human-like AI voice agents for sales and support calls",true,"Paid","https://retellai.com","https://beta.retellai.com/apiKey"],
-  ["AdCreative.ai","Image Generation",27,21,18,12,8,"AI-powered ad creative generation optimized for conversions",true,"Paid","https://adcreative.ai","https://adcreative.ai/api"],
-  ["Jasper AI","Social & Content",24,20,17,12,7,"AI content platform with brand voice training for teams",true,"Paid","https://jasper.ai","https://developers.jasper.ai"],
-  ["Copy.ai","Social & Content",23,21,16,12,8,"GTM-focused AI writing for sales and marketing copy",true,"Freemium","https://copy.ai","https://app.copy.ai/account/api-access"],
-  ["Surfer SEO","SEO & Analytics",25,19,17,11,8,"AI-driven content optimization for top search rankings",true,"Paid","https://surferseo.com","https://developers.surferseo.com"],
-  ["Semrush","SEO & Analytics",26,18,18,13,7,"All-in-one SEO, PPC, and competitive intelligence platform",true,"Freemium","https://semrush.com","https://developer.semrush.com"],
-  ["Instantly.ai","Outreach & CRM",27,24,15,13,9,"AI-powered cold email at scale with smart sending",true,"Paid","https://instantly.ai","https://app.instantly.ai/app/settings/integrations"],
-  ["ManyChat","Automation",25,23,15,13,9,"Conversational marketing automation for DMs and chat",true,"Freemium","https://manychat.com","https://developers.manychat.com"],
-  ["Make","Automation",18,19,12,10,6,"Visual automation platform connecting 1,500+ apps with AI",true,"Freemium","https://make.com","https://www.make.com/en/api-documentation"],
-  ["Voiceflow","Automation",23,22,15,13,8,"No-code AI agent builder for customer-facing workflows",true,"Freemium","https://voiceflow.com","https://docs.voiceflow.com"],
-  ["Perplexity AI","Foundation AI",22,17,16,13,8,"Real-time AI research and market intelligence with citations",true,"Freemium","https://perplexity.ai","https://www.perplexity.ai/settings/api"],
-  ["Grok (xAI)","Foundation AI",22,18,16,12,8,"X-integrated AI for real-time social and market insights",true,"Freemium","https://x.ai","https://console.x.ai"],
-  ["Mistral AI","Foundation AI",20,18,15,14,10,"Efficient open-weight models for cost-effective AI deployment",true,"Freemium","https://mistral.ai","https://console.mistral.ai/api-keys"],
-  ["Leonardo AI","Image Generation",23,18,18,13,9,"Fine-tuned image models for consistent brand visual output",true,"Freemium","https://leonardo.ai","https://app.leonardo.ai/settings/api-keys"],
-  ["Ideogram","Image Generation",21,17,18,12,9,"Superior text-in-image generation for ad copy overlays",true,"Freemium","https://ideogram.ai","https://developer.ideogram.ai"],
-  ["Kling AI","Video Generation",22,16,18,11,8,"High-quality AI video from text and images for campaigns",true,"Freemium","https://klingai.com","https://developer.klingai.com"],
-  ["Luma AI (Dream Machine)","Video Generation",23,16,18,12,8,"Cinematic AI video generation for premium content",true,"Freemium","https://lumalabs.ai","https://lumalabs.ai/dream-machine/api"],
-  ["Pika Labs","Video Generation",21,16,17,11,8,"Fast AI video creation and editing for social content",true,"Freemium","https://pika.art","https://pika.art/api"],
-  ["Sora (OpenAI)","Video Generation",24,14,20,9,6,"OpenAI's flagship video model for Hollywood-quality content",true,"Paid","https://sora.com","https://platform.openai.com/docs/api-reference"],
-  ["Descript","Social & Content",26,21,18,10,8,"AI video and podcast editing with text-based workflow",true,"Freemium","https://descript.com","https://www.descript.com/developers"],
-  ["Opus Clip","Social & Content",25,22,16,10,8,"AI short-form video repurposing from long-form content",true,"Freemium","https://opus.pro","https://www.opus.pro/opus-api"],
-  ["Captions AI","Social & Content",22,21,16,10,8,"AI auto-captions and video enhancement for social media",true,"Freemium","https://captions.ai","https://docs.captions.ai"],
-  ["Wondercraft AI","Music & Podcast",18,18,15,10,8,"AI podcast and audio ad production platform",true,"Paid","https://wondercraft.ai","https://docs.wondercraft.ai"],
-  ["Suno AI","Music & Podcast",17,16,17,10,9,"Text-to-music generation for branded content and ads",true,"Freemium","https://suno.com","https://suno.com/blog/api"],
-  ["Udio","Music & Podcast",16,15,17,10,9,"High-fidelity AI music generation for creative campaigns",true,"Freemium","https://udio.com","https://www.udio.com/api"],
-  ["Deepgram","Speech Recognition",22,21,16,15,9,"Real-time speech-to-text API for call analysis and CRM",true,"Freemium","https://deepgram.com","https://console.deepgram.com"],
-  ["AssemblyAI","Speech Recognition",21,21,16,15,9,"AI transcription and audio intelligence for content ops",true,"Freemium","https://assemblyai.com","https://www.assemblyai.com/app/account"],
-  ["Cartesia AI","Voice & Audio",20,19,16,14,8,"Ultra-low latency voice synthesis for real-time applications",true,"Freemium","https://cartesia.ai","https://play.cartesia.ai/keys"],
-  ["Typeface","Social & Content",23,19,18,11,7,"Enterprise brand AI for on-brand content at scale",true,"Enterprise","https://typeface.ai","https://typeface.ai/api"],
-  ["Smartlead","Outreach & CRM",26,23,14,13,9,"Unlimited email outreach with AI warmup and sequencing",true,"Paid","https://smartlead.ai","https://smartlead.ai/app/api"],
-  ["Taplio","Social & Content",23,21,16,11,8,"AI-powered LinkedIn growth and content scheduling",true,"Paid","https://taplio.com","https://taplio.com/api"],
-  ["Podcastle","Music & Podcast",17,17,15,9,8,"AI podcast recording and production suite",true,"Freemium","https://podcastle.ai","https://podcastle.ai/api"],
-  ["Publer","Social & Content",19,20,13,12,9,"AI social media scheduling and analytics platform",true,"Freemium","https://publer.io","https://publer.io/help/api"],
-  ["Triple Whale","SEO & Analytics",24,18,16,12,7,"AI attribution and ecommerce analytics for ad spend",true,"Paid","https://triplewhale.com","https://developers.triplewhale.com"],
-  ["Zapier (AI Workflows)","Automation",25,25,13,14,9,"No-code automation with 6,000+ app integrations and AI",true,"Freemium","https://zapier.com","https://zapier.com/l/api"],
-  ["Clay.com","Outreach & CRM",27,23,15,13,8,"AI-powered GTM data enrichment and personalization at scale",true,"Paid","https://clay.com","https://docs.clay.com"],
-  ["Phantom Buster","Outreach & CRM",23,22,13,13,8,"LinkedIn and social media lead generation automation",true,"Freemium","https://phantombuster.com","https://phantombuster.com/api"],
-  ["Railway.app","Infrastructure",16,18,13,14,9,"Deploy AI apps and agents with zero-config infrastructure",true,"Freemium","https://railway.app","https://docs.railway.app/reference/public-api"],
-  ["Graft","Infrastructure",15,17,13,13,8,"Enterprise AI workflow automation and model deployment",true,"Enterprise","https://graft.com","https://graft.com/api"],
-  ["MCPHub","Infrastructure",14,16,12,13,8,"MCP server hub for connecting AI agents to any tool",true,"Free","https://mcphub.io","https://mcphub.io/docs"],
-  ["HubSpot","Outreach & CRM",26,21,16,13,7,"AI-enhanced CRM with marketing automation and analytics",true,"Freemium","https://hubspot.com","https://developers.hubspot.com/docs/api/overview"],
-  ["Apollo API","Outreach & CRM",26,21,15,14,8,"B2B contact data and sales intelligence with AI scoring",true,"Freemium","https://apollo.io","https://developer.apollo.io"],
-  ["Million Verifier","Outreach & CRM",21,22,13,14,9,"Real-time email verification to protect sender reputation",true,"Paid","https://millionverifier.com","https://millionverifier.com/api"],
-  ["Refonic","AI Calling",19,20,13,12,8,"AI-powered SMS and voice campaign automation",true,"Paid","https://refonic.com","https://refonic.com/api"],
-  ["Facebook Ads API","SEO & Analytics",28,21,16,13,8,"Direct API access for programmatic ad management at scale",true,"Free","https://business.facebook.com","https://developers.facebook.com/docs/marketing-apis"],
-  ["Super Whisper","Speech Recognition",18,18,15,11,9,"Real-time AI transcription with smart formatting and macros",true,"Paid","https://superwhisper.com","https://superwhisper.com/api"],
-  ["Apify","Automation",26,24,14,14,10,"Web scraping and data extraction for lead generation and competitive research",true,"Freemium","https://apify.com","https://console.apify.com/account/integrations"],
-  ["Google Ads API","SEO & Analytics",29,22,15,15,8,"Programmatic bid management and automated reporting for paid search campaigns",true,"Free","https://ads.google.com","https://developers.google.com/google-ads/api/docs/get-started/introduction"],
-  ["TikTok Ads API","SEO & Analytics",27,21,16,13,8,"Fastest-growing ad platform with API access for social campaign automation",true,"Free","https://ads.tiktok.com","https://ads.tiktok.com/marketing_api/docs"],
-  ["LinkedIn Ads API","SEO & Analytics",26,20,15,13,7,"B2B account-based targeting and lead gen campaign management via API",true,"Free","https://business.linkedin.com","https://developer.linkedin.com/product-catalog"],
-  ["Klaviyo","Outreach & CRM",27,23,15,14,8,"Email and SMS marketing automation with best-in-class ecommerce API",true,"Freemium","https://klaviyo.com","https://developers.klaviyo.com"],
-  ["ActiveCampaign","Outreach & CRM",25,23,14,13,8,"Full-funnel marketing automation with deep CRM and behavioral triggers",true,"Paid","https://activecampaign.com","https://developers.activecampaign.com"],
-  ["Lemlist","Outreach & CRM",25,22,16,13,8,"Personalized cold outreach with AI image and video variable personalization",true,"Paid","https://lemlist.com","https://developer.lemlist.com"],
-  ["Hunter.io","Outreach & CRM",23,21,12,14,9,"Email finder and verification API for building targeted prospecting pipelines",true,"Freemium","https://hunter.io","https://hunter.io/api"],
-  ["Salesforce API","Outreach & CRM",26,21,14,14,6,"Enterprise CRM and marketing cloud integration for large agency clients",true,"Enterprise","https://salesforce.com","https://developer.salesforce.com"],
-  ["Clearbit","Outreach & CRM",24,21,13,13,8,"Real-time B2B data enrichment and firmographic targeting for campaigns",true,"Paid","https://clearbit.com","https://dashboard.clearbit.com/api"],
-  ["Ahrefs API","SEO & Analytics",26,19,17,13,8,"Backlink data, keyword research, and competitor gap analysis via API",true,"Paid","https://ahrefs.com","https://ahrefs.com/api"],
-  ["Google Analytics 4 API","SEO & Analytics",27,20,14,14,10,"Conversion attribution and audience insights for every client property",true,"Free","https://analytics.google.com","https://developers.google.com/analytics/devguides/reporting/data/v1"],
-  ["Mixpanel","SEO & Analytics",23,18,14,13,8,"Funnel analytics and user behavior tracking for SaaS and app clients",true,"Freemium","https://mixpanel.com","https://developer.mixpanel.com"],
-  ["Hotjar","SEO & Analytics",21,16,14,12,8,"Heatmaps and session recordings to justify CRO recommendations to clients",true,"Freemium","https://hotjar.com","https://developer.hotjar.com"],
-  ["Canva API","Image Generation",24,21,18,13,8,"Automated branded template generation and design publishing at scale",true,"Freemium","https://canva.com","https://www.canva.com/developers"],
-  ["Bannerbear","Image Generation",24,23,16,14,9,"Auto-generate thousands of ad creative variations from reusable templates",true,"Paid","https://bannerbear.com","https://developers.bannerbear.com"],
-  ["Photoroom","Image Generation",22,20,18,14,9,"AI product photo editing and background removal for ecommerce clients",true,"Freemium","https://photoroom.com","https://www.photoroom.com/api"],
-  ["Creatopy","Image Generation",23,22,17,13,8,"Programmatic animated ad creative generation for display campaigns",true,"Paid","https://creatopy.com","https://creatopy.com/api"],
-  ["Twilio","Automation",25,23,13,15,8,"SMS, WhatsApp, and voice API backbone for campaign communication flows",true,"Freemium","https://twilio.com","https://console.twilio.com"],
-  ["Postmark","Automation",21,20,12,14,9,"High-deliverability transactional email API for drip and triggered sends",true,"Paid","https://postmarkapp.com","https://account.postmarkapp.com/api_tokens"],
-  ["Replicate","Infrastructure",20,19,18,15,9,"Run any image, video, or audio ML model via a single unified API",true,"Paid","https://replicate.com","https://replicate.com/account/api-tokens"],
-  ["Cohere","Foundation AI",20,19,15,14,9,"Enterprise embeddings and NLP for semantic search and content classification",true,"Freemium","https://cohere.com","https://dashboard.cohere.com/api-keys"],
-  ["Writer.com","Social & Content",23,20,17,12,7,"Enterprise brand voice AI with compliance guardrails for agency teams",true,"Enterprise","https://writer.com","https://dev.writer.com"],
-  ["Sprout Social","Social & Content",22,20,14,12,7,"Social listening, scheduling, and analytics with full API access",true,"Paid","https://sproutsocial.com","https://developers.sproutsocial.com"],
-  ["ZoomInfo API","Outreach & CRM",26,20,13,13,6,"B2B intent data and verified contact database for ABM campaigns",true,"Enterprise","https://zoominfo.com","https://developer.zoominfo.com"],
+  ["OpenAI","Foundation AI",25,21,18,13,8,"Core LLM powering content, code, and automation at scale",true,"Freemium","https://openai.com","https://platform.openai.com/api-keys","Build custom AI agents and automate client reporting via API"],
+  ["Anthropic (Claude)","Foundation AI",30,25,20,15,9,"Advanced reasoning and long-context AI for complex campaigns",true,"Freemium","https://anthropic.com","https://console.anthropic.com/keys","Analyze campaign data and write complex strategy documents at scale"],
+  ["Gemini (Google)","Foundation AI",26,21,18,14,9,"Multimodal AI with deep Google ecosystem integration",true,"Freemium","https://gemini.google.com","https://aistudio.google.com/app/apikey","Analyze text, image, and video campaigns with Google data built in"],
+  ["Midjourney","Image Generation",26,14,20,8,8,"Industry-leading image quality for ad creatives and branding",false,"Paid","https://midjourney.com","https://docs.midjourney.com","Create stunning ad visuals that outperform stock photos every time"],
+  ["Stability AI","Image Generation",22,19,17,15,9,"Open-source image generation with full API control",true,"Freemium","https://stability.ai","https://platform.stability.ai/account/keys","Generate unlimited on-brand product images at zero per-image cost"],
+  ["Runway ML","Video Generation",25,18,19,12,7,"AI video generation and editing for high-end content production",true,"Freemium","https://runwayml.com","https://dev.runwayml.com","Produce cinematic video ads without a production crew or budget"],
+  ["HeyGen","Video Generation",28,20,18,13,7,"Realistic AI avatar videos for personalized client outreach",true,"Freemium","https://heygen.com","https://app.heygen.com/settings?nav=API","Create personalized video messages for every prospect at scale"],
+  ["Synthesia","Video Generation",27,19,18,12,7,"Enterprise AI video with 140+ avatar presenters",true,"Paid","https://synthesia.io","https://docs.synthesia.io","Turn scripts into professional explainer videos in 140+ languages"],
+  ["Higgsfield AI","Video Generation",25,20,18,13,8,"Physics-aware video generation for dynamic ad content",true,"Freemium","https://higgsfield.ai","https://higgsfield.ai/docs","Generate physics-realistic product demo videos for social ads"],
+  ["Remotion","Video Generation",18,20,15,14,9,"Code-based video automation for programmatic content at scale",true,"Free","https://remotion.dev","https://www.remotion.dev/docs/lambda","Render thousands of personalized video ads from a single template"],
+  ["ElevenLabs","Voice & Audio",24,19,18,13,8,"Best-in-class voice cloning and synthesis for any content",true,"Freemium","https://elevenlabs.io","https://elevenlabs.io/app/settings/api-keys","Clone your client's voice for consistent audio branding everywhere"],
+  ["Murf AI","Voice & Audio",21,19,17,12,8,"Studio-quality AI voiceovers for ads and presentations",true,"Freemium","https://murf.ai","https://murf.ai/api","Add professional voiceovers to client videos without hiring talent"],
+  ["PlayHT","Voice & Audio",21,20,17,13,8,"Real-time voice synthesis with extensive voice library",true,"Freemium","https://play.ht","https://docs.play.ht","Deploy real-time AI voices for interactive phone and web experiences"],
+  ["Bland AI","AI Calling",26,24,15,13,8,"AI phone agents for automated lead qualification and follow-up",true,"Paid","https://bland.ai","https://app.bland.ai/home?page=api-keys","Automate outbound sales calls and appointment booking 24/7"],
+  ["Vapi","AI Calling",24,23,15,14,8,"Developer-first voice AI platform for call automation",true,"Freemium","https://vapi.ai","https://dashboard.vapi.ai/keys","Build and deploy AI phone agents for lead qualification in days"],
+  ["Retell AI","AI Calling",23,22,15,14,8,"Human-like AI voice agents for sales and support calls",true,"Paid","https://retellai.com","https://beta.retellai.com/apiKey","Replace SDR cold calling with human-like AI voice agents"],
+  ["AdCreative.ai","Image Generation",27,21,18,12,8,"AI-powered ad creative generation optimized for conversions",true,"Paid","https://adcreative.ai","https://adcreative.ai/api","Generate conversion-optimized ad creatives for every platform automatically"],
+  ["Jasper AI","Social & Content",24,20,17,12,7,"AI content platform with brand voice training for teams",true,"Paid","https://jasper.ai","https://developers.jasper.ai","Produce on-brand blog posts, ads, and emails 10x faster"],
+  ["Copy.ai","Social & Content",23,21,16,12,8,"GTM-focused AI writing for sales and marketing copy",true,"Freemium","https://copy.ai","https://app.copy.ai/account/api-access","Automate your entire GTM content pipeline from emails to landing pages"],
+  ["Surfer SEO","SEO & Analytics",25,19,17,11,8,"AI-driven content optimization for top search rankings",true,"Paid","https://surferseo.com","https://developers.surferseo.com","Rank client content on page 1 with AI-guided content optimization"],
+  ["Semrush","SEO & Analytics",26,18,18,13,7,"All-in-one SEO, PPC, and competitive intelligence platform",true,"Freemium","https://semrush.com","https://developer.semrush.com","Dominate competitor research, keyword gaps, and paid ad intelligence"],
+  ["Instantly.ai","Outreach & CRM",27,24,15,13,9,"AI-powered cold email at scale with smart sending",true,"Paid","https://instantly.ai","https://app.instantly.ai/app/settings/integrations","Send thousands of personalized cold emails daily without landing in spam"],
+  ["ManyChat","Automation",25,23,15,13,9,"Conversational marketing automation for DMs and chat",true,"Freemium","https://manychat.com","https://developers.manychat.com","Convert DMs and comments into booked calls automatically"],
+  ["Make","Automation",18,19,12,10,6,"Visual automation platform connecting 1,500+ apps with AI",true,"Freemium","https://make.com","https://www.make.com/en/api-documentation","Connect every tool in your agency stack without writing any code"],
+  ["Voiceflow","Automation",23,22,15,13,8,"No-code AI agent builder for customer-facing workflows",true,"Freemium","https://voiceflow.com","https://docs.voiceflow.com","Build AI chatbots and agents for client websites in days not months"],
+  ["Perplexity AI","Foundation AI",22,17,16,13,8,"Real-time AI research and market intelligence with citations",true,"Freemium","https://perplexity.ai","https://www.perplexity.ai/settings/api","Research any market, competitor, or trend in real-time with citations"],
+  ["Grok (xAI)","Foundation AI",22,18,16,12,8,"X-integrated AI for real-time social and market insights",true,"Freemium","https://x.ai","https://console.x.ai","Monitor real-time social trends and brand mentions directly from X"],
+  ["Mistral AI","Foundation AI",20,18,15,14,10,"Efficient open-weight models for cost-effective AI deployment",true,"Freemium","https://mistral.ai","https://console.mistral.ai/api-keys","Run cost-efficient AI tasks at scale without OpenAI-level pricing"],
+  ["Leonardo AI","Image Generation",23,18,18,13,9,"Fine-tuned image models for consistent brand visual output",true,"Freemium","https://leonardo.ai","https://app.leonardo.ai/settings/api-keys","Maintain consistent visual style across all client brand imagery"],
+  ["Ideogram","Image Generation",21,17,18,12,9,"Superior text-in-image generation for ad copy overlays",true,"Freemium","https://ideogram.ai","https://developer.ideogram.ai","Create ad graphics with embedded text that actually looks professional"],
+  ["Kling AI","Video Generation",22,16,18,11,8,"High-quality AI video from text and images for campaigns",true,"Freemium","https://klingai.com","https://developer.klingai.com","Turn product photos into short video ads for TikTok and Reels"],
+  ["Luma AI (Dream Machine)","Video Generation",23,16,18,12,8,"Cinematic AI video generation for premium content",true,"Freemium","https://lumalabs.ai","https://lumalabs.ai/dream-machine/api","Generate cinematic B-roll footage without a camera crew"],
+  ["Pika Labs","Video Generation",21,16,17,11,8,"Fast AI video creation and editing for social content",true,"Freemium","https://pika.art","https://pika.art/api","Animate static product images into eye-catching video ads"],
+  ["Sora (OpenAI)","Video Generation",24,14,20,9,6,"OpenAI's flagship video model for Hollywood-quality content",true,"Paid","https://sora.com","https://platform.openai.com/docs/api-reference","Produce Hollywood-quality video concepts for client pitches"],
+  ["Descript","Social & Content",26,21,18,10,8,"AI video and podcast editing with text-based workflow",true,"Freemium","https://descript.com","https://www.descript.com/developers","Edit client podcasts and videos by editing the transcript like a doc"],
+  ["Opus Clip","Social & Content",25,22,16,10,8,"AI short-form video repurposing from long-form content",true,"Freemium","https://opus.pro","https://www.opus.pro/opus-api","Turn one long webinar into 20 viral short clips automatically"],
+  ["Captions AI","Social & Content",22,21,16,10,8,"AI auto-captions and video enhancement for social media",true,"Freemium","https://captions.ai","https://docs.captions.ai","Auto-caption and enhance client social videos for maximum reach"],
+  ["Wondercraft AI","Music & Podcast",18,18,15,10,8,"AI podcast and audio ad production platform",true,"Paid","https://wondercraft.ai","https://docs.wondercraft.ai","Launch branded podcast ads and audio content without a studio"],
+  ["Suno AI","Music & Podcast",17,16,17,10,9,"Text-to-music generation for branded content and ads",true,"Freemium","https://suno.com","https://suno.com/blog/api","Create custom background music for ads and brand videos instantly"],
+  ["Udio","Music & Podcast",16,15,17,10,9,"High-fidelity AI music generation for creative campaigns",true,"Freemium","https://udio.com","https://www.udio.com/api","Generate professional music tracks for client campaigns royalty-free"],
+  ["Deepgram","Speech Recognition",22,21,16,15,9,"Real-time speech-to-text API for call analysis and CRM",true,"Freemium","https://deepgram.com","https://console.deepgram.com","Transcribe client calls and meetings for CRM logging and coaching"],
+  ["AssemblyAI","Speech Recognition",21,21,16,15,9,"AI transcription and audio intelligence for content ops",true,"Freemium","https://assemblyai.com","https://www.assemblyai.com/app/account","Extract insights and action items from sales calls automatically"],
+  ["Cartesia AI","Voice & Audio",20,19,16,14,8,"Ultra-low latency voice synthesis for real-time applications",true,"Freemium","https://cartesia.ai","https://play.cartesia.ai/keys","Power real-time voice apps and call center bots at ultra-low latency"],
+  ["Typeface","Social & Content",23,19,18,11,7,"Enterprise brand AI for on-brand content at scale",true,"Enterprise","https://typeface.ai","https://typeface.ai/api","Generate on-brand content that never violates client brand guidelines"],
+  ["Smartlead","Outreach & CRM",26,23,14,13,9,"Unlimited email outreach with AI warmup and sequencing",true,"Paid","https://smartlead.ai","https://smartlead.ai/app/api","Scale to unlimited email inboxes without deliverability issues"],
+  ["Taplio","Social & Content",23,21,16,11,8,"AI-powered LinkedIn growth and content scheduling",true,"Paid","https://taplio.com","https://taplio.com/api","Grow client LinkedIn audiences with AI-generated posts and engagement"],
+  ["Podcastle","Music & Podcast",17,17,15,9,8,"AI podcast recording and production suite",true,"Freemium","https://podcastle.ai","https://podcastle.ai/api","Record and produce client podcast episodes remotely in broadcast quality"],
+  ["Publer","Social & Content",19,20,13,12,9,"AI social media scheduling and analytics platform",true,"Freemium","https://publer.io","https://publer.io/help/api","Schedule and AI-generate posts across all client social accounts"],
+  ["Triple Whale","SEO & Analytics",24,18,16,12,7,"AI attribution and ecommerce analytics for ad spend",true,"Paid","https://triplewhale.com","https://developers.triplewhale.com","Attribute every ad dollar to actual revenue across all client channels"],
+  ["Zapier (AI Workflows)","Automation",25,25,13,14,9,"No-code automation with 6,000+ app integrations and AI",true,"Freemium","https://zapier.com","https://zapier.com/l/api","Automate repetitive agency workflows by connecting 6,000+ apps with AI"],
+  ["Clay.com","Outreach & CRM",27,23,15,13,8,"AI-powered GTM data enrichment and personalization at scale",true,"Paid","https://clay.com","https://docs.clay.com","Enrich lead lists with 50+ data sources and write hyper-personalized outreach"],
+  ["Phantom Buster","Outreach & CRM",23,22,13,13,8,"LinkedIn and social media lead generation automation",true,"Freemium","https://phantombuster.com","https://phantombuster.com/api","Scrape LinkedIn leads and automate outreach sequences at scale"],
+  ["Railway.app","Infrastructure",16,18,13,14,9,"Deploy AI apps and agents with zero-config infrastructure",true,"Freemium","https://railway.app","https://docs.railway.app/reference/public-api","Deploy client AI apps and bots in minutes without DevOps overhead"],
+  ["Graft","Infrastructure",15,17,13,13,8,"Enterprise AI workflow automation and model deployment",true,"Enterprise","https://graft.com","https://graft.com/api","Deploy custom AI models for enterprise clients with no ML expertise"],
+  ["MCPHub","Infrastructure",14,16,12,13,8,"MCP server hub for connecting AI agents to any tool",true,"Free","https://mcphub.io","https://mcphub.io/docs","Connect AI agents to any tool or data source via MCP protocol"],
+  ["HubSpot","Outreach & CRM",26,21,16,13,7,"AI-enhanced CRM with marketing automation and analytics",true,"Freemium","https://hubspot.com","https://developers.hubspot.com/docs/api/overview","Centralize all client contacts, deals, and campaigns in one hub"],
+  ["Apollo API","Outreach & CRM",26,21,15,14,8,"B2B contact data and sales intelligence with AI scoring",true,"Freemium","https://apollo.io","https://developer.apollo.io","Source verified B2B contacts with intent signals for targeted campaigns"],
+  ["Million Verifier","Outreach & CRM",21,22,13,14,9,"Real-time email verification to protect sender reputation",true,"Paid","https://millionverifier.com","https://millionverifier.com/api","Clean email lists before sending to protect deliverability"],
+  ["Refonic","AI Calling",19,20,13,12,8,"AI-powered SMS and voice campaign automation",true,"Paid","https://refonic.com","https://refonic.com/api","Run AI-powered SMS and voice campaigns that feel personal at scale"],
+  ["Facebook Ads API","SEO & Analytics",28,21,16,13,8,"Direct API access for programmatic ad management at scale",true,"Free","https://business.facebook.com","https://developers.facebook.com/docs/marketing-apis","Programmatically manage and optimize client Meta ad accounts at scale"],
+  ["Super Whisper","Speech Recognition",18,18,15,11,9,"Real-time AI transcription with smart formatting and macros",true,"Paid","https://superwhisper.com","https://superwhisper.com/api","Transcribe client meetings and calls instantly with smart formatting"],
+  ["Apify","Automation",26,24,14,14,10,"Web scraping and data extraction for lead generation and competitive research",true,"Freemium","https://apify.com","https://console.apify.com/account/integrations","Scrape competitor data, pricing, and leads from any website via API"],
+  ["Google Ads API","SEO & Analytics",29,22,15,15,8,"Programmatic bid management and automated reporting for paid search campaigns",true,"Free","https://ads.google.com","https://developers.google.com/google-ads/api/docs/get-started/introduction","Automate bid management and reporting across all client Google campaigns"],
+  ["TikTok Ads API","SEO & Analytics",27,21,16,13,8,"Fastest-growing ad platform with API access for social campaign automation",true,"Free","https://ads.tiktok.com","https://ads.tiktok.com/marketing_api/docs","Programmatically run and optimize TikTok campaigns for younger audiences"],
+  ["LinkedIn Ads API","SEO & Analytics",26,20,15,13,7,"B2B account-based targeting and lead gen campaign management via API",true,"Free","https://business.linkedin.com","https://developer.linkedin.com/product-catalog","Target decision-makers precisely with programmatic B2B ad management"],
+  ["Klaviyo","Outreach & CRM",27,23,15,14,8,"Email and SMS marketing automation with best-in-class ecommerce API",true,"Freemium","https://klaviyo.com","https://developers.klaviyo.com","Build revenue-generating email and SMS flows for ecommerce clients"],
+  ["ActiveCampaign","Outreach & CRM",25,23,14,13,8,"Full-funnel marketing automation with deep CRM and behavioral triggers",true,"Paid","https://activecampaign.com","https://developers.activecampaign.com","Automate full client nurture sequences triggered by real behavior"],
+  ["Lemlist","Outreach & CRM",25,22,16,13,8,"Personalized cold outreach with AI image and video variable personalization",true,"Paid","https://lemlist.com","https://developer.lemlist.com","Send cold emails with personalized images and videos that get replies"],
+  ["Hunter.io","Outreach & CRM",23,21,12,14,9,"Email finder and verification API for building targeted prospecting pipelines",true,"Freemium","https://hunter.io","https://hunter.io/api","Find verified email addresses for any prospect at any company instantly"],
+  ["Salesforce API","Outreach & CRM",26,21,14,14,6,"Enterprise CRM and marketing cloud integration for large agency clients",true,"Enterprise","https://salesforce.com","https://developer.salesforce.com","Sync all agency and client CRM data with the world's #1 enterprise platform"],
+  ["Clearbit","Outreach & CRM",24,21,13,13,8,"Real-time B2B data enrichment and firmographic targeting for campaigns",true,"Paid","https://clearbit.com","https://dashboard.clearbit.com/api","Enrich every inbound lead with company and contact data automatically"],
+  ["Ahrefs API","SEO & Analytics",26,19,17,13,8,"Backlink data, keyword research, and competitor gap analysis via API",true,"Paid","https://ahrefs.com","https://ahrefs.com/api","Track client keyword rankings and backlink profiles vs. every competitor"],
+  ["Google Analytics 4 API","SEO & Analytics",27,20,14,14,10,"Conversion attribution and audience insights for every client property",true,"Free","https://analytics.google.com","https://developers.google.com/analytics/devguides/reporting/data/v1","Pull client traffic and conversion data into automated dashboards"],
+  ["Mixpanel","SEO & Analytics",23,18,14,13,8,"Funnel analytics and user behavior tracking for SaaS and app clients",true,"Freemium","https://mixpanel.com","https://developer.mixpanel.com","Track exactly how users engage with client apps and optimize funnels"],
+  ["Hotjar","SEO & Analytics",21,16,14,12,8,"Heatmaps and session recordings to justify CRO recommendations to clients",true,"Freemium","https://hotjar.com","https://developer.hotjar.com","Show clients exactly where visitors drop off with heatmaps and recordings"],
+  ["Canva API","Image Generation",24,21,18,13,8,"Automated branded template generation and design publishing at scale",true,"Freemium","https://canva.com","https://www.canva.com/developers","Auto-generate branded client assets at scale from a single template"],
+  ["Bannerbear","Image Generation",24,23,16,14,9,"Auto-generate thousands of ad creative variations from reusable templates",true,"Paid","https://bannerbear.com","https://developers.bannerbear.com","Produce 1,000 personalized ad banners from one template via API"],
+  ["Photoroom","Image Generation",22,20,18,14,9,"AI product photo editing and background removal for ecommerce clients",true,"Freemium","https://photoroom.com","https://www.photoroom.com/api","Remove backgrounds and create studio-quality product shots from phone photos"],
+  ["Creatopy","Image Generation",23,22,17,13,8,"Programmatic animated ad creative generation for display campaigns",true,"Paid","https://creatopy.com","https://creatopy.com/api","Animate and export ad sets across all formats and sizes automatically"],
+  ["Twilio","Automation",25,23,13,15,8,"SMS, WhatsApp, and voice API backbone for campaign communication flows",true,"Freemium","https://twilio.com","https://console.twilio.com","Send transactional SMS, WhatsApp, and voice messages in any campaign"],
+  ["Postmark","Automation",21,20,12,14,9,"High-deliverability transactional email API for drip and triggered sends",true,"Paid","https://postmarkapp.com","https://account.postmarkapp.com/api_tokens","Deliver transactional and sequence emails with industry-leading inbox rates"],
+  ["Replicate","Infrastructure",20,19,18,15,9,"Run any image, video, or audio ML model via a single unified API",true,"Paid","https://replicate.com","https://replicate.com/account/api-tokens","Access any AI model for image, video, or audio generation via one API"],
+  ["Cohere","Foundation AI",20,19,15,14,9,"Enterprise embeddings and NLP for semantic search and content classification",true,"Freemium","https://cohere.com","https://dashboard.cohere.com/api-keys","Add semantic search and content classification to client marketing tools"],
+  ["Writer.com","Social & Content",23,20,17,12,7,"Enterprise brand voice AI with compliance guardrails for agency teams",true,"Enterprise","https://writer.com","https://dev.writer.com","Enforce brand voice and compliance across all client-facing AI content"],
+  ["Sprout Social","Social & Content",22,20,14,12,7,"Social listening, scheduling, and analytics with full API access",true,"Paid","https://sproutsocial.com","https://developers.sproutsocial.com","Manage and report on client social performance with deep analytics"],
+  ["ZoomInfo API","Outreach & CRM",26,20,13,13,6,"B2B intent data and verified contact database for ABM campaigns",true,"Enterprise","https://zoominfo.com","https://developer.zoominfo.com","Target buyers actively researching your client's category with intent data"],
+  ["n8n","Automation",22,24,11,14,10,"Open-source workflow automation with self-hosting option for agencies",true,"Freemium","https://n8n.io","https://docs.n8n.io/api/","Build self-hosted automation workflows for clients without per-task pricing"],
+  ["Relevance AI","Automation",23,23,14,13,8,"No-code platform to build and deploy AI agents for marketing workflows",true,"Paid","https://relevanceai.com","https://relevanceai.com/docs","Deploy specialized AI agents for research, outreach, and content in minutes"],
+  ["Lindy AI","Automation",22,22,13,12,8,"AI employee platform for automating repetitive agency tasks and workflows",true,"Paid","https://lindy.ai","https://lindy.ai/api","Create AI employees that handle repetitive agency tasks around the clock"],
+  ["Mailchimp API","Outreach & CRM",25,22,14,14,8,"Industry-standard email marketing platform with full API access",true,"Freemium","https://mailchimp.com","https://mailchimp.com/developer/","Manage client email audiences and campaigns via the most-used email platform"],
+  ["Brevo","Outreach & CRM",23,21,13,14,9,"All-in-one email, SMS, and WhatsApp marketing platform with robust API",true,"Freemium","https://brevo.com","https://developers.brevo.com","Run email, SMS, and WhatsApp campaigns from one platform for global clients"],
+  ["Beehiiv","Outreach & CRM",22,19,15,12,9,"Newsletter platform built for growth with monetization and API access",true,"Paid","https://beehiiv.com","https://developers.beehiiv.com","Launch and monetize client newsletters with built-in growth tools"],
+  ["Pipedrive API","Outreach & CRM",23,20,13,13,8,"Sales-focused CRM with clean API and automation for SMB clients",true,"Paid","https://pipedrive.com","https://developers.pipedrive.com","Track every sales deal and automate follow-ups for client sales teams"],
+  ["Attio","Outreach & CRM",22,19,13,13,8,"Modern AI-native CRM with flexible data model and full API",true,"Paid","https://attio.com","https://developers.attio.com","Build a custom CRM that fits exactly how your client sells"],
+  ["Warmbox","Outreach & CRM",20,21,11,12,9,"Automated email warmup to protect sender reputation before cold campaigns",true,"Paid","https://warmbox.ai","https://warmbox.ai/api","Warm up new email domains automatically before launching cold campaigns"],
+  ["Clearscope","SEO & Analytics",24,18,16,11,8,"AI content optimization platform using real Google ranking data",true,"Paid","https://clearscope.io","https://www.clearscope.io/api","Optimize every client article to rank higher using real Google data"],
+  ["Frase","SEO & Analytics",23,18,16,11,9,"AI-powered SEO content briefs and optimization scoring",true,"Paid","https://frase.io","https://docs.frase.io/api","Research and brief client content in minutes instead of hours"],
+  ["Amplitude","SEO & Analytics",22,17,13,13,8,"Product analytics platform for understanding user behavior and funnels",true,"Freemium","https://amplitude.com","https://www.docs.developers.amplitude.com","Understand exactly what drives client app conversions and retention"],
+  ["Madgicx","SEO & Analytics",25,20,15,12,8,"AI ad optimization platform for Meta and Google campaigns",true,"Paid","https://madgicx.com","https://madgicx.com/api","Let AI optimize client Meta and Google ad spend around the clock"],
+  ["InVideo AI","Video Generation",22,18,17,11,8,"AI-powered video creation from text scripts and prompts",true,"Freemium","https://invideo.io","https://invideo.io/api","Turn any script or idea into a polished marketing video in minutes"],
+  ["Pictory","Video Generation",21,17,16,10,8,"Automatically convert articles and scripts into branded videos",true,"Paid","https://pictory.ai","https://pictory.ai/api","Convert client blog posts into shareable social videos automatically"],
+  ["Adobe Firefly API","Image Generation",24,19,19,12,6,"Enterprise-grade generative AI with commercial licensing and brand safety",true,"Enterprise","https://firefly.adobe.com","https://developer.adobe.com/firefly-api","Generate commercially-safe AI images approved for any brand use"],
+  ["Picsart API","Image Generation",21,18,17,13,9,"AI image editing, generation, and effects platform with full API",true,"Freemium","https://picsart.com","https://picsart.io/api","Add AI image editing and effects to client creative workflows via API"],
+  ["Writesonic","Social & Content",22,20,16,12,8,"AI writing platform with SEO integration and brand voice for agencies",true,"Freemium","https://writesonic.com","https://docs.writesonic.com/api","Generate SEO-optimized articles, ads, and landing pages at agency scale"],
+  ["Hootsuite","Social & Content",22,19,13,12,7,"Social media management with AI scheduling and analytics across all platforms",true,"Paid","https://hootsuite.com","https://developer.hootsuite.com","Schedule, monitor, and report on all client social accounts in one place"],
+  ["Buffer API","Social & Content",20,19,13,13,9,"Simple social scheduling API with AI-suggested optimal posting times",true,"Freemium","https://buffer.com","https://buffer.com/developers/api","Queue and publish client social content with AI-suggested optimal timing"],
+  ["Loom API","Social & Content",22,18,16,13,9,"Video messaging platform for sales outreach and client communications",true,"Freemium","https://loom.com","https://dev.loom.com/docs","Send personalized video messages to prospects that get 3x more replies"],
+  ["Segment","Automation",23,21,12,14,8,"Customer data platform that unifies data from every marketing tool",true,"Paid","https://segment.com","https://segment.com/docs/connections/sources/catalog/libraries/server/","Unify client customer data from every source into one clean profile"],
+  ["Fireflies.ai","Speech Recognition",22,21,14,14,9,"AI meeting recorder with automatic notes, CRM sync, and search",true,"Freemium","https://fireflies.ai","https://docs.fireflies.ai","Auto-record and summarize every client and sales call for your CRM"],
+  ["Otter.ai","Speech Recognition",21,19,14,13,9,"Live AI transcription and meeting summaries with collaboration features",true,"Freemium","https://otter.ai","https://otter.ai/developers","Transcribe client meetings live and share searchable notes instantly"],
+  ["Fathom","Speech Recognition",20,19,13,12,9,"AI meeting recorder with instant summaries and CRM logging",true,"Freemium","https://fathom.video","https://fathom.video/api","Get instant AI summaries and action items from every client call"],
 ];
 
 const TOOLS = RAW.map(r => {
-  const [name,category,revenue,automation,creative,api,cost,description,hasAPI,pricing,mainUrl,apiUrl] = r;
+  const [name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, mainUrl, apiUrl, usp] = r;
   const total = revenue + automation + creative + api + cost;
   const tier = total >= 90 ? 'S' : total >= 80 ? 'A' : total >= 70 ? 'B' : 'C';
-  return {name,category,revenue,automation,creative,api,cost,description,hasAPI,pricing,total,tier,mainUrl,apiUrl};
+  return { name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, mainUrl, apiUrl, usp, total, tier };
 });
 
 const USE_CASES = [
@@ -1636,7 +1688,7 @@ function renderList() {
 
   // Update search placeholder
   document.getElementById('searchInput').placeholder =
-    list.length === 87 ? 'Search 87 intelligence assets...' : `Search ${list.length} intelligence assets...`;
+    list.length === 111 ? 'Search 111 intelligence assets...' : `Search ${list.length} intelligence assets...`;
 
   updateStats(list);
 
@@ -1704,6 +1756,10 @@ function toolRowHTML(tool, idx) {
   <button class="${stackBtnCls}" data-tool="${tool.name}" title="${inStack ? 'Remove from stack' : 'Add to stack'}">${inStack ? '&#10003;' : '+'}</button>
   <div class="tr-expand">
     <div class="tr-expand-inner">
+      <div class="tr-usp">
+        <span class="tr-usp-label">Agency Use Case</span>
+        <span class="tr-usp-text">${tool.usp}</span>
+      </div>
       <div class="tr-desc">${tool.description}</div>
       <div class="tr-bars">
         ${trBarsHTML(tool)}
@@ -2103,6 +2159,10 @@ function buildCheckoutPage() {
             <span class="co-tier-badge" style="border-color:${tc};color:${tc}">${t.tier}</span>
             <span class="co-price-badge" style="border-color:${pc}40;color:${pc}">${t.pricing}</span>
             ${t.hasAPI ? '<span class="co-api-badge">API &#10003;</span>' : ''}
+          </div>
+          <div class="tr-usp" style="margin-top:6px">
+            <span class="tr-usp-label">Agency Use Case</span>
+            <span class="tr-usp-text">${t.usp}</span>
           </div>
           <div class="co-tool-desc">${t.description}</div>
           <div class="co-bars">${barsHtml}</div>
