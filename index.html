@@ -371,7 +371,7 @@ header h1{
   max-height:0;
   transition:max-height 0.35s ease;
 }
-.tool-row.expanded .tr-expand{max-height:400px}
+.tool-row.expanded .tr-expand{max-height:700px}
 
 .tr-rank{
   font-family:'JetBrains Mono',monospace;
@@ -534,6 +534,52 @@ header h1{
   margin-left:auto;
 }
 .tr-compare-cb input{accent-color:var(--gold);cursor:pointer}
+
+/* VIDEO SECTION */
+.tr-video-section{margin-top:18px;border-top:1px solid var(--border);padding-top:16px}
+.tr-video-label{
+  font-family:'Syne',sans-serif;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--text-muted);
+  margin-bottom:10px;
+}
+.tr-video-embed{
+  position:relative;
+  width:100%;
+  max-width:480px;
+  aspect-ratio:16/9;
+  border:1px solid var(--border);
+  background:var(--surface);
+  overflow:hidden;
+}
+.tr-video-embed iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:none;
+}
+.tr-link-video{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:'Syne',sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-decoration:none;
+  color:rgba(168,85,247,0.6);
+  transition:color 0.15s;
+  padding:8px 0;
+}
+.tr-link-video:hover{color:#a855f7}
+.tr-link-video::before{
+  content:'▶';
+  font-size:9px;
+  width:22px;height:22px;
+  border:1px solid currentColor;
+  display:flex;align-items:center;justify-content:center;
+}
 
 /* NO RESULTS */
 .no-results{
@@ -1574,11 +1620,19 @@ const RAW = [
   ["Fathom","Speech Recognition",20,19,13,12,9,"AI meeting recorder with instant summaries and CRM logging",true,"Freemium","https://fathom.video","https://fathom.video/api","Get instant AI summaries and action items from every client call"],
 ];
 
+// YouTube video IDs for embedded demos. Add IDs here as you collect them.
+// Format: 'Tool Name': 'YouTubeVideoID'
+const VIDEO_IDS = {
+  // Populate with official demo/tutorial YouTube video IDs
+  // Example: 'Anthropic (Claude)': 'dQw4w9WgXcQ',
+};
+
 const TOOLS = RAW.map(r => {
   const [name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, mainUrl, apiUrl, usp] = r;
   const total = revenue + automation + creative + api + cost;
   const tier = total >= 90 ? 'S' : total >= 80 ? 'A' : total >= 70 ? 'B' : 'C';
-  return { name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, mainUrl, apiUrl, usp, total, tier };
+  const videoId = VIDEO_IDS[name] || null;
+  return { name, category, revenue, automation, creative, api, cost, description, hasAPI, pricing, mainUrl, apiUrl, usp, total, tier, videoId };
 });
 
 const USE_CASES = [
@@ -1768,6 +1822,13 @@ function toolRowHTML(tool, idx) {
         <a class="tr-link-site" href="${tool.mainUrl}" target="_blank" rel="noopener">&#127760; Website &#8599;</a>
         <a class="tr-link-api" href="${tool.apiUrl}" target="_blank" rel="noopener">&#128273; API Keys &#8599;</a>
         ${compareMode ? `<label class="tr-compare-cb"><input type="checkbox" ${compareSet.has(tool.name)?'checked':''} data-compare="${tool.name}"> Add to Compare</label>` : ''}
+      </div>
+      <div class="tr-video-section">
+        <div class="tr-video-label">Demo &amp; Overview</div>
+        ${tool.videoId
+          ? `<div class="tr-video-embed"><iframe src="https://www.youtube-nocookie.com/embed/${tool.videoId}?modestbranding=1&rel=0" allowfullscreen loading="lazy"></iframe></div>`
+          : `<a class="tr-link-video" href="https://www.youtube.com/results?search_query=${encodeURIComponent(tool.name + ' tutorial demo walkthrough')}" target="_blank" rel="noopener">Watch ${tool.name} Demo on YouTube &#8599;</a>`
+        }
       </div>
     </div>
   </div>
