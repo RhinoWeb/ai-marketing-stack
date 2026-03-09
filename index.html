@@ -1078,6 +1078,76 @@ footer{
   text-decoration:none;transition:all 0.2s;
 }
 .footer-cta:hover{background:var(--gold);color:var(--bg)}
+.footer-suggest{
+  display:inline-block;
+  border:1px solid var(--border);color:var(--text-muted);background:transparent;
+  padding:10px 24px;margin-top:10px;margin-left:10px;
+  font-family:'Syne',sans-serif;font-weight:600;
+  font-size:12px;text-transform:uppercase;letter-spacing:2px;
+  text-decoration:none;transition:all 0.2s;cursor:pointer;
+}
+.footer-suggest:hover{border-color:var(--blue);color:var(--blue)}
+
+/* SUGGEST MODAL */
+#suggestModal{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(6,8,15,0.96);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity 0.2s;
+}
+#suggestModal.open{opacity:1;pointer-events:all}
+.suggest-box{
+  background:var(--surface-2);border:1px solid var(--border);
+  width:100%;max-width:520px;margin:20px;
+  padding:36px;position:relative;
+}
+.suggest-title{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:28px;color:var(--gold);margin-bottom:4px;
+}
+.suggest-sub{
+  font-family:'Syne',sans-serif;font-size:11px;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:24px;
+  padding-bottom:16px;border-bottom:1px solid var(--border);
+}
+.suggest-field{margin-bottom:18px}
+.suggest-label{
+  display:block;font-family:'Syne',sans-serif;font-size:10px;
+  text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);
+  margin-bottom:6px;
+}
+.suggest-input,.suggest-select,.suggest-textarea{
+  width:100%;background:var(--surface);border:1px solid var(--border);
+  color:var(--text);font-family:'Syne',sans-serif;font-size:13px;
+  padding:10px 12px;outline:none;transition:border-color 0.15s;
+  border-radius:0;appearance:none;
+}
+.suggest-input:focus,.suggest-select:focus,.suggest-textarea:focus{border-color:var(--gold)}
+.suggest-textarea{resize:vertical;min-height:80px;line-height:1.5}
+.suggest-select option{background:var(--surface-2)}
+.suggest-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.suggest-submit{
+  width:100%;padding:13px;margin-top:6px;
+  background:var(--gold);color:var(--bg);border:none;
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:12px;text-transform:uppercase;letter-spacing:2px;
+  cursor:pointer;transition:background 0.15s;
+}
+.suggest-submit:hover{background:#d4b97e}
+.suggest-submit:disabled{opacity:0.5;cursor:not-allowed}
+.suggest-status{
+  margin-top:14px;font-family:'Syne',sans-serif;font-size:12px;
+  text-align:center;min-height:18px;
+}
+.suggest-status.success{color:#22c55e}
+.suggest-status.error{color:#f43f5e}
+.suggest-close{
+  position:absolute;top:16px;right:16px;
+  background:none;border:none;color:var(--text-muted);
+  font-size:18px;cursor:pointer;transition:color 0.15s;
+  font-family:'Syne',sans-serif;
+}
+.suggest-close:hover{color:var(--text)}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -1196,7 +1266,64 @@ footer{
     &nbsp;&middot;&nbsp; AI Marketing Intelligence Hub &nbsp;&middot;&nbsp; 87 Tools Scored
   </div>
   <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener" class="footer-cta">Get the Ultimate Marketing AI Playbook &rarr;</a>
+  <button class="footer-suggest" id="openSuggestBtn">+ Suggest a Tool</button>
 </footer>
+
+<!-- SUGGEST MODAL -->
+<div id="suggestModal">
+  <div class="suggest-box">
+    <button class="suggest-close" id="closeSuggestBtn">&times;</button>
+    <div class="suggest-title">Suggest a Tool</div>
+    <div class="suggest-sub">Know an AI tool we missed? Submit it for review.</div>
+    <form id="suggestForm">
+      <div class="suggest-row">
+        <div class="suggest-field">
+          <label class="suggest-label">Tool Name *</label>
+          <input class="suggest-input" name="tool_name" required placeholder="e.g. Perplexity AI">
+        </div>
+        <div class="suggest-field">
+          <label class="suggest-label">Website URL *</label>
+          <input class="suggest-input" name="tool_url" required type="url" placeholder="https://...">
+        </div>
+      </div>
+      <div class="suggest-row">
+        <div class="suggest-field">
+          <label class="suggest-label">Category</label>
+          <select class="suggest-select" name="category">
+            <option value="">— Select —</option>
+            <option>Foundation AI</option>
+            <option>Image Generation</option>
+            <option>Video Generation</option>
+            <option>Voice &amp; Audio</option>
+            <option>AI Calling</option>
+            <option>Automation</option>
+            <option>Outreach &amp; CRM</option>
+            <option>SEO &amp; Analytics</option>
+            <option>Social &amp; Content</option>
+            <option>Music &amp; Podcast</option>
+            <option>Speech Recognition</option>
+            <option>Infrastructure</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="suggest-field">
+          <label class="suggest-label">Your Email (optional)</label>
+          <input class="suggest-input" name="email" type="email" placeholder="for follow-up">
+        </div>
+      </div>
+      <div class="suggest-field">
+        <label class="suggest-label">Why should it be listed?</label>
+        <textarea class="suggest-textarea" name="reason" placeholder="What makes this tool valuable for marketing agencies? Does it have an API?"></textarea>
+      </div>
+      <div class="suggest-field">
+        <label class="suggest-label">API Keys / Docs URL</label>
+        <input class="suggest-input" name="api_url" type="url" placeholder="https://...">
+      </div>
+      <button class="suggest-submit" type="submit" id="suggestSubmitBtn">Submit Suggestion &rarr;</button>
+      <div class="suggest-status" id="suggestStatus"></div>
+    </form>
+  </div>
+</div>
 
 <!-- STACK SIDEBAR -->
 <div class="sidebar-overlay" id="overlay"></div>
@@ -2018,6 +2145,51 @@ window.addEventListener('hashchange', () => { if (window.location.hash !== '#che
 buildPills();
 buildUseCasePills();
 renderList();
+
+// ── SUGGEST A TOOL ────────────────────────────────────────────────────────────
+const SUPABASE_URL = 'YOUR_SUPABASE_URL';       // e.g. https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+function openSuggestModal()  { document.getElementById('suggestModal').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeSuggestModal() { document.getElementById('suggestModal').classList.remove('open'); document.body.style.overflow=''; document.getElementById('suggestStatus').textContent=''; document.getElementById('suggestForm').reset(); }
+
+document.getElementById('openSuggestBtn').addEventListener('click', openSuggestModal);
+document.getElementById('closeSuggestBtn').addEventListener('click', closeSuggestModal);
+document.getElementById('suggestModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeSuggestModal(); });
+
+document.getElementById('suggestForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const btn = document.getElementById('suggestSubmitBtn');
+  const status = document.getElementById('suggestStatus');
+  const data = Object.fromEntries(new FormData(e.target));
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  status.className = 'suggest-status';
+  status.textContent = '';
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/suggestions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Submission failed');
+    status.className = 'suggest-status success';
+    status.textContent = '✓ Thank you! Your suggestion has been submitted for review.';
+    e.target.reset();
+    btn.textContent = 'Submitted ✓';
+    setTimeout(() => { btn.disabled=false; btn.textContent='Submit Suggestion →'; }, 3000);
+  } catch(err) {
+    status.className = 'suggest-status error';
+    status.textContent = '✗ Something went wrong. Please try again.';
+    btn.disabled = false;
+    btn.textContent = 'Submit Suggestion →';
+  }
+});
 </script>
 </body>
 </html>

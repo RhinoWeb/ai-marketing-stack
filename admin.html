@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Suggestions — Admin Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06080f;--surface:#0d1117;--surface-2:#141922;--border:#1e2535;
+  --gold:#c8a96e;--gold-dim:#8a7248;--blue:#3b82f6;
+  --text:#f0ede6;--text-dim:#8892a4;--text-muted:#3d4a5c;
+  --green:#22c55e;--rose:#f43f5e;--purple:#a855f7;
+}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh}
+
+/* LOGIN GATE */
+#loginGate{
+  position:fixed;inset:0;background:var(--bg);z-index:999;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;
+}
+#loginGate h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;color:var(--gold)}
+#loginGate p{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted)}
+#loginForm{display:flex;flex-direction:column;gap:12px;width:300px}
+#pwInput{
+  background:var(--surface);border:1px solid var(--border);color:var(--text);
+  font-family:'Syne',sans-serif;font-size:14px;padding:12px;outline:none;
+  transition:border-color 0.15s;
+}
+#pwInput:focus{border-color:var(--gold)}
+#loginBtn{
+  background:var(--gold);color:var(--bg);border:none;padding:12px;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:12px;
+  text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:background 0.15s;
+}
+#loginBtn:hover{background:#d4b97e}
+#loginError{font-size:12px;color:var(--rose);text-align:center;min-height:16px}
+
+/* TOP BAR */
+.top-bar{
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+header{
+  padding:28px 32px 24px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.admin-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--gold)}
+.admin-sub{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-top:4px}
+.header-actions{display:flex;gap:10px;align-items:center}
+#refreshBtn{
+  border:1px solid var(--border);background:transparent;color:var(--text-dim);
+  font-family:'Syne',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1px;
+  padding:8px 16px;cursor:pointer;transition:all 0.15s;
+}
+#refreshBtn:hover{border-color:var(--gold-dim);color:var(--gold)}
+#logoutBtn{
+  border:1px solid var(--border);background:transparent;color:var(--text-muted);
+  font-family:'Syne',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1px;
+  padding:8px 16px;cursor:pointer;transition:all 0.15s;
+}
+#logoutBtn:hover{border-color:var(--rose);color:var(--rose)}
+
+/* STATS BAR */
+.stats-bar{
+  display:flex;gap:24px;padding:16px 32px;border-bottom:1px solid var(--border);
+  background:var(--surface);flex-wrap:wrap;
+}
+.stat{text-align:center}
+.stat-n{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--gold)}
+.stat-l{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:2px}
+
+/* FILTERS */
+.filters{
+  display:flex;gap:10px;padding:14px 32px;border-bottom:1px solid var(--border);flex-wrap:wrap;align-items:center;
+}
+.filter-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-right:4px}
+.filter-btn{
+  border:1px solid var(--border);background:transparent;color:var(--text-dim);
+  font-family:'Syne',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:1px;
+  padding:5px 12px;cursor:pointer;transition:all 0.15s;
+}
+.filter-btn:hover{border-color:var(--gold-dim);color:var(--text)}
+.filter-btn.active{border-color:var(--gold);color:var(--gold);background:rgba(200,169,110,0.08)}
+#adminSearch{
+  margin-left:auto;background:transparent;border:none;border-bottom:1px solid var(--border);
+  color:var(--text);font-family:'Syne',sans-serif;font-size:13px;padding:6px 0;
+  width:200px;outline:none;transition:border-color 0.15s;
+}
+#adminSearch:focus{border-color:var(--gold)}
+#adminSearch::placeholder{color:var(--text-muted)}
+
+/* TABLE */
+.table-wrap{padding:24px 32px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{
+  font-family:'Syne',sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:2px;
+  color:var(--text-muted);padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);
+  white-space:nowrap;
+}
+td{
+  padding:14px;border-bottom:1px solid rgba(30,37,53,0.6);vertical-align:top;
+}
+tr:hover td{background:rgba(200,169,110,0.03)}
+.tool-name-cell{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text)}
+.tool-url-cell a,.tool-api-cell a{
+  color:var(--gold-dim);font-size:11px;text-decoration:none;transition:color 0.15s;
+  font-family:'JetBrains Mono',monospace;word-break:break-all;
+}
+.tool-url-cell a:hover,.tool-api-cell a:hover{color:var(--gold)}
+.cat-cell{font-size:11px;color:var(--text-dim)}
+.reason-cell{font-size:12px;color:var(--text-dim);line-height:1.5;max-width:260px}
+.email-cell{font-size:11px;color:var(--text-muted);font-family:'JetBrains Mono',monospace}
+.date-cell{font-size:11px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;white-space:nowrap}
+
+/* STATUS BADGES */
+.status-badge{
+  display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:1px;
+  padding:3px 8px;border:1px solid;font-family:'Syne',sans-serif;font-weight:700;
+  white-space:nowrap;
+}
+.status-new     {border-color:var(--blue);color:var(--blue);background:rgba(59,130,246,0.08)}
+.status-reviewed{border-color:var(--gold);color:var(--gold);background:rgba(200,169,110,0.08)}
+.status-added   {border-color:var(--green);color:var(--green);background:rgba(34,197,94,0.08)}
+.status-rejected{border-color:var(--rose);color:var(--rose);background:rgba(244,63,94,0.08)}
+
+/* ACTION BUTTONS */
+.actions-cell{display:flex;flex-direction:column;gap:5px;min-width:110px}
+.action-btn{
+  border:1px solid var(--border);background:transparent;color:var(--text-dim);
+  font-family:'Syne',sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:1px;
+  padding:4px 8px;cursor:pointer;transition:all 0.15s;text-align:center;
+}
+.action-btn:hover{border-color:var(--gold-dim);color:var(--text)}
+.action-btn.mark-reviewed:hover{border-color:var(--gold);color:var(--gold)}
+.action-btn.mark-added:hover{border-color:var(--green);color:var(--green)}
+.action-btn.mark-rejected:hover{border-color:var(--rose);color:var(--rose)}
+.action-btn.mark-delete:hover{border-color:var(--rose);color:var(--rose)}
+
+/* EMPTY / LOADING */
+.state-msg{
+  text-align:center;padding:60px;color:var(--text-muted);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;
+}
+
+/* TOAST */
+#toast{
+  position:fixed;bottom:24px;right:24px;
+  background:var(--surface-2);border:1px solid var(--border);
+  padding:12px 20px;font-family:'Syne',sans-serif;font-size:12px;
+  color:var(--text);opacity:0;transition:opacity 0.2s;pointer-events:none;
+  z-index:999;
+}
+#toast.show{opacity:1}
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<!-- LOGIN GATE -->
+<div id="loginGate">
+  <h1>Admin Review</h1>
+  <p>AI Marketing Intelligence Hub</p>
+  <div id="loginForm">
+    <input type="password" id="pwInput" placeholder="Enter admin password" autocomplete="current-password">
+    <button id="loginBtn">Access Dashboard</button>
+    <div id="loginError"></div>
+  </div>
+</div>
+
+<!-- MAIN ADMIN UI (hidden until logged in) -->
+<div id="adminUI" style="display:none">
+  <header>
+    <div>
+      <div class="admin-title">Tool Suggestions</div>
+      <div class="admin-sub">Review panel — AI Marketing Intelligence Hub</div>
+    </div>
+    <div class="header-actions">
+      <button id="refreshBtn">↻ Refresh</button>
+      <button id="logoutBtn">Log Out</button>
+    </div>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-n" id="statTotal">—</div><div class="stat-l">Total</div></div>
+    <div class="stat"><div class="stat-n" id="statNew" style="color:var(--blue)">—</div><div class="stat-l">New</div></div>
+    <div class="stat"><div class="stat-n" id="statReviewed" style="color:var(--gold)">—</div><div class="stat-l">Reviewed</div></div>
+    <div class="stat"><div class="stat-n" id="statAdded" style="color:var(--green)">—</div><div class="stat-l">Added</div></div>
+    <div class="stat"><div class="stat-n" id="statRejected" style="color:var(--rose)">—</div><div class="stat-l">Rejected</div></div>
+  </div>
+
+  <div class="filters">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="new">New</button>
+    <button class="filter-btn" data-filter="reviewed">Reviewed</button>
+    <button class="filter-btn" data-filter="added">Added</button>
+    <button class="filter-btn" data-filter="rejected">Rejected</button>
+    <input type="text" id="adminSearch" placeholder="Search submissions...">
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Tool</th>
+          <th>Website</th>
+          <th>API Docs</th>
+          <th>Category</th>
+          <th>Reason</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="suggestionsBody"></tbody>
+    </table>
+    <div id="tableState" class="state-msg">Loading submissions...</div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── CONFIG — fill these in after Supabase setup ───────────────────────────────
+const SUPABASE_URL     = 'YOUR_SUPABASE_URL';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const ADMIN_PASSWORD   = 'YOUR_ADMIN_PASSWORD'; // e.g. 'ryanshaw2026'
+// ─────────────────────────────────────────────────────────────────────────────
+
+let allRows = [];
+let activeFilter = 'all';
+let searchTerm = '';
+
+// ── AUTH ──────────────────────────────────────────────────────────────────────
+function checkSession() {
+  if (sessionStorage.getItem('admin_authed') === '1') showAdmin();
+}
+
+document.getElementById('loginBtn').addEventListener('click', login);
+document.getElementById('pwInput').addEventListener('keydown', e => { if(e.key==='Enter') login(); });
+
+function login() {
+  const pw = document.getElementById('pwInput').value;
+  if (pw === ADMIN_PASSWORD) {
+    sessionStorage.setItem('admin_authed','1');
+    showAdmin();
+  } else {
+    document.getElementById('loginError').textContent = 'Incorrect password.';
+    document.getElementById('pwInput').value = '';
+  }
+}
+
+function showAdmin() {
+  document.getElementById('loginGate').style.display = 'none';
+  document.getElementById('adminUI').style.display = 'block';
+  loadSubmissions();
+}
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  sessionStorage.removeItem('admin_authed');
+  location.reload();
+});
+
+// ── DATA ──────────────────────────────────────────────────────────────────────
+async function loadSubmissions() {
+  document.getElementById('tableState').textContent = 'Loading submissions...';
+  document.getElementById('suggestionsBody').innerHTML = '';
+  try {
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/suggestions?select=*&order=created_at.desc`,
+      { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } }
+    );
+    if (!res.ok) throw new Error(await res.text());
+    allRows = await res.json();
+    updateStats();
+    renderTable();
+  } catch(err) {
+    document.getElementById('tableState').textContent = 'Failed to load. Check Supabase config. Error: ' + err.message;
+  }
+}
+
+async function updateStatus(id, status) {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/suggestions?id=eq.${id}`, {
+    method: 'PATCH',
+    headers: {
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+      'Content-Type': 'application/json',
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({ status })
+  });
+  if (res.ok) {
+    const row = allRows.find(r => r.id === id);
+    if (row) row.status = status;
+    updateStats();
+    renderTable();
+    showToast(`Marked as ${status}`);
+  }
+}
+
+async function deleteRow(id) {
+  if (!confirm('Delete this submission?')) return;
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/suggestions?id=eq.${id}`, {
+    method: 'DELETE',
+    headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+  });
+  if (res.ok) {
+    allRows = allRows.filter(r => r.id !== id);
+    updateStats();
+    renderTable();
+    showToast('Deleted');
+  }
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function updateStats() {
+  const counts = { new:0, reviewed:0, added:0, rejected:0 };
+  allRows.forEach(r => { counts[r.status || 'new'] = (counts[r.status || 'new'] || 0) + 1; });
+  document.getElementById('statTotal').textContent    = allRows.length;
+  document.getElementById('statNew').textContent      = counts.new || 0;
+  document.getElementById('statReviewed').textContent = counts.reviewed || 0;
+  document.getElementById('statAdded').textContent    = counts.added || 0;
+  document.getElementById('statRejected').textContent = counts.rejected || 0;
+}
+
+function renderTable() {
+  const filtered = allRows.filter(r => {
+    const s = r.status || 'new';
+    const matchFilter = activeFilter === 'all' || s === activeFilter;
+    const matchSearch = !searchTerm || [r.tool_name, r.tool_url, r.category, r.reason, r.email]
+      .some(v => v && v.toLowerCase().includes(searchTerm));
+    return matchFilter && matchSearch;
+  });
+
+  const tbody = document.getElementById('suggestionsBody');
+  const state = document.getElementById('tableState');
+
+  if (!filtered.length) {
+    tbody.innerHTML = '';
+    state.textContent = allRows.length ? 'No submissions match this filter.' : 'No submissions yet.';
+    state.style.display = 'block';
+    return;
+  }
+
+  state.style.display = 'none';
+  tbody.innerHTML = filtered.map(r => {
+    const status = r.status || 'new';
+    const date = r.created_at ? new Date(r.created_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '—';
+    return `<tr>
+      <td class="date-cell">${date}</td>
+      <td class="tool-name-cell">${esc(r.tool_name || '—')}</td>
+      <td class="tool-url-cell">${r.tool_url ? `<a href="${esc(r.tool_url)}" target="_blank" rel="noopener">↗ Visit</a>` : '—'}</td>
+      <td class="tool-api-cell">${r.api_url ? `<a href="${esc(r.api_url)}" target="_blank" rel="noopener">↗ Docs</a>` : '—'}</td>
+      <td class="cat-cell">${esc(r.category || '—')}</td>
+      <td class="reason-cell">${esc(r.reason || '—')}</td>
+      <td class="email-cell">${esc(r.email || '—')}</td>
+      <td><span class="status-badge status-${status}">${status}</span></td>
+      <td class="actions-cell">
+        ${status !== 'reviewed' ? `<button class="action-btn mark-reviewed" onclick="updateStatus('${r.id}','reviewed')">Mark Reviewed</button>` : ''}
+        ${status !== 'added'    ? `<button class="action-btn mark-added"    onclick="updateStatus('${r.id}','added')">✓ Add to List</button>` : ''}
+        ${status !== 'rejected' ? `<button class="action-btn mark-rejected" onclick="updateStatus('${r.id}','rejected')">✗ Reject</button>` : ''}
+        <button class="action-btn mark-delete" onclick="deleteRow('${r.id}')">Delete</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── CONTROLS ──────────────────────────────────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    renderTable();
+  });
+});
+
+document.getElementById('adminSearch').addEventListener('input', e => {
+  searchTerm = e.target.value.toLowerCase().trim();
+  renderTable();
+});
+
+document.getElementById('refreshBtn').addEventListener('click', loadSubmissions);
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+checkSession();
+</script>
+</body>
+</html>
