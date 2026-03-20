@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 100 AI GitHub Repos — AI Marketing Intelligence Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06080f;
+  --surface:#0d1117;
+  --surface-2:#141922;
+  --border:#1e2535;
+  --gold:#c8a96e;
+  --gold-dim:#8a7248;
+  --gold-bg:rgba(200,169,110,0.08);
+  --blue:#3b82f6;
+  --text:#f0ede6;
+  --text-dim:#8892a4;
+  --text-muted:#3d4a5c;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border)}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+
+.top-accent{height:3px;background:linear-gradient(90deg,transparent,#c8a96e,transparent);width:100%}
+
+/* NAV */
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1300px;
+  margin:0 auto;
+  padding:16px 48px;
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--gold);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{
+  font-family:'Syne',sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--text-dim);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+
+/* HEADER */
+.page-header{
+  max-width:1300px;
+  margin:0 auto;
+  padding:60px 48px 40px;
+  border-bottom:1px solid var(--border);
+}
+.page-header .eyebrow{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  color:var(--gold-dim);
+  margin-bottom:14px;
+}
+.page-header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:16px;
+}
+.page-header .subtitle{
+  color:var(--text-dim);
+  font-size:14px;
+  max-width:700px;
+  line-height:1.6;
+}
+
+/* CONTROLS */
+.controls-bar{
+  max-width:1300px;
+  margin:0 auto;
+  padding:16px 48px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--bg);
+}
+.search-input{
+  background:transparent;
+  border:none;
+  border-bottom:1px solid var(--border);
+  color:var(--text);
+  font-family:'Syne',sans-serif;
+  font-size:13px;
+  padding:8px 0;
+  width:260px;
+  outline:none;
+}
+.search-input::placeholder{color:var(--text-muted)}
+.search-input:focus{border-bottom-color:var(--gold)}
+.lang-pills{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.lang-pill{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  padding:5px 12px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text-dim);
+  cursor:pointer;
+  transition:all 0.2s;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.lang-pill:hover{border-color:var(--gold-dim);color:var(--text)}
+.lang-pill.active{border-color:var(--gold);color:var(--gold);background:var(--gold-bg)}
+.refresh-btn{
+  font-family:'Syne',sans-serif;
+  font-size:11px;
+  padding:6px 16px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text-dim);
+  cursor:pointer;
+  transition:all 0.2s;
+  letter-spacing:1px;
+}
+.refresh-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* STATS ROW */
+.stats-row{
+  max-width:1300px;
+  margin:0 auto;
+  padding:16px 48px;
+  display:flex;
+  gap:32px;
+  align-items:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  color:var(--text-muted);
+}
+.stats-row .stat-val{color:var(--gold);font-weight:700;margin-right:4px}
+
+/* REPO LIST */
+.repo-list{
+  max-width:1300px;
+  margin:0 auto;
+  padding:0 48px 48px;
+}
+.repo-card{
+  display:grid;
+  grid-template-columns:48px 1fr auto;
+  gap:16px;
+  align-items:start;
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+  transition:background 0.2s;
+}
+.repo-card:hover{background:var(--gold-bg);margin:0 -12px;padding:20px 12px;border-radius:4px}
+.repo-rank{
+  font-family:'JetBrains Mono',monospace;
+  font-size:14px;
+  font-weight:700;
+  color:var(--text-muted);
+  text-align:center;
+  padding-top:4px;
+}
+.repo-rank.top-10{color:var(--gold)}
+.repo-rank.top-25{color:var(--blue)}
+.repo-info{min-width:0}
+.repo-name{
+  font-size:15px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:4px;
+}
+.repo-name a{color:inherit;text-decoration:none}
+.repo-name a:hover{color:var(--gold)}
+.repo-owner{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  color:var(--text-muted);
+  margin-bottom:8px;
+}
+.repo-desc{
+  font-size:13px;
+  color:var(--text-dim);
+  line-height:1.5;
+  margin-bottom:10px;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.repo-tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.repo-lang{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  padding:3px 8px;
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  border-radius:3px;
+}
+.repo-topic{
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  padding:2px 6px;
+  background:var(--surface-2);
+  color:var(--text-muted);
+  border-radius:2px;
+}
+.repo-stats{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  align-items:flex-end;
+  padding-top:4px;
+  white-space:nowrap;
+}
+.repo-stat{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  color:var(--text-dim);
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+.repo-stat .star-icon{color:var(--gold)}
+.repo-stat .fork-icon{color:var(--text-muted)}
+
+/* LOADING */
+.loading{
+  text-align:center;
+  padding:80px 24px;
+  color:var(--text-muted);
+  font-size:14px;
+}
+.loading-spinner{
+  width:32px;height:32px;
+  border:2px solid var(--border);
+  border-top-color:var(--gold);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+  margin:0 auto 16px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.error-msg{
+  text-align:center;
+  padding:60px 24px;
+  color:#f43f5e;
+  font-size:13px;
+}
+.error-msg button{
+  margin-top:12px;
+  background:transparent;
+  border:1px solid #f43f5e;
+  color:#f43f5e;
+  padding:8px 20px;
+  cursor:pointer;
+  font-family:'Syne',sans-serif;
+  font-size:12px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 24px;
+  border-top:1px solid var(--border);
+  color:var(--text-muted);
+  font-size:12px;
+}
+footer a{color:var(--gold-dim);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:700px){
+  nav{padding:14px 20px;flex-direction:column;gap:12px}
+  .page-header{padding:40px 20px 30px}
+  .controls-bar{padding:12px 20px}
+  .search-input{width:100%}
+  .repo-list{padding:0 20px 32px}
+  .repo-card{grid-template-columns:32px 1fr;gap:10px}
+  .repo-stats{flex-direction:row;gap:12px;grid-column:1/-1;padding:0}
+  .stats-row{padding:12px 20px;flex-wrap:wrap;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-accent"></div>
+
+<nav>
+  <a href="index.html" class="nav-brand">AI Marketing Intelligence Hub</a>
+  <div class="nav-links">
+    <a href="index.html">Tools</a>
+    <a href="changelog.html">Changelog</a>
+    <a href="github-repos.html" class="active">GitHub Top 100</a>
+    <a href="ai-news.html">AI News</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow">Live Data &middot; GitHub API &middot; Updated on Load</div>
+  <h1>Top 100 AI Repos</h1>
+  <p class="subtitle">The most-starred AI and machine learning repositories on GitHub, updated live. Track the open-source tools powering the AI marketing revolution.</p>
+</div>
+
+<div class="controls-bar">
+  <input type="text" class="search-input" id="repoSearch" placeholder="Search repos...">
+  <div class="lang-pills" id="langPills"></div>
+  <button class="refresh-btn" id="refreshBtn">Refresh</button>
+</div>
+
+<div class="stats-row" id="statsRow"></div>
+
+<div class="repo-list" id="repoList">
+  <div class="loading" id="loadingState">
+    <div class="loading-spinner"></div>
+    Fetching top AI repositories from GitHub...
+  </div>
+</div>
+
+<footer>
+  Data sourced from GitHub Search API &nbsp;&middot;&nbsp;
+  Curated by <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener">Ryan Shaw</a>
+  &nbsp;&middot;&nbsp; AI Marketing Intelligence Hub
+</footer>
+
+<script>
+const AI_QUERIES = [
+  'artificial-intelligence',
+  'machine-learning',
+  'deep-learning',
+  'large-language-model',
+  'generative-ai',
+  'llm',
+  'stable-diffusion',
+  'chatgpt',
+  'langchain',
+  'transformers',
+];
+
+let allRepos = [];
+let currentLang = 'All';
+let searchQuery = '';
+
+function formatStars(n) {
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+  return n.toString();
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+async function fetchRepos() {
+  document.getElementById('repoList').innerHTML = `
+    <div class="loading" id="loadingState">
+      <div class="loading-spinner"></div>
+      Fetching top AI repositories from GitHub...
+    </div>`;
+
+  try {
+    // Fetch multiple queries in parallel, taking top results from each
+    const queries = [
+      'topic:artificial-intelligence',
+      'topic:machine-learning',
+      'topic:large-language-model',
+      'topic:generative-ai',
+      'topic:llm',
+      'AI OR LLM OR "machine learning" OR "deep learning" OR "generative ai"',
+    ];
+
+    const fetches = queries.map(q =>
+      fetch(`https://api.github.com/search/repositories?q=${encodeURIComponent(q)}&sort=stars&order=desc&per_page=50`)
+        .then(r => {
+          if (!r.ok) throw new Error(`GitHub API error: ${r.status}`);
+          return r.json();
+        })
+        .then(d => d.items || [])
+        .catch(() => [])
+    );
+
+    const results = await Promise.all(fetches);
+    const seen = new Set();
+    const merged = [];
+
+    for (const items of results) {
+      for (const repo of items) {
+        if (!seen.has(repo.id)) {
+          seen.add(repo.id);
+          merged.push(repo);
+        }
+      }
+    }
+
+    // Sort by stars descending, take top 100
+    merged.sort((a, b) => b.stargazers_count - a.stargazers_count);
+    allRepos = merged.slice(0, 100);
+
+    buildLangPills();
+    renderRepos();
+    renderStats();
+  } catch (err) {
+    document.getElementById('repoList').innerHTML = `
+      <div class="error-msg">
+        Failed to fetch repositories. GitHub API may be rate-limited.<br>
+        <button onclick="fetchRepos()">Try Again</button>
+      </div>`;
+  }
+}
+
+function buildLangPills() {
+  const langs = {};
+  allRepos.forEach(r => {
+    if (r.language) langs[r.language] = (langs[r.language] || 0) + 1;
+  });
+  const sorted = Object.entries(langs).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  const wrap = document.getElementById('langPills');
+  wrap.innerHTML = `<button class="lang-pill ${currentLang === 'All' ? 'active' : ''}" data-lang="All">All</button>` +
+    sorted.map(([lang]) =>
+      `<button class="lang-pill ${currentLang === lang ? 'active' : ''}" data-lang="${lang}">${lang}</button>`
+    ).join('');
+
+  wrap.querySelectorAll('.lang-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = btn.dataset.lang;
+      buildLangPills();
+      renderRepos();
+    });
+  });
+}
+
+function getFiltered() {
+  return allRepos.filter(r => {
+    if (currentLang !== 'All' && r.language !== currentLang) return false;
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      const haystack = `${r.full_name} ${r.description || ''} ${(r.topics || []).join(' ')}`.toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderStats() {
+  const filtered = getFiltered();
+  const totalStars = filtered.reduce((s, r) => s + r.stargazers_count, 0);
+  const langs = new Set(filtered.map(r => r.language).filter(Boolean));
+  document.getElementById('statsRow').innerHTML = `
+    <span><span class="stat-val">${filtered.length}</span> repos</span>
+    <span><span class="stat-val">${formatStars(totalStars)}</span> total stars</span>
+    <span><span class="stat-val">${langs.size}</span> languages</span>
+  `;
+}
+
+function renderRepos() {
+  const filtered = getFiltered();
+  renderStats();
+
+  if (!filtered.length) {
+    document.getElementById('repoList').innerHTML = `<div class="loading">No repos match your filters.</div>`;
+    return;
+  }
+
+  document.getElementById('repoList').innerHTML = filtered.map((r, i) => {
+    const rank = i + 1;
+    const rankClass = rank <= 10 ? 'top-10' : rank <= 25 ? 'top-25' : '';
+    const topics = (r.topics || []).slice(0, 4);
+    return `<div class="repo-card">
+      <div class="repo-rank ${rankClass}">#${rank}</div>
+      <div class="repo-info">
+        <div class="repo-name"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></div>
+        <div class="repo-owner">${r.full_name}</div>
+        <div class="repo-desc">${r.description || 'No description provided.'}</div>
+        <div class="repo-tags">
+          ${r.language ? `<span class="repo-lang">${r.language}</span>` : ''}
+          ${topics.map(t => `<span class="repo-topic">${t}</span>`).join('')}
+        </div>
+      </div>
+      <div class="repo-stats">
+        <div class="repo-stat"><span class="star-icon">&#9733;</span> ${formatStars(r.stargazers_count)}</div>
+        <div class="repo-stat"><span class="fork-icon">&#9741;</span> ${formatStars(r.forks_count)}</div>
+        <div class="repo-stat" style="font-size:10px;color:var(--text-muted)">Updated ${formatDate(r.updated_at)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Search
+document.getElementById('repoSearch').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  renderRepos();
+});
+
+// Refresh
+document.getElementById('refreshBtn').addEventListener('click', () => {
+  currentLang = 'All';
+  searchQuery = '';
+  document.getElementById('repoSearch').value = '';
+  fetchRepos();
+});
+
+// Init
+fetchRepos();
+</script>
+
+</body>
+</html>

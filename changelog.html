@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — AI Marketing Intelligence Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06080f;
+  --surface:#0d1117;
+  --surface-2:#141922;
+  --border:#1e2535;
+  --gold:#c8a96e;
+  --gold-dim:#8a7248;
+  --gold-bg:rgba(200,169,110,0.08);
+  --blue:#3b82f6;
+  --text:#f0ede6;
+  --text-dim:#8892a4;
+  --text-muted:#3d4a5c;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border)}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+
+.top-accent{height:3px;background:linear-gradient(90deg,transparent,#c8a96e,transparent);width:100%}
+
+/* NAV */
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1300px;
+  margin:0 auto;
+  padding:16px 48px;
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--gold);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{
+  font-family:'Syne',sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--text-dim);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+
+/* HEADER */
+.page-header{
+  max-width:1300px;
+  margin:0 auto;
+  padding:60px 48px 40px;
+  border-bottom:1px solid var(--border);
+}
+.page-header .eyebrow{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  color:var(--gold-dim);
+  margin-bottom:14px;
+}
+.page-header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:16px;
+}
+.page-header .subtitle{
+  color:var(--text-dim);
+  font-size:14px;
+  max-width:600px;
+  line-height:1.6;
+}
+
+/* TIMELINE */
+.timeline{
+  max-width:900px;
+  margin:0 auto;
+  padding:48px;
+  position:relative;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:120px;
+  top:48px;
+  bottom:48px;
+  width:1px;
+  background:var(--border);
+}
+.entry{
+  position:relative;
+  padding-left:160px;
+  margin-bottom:48px;
+}
+.entry-date{
+  position:absolute;
+  left:0;
+  top:2px;
+  width:100px;
+  text-align:right;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  color:var(--gold);
+  font-weight:700;
+}
+.entry-dot{
+  position:absolute;
+  left:116px;
+  top:6px;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--gold);
+  border:2px solid var(--bg);
+  box-shadow:0 0 0 1px var(--gold-dim);
+}
+.entry-version{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:6px;
+}
+.entry-title{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:var(--text);
+}
+.entry-body{
+  color:var(--text-dim);
+  font-size:13px;
+  line-height:1.7;
+}
+.entry-body ul{
+  list-style:none;
+  padding:0;
+  margin:8px 0 0;
+}
+.entry-body li{
+  padding:4px 0;
+  padding-left:16px;
+  position:relative;
+}
+.entry-body li::before{
+  content:'+';
+  position:absolute;
+  left:0;
+  color:var(--gold);
+  font-family:'JetBrains Mono',monospace;
+  font-weight:700;
+}
+.tag{
+  display:inline-block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  padding:3px 8px;
+  border-radius:3px;
+  margin-right:6px;
+  margin-bottom:4px;
+}
+.tag-feature{background:rgba(59,130,246,0.15);color:#3b82f6;border:1px solid rgba(59,130,246,0.2)}
+.tag-added{background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.2)}
+.tag-fix{background:rgba(244,63,94,0.15);color:#f43f5e;border:1px solid rgba(244,63,94,0.2)}
+.tag-design{background:rgba(168,85,247,0.15);color:#a855f7;border:1px solid rgba(168,85,247,0.2)}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 24px;
+  border-top:1px solid var(--border);
+  color:var(--text-muted);
+  font-size:12px;
+}
+footer a{color:var(--gold-dim);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:700px){
+  nav{padding:14px 20px;flex-direction:column;gap:12px}
+  .page-header{padding:40px 20px 30px}
+  .timeline{padding:32px 20px}
+  .timeline::before{left:20px}
+  .entry{padding-left:48px;margin-bottom:36px}
+  .entry-date{position:static;text-align:left;width:auto;margin-bottom:4px}
+  .entry-dot{left:16px;top:42px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-accent"></div>
+
+<nav>
+  <a href="index.html" class="nav-brand">AI Marketing Intelligence Hub</a>
+  <div class="nav-links">
+    <a href="index.html">Tools</a>
+    <a href="changelog.html" class="active">Changelog</a>
+    <a href="github-repos.html">GitHub Top 100</a>
+    <a href="ai-news.html">AI News</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow">Version History &middot; All Updates</div>
+  <h1>Changelog</h1>
+  <p class="subtitle">A running log of every addition, improvement, and fix to the AI Marketing Intelligence Hub.</p>
+</div>
+
+<div class="timeline">
+
+  <div class="entry">
+    <div class="entry-date">Mar 20, 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.6.0</div>
+    <div class="entry-title">Changelog, GitHub Top 100, & AI News Pages</div>
+    <div class="entry-body">
+      <span class="tag tag-feature">Feature</span>
+      <span class="tag tag-design">Design</span>
+      <ul>
+        <li>Added changelog page to track all hub updates</li>
+        <li>Added live Top 100 AI GitHub Repos page with real-time star counts</li>
+        <li>Added daily curated AI News page with category filtering</li>
+        <li>Added persistent navigation bar across all pages</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Mar 9, 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.5.0</div>
+    <div class="entry-title">YouTube Demo Embeds</div>
+    <div class="entry-body">
+      <span class="tag tag-feature">Feature</span>
+      <ul>
+        <li>Added YouTube demo embed feature to tool expanded rows</li>
+        <li>Video IDs configurable per tool for embedded tutorials</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Mar 9, 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.4.0</div>
+    <div class="entry-title">25 New Tools &amp; Agency USP Field</div>
+    <div class="entry-body">
+      <span class="tag tag-added">Added</span>
+      <span class="tag tag-feature">Feature</span>
+      <ul>
+        <li>Added 25 new tools bringing total to 111</li>
+        <li>Added USP agency use case field on all tool rows and checkout</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Mar 9, 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.3.0</div>
+    <div class="entry-title">Tool Suggestion Form &amp; Admin Review</div>
+    <div class="entry-body">
+      <span class="tag tag-feature">Feature</span>
+      <ul>
+        <li>Added tool suggestion form in footer</li>
+        <li>Added password-protected admin review page</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Mar 9, 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.2.0</div>
+    <div class="entry-title">Anthropic (Claude) Added to All Templates</div>
+    <div class="entry-body">
+      <span class="tag tag-added">Added</span>
+      <ul>
+        <li>Added Anthropic (Claude) to all 6 stack templates</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Mar 9, 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.1.0</div>
+    <div class="entry-title">UI Refinements &amp; Template Differentiation</div>
+    <div class="entry-body">
+      <span class="tag tag-design">Design</span>
+      <span class="tag tag-fix">Fix</span>
+      <ul>
+        <li>Removed Groq from tool list</li>
+        <li>Differentiated Templates / Compare / Stack buttons with distinct colors and icons</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-date">Mar 2026</div>
+    <div class="entry-dot"></div>
+    <div class="entry-version">v1.0.0</div>
+    <div class="entry-title">Initial Launch</div>
+    <div class="entry-body">
+      <span class="tag tag-feature">Feature</span>
+      <span class="tag tag-design">Design</span>
+      <ul>
+        <li>Launched AI Marketing Intelligence Hub with 86 scored tools</li>
+        <li>Category filtering, search, sort by score/A-Z/category</li>
+        <li>Stack Dossier sidebar with average scoring and category coverage</li>
+        <li>Checkout page with downloadable PDF stack reports</li>
+        <li>Side-by-side comparison for up to 3 tools</li>
+        <li>6 pre-built stack templates</li>
+        <li>Use case filtering for quick discovery</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Curated by <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener">Ryan Shaw</a>
+  &nbsp;&middot;&nbsp; AI Marketing Intelligence Hub
+</footer>
+
+</body>
+</html>

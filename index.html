@@ -1262,11 +1262,52 @@ footer{
   .sidebar,.sidebar-overlay,#compareBar,
   .modal-backdrop{display:none !important}
 }
+/* NAV */
+.site-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1300px;
+  margin:0 auto;
+  padding:12px 48px;
+  border-bottom:1px solid var(--border);
+}
+.site-nav .nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:18px;
+  color:var(--gold);
+  text-decoration:none;
+}
+.site-nav .nav-links{display:flex;gap:24px;align-items:center}
+.site-nav .nav-links a{
+  font-family:'Syne',sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--text-dim);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.site-nav .nav-links a:hover,.site-nav .nav-links a.active{color:var(--gold)}
+@media(max-width:700px){
+  .site-nav{padding:10px 16px;flex-direction:column;gap:8px}
+}
 </style>
 </head>
 <body>
 
 <div class="top-accent"></div>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">AI Marketing Intelligence Hub</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Tools</a>
+    <a href="changelog.html">Changelog</a>
+    <a href="github-repos.html">GitHub Top 100</a>
+    <a href="ai-news.html">AI News</a>
+  </div>
+</nav>
 
 <!-- HEADER -->
 <header>

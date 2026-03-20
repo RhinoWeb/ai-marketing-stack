@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI News — AI Marketing Intelligence Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#06080f;
+  --surface:#0d1117;
+  --surface-2:#141922;
+  --border:#1e2535;
+  --gold:#c8a96e;
+  --gold-dim:#8a7248;
+  --gold-bg:rgba(200,169,110,0.08);
+  --blue:#3b82f6;
+  --text:#f0ede6;
+  --text-dim:#8892a4;
+  --text-muted:#3d4a5c;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border)}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-dim)}
+
+.top-accent{height:3px;background:linear-gradient(90deg,transparent,#c8a96e,transparent);width:100%}
+
+/* NAV */
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1300px;
+  margin:0 auto;
+  padding:16px 48px;
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--gold);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{
+  font-family:'Syne',sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--text-dim);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+
+/* HEADER */
+.page-header{
+  max-width:1300px;
+  margin:0 auto;
+  padding:60px 48px 40px;
+  border-bottom:1px solid var(--border);
+}
+.page-header .eyebrow{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  color:var(--gold-dim);
+  margin-bottom:14px;
+}
+.page-header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:16px;
+}
+.page-header .subtitle{
+  color:var(--text-dim);
+  font-size:14px;
+  max-width:700px;
+  line-height:1.6;
+}
+
+/* CONTROLS */
+.controls-bar{
+  max-width:1300px;
+  margin:0 auto;
+  padding:16px 48px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--bg);
+}
+.search-input{
+  background:transparent;
+  border:none;
+  border-bottom:1px solid var(--border);
+  color:var(--text);
+  font-family:'Syne',sans-serif;
+  font-size:13px;
+  padding:8px 0;
+  width:260px;
+  outline:none;
+}
+.search-input::placeholder{color:var(--text-muted)}
+.search-input:focus{border-bottom-color:var(--gold)}
+.cat-pills{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.cat-pill{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  padding:5px 12px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text-dim);
+  cursor:pointer;
+  transition:all 0.2s;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.cat-pill:hover{border-color:var(--gold-dim);color:var(--text)}
+.cat-pill.active{border-color:var(--gold);color:var(--gold);background:var(--gold-bg)}
+.refresh-btn{
+  font-family:'Syne',sans-serif;
+  font-size:11px;
+  padding:6px 16px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text-dim);
+  cursor:pointer;
+  transition:all 0.2s;
+  letter-spacing:1px;
+}
+.refresh-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* NEWS GRID */
+.news-grid{
+  max-width:1300px;
+  margin:0 auto;
+  padding:32px 48px 48px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+  gap:20px;
+}
+.news-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:24px;
+  transition:all 0.25s;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.news-card:hover{
+  border-color:var(--gold-dim);
+  background:var(--surface-2);
+  transform:translateY(-2px);
+}
+.news-card.featured{
+  grid-column:1/-1;
+  border-color:var(--gold-dim);
+  background:var(--gold-bg);
+}
+.news-card.featured .news-title{font-size:22px}
+.news-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.news-source{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--gold);
+  font-weight:700;
+}
+.news-date{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  color:var(--text-muted);
+}
+.news-cat{
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;
+  padding:2px 8px;
+  border-radius:3px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.cat-models{background:rgba(99,102,241,0.15);color:#6366f1;border:1px solid rgba(99,102,241,0.2)}
+.cat-tools{background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.2)}
+.cat-industry{background:rgba(245,158,11,0.15);color:#f59e0b;border:1px solid rgba(245,158,11,0.2)}
+.cat-regulation{background:rgba(244,63,94,0.15);color:#f43f5e;border:1px solid rgba(244,63,94,0.2)}
+.cat-research{background:rgba(168,85,247,0.15);color:#a855f7;border:1px solid rgba(168,85,247,0.2)}
+.cat-marketing{background:rgba(59,130,246,0.15);color:#3b82f6;border:1px solid rgba(59,130,246,0.2)}
+.cat-funding{background:rgba(6,182,212,0.15);color:#06b6d4;border:1px solid rgba(6,182,212,0.2)}
+.cat-open-source{background:rgba(200,169,110,0.15);color:var(--gold);border:1px solid rgba(200,169,110,0.2)}
+
+.news-title{
+  font-size:16px;
+  font-weight:700;
+  line-height:1.35;
+  color:var(--text);
+}
+.news-title a{color:inherit;text-decoration:none}
+.news-title a:hover{color:var(--gold)}
+.news-excerpt{
+  font-size:13px;
+  color:var(--text-dim);
+  line-height:1.6;
+  flex:1;
+}
+.news-link{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  color:var(--gold-dim);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  transition:color 0.2s;
+  align-self:flex-start;
+}
+.news-link:hover{color:var(--gold)}
+
+/* LOADING */
+.loading{
+  text-align:center;
+  padding:80px 24px;
+  color:var(--text-muted);
+  font-size:14px;
+  grid-column:1/-1;
+}
+.loading-spinner{
+  width:32px;height:32px;
+  border:2px solid var(--border);
+  border-top-color:var(--gold);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+  margin:0 auto 16px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 24px;
+  border-top:1px solid var(--border);
+  color:var(--text-muted);
+  font-size:12px;
+}
+footer a{color:var(--gold-dim);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:700px){
+  nav{padding:14px 20px;flex-direction:column;gap:12px}
+  .page-header{padding:40px 20px 30px}
+  .controls-bar{padding:12px 20px}
+  .search-input{width:100%}
+  .news-grid{padding:20px;grid-template-columns:1fr}
+  .news-card.featured{grid-column:1}
+}
+</style>
+</head>
+<body>
+
+<div class="top-accent"></div>
+
+<nav>
+  <a href="index.html" class="nav-brand">AI Marketing Intelligence Hub</a>
+  <div class="nav-links">
+    <a href="index.html">Tools</a>
+    <a href="changelog.html">Changelog</a>
+    <a href="github-repos.html">GitHub Top 100</a>
+    <a href="ai-news.html" class="active">AI News</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="eyebrow">Daily Briefing &middot; Curated AI Intelligence</div>
+  <h1>AI News</h1>
+  <p class="subtitle">The hottest AI news curated daily. Models, tools, funding, regulation, and everything shaping the future of AI-powered marketing.</p>
+</div>
+
+<div class="controls-bar">
+  <input type="text" class="search-input" id="newsSearch" placeholder="Search news...">
+  <div class="cat-pills" id="catPills"></div>
+  <button class="refresh-btn" id="refreshNews">Refresh</button>
+</div>
+
+<div class="news-grid" id="newsGrid">
+  <div class="loading">
+    <div class="loading-spinner"></div>
+    Fetching latest AI news...
+  </div>
+</div>
+
+<footer>
+  News sourced via HackerNews Algolia API &nbsp;&middot;&nbsp;
+  Curated by <a href="https://claude.ai/public/artifacts/6eed9f7c-8fd6-4008-8212-8d4a78a7a5b1" target="_blank" rel="noopener">Ryan Shaw</a>
+  &nbsp;&middot;&nbsp; AI Marketing Intelligence Hub
+</footer>
+
+<script>
+const NEWS_CATEGORIES = {
+  'All':         null,
+  'Models':      ['GPT','Claude','Gemini','Llama','Mistral','LLM','model','language model','foundation model','multimodal'],
+  'Tools':       ['API','SDK','platform','tool','app','launch','release','product','feature','plugin'],
+  'Marketing':   ['marketing','ads','advertising','SEO','content','social media','campaign','brand','email','outreach'],
+  'Research':    ['paper','research','benchmark','arxiv','study','breakthrough','training','dataset','alignment'],
+  'Funding':     ['funding','raised','valuation','series','investment','acquire','IPO','billion','million'],
+  'Regulation':  ['regulation','law','policy','EU','ban','compliance','safety','governance','copyright','congress'],
+  'Open Source': ['open source','open-source','github','hugging face','apache','MIT license','weights','fine-tune'],
+  'Industry':    ['enterprise','startup','company','hire','layoff','partnership','deal','market','revenue'],
+};
+
+const CAT_CLASSES = {
+  'Models': 'cat-models',
+  'Tools': 'cat-tools',
+  'Marketing': 'cat-marketing',
+  'Research': 'cat-research',
+  'Funding': 'cat-funding',
+  'Regulation': 'cat-regulation',
+  'Open Source': 'cat-open-source',
+  'Industry': 'cat-industry',
+};
+
+let allNews = [];
+let currentCat = 'All';
+let newsSearch = '';
+
+function categorize(title, text) {
+  const combined = `${title} ${text || ''}`.toLowerCase();
+  let bestCat = 'Industry';
+  let bestScore = 0;
+  for (const [cat, keywords] of Object.entries(NEWS_CATEGORIES)) {
+    if (cat === 'All' || !keywords) continue;
+    let score = 0;
+    for (const kw of keywords) {
+      if (combined.includes(kw.toLowerCase())) score++;
+    }
+    if (score > bestScore) { bestScore = score; bestCat = cat; }
+  }
+  return bestCat;
+}
+
+function timeAgo(ts) {
+  const diff = Date.now() / 1000 - ts;
+  if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+  if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
+  return new Date(ts * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+async function fetchNews() {
+  document.getElementById('newsGrid').innerHTML = `
+    <div class="loading">
+      <div class="loading-spinner"></div>
+      Fetching latest AI news...
+    </div>`;
+
+  try {
+    const queries = [
+      'artificial intelligence',
+      'AI startup',
+      'LLM',
+      'generative AI',
+      'AI marketing',
+      'machine learning',
+      'OpenAI OR Anthropic OR Google AI',
+    ];
+
+    const fetches = queries.map(q =>
+      fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(q)}&tags=story&hitsPerPage=30&numericFilters=points>20`)
+        .then(r => r.json())
+        .then(d => d.hits || [])
+        .catch(() => [])
+    );
+
+    const results = await Promise.all(fetches);
+    const seen = new Set();
+    const merged = [];
+
+    for (const hits of results) {
+      for (const hit of hits) {
+        if (!seen.has(hit.objectID)) {
+          seen.add(hit.objectID);
+          hit._category = categorize(hit.title, hit.story_text);
+          merged.push(hit);
+        }
+      }
+    }
+
+    // Sort by points descending (hottest first), then by recency
+    merged.sort((a, b) => {
+      const dayA = Math.floor(a.created_at_i / 86400);
+      const dayB = Math.floor(b.created_at_i / 86400);
+      if (dayA !== dayB) return dayB - dayA; // more recent day first
+      return b.points - a.points; // same day: higher points first
+    });
+
+    allNews = merged.slice(0, 100);
+    buildCatPills();
+    renderNews();
+  } catch (err) {
+    document.getElementById('newsGrid').innerHTML = `
+      <div class="loading">
+        Failed to fetch news. Please try again.
+        <br><button class="refresh-btn" onclick="fetchNews()" style="margin-top:12px">Retry</button>
+      </div>`;
+  }
+}
+
+function buildCatPills() {
+  const wrap = document.getElementById('catPills');
+  const cats = Object.keys(NEWS_CATEGORIES);
+  wrap.innerHTML = cats.map(c =>
+    `<button class="cat-pill ${currentCat === c ? 'active' : ''}" data-cat="${c}">${c}</button>`
+  ).join('');
+  wrap.querySelectorAll('.cat-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCat = btn.dataset.cat;
+      buildCatPills();
+      renderNews();
+    });
+  });
+}
+
+function getFilteredNews() {
+  return allNews.filter(n => {
+    if (currentCat !== 'All' && n._category !== currentCat) return false;
+    if (newsSearch) {
+      const q = newsSearch.toLowerCase();
+      if (!`${n.title} ${n.author || ''}`.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderNews() {
+  const filtered = getFilteredNews();
+
+  if (!filtered.length) {
+    document.getElementById('newsGrid').innerHTML = `<div class="loading">No news matches your filters.</div>`;
+    return;
+  }
+
+  document.getElementById('newsGrid').innerHTML = filtered.map((n, i) => {
+    const cat = n._category;
+    const catClass = CAT_CLASSES[cat] || 'cat-industry';
+    const isFeatured = i === 0 && currentCat === 'All';
+    const url = n.url || `https://news.ycombinator.com/item?id=${n.objectID}`;
+    const domain = n.url ? new URL(n.url).hostname.replace('www.', '') : 'news.ycombinator.com';
+
+    return `<div class="news-card ${isFeatured ? 'featured' : ''}">
+      <div class="news-meta">
+        <span class="news-source">${domain}</span>
+        <span class="news-date">${timeAgo(n.created_at_i)}</span>
+        <span class="news-cat ${catClass}">${cat}</span>
+      </div>
+      <div class="news-title"><a href="${url}" target="_blank" rel="noopener">${n.title}</a></div>
+      <div class="news-excerpt">
+        ${n.points} points &middot; ${n.num_comments || 0} comments &middot; by ${n.author || 'unknown'}
+      </div>
+      <a href="https://news.ycombinator.com/item?id=${n.objectID}" target="_blank" rel="noopener" class="news-link">Discussion &rarr;</a>
+    </div>`;
+  }).join('');
+}
+
+// Search
+document.getElementById('newsSearch').addEventListener('input', e => {
+  newsSearch = e.target.value.trim();
+  renderNews();
+});
+
+// Refresh
+document.getElementById('refreshNews').addEventListener('click', () => {
+  currentCat = 'All';
+  newsSearch = '';
+  document.getElementById('newsSearch').value = '';
+  fetchNews();
+});
+
+// Init
+fetchNews();
+</script>
+
+</body>
+</html>
