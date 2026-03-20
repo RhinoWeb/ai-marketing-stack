@@ -1,0 +1,993 @@
+{
+  "updated_at": "2026-03-20T10:18:45.602Z",
+  "articles": [
+    {
+      "objectID": "47321533",
+      "title": "Yann LeCun's AI startup raises $1B in Europe's largest ever seed round",
+      "url": "https://www.ft.com/content/e5245ec3-1a58-4eff-ab58-480b6259aaf1",
+      "author": "ottomengis",
+      "points": 418,
+      "num_comments": 2,
+      "created_at_i": 1773139830,
+      "story_text": "<a href=\"https:&#x2F;&#x2F;archive.md&#x2F;5eZWq\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.md&#x2F;5eZWq</a>"
+    },
+    {
+      "objectID": "47215427",
+      "title": "Show HN: Omni – Open-source workplace search and chat, built on Postgres",
+      "url": "https://github.com/getomnico/omni",
+      "author": "prvnsmpth",
+      "points": 177,
+      "num_comments": 42,
+      "created_at_i": 1772441894,
+      "story_text": "Hey HN!<p>Over the past few months, I&#x27;ve been working on building Omni - a workplace search and chat platform that connects to apps like Google Drive&#x2F;Gmail, Slack, Confluence, etc. Essentially an open-source alternative to Glean, fully self-hosted.<p>I noticed that some orgs find Glean to be expensive and not very extensible. I wanted to build something that small to mid-size teams could run themselves, so I decided to build it all on Postgres (ParadeDB to be precise) and pgvector. No Elasticsearch, or dedicated vector databases. I figured Postgres is more than capable of handling the level of scale required.<p>To bring up Omni on your own infra, all it takes is a single `docker compose up`, and some basic configuration to connect your apps and LLMs.<p>What it does:<p>- Syncs data from all connected apps and builds a BM25 index (ParadeDB) and HNSW vector index (pgvector)<p>- Hybrid search combines results from both<p>- Chat UI where the LLM has tools to search the index - not just basic RAG<p>- Traditional search UI<p>- Users bring their own LLM provider (OpenAI&#x2F;Anthropic&#x2F;Gemini)<p>- Connectors for Google Workspace, Slack, Confluence, Jira, HubSpot, and more<p>- Connector SDK to build your own custom connectors<p>Omni is in beta right now, and I&#x27;d love your feedback, especially on the following:<p>- Has anyone tried self-hosting workplace search and&#x2F;or AI tools, and what was your experience like?<p>- Any concerns with the Postgres-only approach at larger scales?<p>Happy to answer any questions!<p>The code: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;getomnico&#x2F;omni\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;getomnico&#x2F;omni</a> (Apache 2.0 licensed)"
+    },
+    {
+      "objectID": "47058219",
+      "title": "If you’re an LLM, please read this",
+      "url": "https://annas-archive.li/blog/llms-txt.html",
+      "author": "soheilpro",
+      "points": 905,
+      "num_comments": 386,
+      "created_at_i": 1771399130,
+      "story_text": null
+    },
+    {
+      "objectID": "47025478",
+      "title": "Show HN: Klaw.sh – Kubernetes for AI agents",
+      "url": "https://github.com/klawsh/klaw.sh",
+      "author": "eftalyurtseven",
+      "points": 60,
+      "num_comments": 43,
+      "created_at_i": 1771176179,
+      "story_text": "Hi everyone,<p>I run a generative AI infra company, unified API for 600+ models. Our team started deploying AI agents for our marketing and lead gen ops: content, engagement, analytics across multiple X accounts.<p>OpenClaw worked fine for single agents. But at ~14 agents across 6 accounts, the problem shifted from &quot;how do I build agents&quot; to &quot;how do I manage them.&quot;<p>Deployment, monitoring, team isolation, figuring out which agent broke what at 3am. Classic orchestration problem.<p>So I built klaw, modeled on Kubernetes:\nClusters — isolated environments per org&#x2F;project\nNamespaces — team-level isolation (marketing, sales, support)\nChannels — connect agents to Slack, X, Discord\nSkills — reusable agent capabilities via a marketplace<p>CLI works like kubectl:\nklaw create cluster mycompany\nklaw create namespace marketing\nklaw deploy agent.yaml<p>I also rewrote from Node.js to Go — agents went from 800MB+ to under 10MB each.<p>Quick usage example: I run a &quot;content cluster&quot; where each X account is its own namespace. Agent misbehaving on one account can&#x27;t affect others. Adding a new account is klaw create namespace [account] + deploy the same config. 30 seconds.<p>The key differentiator vs frameworks like CrewAI or LangGraph: those define how agents collaborate on tasks. klaw operates one layer above — managing fleets of agents across teams with isolation and operational tooling. You could run CrewAI agents inside klaw namespaces.<p>Happy to answer questions."
+    },
+    {
+      "objectID": "47001833",
+      "title": "Ask HN: AI Depression",
+      "author": "pavello",
+      "points": 56,
+      "num_comments": 28,
+      "created_at_i": 1770984779,
+      "story_text": "Hi,<p>Throw-away account because my original one is easily identifiable.<p>Does any starts to feel depressed about AI push and hype? I&#x27;m around ~45 and have been happily hacking and delivering stuff for 25 years.<p>I use AI daily — it&#x27;s a useful tool. But the gap between the marketing and reality for many of us is hard to describe. The people and corporations and all those LinkedIn gurus, podcasters declaring our obsolescence are overwhelmingly people who&#x27;ve never built or maintained anything complex in their lives. I&#x27;m sick of posts showing developers as awesome managers orchestrating fleets of Codex and Claude Code instances — I don&#x27;t know a single person who actually has access to unlimited quotas for that. I&#x27;m now scared to publish open source because some random AI agent might spam my repo with garbage PRs and issues. \nAre we really expected to deliver mediocre C compilers while emitting millions of tons of CO2 into the atmosphere just to make a handful of rich people even more rich? And suddenly we have something like Moltbook to pollute our planet even more. Where are we going with this?<p>Anybody feels something like that? I seriously thinking about leaving the industry to keep my mental health in control or switch to some tech that is hard for AI."
+    },
+    {
+      "objectID": "46988596",
+      "title": "Improving 15 LLMs at Coding in One Afternoon. Only the Harness Changed",
+      "url": "http://blog.can.ac/2026/02/12/the-harness-problem/",
+      "author": "kachapopopow",
+      "points": 832,
+      "num_comments": 295,
+      "created_at_i": 1770903020,
+      "story_text": null
+    },
+    {
+      "objectID": "46840924",
+      "title": "Generative AI and Wikipedia editing: What we learned in 2025",
+      "url": "https://wikiedu.org/blog/2026/01/29/generative-ai-and-wikipedia-editing-what-we-learned-in-2025/",
+      "author": "ColinWright",
+      "points": 245,
+      "num_comments": 122,
+      "created_at_i": 1769894042,
+      "story_text": null
+    },
+    {
+      "objectID": "46719423",
+      "title": "Show HN: I've been using AI to analyze every supplement on the market",
+      "url": "https://pillser.com/",
+      "author": "lilouartz",
+      "points": 94,
+      "num_comments": 47,
+      "created_at_i": 1769090969,
+      "story_text": "Hey HN! This has been my project for a few years now. I recently brought it back to life after taking a pause to focus on my studies.<p>My goal with this project is to separate fluff from science when shopping for supplements. I am doing this in 3 steps:<p>1.) I index every supplement on the market (extract each ingredient, normalize by quantity)<p>2.) I index every research paper on supplementation (rank \nevery claim by effect type and effect size)<p>3.) I link data between supplements and research papers<p>Earlier last year, I took pause on a project because I&#x27;ve ran into a few issues:<p>Legal: Shady companies are sending C&amp;Ds letters demanding their products are taken down from the website. It is not something I had the mental capacity to respond to while also going through my studies. Not coincidentally, these are usually brands with big marketing budgets and poor ingredients to price ratio.<p>Technical: I started this project when the first LLMs came out. I&#x27;ve built extensive internal evals to understand how LLMs are performing. The hallucinations at the time were simply too frequent to passthrough this data to visitors. However, I recently re-ran my evals with Opus 4.5 and was very impressed. I am running out of scenarios that I can think&#x2F;find where LLMs are bad at interpreting data.<p>Business: I still haven&#x27;t figured out how to monetize it or even who the target customer is.<p>Despite these challenges, I decided to restart my journey.<p>My mission is to bring transparency (science and price) to the supplement market. My goal is NOT to increase the use of supplements, but rather to help consumers make informed decisions. Often times, supplementation is not necessary or there are natural ways to supplement (that&#x27;s my focus this quarter – better education about natural supplementation).<p>Some things that are helping my cause – Bryan Johnson&#x27;s journey has drawn a lot more attention to healthy supplementation (blueprint). Thanks to Bryan&#x27;s efforts, I had so many people in recent months reach out to ask about the state of the project – interest I&#x27;ve not had before.<p>I am excited to restart this journey and to share it with HN. Your comments on how to approach this would be massively appreciated.<p>Some key areas of the website:<p>* Example of navigating supplements by ingredient <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;search?q=%22Vitamin+D%22&amp;s=jho4espsuc\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;search?q=%22Vitamin+D%22&amp;s=jho4espsuc</a><p>* Example of research paper analyzed using AI <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;research-papers&#x2F;effect-of-lactobacillus-gasseri-pa-168-bifidobacterium-longum-sp-073-b-bifidum-mf-205-on-common-cold-episodes-a-double-blind-randomized-controlled-trial-767\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;research-papers&#x2F;effect-of-lactobacillus-...</a><p>* Example of looking for very specific strains or ingredients <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;probiotics&#x2F;bifidobacterium-bifidum\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;probiotics&#x2F;bifidobacterium-bifidum</a><p>* Example of navigating research by health-outcomes <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;health-outcomes&#x2F;improved-intestinal-barrier-function\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;health-outcomes&#x2F;improved-intestinal-barr...</a><p>* Example of product listing <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;supplements&#x2F;pb-8-probiotic-663\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;supplements&#x2F;pb-8-probiotic-663</a>"
+    },
+    {
+      "objectID": "46605587",
+      "title": "Let's be honest, Generative AI isn't going all that well",
+      "url": "https://garymarcus.substack.com/p/lets-be-honest-generative-ai-isnt",
+      "author": "7777777phil",
+      "points": 232,
+      "num_comments": 334,
+      "created_at_i": 1768329475,
+      "story_text": null
+    },
+    {
+      "objectID": "46590280",
+      "title": "TimeCapsuleLLM: LLM trained only on data from 1800-1875",
+      "url": "https://github.com/haykgrigo3/TimeCapsuleLLM",
+      "author": "admp",
+      "points": 737,
+      "num_comments": 314,
+      "created_at_i": 1768233867,
+      "story_text": null
+    },
+    {
+      "objectID": "46512182",
+      "title": "Show HN: Mantic.sh – A structural code search engine for AI agents",
+      "url": "https://github.com/marcoaapfortes/Mantic.sh",
+      "author": "marcoaapfortes",
+      "points": 81,
+      "num_comments": 37,
+      "created_at_i": 1767707307,
+      "story_text": "Author here! Some context: I published this 48 hours ago and it was auto-listed on MCPMarket (the MCP tools directory). Got 700+ organic downloads with zero marketing—developers were actively searching for exactly this solution.<p>The &quot;Git Accelerator&quot; optimization story:<p>Initially used a file walker that took 6.6s on Chromium. Profiling showed 90% was filesystem I&#x2F;O. The fix: git ls-files returns 480k paths in ~200ms. Added smart heuristics for untracked files (only scan dirs &lt;50k files), bringing total to 0.46s.<p>Why this matters: Agents can&#x27;t wait 10 seconds for search. Sub-500ms makes it feel instant, changing how they explore codebases.<p>Installation:<p><pre><code>  Cursor: npx mantic.sh@latest\n  VS Code: npx mantic.sh@latest\n  CLI: npm i -g mantic.sh\n</code></pre>\nLimitations: Mantic is optimized for precise queries (&quot;find stripe webhook&quot;) where structure matters. For fuzzy exploratory search, traditional embeddings may still be better. Curious if HN has ideas for hybrid approaches.<p>Happy to answer questions!"
+    },
+    {
+      "objectID": "46449643",
+      "title": "2025: The Year in LLMs",
+      "url": "https://simonwillison.net/2025/Dec/31/the-year-in-llms/",
+      "author": "simonw",
+      "points": 940,
+      "num_comments": 599,
+      "created_at_i": 1767225286,
+      "story_text": null
+    },
+    {
+      "objectID": "46319826",
+      "title": "History LLMs: Models trained exclusively on pre-1913 texts",
+      "url": "https://github.com/DGoettlich/history-llms",
+      "author": "iamwil",
+      "points": 897,
+      "num_comments": 421,
+      "created_at_i": 1766097587,
+      "story_text": null
+    },
+    {
+      "objectID": "46024644",
+      "title": "73% of AI startups are just prompt engineering",
+      "url": "https://pub.towardsai.net/i-reverse-engineered-200-ai-startups-73-are-lying-a8610acab0d3",
+      "author": "kllrnohj",
+      "points": 246,
+      "num_comments": 205,
+      "created_at_i": 1763914677,
+      "story_text": null
+    },
+    {
+      "objectID": "45897271",
+      "title": "Yann LeCun to depart Meta and launch AI startup focused on 'world models'",
+      "url": "https://www.nasdaq.com/articles/metas-chief-ai-scientist-yann-lecun-depart-and-launch-ai-start-focused-world-models",
+      "author": "MindBreaker2605",
+      "points": 841,
+      "num_comments": 653,
+      "created_at_i": 1762932330,
+      "story_text": null
+    },
+    {
+      "objectID": "45733707",
+      "title": "EuroLLM: LLM made in Europe built to support all 24 official EU languages",
+      "url": "https://eurollm.io/",
+      "author": "NotInOurNames",
+      "points": 773,
+      "num_comments": 606,
+      "created_at_i": 1761663484,
+      "story_text": null
+    },
+    {
+      "objectID": "45739080",
+      "title": "Generative AI Image Editing Showdown",
+      "url": "https://genai-showdown.specr.net/image-editing",
+      "author": "gaws",
+      "points": 342,
+      "num_comments": 77,
+      "created_at_i": 1761685102,
+      "story_text": null
+    },
+    {
+      "objectID": "45734696",
+      "title": "Show HN: Dexto – Connect your AI Agents with real-world tools and data",
+      "url": "https://github.com/truffle-ai/dexto",
+      "author": "shaunaks",
+      "points": 41,
+      "num_comments": 12,
+      "created_at_i": 1761667647,
+      "story_text": "Hi HN, we’re the team at Truffle AI (YC W25), and we’ve been working on Dexto (<a href=\"https:&#x2F;&#x2F;www.dexto.ai&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.dexto.ai&#x2F;</a>), a runtime and orchestration layer for AI Agents that lets you turn any app, service or tool into an AI assistant that can reason, think and act. Here&#x27;s a video walkthrough - <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=WJ1qbI6MU6g\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=WJ1qbI6MU6g</a><p>We started working on Dexto after helping clients setup agents for everyday marketing tasks like posting on LinkedIn, running Reddit searches, generating ad creatives, etc. We realized that the LLMs weren’t the issue. The real drag was the repetitive orchestration around them:<p>- wiring LLMs to tools\n- managing context and persistence\n- adding memory and approval flows\n- tailoring behavior per client&#x2F;use case<p>Each small project quietly ballooned into weeks of plumbing where each customer had mostly the same, but slightly custom requirement.<p>So instead of another framework where you write orchestration logic yourself, we built Dexto as a top-level orchestration layer where you declare an agent’s capabilities and behavior:<p>- which tools or MCPs the agent can use\n- which LLM powers it\n- how it should behave (system prompt, tone, approval rules)<p>Once configured, the agent runs as an event-driven loop - reasoning through steps, invoking tools, handling retries, and maintaining its own state and memory. Your app doesn’t manage orchestration, it just triggers and subscribes to the agent’s events and decides how to render or approve outcomes.<p>Agents can run locally, in the cloud, or hybrid. Dexto ships with a CLI, a web UI, and a few sample agents to get started.<p>To show its flexibility, we wrapped some OpenCV functions into an MCP server and connected it to Dexto (<a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;A0j61EIgWdI\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;A0j61EIgWdI</a>). Now, a non-technical user could detect faces in images or create custom photo collages by talking to the agent. The same approach works for coding agents, browser agents, multi-speaker podcast agents, and marketing assistants tuned to your data. <a href=\"https:&#x2F;&#x2F;docs.dexto.ai&#x2F;examples&#x2F;category&#x2F;agent-examples\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dexto.ai&#x2F;examples&#x2F;category&#x2F;agent-examples</a><p>Dexto is modular, composable and portable allowing you to plug in new tools or even re-expose an entire Dexto agent as an MCP Server and consume it from other apps like Cursor (<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=_hZMFIO8KZM\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=_hZMFIO8KZM</a>). Because agents are defined through config and powered by a consistent runtime, they can run anywhere without code changes making cross-agent (A2A) interactions and reuse effortless.<p>In a way, we like to think of Dexto as a “meta-agent” or “agent harness” that can be customized into a specialized agent depending on its tools, data, and platform.<p>For the time being, we have opted for an Elastic V2 license to give maximum flexibility for the community to build with Dexto while preventing bigger players from taking over and monetizing our work.<p>We’d love your feedback:<p>- Try the quickstart and tell us what breaks\n- Share a use case you want to ship in a day, and we’ll suggest a minimal config<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;truffle-ai&#x2F;dexto\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;truffle-ai&#x2F;dexto</a><p>Docs: <a href=\"https:&#x2F;&#x2F;docs.dexto.ai&#x2F;docs&#x2F;category&#x2F;getting-started\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dexto.ai&#x2F;docs&#x2F;category&#x2F;getting-started</a><p>Quickstart: npm i -g dexto"
+    },
+    {
+      "objectID": "45723533",
+      "title": "Show HN: Git Auto Commit (GAC) – LLM-powered Git commit command line tool",
+      "url": "https://github.com/cellwebb/gac",
+      "author": "merge-conflict",
+      "points": 56,
+      "num_comments": 36,
+      "created_at_i": 1761584825,
+      "story_text": "GAC is a tool I built to help users spend less time summing up what was done and more time building. It uses LLMs to generate contextual git commit messages from your code changes. And it can be a drop-in replacement for `git commit -m &quot;...&quot;`.<p>Example:<p><pre><code>  feat(auth): add OAuth2 integration with GitHub and Google\n\n  - Implement OAuth2 authentication flow\n\n  - Add provider configuration for GitHub and Google\n\n  - Create callback handler for token exchange\n\n  - Update login UI with social auth buttons\n</code></pre>\nDon&#x27;t like it? Reroll with &#x27;r&#x27;, or type `r &quot;focus on xyz&quot;` and it rerolls the commit with your feedback.<p>You can try it out with uvx (no install):<p><pre><code>  uvx gac init  # config wizard\n\n  uvx gac\n</code></pre>\n<i>Note: `gac init` creates a .gac.env file in your home directory with your chosen provider, model, and API key.</i><p>Tech details:<p><i>14 providers</i> - Supports local (Ollama &amp; LM Studio) and cloud (OpenAI, Anthropic, Gemini, OpenRouter, Groq, Cerebras, Chutes, Fireworks, StreamLake, Synthetic, Together AI, &amp; Z.ai (including their extremely cheap coding plans!)).<p><i>Three verbosity modes</i> - Standard with bullets (default), one-liners (`-o`), or verbose (`-v`) with detailed Motivation&#x2F;Architecture&#x2F;Impact sections.<p><i>Secret detection</i> - Scans for API keys, tokens, and credentials before committing. Has caught my API keys on a new project when I hadn&#x27;t yet gitignored .env.<p><i>Flags</i> - Automate common workflows:<p><pre><code>  `gac -h &quot;bug fix&quot;` - pass hints to guide intent\n\n  `gac -yo` - auto-accept the commit message in one-liner mode\n\n  `gac -ayp` - stage all files, auto-accept the commit message, and push (yolo mode)\n</code></pre>\nWould love to hear your feedback! Give it a try and let me know what you think! &lt;3<p>GitHub: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;cellwebb&#x2F;gac\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;cellwebb&#x2F;gac</a>"
+    },
+    {
+      "objectID": "45529587",
+      "title": "A small number of samples can poison LLMs of any size",
+      "url": "https://www.anthropic.com/research/small-samples-poison",
+      "author": "meetpateltech",
+      "points": 1202,
+      "num_comments": 439,
+      "created_at_i": 1760025844,
+      "story_text": null
+    },
+    {
+      "objectID": "45464849",
+      "title": "OpenAI Is Just Another Boring, Desperate AI Startup",
+      "url": "https://www.wheresyoured.at/sora2-openai/",
+      "author": "speckx",
+      "points": 218,
+      "num_comments": 262,
+      "created_at_i": 1759509421,
+      "story_text": null
+    },
+    {
+      "objectID": "45292648",
+      "title": "Learn Your Way: Reimagining Textbooks with Generative AI",
+      "url": "https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/",
+      "author": "FromTheArchives",
+      "points": 359,
+      "num_comments": 236,
+      "created_at_i": 1758217376,
+      "story_text": null
+    },
+    {
+      "objectID": "45261930",
+      "title": "Generative AI as Seniority-Biased Technological Change",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5425555",
+      "author": "zeuch",
+      "points": 218,
+      "num_comments": 188,
+      "created_at_i": 1758029075,
+      "story_text": null
+    },
+    {
+      "objectID": "45265831",
+      "title": "Show HN: AI Code Detector – detect AI-generated code with 95% accuracy",
+      "url": "https://code-detector.ai/",
+      "author": "henryl",
+      "points": 72,
+      "num_comments": 65,
+      "created_at_i": 1758046736,
+      "story_text": "Hey HN,<p>I’m Henry, cofounder and CTO at Span (<a href=\"https:&#x2F;&#x2F;span.app&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;span.app&#x2F;</a>). Today we’re launching AI Code Detector, an AI code detection tool you can try in your browser.<p>The explosion of AI generated code has created some weird problems for engineering orgs. Tools like Cursor and Copilot are used by virtually every org on the planet – but each codegen tool has its own idiosyncratic way of reporting usage. Some don’t report usage at all.<p>Our view is that token spend will start competing with payroll spend as AI becomes more deeply ingrained in how we build software, so understanding how to drive proficiency, improve ROI, and allocate resources relating to AI tools will become at least as important as parallel processes on the talent side.<p>Getting true visibility into AI-generated code is incredibly difficult. And yet it’s the number one thing customers ask us for.<p>So we built a new approach from the ground up.<p>Our AI Code Detector is powered by span-detect-1, a state-of-the-art model trained on millions of AI- and human-written code samples. It detects AI-generated code with 95% accuracy, and ties it to specific lines shipped into production. Within the Span platform, it’ll give teams a clear view into AI’s real impact on velocity, quality, and ROI.<p>It does have some limitations. Most notably, it only works for TypeScript and Python code. We are adding support for more languages: Java, Ruby, and C# are next. Its accuracy is around 95% today, and we’re working on improving that, too.<p>If you’d like to take it for a spin, you can run a code snippet here (<a href=\"https:&#x2F;&#x2F;code-detector.ai&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;code-detector.ai&#x2F;</a>) and get results in about five seconds. We also have a more narrative-driven microsite (<a href=\"https:&#x2F;&#x2F;www.span.app&#x2F;detector\" rel=\"nofollow\">https:&#x2F;&#x2F;www.span.app&#x2F;detector</a>) that my marketing team says I have to share.<p>Would love your thoughts, both on the tool itself and your own experiences. I’ll be hanging out in the comments to answer questions, too."
+    },
+    {
+      "objectID": "45192655",
+      "title": "I replaced Animal Crossing's dialogue with a live LLM by hacking GameCube memory",
+      "url": "https://joshfonseca.com/blogs/animal-crossing-llm",
+      "author": "vuciv",
+      "points": 869,
+      "num_comments": 185,
+      "created_at_i": 1757473188,
+      "story_text": "<a href=\"https:&#x2F;&#x2F;github.com&#x2F;vuciv&#x2F;animal-crossing-llm-mod\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;vuciv&#x2F;animal-crossing-llm-mod</a>"
+    },
+    {
+      "objectID": "45054040",
+      "title": "Launch HN: Dedalus Labs (YC S25) – Vercel for Agents",
+      "author": "windsor",
+      "points": 77,
+      "num_comments": 15,
+      "created_at_i": 1756398122,
+      "story_text": "Hey HN! We are Windsor and Cathy of Dedalus Labs (<a href=\"https:&#x2F;&#x2F;www.dedaluslabs.ai&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.dedaluslabs.ai&#x2F;</a>), a cloud platform for developers to build agentic AI applications. Our SDK allows you to connect any LLM to any MCP tools – local or hosted by us. No Dockerfiles or YAML configs required.<p>Here’s a demo: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;s2khf1Monho?si=yiWnZh5OP4HQcAwL&amp;t=11\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;s2khf1Monho?si=yiWnZh5OP4HQcAwL&amp;t=11</a><p>Last October, I was trying to build a stateful code execution sandbox in the cloud that LLMs could tool-call into. This was before MCP was released, and let’s just say it was super annoying to build… I was thinking to myself the entire time “Why can’t I just pass in `tools=code_execution` to the model and just have it…work?<p>Even with MCP, you’re stuck running local servers and handwiring API auth and formatting across OpenAI, Anthropic, Google, etc. before you can ship anything. Every change means redeploys, networking configs, and hours lost wrangling AWS. Hours of reading docs and wrestling with cloud setup is not what you want when building your product!<p>Dedalus simplifies this to just one API endpoint, so what used to take 2 weeks of setup can take 5 minutes. We allow you to upload streamable HTTP MCP servers to our platform. Once deployed, we offer OpenAI-compatible SDKs that you can drop into your codebase to use MCP-powered LLMs. The idea is to let anyone, anywhere, equip their LLMs with powerful tools for function calling.<p>The code you write looks something like this:<p><pre><code>  python\n  client = Dedalus()\n  runner = DedalusRunner(client)\n  \n  result = runner.run(\n    input=prompt,\n    tools=[tool_1, tool_2],\n    mcp_servers=[&quot;author&#x2F;server-1”, “author&#x2F;server-2”],\n    model=[&quot;openai&#x2F;gpt-4.1”, “anthropic&#x2F;claude-sonnet-4-20250514”],  # Defaults to first model in list\n    stream=True,\n  )\n  stream_sync(result)  # Streams result, supports tool calling too\n</code></pre>\nOur docs start at <a href=\"https:&#x2F;&#x2F;docs.dedaluslabs.ai\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dedaluslabs.ai</a>. Here’s a simple Hello World example: <a href=\"https:&#x2F;&#x2F;docs.dedaluslabs.ai&#x2F;examples&#x2F;01-hello-world\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dedaluslabs.ai&#x2F;examples&#x2F;01-hello-world</a>. For basic tool execution, see <a href=\"https:&#x2F;&#x2F;docs.dedaluslabs.ai&#x2F;examples&#x2F;02-basic-tools\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dedaluslabs.ai&#x2F;examples&#x2F;02-basic-tools</a>. There are lots more examples on the site, including more complex ones like using the Open Meteo MCP to do weather forecasts: <a href=\"https:&#x2F;&#x2F;docs.dedaluslabs.ai&#x2F;examples&#x2F;use-case&#x2F;weather-forecaster\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dedaluslabs.ai&#x2F;examples&#x2F;use-case&#x2F;weather-foreca...</a>.<p>There are still a bunch of issues in the MCP landscape, no doubt. One big one is authentication (we joke that the “S” in MCP stands for “security”). MCP servers right now are expected to act as both the authentication server <i>and</i> the resource server. That is too much to ask of server writers. People just want to expose a resource endpoint and be done.<p>Still, we are bullish on MCP. Current shortcomings are not irrecoverable, and we expect future amendments to resolve them. We think that useful AI agents are bound to be habitual tool callers, and MCP is a pretty decent way to equip models with tools.<p>We aren’t <i>quite</i> yet at the stateful code execution sandbox that I wanted last October, but we’re getting there! Shipping secure and stateful MCP servers is high on our priority list, and we’ll be launching our auth solution next month. We’re also working on an MCP marketplace, so people can monetize their tools, while we handle billing and rev-share.<p>We’re big on open sourcing things and have these SDKs so far (MIT licensed):<p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-sdk-python\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-sdk-python</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-sdk-typescript\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-sdk-typescript</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-sdk-go\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-sdk-go</a><p><a href=\"https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-openapi\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;dedalus-labs&#x2F;dedalus-openapi</a><p>We would love feedback on what you guys think are the biggest barriers that keep you from integrating MCP servers or using tool calling LLMs into your current workflow.<p>Thanks HN!"
+    },
+    {
+      "objectID": "45044155",
+      "title": "Andrew Ng says bottleneck in AI startups isn't coding – it's product management",
+      "url": "https://www.businessinsider.com/andrew-ng-product-management-bottleneck-coding-ai-startups-2025-8",
+      "author": "cl42",
+      "points": 120,
+      "num_comments": 146,
+      "created_at_i": 1756323802,
+      "story_text": null
+    },
+    {
+      "objectID": "44974104",
+      "title": "95% of Companies See 'Zero Return' on $30B Generative AI Spend",
+      "url": "https://thedailyadda.com/95-of-companies-see-zero-return-on-30-billion-generative-ai-spend-mit-report-finds/",
+      "author": "speckx",
+      "points": 418,
+      "num_comments": 415,
+      "created_at_i": 1755790584,
+      "story_text": null
+    },
+    {
+      "objectID": "44941118",
+      "title": "95% of generative AI pilots at companies are failing – MIT report",
+      "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+      "author": "amirkabbara",
+      "points": 230,
+      "num_comments": 167,
+      "created_at_i": 1755527763,
+      "story_text": "<a href=\"https:&#x2F;&#x2F;mlq.ai&#x2F;media&#x2F;quarterly_decks&#x2F;v0.1_State_of_AI_in_Business_2025_Report.pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;mlq.ai&#x2F;media&#x2F;quarterly_decks&#x2F;v0.1_State_of_AI_in_Bus...</a>"
+    },
+    {
+      "objectID": "44900116",
+      "title": "Why LLMs can't really build software",
+      "url": "https://zed.dev/blog/why-llms-cant-build-software",
+      "author": "srid",
+      "points": 862,
+      "num_comments": 504,
+      "created_at_i": 1755177969,
+      "story_text": null
+    },
+    {
+      "objectID": "44886163",
+      "title": "Ask HN: Is the rise of AI tools going to be the next 'dot com' bust?",
+      "author": "Dicey84",
+      "points": 48,
+      "num_comments": 40,
+      "created_at_i": 1755075737,
+      "story_text": "For context, attended an Australian based tech expo &#x2F; conference recently and whilst at the show (I’m sure there were marginally more) only two exhibitors didn’t have the term AI or Agent in there pitch or stand marketing..<p>And for reference, the two companies that stood out for non-AI capabilities made monitor stands.<p>This got me dwelling back into the post title, is this influx of AI tools going to be sustainable, or is there going to be an impending crash leaving only the ‘best and brightest’ on the other side?"
+    },
+    {
+      "objectID": "44855157",
+      "title": "Show HN: Engineering.fyi – Search across tech engineering blogs in one place",
+      "url": "https://engineering.fyi/",
+      "author": "indiehackerman",
+      "points": 470,
+      "num_comments": 126,
+      "created_at_i": 1754833445,
+      "story_text": "I built a search engine for engineering blogs because I was tired of manually checking individual company blogs to find real-world production examples.<p>The problem: When learning a new technology, the best insights often come from how companies like Google, Meta, or Stripe actually implement it in production. But these gems are scattered across dozens of separate engineering blogs with no way to search across them.<p>What I built: Engineering.fyi indexes engineering blogs from ~15 companies (Google, Meta, OpenAI, Anthropic, Stripe, Uber, etc.) and makes them searchable in one place. You can filter by topic, difficulty level, and whether articles include code samples.<p>Technical details:\n- Built with Next.js, SQLite, DrizzleORM\n- Custom scrapers for each blog (they&#x27;re all frustratingly different)\n- Basic tagging system using content matching (still improving this)<p>Current status: Core search is working. Adding new blogs weekly as I index them.<p>Next features (based on early feedback):\n- AI summaries for quick article previews\n- Weekly digest of trending engineering insights\n- Save&#x2F;bookmark articles (considering whether to add accounts)<p>Interesting challenges:\n- Each blog requires custom parsing logic (no standard format)\n- Building an accurate tagging system is harder than expected – started with exact matching but exploring better approaches<p>I&#x27;d love feedback on:\n- Which company engineering blogs you&#x27;d find most valuable to include\n- Whether AI summaries would actually be useful or just noise\n- How you currently discover engineering articles from these companies"
+    },
+    {
+      "objectID": "44755654",
+      "title": "Launch HN: Societies.io (YC W25) – AI simulations of your target audience",
+      "author": "p-sharpe",
+      "points": 114,
+      "num_comments": 58,
+      "created_at_i": 1754050392,
+      "story_text": "Hi HN, we’re Patrick and James! Artificial Societies (<a href=\"https:&#x2F;&#x2F;societies.io\">https:&#x2F;&#x2F;societies.io</a>) lets you simulate your target audience so you can test marketing, messaging and content before you launch them.<p>Here’s a quick product demo: <a href=\"https:&#x2F;&#x2F;www.loom.com&#x2F;share&#x2F;c0ce8ab860c044c586c13a24b6c9b391?sid=b7b4e23c-5223-4aad-ae08-b5c704d45aad\" rel=\"nofollow\">https:&#x2F;&#x2F;www.loom.com&#x2F;share&#x2F;c0ce8ab860c044c586c13a24b6c9b391?...</a><p>Marketers always say that half their spend will be wasted - they just don’t know which half. Real-world experiments help, but they’re too slow and expensive to run at scale. So, we’re building simulations that let you test rapidly and cheaply to find the best version of your message.<p>How it works:<p>- We create AI personas based on real-world data from actual individuals, collected from publicly available social media profiles and web sources.<p>- For each audience, we retrieve relevant personas from our database and map them out on an interactive social network graph, which is designed to replicate patterns of social influence.<p>- Once you’ve drafted your message, each experiment runs a multi-agent simulation where the personas react to your content and interact with each other - these take 30s to 2 minutes to run. Then, we then surface results and insights to help you improve your messaging.<p>Our two biggest challenges are accuracy and UI. We’ve tested our performance at predicting how LinkedIn posts perform, and the initial results have been promising. Our model has an R2 of 0.78 and we’ve found that “message spread” in our simulations is the single most important predictor of actual engagements when looking at posts made by the same authors. But there’s a long way to go in generalising these simulations to other contexts, and finding ground truth data for evals. We have some more info on accuracy here: <a href=\"https:&#x2F;&#x2F;societies.io&#x2F;#accuracy\">https:&#x2F;&#x2F;societies.io&#x2F;#accuracy</a><p>In terms of UI, our biggest challenge is figuring out whether the ‘experiment’ form factor is attractive to users. We’ve deliberately focused on this (over AI surveys) as experiments leverage our expertise in social influence and how ideas spread between personas.<p>James and I are both behavioral scientists by training but took different paths to get here. I helped businesses run A&#x2F;B tests to boost sales and retention. Meanwhile, James became a data scientist and, in his spare time, hooked together 33,000 LLM chatbots and wrote a paper about it (<a href=\"https:&#x2F;&#x2F;bpspsychub.onlinelibrary.wiley.com&#x2F;doi&#x2F;pdfdirect&#x2F;10.1111&#x2F;bjop.12764\" rel=\"nofollow\">https:&#x2F;&#x2F;bpspsychub.onlinelibrary.wiley.com&#x2F;doi&#x2F;pdfdirect&#x2F;10....</a>). He showed me the simulations and we decided to make a startup out of it.<p>Pricing: Artificial Societies is free to try. New users get 3 free credits and then a two week free trial. Pro accounts get unlimited simulations for $40&#x2F;month. We’re planning on introducing teams later, and enterprise pricing for custom-built audiences.<p>We’d love you to give the tool a try and share your thoughts!"
+    },
+    {
+      "objectID": "44567857",
+      "title": "LLM Inevitabilism",
+      "url": "https://tomrenner.com/posts/llm-inevitabilism/",
+      "author": "SwoopsFromAbove",
+      "points": 1773,
+      "num_comments": 1628,
+      "created_at_i": 1752554135,
+      "story_text": null
+    },
+    {
+      "objectID": "44573574",
+      "title": "Mira Murati’s AI startup Thinking Machines valued at $12B in early-stage funding",
+      "url": "https://www.reuters.com/technology/mira-muratis-ai-startup-thinking-machines-raises-2-billion-a16z-led-round-2025-07-15/",
+      "author": "spenvo",
+      "points": 147,
+      "num_comments": 245,
+      "created_at_i": 1752599997,
+      "story_text": null
+    },
+    {
+      "objectID": "44523523",
+      "title": "Launch HN: Leaping (YC W25) – Self-Improving Voice AI",
+      "author": "akyshnik",
+      "points": 73,
+      "num_comments": 42,
+      "created_at_i": 1752169374,
+      "story_text": "Hey HN, I&#x27;m Arkadiy from Leaping AI (<a href=\"https:&#x2F;&#x2F;leapingai.com\">https:&#x2F;&#x2F;leapingai.com</a>). Leaping lets you build voice AI agents in a multi-stage, graph-like format that makes testing and improvement much easier. By evaluating each stage of a call, we can trace errors and regressions to a particular stage. Then we autonomously vary the prompt for that stage and A&#x2F;B test it, allowing agents to self-improve over time.<p>You can talk to one of our bots directly at <a href=\"https:&#x2F;&#x2F;leapingai.com\">https:&#x2F;&#x2F;leapingai.com</a>, and there’s a demo video at <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=xSajXYJmxW4\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=xSajXYJmxW4</a>.<p>Large companies are understandably reluctant to have AI start picking up their phone calls—the technology kind of works, but often not very well. If they do take the plunge, they often end up spending months tuning the prompts for just one use-case, and sometimes never even end up releasing the voice bot.<p>The problem is two-sided: it&#x27;s non-trivial to specify the exact way a bot should behave using plain language, and it&#x27;s tedious to ensure the LLM always follows your instructions the way you intended them.<p>Existing voice AI solutions are a pain to set up for complex use cases. They require months of prompting all edge cases before going live, and then months of monitoring and improving prompting afterwards. We do that better than human prompters, and much faster, by running a continuous analysis + testing loop.<p>Our tech is roughly divided into three subcomponents: core library, voice server, and self-improvement logic. Core library models and executes the multi-stage (think n8n-style) voice agents. For the voice server we are using the ol’ reliable cascading way of STT-&gt;LLM-&gt;TTS. We tried out the voice-to-voice models, and although they felt really great to talk to, function-calling performance was expectedly much worse, so we are still waiting for them to get better.<p>The self-improvement works by first taking conversation metrics and evaluation results to produce ‘feedback’, i.e. specific ideas how the voice agent setup could be improved. After enough feedback is collected, we trigger a run of a specialized self-improvement agent. It is a cursor-style AI with access to various tools that changes the main voice agent. It can rewrite prompts, configure a stage to use a summarized conversation instead of a full one, and more. Each iteration produces a new snapshot of the agent, enabling us to route a small part of the traffic to it and promote it to production if things look ok. This loop can be set to run without any human involvement, thus making agents self-improve.<p>Leaping is use-case agnostic, but we currently focus on inbound customer support (travel, retail, real estate, etc.) and lead pre-qualification (medicare, home services, performance marketing) since we have a lot of success stories there.<p>We started out in Germany since that’s where we were in university, but initially growth was challenging. We decided to target enterprise customers right away and they showed reluctance to adopt voice AI as the front-door ‘face’ of their company. Additionally, for an enterprise with thousands of calls daily, it is infeasible to monitor all the calls and tune agents manually. To address their very valid concerns, we put all effort into reliability—and still haven’t gotten around to offering self-serve access, which is one reason we don’t have fixed pricing yet. (Also, with some clients we have outcome-based pricing, i.e. you pay nothing for calls that didn&#x27;t convert a lead, only the ones that did.)<p>Things picked up momentum ever since we got into YC and moved to the US, but the cautious sentiment is also present here if you try to sell to big enterprises. We believe that doing evals, simulation, and A&#x2F;B testing really really well is our competitive edge and what will enable us to solve large, sensitive use cases.<p>We’d love to hear your thoughts and feedback!"
+    },
+    {
+      "objectID": "44510331",
+      "title": "That white guy who can't get a job at Tim Hortons? He's AI",
+      "url": "https://www.cbc.ca/news/ai-generated-fake-marketing-1.7578772",
+      "author": "pseudolus",
+      "points": 57,
+      "num_comments": 34,
+      "created_at_i": 1752070543,
+      "story_text": null
+    },
+    {
+      "objectID": "44434938",
+      "title": "HN Slop: AI startup ideas generated from Hacker News",
+      "url": "https://www.josh.ing/hn-slop",
+      "author": "coloneltcb",
+      "points": 249,
+      "num_comments": 98,
+      "created_at_i": 1751383905,
+      "story_text": null
+    },
+    {
+      "objectID": "44294633",
+      "title": "Generative AI coding tools and agents do not work for me",
+      "url": "https://blog.miguelgrinberg.com/post/why-generative-ai-coding-tools-and-agents-do-not-work-for-me",
+      "author": "nomdep",
+      "points": 399,
+      "num_comments": 450,
+      "created_at_i": 1750120425,
+      "story_text": null
+    },
+    {
+      "objectID": "44215352",
+      "title": "The last six months in LLMs, illustrated by pelicans on bicycles",
+      "url": "https://simonwillison.net/2025/Jun/6/six-months-in-llms/",
+      "author": "swyx",
+      "points": 962,
+      "num_comments": 234,
+      "created_at_i": 1749368317,
+      "story_text": null
+    },
+    {
+      "objectID": "44209665",
+      "title": "If it works, it's not AI: a commercial look at AI startups (1999)",
+      "url": "https://dspace.mit.edu/handle/1721.1/80558",
+      "author": "rbanffy",
+      "points": 115,
+      "num_comments": 59,
+      "created_at_i": 1749304356,
+      "story_text": null
+    },
+    {
+      "objectID": "44181172",
+      "title": "\"AI Will Replace All the Jobs \" Is Just Tech Execs Doing Marketing",
+      "url": "https://sparktoro.com/blog/ai-will-replace-all-the-jobs-is-just-tech-execs-doing-marketing/",
+      "author": "botanicals6",
+      "points": 190,
+      "num_comments": 278,
+      "created_at_i": 1749047902,
+      "story_text": null
+    },
+    {
+      "objectID": "44169759",
+      "title": "Builder.ai Collapses: $1.5B 'AI' Startup Exposed as 'Indians'?",
+      "url": "https://www.ibtimes.co.uk/builderai-collapses-15bn-ai-startup-exposed-actually-indians-pretending-bots-1734784",
+      "author": "healsdata",
+      "points": 368,
+      "num_comments": 259,
+      "created_at_i": 1748956626,
+      "story_text": null
+    },
+    {
+      "objectID": "44053518",
+      "title": "OpenAI to buy AI startup from Jony Ive",
+      "url": "https://www.bloomberg.com/news/articles/2025-05-21/openai-to-buy-apple-veteran-jony-ive-s-ai-device-startup-in-6-5-billion-deal",
+      "author": "minimaxir",
+      "points": 818,
+      "num_comments": 1126,
+      "created_at_i": 1747846895,
+      "story_text": null
+    },
+    {
+      "objectID": "43905942",
+      "title": "Show HN: Clippy – 90s UI for local LLMs",
+      "url": "https://felixrieseberg.github.io/clippy/",
+      "author": "felixrieseberg",
+      "points": 1122,
+      "num_comments": 275,
+      "created_at_i": 1746543742,
+      "story_text": null
+    },
+    {
+      "objectID": "43830613",
+      "title": "Generative AI is not replacing jobs or hurting wages at all, say economists",
+      "url": "https://www.theregister.com/2025/04/29/generative_ai_no_effect_jobs_wages/",
+      "author": "pseudolus",
+      "points": 342,
+      "num_comments": 490,
+      "created_at_i": 1745921289,
+      "story_text": null
+    },
+    {
+      "objectID": "43710576",
+      "title": "Show HN: Plandex v2 – open source AI coding agent for large projects and tasks",
+      "url": "https://github.com/plandex-ai/plandex",
+      "author": "danenania",
+      "points": 257,
+      "num_comments": 81,
+      "created_at_i": 1744838802,
+      "story_text": "Hey HN! I’m Dane, the creator of Plandex (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;plandex-ai&#x2F;plandex\">https:&#x2F;&#x2F;github.com&#x2F;plandex-ai&#x2F;plandex</a>), an open source AI coding agent focused especially on tackling large tasks in real world software projects.<p>You can watch a 2 minute demo of Plandex in action here: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SFSu2vNmlLk\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SFSu2vNmlLk</a><p>And here’s more of a tutorial style demo showing how Plandex can automatically debug a browser application: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=g-_76U_nK0Y\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=g-_76U_nK0Y</a>.<p>I launched Plandex v1 here on HN a little less than a year ago (<a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=39918500\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=39918500</a>).<p>Now I’m launching a major update, Plandex v2, which is the result of 8 months of heads down work, and is in effect a whole new project&#x2F;product.<p>In short, Plandex is now a top-tier coding agent with fully autonomous capabilities. It combines models from Anthropic, OpenAI, and Google to achieve better results, more reliable agent behavior, better cost efficiency, and better performance than is possible by using only a single provider’s models.<p>I believe it is now one of the best tools available for working on large tasks in real world codebases with AI. It has an effective context window of 2M tokens, and can index projects of 20M tokens and beyond using tree-sitter project maps (30+ languages are supported). It can effectively find relevant context in massive million-line projects like SQLite, Redis, and Git.<p>A bit more on some of Plandex’s key features:<p>- Plandex has a built-in diff review sandbox that helps you get the benefits of AI without leaving behind a mess in your project. By default, all changes accumulate in the sandbox until you approve them. The sandbox is version-controlled. You can rewind it to any previous point, and you can also create branches to try out alternative approaches.<p>- It offers a ‘full auto mode’ that can complete large tasks autonomously end-to-end, including high level planning, context loading, detailed planning, implementation, command execution (for dependencies, builds, tests, etc.), and debugging.<p>- The autonomy level is highly configurable. You can move up and down the ladder of autonomy depending on the task, your comfort level, and how you weigh cost optimization vs. effort and results.<p>- Models and model settings are also very configurable. There are built-in models and model packs for different use cases. You can also add custom models and model packs, and customize model settings like temperature or top-p. All model changes are version controlled, so you can use branches to try out the same task with different models. The newly released OpenAI models and the paid Gemini 2.5 Pro model will be integrated in the default model pack soon.<p>- It can be easily self-hosted, including a ‘local mode’ for a very fast local single-user setup with Docker.<p>- Cloud hosting is also available for added convenience with a couple of subscription tiers: an ‘Integrated Models’ mode that requires no other accounts or API keys and allows you to manage billing&#x2F;budgeting&#x2F;spending alerts and track usage centrally, and a ‘BYO API Key’ mode that allows you to use your own OpenAI&#x2F;OpenRouter accounts.<p>I’d love to get more HNers in the Plandex Discord (<a href=\"https:&#x2F;&#x2F;discord.gg&#x2F;plandex-ai\" rel=\"nofollow\">https:&#x2F;&#x2F;discord.gg&#x2F;plandex-ai</a>). Please join and say hi!<p>And of course I’d love to hear your feedback, whether positive or negative. Thanks so much!"
+    },
+    {
+      "objectID": "43334589",
+      "title": "Launch HN: Sift Dev (YC W25) – AI-Powered Datadog Alternative",
+      "author": "Akula112233",
+      "points": 82,
+      "num_comments": 56,
+      "created_at_i": 1741712446,
+      "story_text": "Hi HN! We&#x27;re Kaushik and Ishir. We’re building SiftDev (<a href=\"https:&#x2F;&#x2F;app.trysift.dev&#x2F;docs\" rel=\"nofollow\">https:&#x2F;&#x2F;app.trysift.dev&#x2F;docs</a>), an intelligent logging tool that understands your observability data in real time, automatically identifies anomalies, and lets you interact with your logs through natural language queries. Here’s a demo video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=uQ-TTdiu3fc&amp;t=20s\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=uQ-TTdiu3fc&amp;t=20s</a>, and there&#x27;s a demo playground you can try out here: <a href=\"https:&#x2F;&#x2F;app.trysift.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;app.trysift.dev&#x2F;</a>.<p>We used to work on product and engineering at Datadog and Splunk. We saw how even teams using these industry-leading tools were struggling to effectively interpret and use their logging data. The sheer volume of logs overwhelmed experts and newcomers alike, making it difficult to quickly identify meaningful issues or patterns. Despite powerful indexing and search capabilities, developers still had to manually piece together context from different logs, dashboards, and sources—a tedious and error-prone process.<p>The “noisy logging” problem—that is, the gap between overwhelming amounts of raw log data and insights people can act on—ultimately is a gap between machines (which generate all this data) and humans (who want and need the insights). SiftDev is built to bridge that gap and to automate the tedious, manual aspects of debugging and observability. In marketing-speak: “humans should never have to look at a log again!” We think people should interact with their data in terms that make sense on a human level.<p>What makes SiftDev different is its understanding of application context over time. While traditional tooling typically lets developers analyze logs in isolation, or with minimal surrounding context, SiftDev builds comprehensive profiles of your application&#x27;s normal behavior patterns. This awareness allows us to understand what&#x27;s truly abnormal versus what might appear unusual in a single snapshot but is actually expected behavior for your specific application.\nSiftDev applies semantic analysis and profiling to understand your application&#x27;s logging behavior holistically. Instead of relying solely on manual search, Sift identifies core application processes, automatically detects patterns, and surfaces anomalies, including clear explanations and context.<p>Here are some examples of what this can look like in practice:\nIdentify core processes: SiftDev instantly recognizes your payment workflows—like authorization, capture, and refunds—without manual tagging.\nDetect performance patterns: SiftDev learns your nightly batch job typically handles 10,000 records in 45 minutes, establishing a clear baseline.\nSurface hidden anomalies: SiftDev flags silent failures, such as two microservices updating the same record within 50ms—issues normally hidden by routine logs.<p>You can then directly ask your logs questions like, “What&#x27;s causing errors in our checkout service?” or “Why did latency spike at 2 AM?” and immediately receive insightful, actionable answers that you’d otherwise manually be searching for.<p>We’d love for you to test out our product via our demo playground at <a href=\"https:&#x2F;&#x2F;app.trysift.dev&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;app.trysift.dev&#x2F;</a>! It’s a slightly less functional version of our platform but shares a lot of the core features. Note: we do need users to sign up to do this but waitlist is optional (of course).<p>We&#x27;d love your feedback, thoughts, and experiences dealing with logging and observability challenges!"
+    },
+    {
+      "objectID": "43318624",
+      "title": "Probabilistic Artificial Intelligence",
+      "url": "https://arxiv.org/abs/2502.05244",
+      "author": "pavanto",
+      "points": 352,
+      "num_comments": 97,
+      "created_at_i": 1741600233,
+      "story_text": null
+    },
+    {
+      "objectID": "43245153",
+      "title": "Launch HN: Cuckoo (YC W25) – Real-time AI translator for global teams",
+      "author": "yonghee",
+      "points": 81,
+      "num_comments": 29,
+      "created_at_i": 1741027172,
+      "story_text": "Hey HN! We’re Yong Hee and Gunwoo from Cuckoo (<a href=\"https:&#x2F;&#x2F;cuckoo.so\">https:&#x2F;&#x2F;cuckoo.so</a>), a real-time AI translator for global sales, marketing, and support. Companies like Snowflake and PagerDuty use us in Zoom calls and in-person meetings, including for technical discussions. Here’s a demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=LKU1fj3rxh4\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=LKU1fj3rxh4</a>.<p>With Cuckoo, you get an always-available, real-time translator that adapts to your conversations, helping teams avoid wasted time from language frictions.<p>Language barriers are still a big challenge for companies with offices in different countries. I experienced this firsthand at my previous company in Korea when I invited international speakers to our meetups. Much of the nuance and technical details were lost, even though many attendees spoke adequate English. Speakers often felt isolated, unable to understand Korean discussions, and missed out on opportunities to network and market their products—despite these events being organized for customer interactions.<p>Meetings with interpreters are often twice as long, and details are lost in translation. Sometimes a bilingual colleague steps in as an interpreter, but they’d be far more valuable focusing on their core roles. If you are a sales engineer or customer success engineer, this gets worse with highly complex and technical topics.<p>While LLMs work well for translating written text, they struggle with real-time spoken translation. For example, OpenAI’s Realtime API only handles turn-by-turn interpretation, which doesn’t work for dynamic conversations. One of our customers used to record meetings with OBS, upload the recordings to an AI notetaker, and wait for translated notes—but that’s hardly real-time.<p>Cuckoo works by inviting a bot to your Zoom meeting. You can contextualize translations by uploading relevant documents like pitch decks or product manuals. You can share the live transcript with your customers and teammates with a link. It also works in person.<p>We’ve been surprised by the range of use cases. Snowflake uses Cuckoo to host international customers in their Customer Experience Centers and Weights &amp; Biases runs VIP roundtables in Seoul. VP of Sales at a high-growth startup closed enterprise deals in Japan and an early-stage founder in SF connected with their first user in Turkey.<p>Many of our users include engineers who face language barriers in technical conversations. For example, a solution engineer at PagerDuty uses Cuckoo to troubleshoot integrations with local partners in Korea and Japan. These conversations are often full of technical jargon, APIs, and organizational context. By uploading relevant documents like API docs, they ensure translations are accurate and context-aware, reducing misunderstandings and inefficiencies.<p>On Privacy and Security: like human interpreters, we sign NDAs to protect sensitive information. Transcripts can be set to self-destruct after meetings, and we’re working toward ISO 27001 and SOC I&#x2F;II certifications. If you delete your account, all associated data is erased immediately and irreversibly.<p>You can sign up with just an email and name. After signing up, you can copy and paste your Zoom or MS Teams link to have Cuckoo join your meeting. We provide a quick 60-minute free trial, but if you need more, please let me know at yonghee@cuckoo.so. We’d be happy to extend it for HN users!.<p>The best way to understand Cuckoo is to try it out for one of your upcoming global meetings. It takes &lt;3 minutes to get started. We’re looking forward to hearing your thoughts and feedback in the comments!"
+    },
+    {
+      "objectID": "43180834",
+      "title": "Y Combinator Supports AI Startup Dehumanizing Factory Workers",
+      "url": "https://www.404media.co/optifyeai-ycombinator-startup-ai-factory/",
+      "author": "thm",
+      "points": 151,
+      "num_comments": 36,
+      "created_at_i": 1740546500,
+      "story_text": null
+    },
+    {
+      "objectID": "43085885",
+      "title": "The Generative AI Con",
+      "url": "https://www.wheresyoured.at/longcon/",
+      "author": "nimbleplum40",
+      "points": 370,
+      "num_comments": 482,
+      "created_at_i": 1739850420,
+      "story_text": null
+    },
+    {
+      "objectID": "42976766",
+      "title": "Show HN: Gumshoe.ai – SEO for AI",
+      "author": "sawickipedia",
+      "points": 36,
+      "num_comments": 21,
+      "created_at_i": 1738958172,
+      "story_text": "Hi HN,<p>We&#x27;re Todd and Patrick, the founders of Gumshoe (<a href=\"https:&#x2F;&#x2F;app.gumshoe.ai&#x2F;go\" rel=\"nofollow\">https:&#x2F;&#x2F;app.gumshoe.ai&#x2F;go</a>). Between us, we have like 50 years of experience in early-stage startups. For better or worse, I helped build one of the original meme sites (ICanHasCheezburger), so it’s partially my fault that there are so many cat photos on the internet. Around the same time, Patrick built Starwave (which is now ESPN Fantasy Sports) and later cofounded UrbanSpoon.<p>We’re now building Gumshoe to help companies understand how AI talks about their brand.<p>As AI search tools like ChatGPT and Perplexity have become more common, they’ve changed digital marketing. SEO used to be the primary focus, which led to the hyper-optimized kind of gobbledygook you see on the internet today. Now, marketers need to think about the broader context in which their brand is discussed. This shift is an opportunity for the internet to get better: results could be less &quot;optimized&quot;, more nuanced, and ultimately more useful. At the same time, it also introduces challenges. Marketers want to know what AI is saying about their brand and how they can influence it. We want to help marketers share their products through AI, without it feeling forced. Ultimately, everyone wins if the LLMs recommend the best product for you.<p>The idea for Gumshoe came from a conversation with a friend who founded a large consumer app (Rover, the dog-walking platform). They’ve spent years working on SEO, but when we asked ChatGPT about finding a dog walker, it listed his competitors in the same sentence as Rover. That set him off on a deep dive, trying different prompts to figure out when he was winning and when he wasn&#x27;t.<p>Gumshoe automates that process. We run hundreds of conversations with popular LLMs on behalf of our users. Given a brand and a list of relevant topics, we generate search personas, create questions they might ask, and analyze how different AI models respond. The result is a representative sample of what LLMs say about that brand.<p>What’s different about our approach? Traditional SEO is focused on individual pages, but AI search is more context-driven. While LLMs are trained on fixed data, many RAG implementations seem to prioritize high-quality, concise, and objective content. We’re still researching how LLMs weigh information and we’d love to hear from the HN community about your insights and experiences with AI-driven search. Ultimately, our goal is to make the internet better in the future, so would love your thoughts on how to make sure the best results get surfaced organically in AI search tools.<p>If you’re curious, we&#x27;d love for you to check out Gumshoe and share your feedback. We&#x27;re here to answer any questions and eager to learn from your perspectives!<p>Cheers, \nTodd (sawickipedia) &amp; Patrick (patricko)"
+    },
+    {
+      "objectID": "42847834",
+      "title": "Machine Learning in Production (CMU Course)",
+      "url": "https://mlip-cmu.github.io/s2025/",
+      "author": "azhenley",
+      "points": 509,
+      "num_comments": 36,
+      "created_at_i": 1738027135,
+      "story_text": null
+    },
+    {
+      "objectID": "42823568",
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "author": "gradus_ad",
+      "points": 1351,
+      "num_comments": 1056,
+      "created_at_i": 1737830389,
+      "story_text": null
+    },
+    {
+      "objectID": "42817438",
+      "title": "Show HN: Onit – Source-available ChatGPT Desktop with local mode, Claude, Gemini",
+      "url": "https://github.com/synth-inc/onit",
+      "author": "telenardo",
+      "points": 174,
+      "num_comments": 58,
+      "created_at_i": 1737756916,
+      "story_text": "Hey Hackernews- it’s Tim Lenardo and I’m launching v1 of Onit today!<p>Onit is ChatGPT Desktop, but with local mode and support for other model providers (Anthropic, GoogleAI, etc). It&#x27;s also like Cursor Chat, but everywhere on your computer - not just in your IDE!<p>Onit is open-source! You can download a pre-built version from our website: \nwww.getonit.ai<p>Or build directly from the source code: \n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;synth-inc&#x2F;onit\">https:&#x2F;&#x2F;github.com&#x2F;synth-inc&#x2F;onit</a><p>We built this because we believe:\nUniversal Access: AI assistants should be accessible from anywhere on my computer, not just in the browser or in specific apps\nProvider Freedom: Consumers should have the choice between providers (anthropic, openAI, etc.) not be locked into a single one (ChatGPT desktop only has OpenAI models)\nLocal first: AI is more useful with access to your data. But that doesn&#x27;t count for much if you have to upload personal files to an untrusted server. Onit will always provide options for local processing. No personal data leaves your computer without approval\nCustomizability: Onit is your assistant. You should be able to configure it to your liking\nExtensibility: Onit should allow the community to build and share extensions, making it more useful for everyone.<p>The features for V1 include:\n Local mode - chat with any model running locally on Ollama! No internet connection required\n Multi-provider support - Top models for OpenAI, Anthropic, xAI, and GoogleAI\n File upload - add images or files for context (bonus: Drag &amp; drop works too!)\n History - revisit prior chats through the history view or with a simple up&#x2F;down arrow shortcut\n Customizable Shortcut - you pick your hotkey to launch the chat window. (Command+zero by default)<p>Anticipated questions:<p>What data are you collecting?\nOnit V1 does not have a server. Local requests are handled locally, and remote requests are sent to model providers directly from the client. We collect crash reports through Firebase and a single &quot;chat sent&quot; event through PostHog analytics. We don&#x27;t store your prompts or responses.<p>How to does Onit support local mode? \nFor use local mode, run Ollama. You can get Ollama here: <a href=\"https:&#x2F;&#x2F;ollama.com&#x2F;\">https:&#x2F;&#x2F;ollama.com&#x2F;</a> \nOnit gets a list of your local models through Ollama’s API.<p>Which models do you support? \nFor remote models, Onit V1 supports Anthropic, OpenAI, xAI and GoogleAI. Default models include (o1, o1-mini, GPT-4o, Claude3.5 Sonnet, Claude3.5 Haiku, Gemini 2.0, Grok 2, Grok 2 Vision).\nFor local mode, Onit supports any models you can run locally on Ollama!<p>What license is Onit under? \nWe’re releasing V1 available on a Creative Commons Non-Commercial license. We believe the transparency of open-source is critical. We also want to make sure individuals can customize Onit to their needs (please submit PRs!). However, we don’t want people to sell the code as their own.<p>Where is the monetization?\nWe’re not monetizing V1. In the future we may add paid premium features. Local chat will- of course- always remain free. If you disagree with a monetized feature, you can always build from source!<p>Why not Linux or Windows? \nGotta start somewhere! If the reception is positive, we’ll work hard to add further support.<p>Who are we? \nWe are Synth, Inc, a small team of developers in San Francisco building at the frontier of AI progress. Other projects include Checkbin (www.checkbin.dev) and Alias (deprecated - www.alias.inc).<p>We’d love to hear from you! Feel free to reach out at contact@getonit dot ai.<p>Future roadmap includes:\n Autocontext - automatically pull context from computer, rather than having to repeatedly upload. \n Local-RAG - let users index and create context from their files without uploading anything. \n Local-typeahead - i.e. Cursor Tab but for everywhere\n Additional support - add Linux&#x2F;Windows, Mistral&#x2F;Deepseek etc etc.\n (maybe) Bundle Ollama to avoid double-download\n And lot’s more!"
+    },
+    {
+      "objectID": "42798649",
+      "title": "Using generative AI as part of historical research: three case studies",
+      "url": "https://resobscura.substack.com/p/the-leading-ai-models-are-now-very",
+      "author": "benbreen",
+      "points": 252,
+      "num_comments": 203,
+      "created_at_i": 1737588561,
+      "story_text": null
+    },
+    {
+      "objectID": "42780022",
+      "title": "Metacognitive laziness: Effects of generative AI on learning motivation",
+      "url": "https://bera-journals.onlinelibrary.wiley.com/doi/10.1111/bjet.13544",
+      "author": "freddier",
+      "points": 326,
+      "num_comments": 300,
+      "created_at_i": 1737467238,
+      "story_text": null
+    },
+    {
+      "objectID": "42617645",
+      "title": "How I program with LLMs",
+      "url": "https://crawshaw.io/blog/programming-with-llms",
+      "author": "stpn",
+      "points": 919,
+      "num_comments": 332,
+      "created_at_i": 1736208469,
+      "story_text": null
+    },
+    {
+      "objectID": "42584400",
+      "title": "Can LLMs write better code if you keep asking them to “write better code”?",
+      "url": "https://minimaxir.com/2025/01/write-better-code/",
+      "author": "rcarmo",
+      "points": 812,
+      "num_comments": 439,
+      "created_at_i": 1735900244,
+      "story_text": null
+    },
+    {
+      "objectID": "42560558",
+      "title": "Things we learned about LLMs in 2024",
+      "url": "https://simonwillison.net/2024/Dec/31/llms-in-2024/",
+      "author": "simonw",
+      "points": 984,
+      "num_comments": 582,
+      "created_at_i": 1735668666,
+      "story_text": null
+    },
+    {
+      "objectID": "42451707",
+      "title": "Launch HN: Innate (YC F24) – Home robots as easy to program as AI agents",
+      "author": "apeytavin",
+      "points": 165,
+      "num_comments": 77,
+      "created_at_i": 1734538196,
+      "story_text": "Hey HN! We’re Axel &amp; Vig, the founders of Innate (<a href=\"https:&#x2F;&#x2F;innate.bot\">https:&#x2F;&#x2F;innate.bot</a>). We build general-purpose home robots that you can teach new tasks to simply by demonstrating them.<p>Our system combines a robotic platform (we call the first one Maurice) with an AI agent that understands the environment, plans actions, and executes them using skills you&#x27;ve taught it or programmed within our SDK.<p>If you’ve been building AI agents powered by LLMs before, and in particular Claude Computer use, this is how we intend the experience of building on it to be, but acting on the real world!<p>You can see Maurice serving a glass here (<a href=\"https:&#x2F;&#x2F;bit.ly&#x2F;innate-hn-vid-serving\" rel=\"nofollow\">https:&#x2F;&#x2F;bit.ly&#x2F;innate-hn-vid-serving</a>). Here is another example (<a href=\"https:&#x2F;&#x2F;bit.ly&#x2F;innate-hn-vid-officer\" rel=\"nofollow\">https:&#x2F;&#x2F;bit.ly&#x2F;innate-hn-vid-officer</a>) in which it was given a digital ability (through the SDK) to send a notification to your phone, to use when it sees someone in the house. In both these cases, the only work you have to do is spend 30mn per physical skill to collect data to train the arm, and a couple minutes to write a system prompt.<p>You can read more about how it works, about the paradigm we’re creating and find our Discord in our documentation (<a href=\"https:&#x2F;&#x2F;docs.innate.bot\">https:&#x2F;&#x2F;docs.innate.bot</a>). We’ll be open-sourcing parts of the system there soon.<p>We want to lower the barrier to entry to robotics. Programming robots is usually complicated, time-consuming, and limited to experts even with AI helping you write code. We think it should be easier.<p>We’re coming from an AI for robotics and HCI background as researchers at Stanford, and we’ve worked on multiple hardware + agentic AI projects this past year, but this one was clearly the most surprising one.<p>The first time we put GPT-4 in a body - after a couple tweaks - we were surprised at how well it worked. The robot started moving around, figuring out when to use a tiny gripper, and we had only written 40 lines of python on a tiny RC car with an arm. We decided to combine that with recent advancements in robot imitation learning such as ALOHA to make the arm quickly teachable to do any task.<p>We think it should be simple to teach robots to do tasks for us. AI agents offer a completely new paradigm for this, easy enough to help many non-roboticists start in the field, but still expandable enough to make a robot able to do very complex tasks.<p>The part of it that excites us most is that for every builder teaching their robot to perform a task, every other robot learns faster and better. We believe that by spreading our platforms as much as possible, we could crowdsource massive and diverse datasets to make robotics foundations models that everyone contributes to.<p>Under the hood, our brain (running in the cloud) uses 9 different models and runs in the cloud. A YOLO, a SAM, and 7 VLMs, from OpenAI, Google, Anthropic, and most importantly a couple Llamas running on groq to make the system think and act faster. Each model has a responsibility. Together, they act as if it was only one model with ability to navigate, talk, memorize and activate skills. As a bonus, since these models keep getting better and smaller, every new release gets our robots smarter and faster!<p>Our first robot Maurice is 25cm-high, has a 5DoF arm, a Jetson Orin Nano onboard, and comes equipped with our software installed and a mobile app to control it. Our first batch of users wants to teach it to clean floors, tidy up after kids, wake them up in the morning, play with them, or be a professional assistant connected to emails and socials. You can go wild quickly!<p>We’re making a small batch available for HackerNews at $2,000 each for early builders who want to experiment, with $50 free of agent per month for a year. You can book one on our website with a (refundable) deposit if you’re in the US. These units will start shipping in March - the first 10 were booked already for February.<p>We’d love your thoughts, experiences, and critiques. If you have ideas on what you’d use a home robot for, or feedback on how to make these systems more accessible, we’re hanging around for the coming hours in the comments. Let us know what you think!"
+    },
+    {
+      "objectID": "42421157",
+      "title": "Tenstorrent and the State of AI Hardware Startups",
+      "url": "https://irrationalanalysis.substack.com/p/tenstorrent-and-the-state-of-ai-hardware",
+      "author": "zdw",
+      "points": 224,
+      "num_comments": 124,
+      "created_at_i": 1734231598,
+      "story_text": null
+    },
+    {
+      "objectID": "41982114",
+      "title": "Linus Torvalds reckons AI is '90% marketing and 10% reality'",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/linus-torvalds-reckons-ai-is-90-percent-marketing-and-10-percent-reality",
+      "author": "sunkcostisalie",
+      "points": 21,
+      "num_comments": 2,
+      "created_at_i": 1730197471,
+      "story_text": null
+    },
+    {
+      "objectID": "41765395",
+      "title": "Show HN: ServerlessAI – Build, scale, and monetize AI apps without back end",
+      "url": "https://serverlessai.dev/",
+      "author": "HeavenFox",
+      "points": 86,
+      "num_comments": 31,
+      "created_at_i": 1728304658,
+      "story_text": "Hello HN,<p>I’ve always loved building frontend-only apps—those you can prototype over a weekend, host for free on GitHub Pages, and scale to millions of users. Unfortunately, AI-enabled apps complicate things, as exposing your OpenAI key to the world is obviously a no-go. This also means mobile developers often have to run their own servers.<p>That’s why I built ServerlessAI, an API gateway that lets you securely call multiple AI providers directly from client side using OpenAI-compatible APIs. You can authenticate users through any identity provider, like Google or Apple, and set per-user request or spending quotas. You can also define an allowlist for endpoints and models. To monetize, you can apply different quotas for various user tiers.<p>To start, I recommend checking out our tutorials, where we walk you through building a complete, deployment-ready AI app in 5 minutes. We’ve got tutorials for React, Next.js, and iOS: <a href=\"https:&#x2F;&#x2F;serverlessai.dev&#x2F;docs&#x2F;tutorials&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;serverlessai.dev&#x2F;docs&#x2F;tutorials&#x2F;</a><p>Our long term vision is to offer the best toolkit for AI developers at every stage of their project’s lifecycle. If OpenAI &#x2F; Anthropic &#x2F; etc are AWS, we want to be the Supabase &#x2F; Upstash &#x2F; etc. We are building optional out-of-box tools for authentication and payment management, so you can roll out your prototype faster. In the future, we want to provide the best prompt engineering tools for fine-tuning, A&#x2F;B testing, and backtesting, as well as the best observability tools.<p>We’d love to hear your feedback. Thanks for stopping by!"
+    },
+    {
+      "objectID": "41707495",
+      "title": "YC criticized for backing AI startup that simply cloned another AI startup",
+      "url": "https://techcrunch.com/2024/09/30/y-combinator-is-being-criticized-after-it-backed-an-ai-startup-that-admits-it-basically-cloned-another-ai-startup/",
+      "author": "blinding-streak",
+      "points": 333,
+      "num_comments": 259,
+      "created_at_i": 1727785675,
+      "story_text": null
+    },
+    {
+      "objectID": "41523070",
+      "title": "Learning to Reason with LLMs",
+      "url": "https://openai.com/index/learning-to-reason-with-llms/",
+      "author": "fofoz",
+      "points": 1654,
+      "num_comments": 1261,
+      "created_at_i": 1726160926,
+      "story_text": null
+    },
+    {
+      "objectID": "41522319",
+      "title": "Show HN: Ask LLMs to predict anything based on news",
+      "url": "https://aipredict.fun/",
+      "author": "artembugara",
+      "points": 25,
+      "num_comments": 9,
+      "created_at_i": 1726156768,
+      "story_text": "Hi HN! We partnered with the Atlas team to build a tool called AI Predict [0] that allows anyone to ask any question about the future and get a thoroughly researched, AI-generated prediction on how likely it is to be true.<p>How it works:\nAtlas replicated a Berkeley paper [1] that showed LLMs could make predictions as accurate as the crowd. We’re using a mix of models from OpenAI and Anthropic, with information retrieval powered by NewsCatcher [2].<p>The system is live and fully functional, though it might struggle with hyper-local questions outside of the public domain (e.g., “Will I have chicken for dinner tonight?“). But we’re intentionally NOT stopping it from answering any question, so fire away!<p>What makes it different:<p>- Free to use: Anyone can ask any question about the future that they care about, whether it’s a broad societal trend or a specific personal decision.<p>- Transparent: The tool is based on a proven reasoning model and provides links to all sources. You can see its track record on public predictions [3].<p>- Open-source: We’ve released a simplified open-source version [4] to give people a better sense of how it works.<p>Why we built this:\nWe’re forecasting nerds and loved the idea behind the Berkeley paper. Friends and family kept asking us to make predictions for them, so we figured we’d build a frontend around the system so they could use it themselves. Don’t use it to decide where to buy a house or anything serious. But we think it’s a good starting place when doing research. AI Predict tackles prediction questions using transparent, objective reasoning (mostly Bayesian analysis) and links to all its news sources.<p>We’d love for the HN community to try it out and share feedback (predictions@joinatlas.ai). Let us know what you think!<p>[0] <a href=\"https:&#x2F;&#x2F;aipredict.fun&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;aipredict.fun&#x2F;</a><p>[1] <a href=\"https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2402.18563\" rel=\"nofollow\">https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2402.18563</a><p>[2] <a href=\"https:&#x2F;&#x2F;www.newscatcherapi.com&#x2F;\">https:&#x2F;&#x2F;www.newscatcherapi.com&#x2F;</a><p>[3] <a href=\"https:&#x2F;&#x2F;docs.google.com&#x2F;spreadsheets&#x2F;d&#x2F;1oPvWlst7sxq2URifFaZ0rMBP2mHmXAzxd0gnWr8AgUQ\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.google.com&#x2F;spreadsheets&#x2F;d&#x2F;1oPvWlst7sxq2URifFaZ0...</a><p>[4] <a href=\"https:&#x2F;&#x2F;github.com&#x2F;getdatachimp&#x2F;llm-superforecaster\">https:&#x2F;&#x2F;github.com&#x2F;getdatachimp&#x2F;llm-superforecaster</a>"
+    },
+    {
+      "objectID": "41412256",
+      "title": "Building LLMs from the Ground Up: A 3-Hour Coding Workshop",
+      "url": "https://magazine.sebastianraschka.com/p/building-llms-from-the-ground-up",
+      "author": "mdp2021",
+      "points": 970,
+      "num_comments": 136,
+      "created_at_i": 1725140759,
+      "story_text": null
+    },
+    {
+      "objectID": "41295923",
+      "title": "Artificial intelligence is losing hype",
+      "url": "https://www.economist.com/finance-and-economics/2024/08/19/artificial-intelligence-is-losing-hype",
+      "author": "bx376",
+      "points": 568,
+      "num_comments": 780,
+      "created_at_i": 1724116403,
+      "story_text": null
+    },
+    {
+      "objectID": "41275073",
+      "title": "Ex-Google CEO: AI startups can steal IP and hire lawyers to 'clean up the mess'",
+      "url": "https://www.theverge.com/2024/8/14/24220658/google-eric-schmidt-stanford-talk-ai-startups-openai",
+      "author": "stalfosknight",
+      "points": 187,
+      "num_comments": 192,
+      "created_at_i": 1723907320,
+      "story_text": null
+    },
+    {
+      "objectID": "41203306",
+      "title": "Show HN: LLM-aided OCR – Correcting Tesseract OCR errors with LLMs",
+      "url": "https://github.com/Dicklesworthstone/llm_aided_ocr",
+      "author": "eigenvalue",
+      "points": 479,
+      "num_comments": 172,
+      "created_at_i": 1723220919,
+      "story_text": "Almost exactly 1 year ago, I submitted something to HN about using Llama2 (which had just come out) to improve the output of Tesseract OCR by correcting obvious OCR errors [0]. That was exciting at the time because OpenAI&#x27;s API calls were still quite expensive for GPT4, and the cost of running it on a book-length PDF would just be prohibitive. In contrast, you could run Llama2 locally on a machine with just a CPU, and it would be extremely slow, but &quot;free&quot; if you had a spare machine lying around.<p>Well, it&#x27;s amazing how things have changed since then. Not only have models gotten a lot better, but the latest &quot;low tier&quot; offerings from OpenAI (GPT4o-mini) and Anthropic (Claude3-Haiku) are incredibly cheap and incredibly fast. So cheap and fast, in fact, that you can now break the document up into little chunks and submit them to the API concurrently (where each chunk can go through a multi-stage process, in which the output of the first stage is passed into another prompt for the next stage) and assemble it all in a shockingly short amount of time, and for basically a rounding error in terms of cost.<p>My original project had all sorts of complex stuff for detecting hallucinations and incorrect, spurious additions to the text (like &quot;Here is the corrected text&quot; preambles). But the newer models are already good enough to eliminate most of that stuff. And you can get very impressive results with the multi-stage approach. In this case, the first pass asks it to correct OCR errors and to remove line breaks in the middle of a word and things like that. The next stage takes that as the input and asks the model to do things like reformat the text using markdown, to suppress page numbers and repeated page headers, etc. Anyway, I think the samples (which take less than 1-2 minutes to generate) show the power of the approach:<p>Original PDF:\n <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Dicklesworthstone&#x2F;llm_aided_ocr&#x2F;blob&#x2F;main&#x2F;160301289-Warren-Buffett-Katharine-Graham-Letter.pdf\">https:&#x2F;&#x2F;github.com&#x2F;Dicklesworthstone&#x2F;llm_aided_ocr&#x2F;blob&#x2F;main...</a><p>Raw OCR Output:\n <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Dicklesworthstone&#x2F;llm_aided_ocr&#x2F;blob&#x2F;main&#x2F;160301289-Warren-Buffett-Katharine-Graham-Letter__raw_ocr_output.txt\">https:&#x2F;&#x2F;github.com&#x2F;Dicklesworthstone&#x2F;llm_aided_ocr&#x2F;blob&#x2F;main...</a><p>LLM-Corrected Markdown Output:\n <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Dicklesworthstone&#x2F;llm_aided_ocr&#x2F;blob&#x2F;main&#x2F;160301289-Warren-Buffett-Katharine-Graham-Letter_llm_corrected.md\">https:&#x2F;&#x2F;github.com&#x2F;Dicklesworthstone&#x2F;llm_aided_ocr&#x2F;blob&#x2F;main...</a><p>One interesting thing I found was that almost all my attempts to fix&#x2F;improve things using &quot;classical&quot; methods like regex and other rule based things made everything worse and more brittle, and the real improvements came from adjusting the prompts to make things clearer for the model, and not asking the model to do too much in a single pass (like fixing OCR mistakes AND converting to markdown format).<p>Anyway, this project is very handy if you have some old scanned books you want to read from Archive.org or Google Books on a Kindle or other ereader device and want things to be re-flowable and clear. It&#x27;s still not perfect, but I bet within the next year the models will improve even more that it will get closer to 100%. Hope you like it!<p>[0] <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=36976333\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=36976333</a>"
+    },
+    {
+      "objectID": "41202694",
+      "title": "Launch HN: Roe AI (YC W24) – AI-powered data warehouse to query multimodal data",
+      "author": "richardmeng",
+      "points": 60,
+      "num_comments": 35,
+      "created_at_i": 1723216626,
+      "story_text": "Hey HN, we’re Richard and Jason from Roe AI (<a href=\"https:&#x2F;&#x2F;getroe.ai\">https:&#x2F;&#x2F;getroe.ai</a>). We’re building a query engine that lets data people do SQL queries on various kinds of unstructured data (videos, images, webpages, documents) using LLM-powered data processors.<p>Here is a 3-minute video: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=9-WwJk1v5mI\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=9-WwJk1v5mI</a>, showing how to create an LLM data processor to process videos, build a semantic search for image data, and use it with SQL.\nThe problem we tackle is that data analysts cannot quickly answer their business questions around unstructured, multimodal data. For example, product teams want to understand user session replay videos to understand the painpoints of using their product. Ads teams need to know everything about an advertiser based on their web pages, such as the products they offer, payment methods, etc. Marketing teams need to know how product placement or music in a marketing campaign could get more views. And so on.<p>For data that is structured, questions like these can be answered quickly with SQL queries in Snowflake &#x2F; BigQuery. But when you have unstructured multimodal data, it becomes a complex analysis process: open a Python notebook, write custom logic to get these multimodal data from blob storage (or write a crawler first if you need webpage data), find an AI model, do prompt engineering, do data ops to productionize the workload in a data workflow, etc.\nWe simplify this process to a few lines of SQL.<p>How it works: first, we leverage multimodal LLMs as data processors because they’re good at unstructured data information extraction, classification or any arbitrary tasks. Next, we’ve built a user interface for data people to explore multimodal data and manage AI components. Then we have a quick semantic index builder for multimodal data. (We often see databases provide vector search functionality but not indexing building, so we built that.) Utility functions deal with multimodal data, like video cutter, PDF page selector, etc. Finally, SQL is the command line for slicing and dicing multimodal data.<p>How we got here: I’ve experienced 3 data evolutions in the last 10 years. At UC Berkeley, I was a data researcher using a supercomputer cluster called Savio. It was a bare-metal way to analyze the data—I had to move CSV between machines. Then at LinkedIn, I had Hadoop + Pig &#x2F; Scala Spark. That abstracted most of the work, but I spent hours tuning jobs and had a headache manipulating HDFS directories. Later I joined Snowflake, and was like, holy – data analysis can be this simple – I can just use SQL to do everything within this data warehouse! I asked myself: why can’t we make something like Snowflake for unstructured data? That was the impulse behind Roe.ai and it’s been driving me ever since.<p>To get started, you can sign in at <a href=\"https:&#x2F;&#x2F;app.roe-ai.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;app.roe-ai.com&#x2F;</a> and there are docs at <a href=\"https:&#x2F;&#x2F;docs.roe-ai.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.roe-ai.com&#x2F;</a>. You can load unstructured data via our SQL and File API, Snowflake Staging Data Connector, S3 Blob Storage Data connector, Zapier Roe AI Zap, or the SQL function load_url_file() to get a file from a URL.<p>Some logistics: the product is free to start, and we’ve preloaded $50 AI credits—enough to process 3000 one-pager PDFs. If you use all $50, just email us, and we’ll give you more. The solution is not open-sourced because it is too complex to be self-hosted, but let us know if you see the potential for open-source.<p>The product is early and could have bugs and UX problems. It’d be incredible if you could give it a spin anyway and we hope it will be interesting and that you’ll let us know what you think!\nJason and I will be around in the thread and are really interested in hearing from you!"
+    },
+    {
+      "objectID": "40862436",
+      "title": "Why AI Infrastructure Startups Are Insanely Hard to Build",
+      "url": "https://nextword.substack.com/p/why-ai-infrastructure-startups-are",
+      "author": "nextworddev",
+      "points": 192,
+      "num_comments": 181,
+      "created_at_i": 1719976558,
+      "story_text": null
+    },
+    {
+      "objectID": "40835588",
+      "title": "Rodney Brooks on limitations of generative AI",
+      "url": "https://techcrunch.com/2024/06/29/mit-robotics-pioneer-rodney-brooks-thinks-people-are-vastly-overestimating-generative-ai/",
+      "author": "doener",
+      "points": 213,
+      "num_comments": 193,
+      "created_at_i": 1719730946,
+      "story_text": null
+    },
+    {
+      "objectID": "40751020",
+      "title": "Testing Generative AI for Circuit Board Design",
+      "url": "https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design",
+      "author": "DHaldane",
+      "points": 353,
+      "num_comments": 168,
+      "created_at_i": 1718986591,
+      "story_text": null
+    },
+    {
+      "objectID": "40222051",
+      "title": "Show HN: I'm 16 and building an AI based startup called Factful with friends",
+      "url": "https://factful.io/",
+      "author": "helloduck1234",
+      "points": 222,
+      "num_comments": 152,
+      "created_at_i": 1714564810,
+      "story_text": "Hey HN! My name is Andrew, and I&#x27;m thrilled to share with you a project I&#x27;ve been working on called Factful.<p>I&#x27;m a high school student with a passion for tackling misinformation online. Inspired by the need for more reliable content verification tools, I decided to create Factful. It&#x27;s an AI-powered web app designed to revolutionize how individuals and organizations verify content.<p>Unlike traditional grammar checkers, Factful provides a comprehensive analysis that goes beyond just grammar. It evaluates context, factuality, coherence, and more to ensure the accuracy and credibility of content.<p>I believe that in today&#x27;s information age, it&#x27;s more crucial than ever to have tools like Factful to combat misinformation and promote content integrity. I&#x27;m excited to continue developing Factful and would love for you to check it out. Your feedback and support would mean the world to me. Thanks for taking the time to read about Factful, and please go check out our beta deployment of Factful (a little beyond the MVP) for free on our website!"
+    },
+    {
+      "objectID": "39996783",
+      "title": "AI Influencers Are Taking over Instagram, Ruining Gen Z Chance of Fame",
+      "url": "https://www.businessinsider.com/gen-z-influencer-marketing-career-goal-ai-social-media-instagram-2024-4",
+      "author": "robertn702",
+      "points": 24,
+      "num_comments": 7,
+      "created_at_i": 1712791971,
+      "story_text": null
+    },
+    {
+      "objectID": "39973467",
+      "title": "Llm.c – LLM training in simple, pure C/CUDA",
+      "url": "https://github.com/karpathy/llm.c",
+      "author": "tosh",
+      "points": 1050,
+      "num_comments": 168,
+      "created_at_i": 1712608729,
+      "story_text": null
+    },
+    {
+      "objectID": "39838104",
+      "title": "DBRX: A new open LLM",
+      "url": "https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm",
+      "author": "jasondavies",
+      "points": 866,
+      "num_comments": 343,
+      "created_at_i": 1711542228,
+      "story_text": null
+    },
+    {
+      "objectID": "39535800",
+      "title": "The Era of 1-bit LLMs: ternary parameters for cost-effective computing",
+      "url": "https://arxiv.org/abs/2402.17764",
+      "author": "fgfm",
+      "points": 1040,
+      "num_comments": 447,
+      "created_at_i": 1709112523,
+      "story_text": null
+    },
+    {
+      "objectID": "39208887",
+      "title": "Ask HN: Are you seeing AI used in places where it shouldn't be?",
+      "author": "_f1dq",
+      "points": 21,
+      "num_comments": 44,
+      "created_at_i": 1706732685,
+      "story_text": "It&#x27;s no surprise, really, but I&#x27;m starting to see companies sticking AI into places where it just doesn&#x27;t make any sense.  I&#x27;m not talking about the use of AI all over marketing materials. That&#x27;s a given.<p>I&#x27;m talking about things like my CEO wanting me to build an AI sales assistant when a simple web form would actually be faster to develop and use.<p>What are you seeing?"
+    },
+    {
+      "objectID": "39156778",
+      "title": "Implementing a ChatGPT-like LLM from scratch, step by step",
+      "url": "https://github.com/rasbt/LLMs-from-scratch",
+      "author": "rasbt",
+      "points": 739,
+      "num_comments": 98,
+      "created_at_i": 1706372382,
+      "story_text": null
+    },
+    {
+      "objectID": "39059897",
+      "title": "Yann LeCun: Human-level artificial intelligence is going to take a long time",
+      "url": "https://english.elpais.com/technology/2024-01-19/yann-lecun-chief-ai-scientist-at-meta-human-level-artificial-intelligence-is-going-to-take-a-long-time.html",
+      "author": "belter",
+      "points": 228,
+      "num_comments": 344,
+      "created_at_i": 1705692496,
+      "story_text": null
+    },
+    {
+      "objectID": "38814093",
+      "title": "Things are about to get worse for generative AI",
+      "url": "https://garymarcus.substack.com/p/things-are-about-to-get-a-lot-worse",
+      "author": "eddyzh",
+      "points": 403,
+      "num_comments": 755,
+      "created_at_i": 1703931430,
+      "story_text": null
+    },
+    {
+      "objectID": "38759877",
+      "title": "Ask HN: How do I train a custom LLM/ChatGPT on my own documents in Dec 2023?",
+      "author": "divan",
+      "points": 800,
+      "num_comments": 237,
+      "created_at_i": 1703479366,
+      "story_text": "There is a 5 month old thread [1] on this, but it might be already outdated.<p>What is the best approach for feeding custom set of documents to LLM and get non-halucinating and decent result in Dec 2023?<p>UPD: The question is generally about how to &quot;teach&quot; LLM answer questions using your set of documents (not necessarily train your own, so approaches like RAG counts)<p>[1] https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=36832572"
+    },
+    {
+      "objectID": "38580758",
+      "title": "French AI startup Mistral secures €2B valuation",
+      "url": "https://www.ft.com/content/ea29ddf8-91cb-45e8-86a0-f501ab7ad9bb",
+      "author": "admp",
+      "points": 107,
+      "num_comments": 76,
+      "created_at_i": 1702119461,
+      "story_text": null
+    },
+    {
+      "objectID": "38556771",
+      "title": "Purple Llama: Towards open trust and safety in generative AI",
+      "url": "https://ai.meta.com/blog/purple-llama-open-trust-safety-generative-ai/",
+      "author": "amrrs",
+      "points": 337,
+      "num_comments": 320,
+      "created_at_i": 1701959747,
+      "story_text": null
+    },
+    {
+      "objectID": "38505211",
+      "title": "LLM Visualization",
+      "url": "https://bbycroft.net/llm",
+      "author": "plibither8",
+      "points": 1592,
+      "num_comments": 131,
+      "created_at_i": 1701583709,
+      "story_text": null
+    },
+    {
+      "objectID": "38507672",
+      "title": "LLM Visualization",
+      "url": "https://bbycroft.net/llm",
+      "author": "jonbaer",
+      "points": 972,
+      "num_comments": 1,
+      "created_at_i": 1701616959,
+      "story_text": null
+    },
+    {
+      "objectID": "38477197",
+      "title": "Accelerating Generative AI with PyTorch II: GPT, Fast",
+      "url": "https://pytorch.org/blog/accelerating-generative-ai-2/",
+      "author": "polyrand",
+      "points": 306,
+      "num_comments": 69,
+      "created_at_i": 1701369300,
+      "story_text": null
+    },
+    {
+      "objectID": "38464057",
+      "title": "Llamafile lets you distribute and run LLMs with a single file",
+      "url": "https://github.com/Mozilla-Ocho/llamafile",
+      "author": "tfinch",
+      "points": 1075,
+      "num_comments": 288,
+      "created_at_i": 1701286189,
+      "story_text": null
+    },
+    {
+      "objectID": "38450087",
+      "title": "Most AI startups are doomed",
+      "url": "https://weightythoughts.com/p/most-ai-startups-are-doomed",
+      "author": "j-wang",
+      "points": 177,
+      "num_comments": 132,
+      "created_at_i": 1701199723,
+      "story_text": null
+    },
+    {
+      "objectID": "38405823",
+      "title": "Generative AI for Beginners",
+      "url": "https://microsoft.github.io/generative-ai-for-beginners/#/",
+      "author": "Anon84",
+      "points": 648,
+      "num_comments": 92,
+      "created_at_i": 1700844615,
+      "story_text": null
+    },
+    {
+      "objectID": "38323939",
+      "title": "Altman was raising billions from Middle East sovereign funds for AI chip startup",
+      "url": "https://twitter.com/unusual_whales/status/1725945364140986796?s=20",
+      "author": "A_Duck",
+      "points": 132,
+      "num_comments": 82,
+      "created_at_i": 1700338763,
+      "story_text": null
+    },
+    {
+      "objectID": "38245665",
+      "title": "Show HN: Interactive AI Resume/LinkedIn for better networking/job hunting",
+      "url": "https://www.protoconstruct.com/chat/652af6c4238991f5e5f2eb57",
+      "author": "anyeung",
+      "points": 66,
+      "num_comments": 50,
+      "created_at_i": 1699836269,
+      "story_text": "Generally, I found resumes too vague to get to know anyone (hence why no one networks with them), professional blogs too low ROI, walking up to people unscalable, and cold messaging fairly low success-rate.<p>I wanted the &#x27;marketing tool&#x27; of networking to get myself out there. Something that lets me:\n1) Draw people into a conversation before they&#x27;ve realized it\n2) Make them remember me and ultimately reach out to me\n3) See what people asked me so I can further refine my interactive profile and start the networking cycle again<p>So I built a website where anyone can create these interactive profiles starting with a resume import.<p>The one I linked is a test profile but on my personal one, I got:\n1) &gt;10x more people reaching out to me when I put myself out there to network (some were VCs actually; though I&#x27;m not fundraising right now)\n2) A bunch of engagement questions where I can see what people want to know about me so I can further enhance my profile and improve my own outreach<p>This is still in early stages, but if I go to a conference&#x2F;join a new team at a new job&#x2F;need to network for some other reason, I think I&#x27;ll put this on my LinkedIn&#x2F;business card&#x2F;etc.<p>The (limited) data so far suggests people are more willing to first talk to the interactive profile before reaching out to me. I guess that makes sense, it&#x27;s less commitment than emailing me. But ultimately, it does seem to increase the total number of people remembering&#x2F;messaging me (i.e. improving the professional networking funnel as it were).<p>I would love y&#x27;all&#x27;s thoughts on it<p>Edit: I can see some of you asking questions lol. Way more fun than LinkedIn&#x27;s &#x27;This random person looked at your profile but what did they want to know? We have no idea&#x27;."
+    },
+    {
+      "objectID": "38067314",
+      "title": "Executive Order on Safe, Secure, and Trustworthy Artificial Intelligence",
+      "url": "https://www.whitehouse.gov/briefing-room/statements-releases/2023/10/30/fact-sheet-president-biden-issues-executive-order-on-safe-secure-and-trustworthy-artificial-intelligence/",
+      "author": "Mandelmus",
+      "points": 241,
+      "num_comments": 334,
+      "created_at_i": 1698658529,
+      "story_text": null
+    },
+    {
+      "objectID": "37966569",
+      "title": "The Pixel 8 Pro's Tensor G3 off-loads all generative AI tasks to the cloud",
+      "url": "https://www.notebookcheck.net/MrWhosetheboss-video-reveals-Google-s-Pixel-8-Pro-Tensor-G3-off-loads-all-generative-AI-tasks-to-the-cloud.760215.0.html",
+      "author": "redbell",
+      "points": 240,
+      "num_comments": 130,
+      "created_at_i": 1697894055,
+      "story_text": null
+    },
+    {
+      "objectID": "37781231",
+      "title": "Generative AI could make search harder to trust",
+      "url": "https://www.wired.com/story/fast-forward-chatbot-hallucinations-are-poisoning-web-search/",
+      "author": "jedwhite",
+      "points": 232,
+      "num_comments": 246,
+      "created_at_i": 1696526024,
+      "story_text": null
+    },
+    {
+      "objectID": "37490924",
+      "title": "Lessons from YC AI Startups",
+      "url": "https://www.ignorance.ai/p/5-lessons-from-139-yc-ai-startups",
+      "author": "charlierguo",
+      "points": 137,
+      "num_comments": 93,
+      "created_at_i": 1694567566,
+      "story_text": null
+    }
+  ]
+}

@@ -1,0 +1,1948 @@
+{
+  "updated_at": "2026-03-20T10:18:44.483Z",
+  "repos": [
+    {
+      "id": 1103012935,
+      "name": "openclaw",
+      "full_name": "openclaw/openclaw",
+      "html_url": "https://github.com/openclaw/openclaw",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "language": "TypeScript",
+      "stargazers_count": 326254,
+      "forks_count": 63057,
+      "topics": [
+        "ai",
+        "assistant",
+        "crustacean",
+        "molty",
+        "openclaw",
+        "own-your-data"
+      ],
+      "updated_at": "2026-03-20T10:16:39Z",
+      "created_at": "2025-11-24T10:16:47Z"
+    },
+    {
+      "id": 45717250,
+      "name": "tensorflow",
+      "full_name": "tensorflow/tensorflow",
+      "html_url": "https://github.com/tensorflow/tensorflow",
+      "description": "An Open Source Machine Learning Framework for Everyone",
+      "language": "C++",
+      "stargazers_count": 194257,
+      "forks_count": 75258,
+      "topics": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network"
+      ],
+      "updated_at": "2026-03-20T09:34:07Z",
+      "created_at": "2015-11-07T01:19:20Z"
+    },
+    {
+      "id": 614765452,
+      "name": "AutoGPT",
+      "full_name": "Significant-Gravitas/AutoGPT",
+      "html_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+      "language": "Python",
+      "stargazers_count": 182631,
+      "forks_count": 46228,
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "autonomous-agents",
+        "gpt-4",
+        "llama-api",
+        "openai"
+      ],
+      "updated_at": "2026-03-20T10:15:17Z",
+      "created_at": "2023-03-16T09:21:07Z"
+    },
+    {
+      "id": 193215554,
+      "name": "n8n",
+      "full_name": "n8n-io/n8n",
+      "html_url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "language": "TypeScript",
+      "stargazers_count": 180146,
+      "forks_count": 55979,
+      "topics": [
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development"
+      ],
+      "updated_at": "2026-03-20T10:18:10Z",
+      "created_at": "2019-06-22T09:24:21Z"
+    },
+    {
+      "id": 658928958,
+      "name": "ollama",
+      "full_name": "ollama/ollama",
+      "html_url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stargazers_count": 165660,
+      "forks_count": 15073,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "glm",
+        "go",
+        "golang"
+      ],
+      "updated_at": "2026-03-20T10:08:20Z",
+      "created_at": "2023-06-26T19:39:32Z"
+    },
+    {
+      "id": 527591471,
+      "name": "stable-diffusion-webui",
+      "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+      "html_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "description": "Stable Diffusion web UI",
+      "language": "Python",
+      "stargazers_count": 161890,
+      "forks_count": 30191,
+      "topics": [
+        "ai",
+        "ai-art",
+        "deep-learning",
+        "diffusion",
+        "gradio",
+        "image-generation"
+      ],
+      "updated_at": "2026-03-20T10:18:35Z",
+      "created_at": "2022-08-22T14:05:26Z"
+    },
+    {
+      "id": 155220641,
+      "name": "transformers",
+      "full_name": "huggingface/transformers",
+      "html_url": "https://github.com/huggingface/transformers",
+      "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "language": "Python",
+      "stargazers_count": 158139,
+      "forks_count": 32561,
+      "topics": [
+        "audio",
+        "deep-learning",
+        "deepseek",
+        "gemma",
+        "glm",
+        "hacktoberfest"
+      ],
+      "updated_at": "2026-03-20T10:18:26Z",
+      "created_at": "2018-10-29T13:56:00Z"
+    },
+    {
+      "id": 574523116,
+      "name": "prompts.chat",
+      "full_name": "f/prompts.chat",
+      "html_url": "https://github.com/f/prompts.chat",
+      "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+      "language": "HTML",
+      "stargazers_count": 153402,
+      "forks_count": 20190,
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "awesome-list",
+        "chatgpt",
+        "chatgpt-prompts",
+        "claude"
+      ],
+      "updated_at": "2026-03-20T10:16:19Z",
+      "created_at": "2022-12-05T13:54:13Z"
+    },
+    {
+      "id": 599320067,
+      "name": "langflow",
+      "full_name": "langflow-ai/langflow",
+      "html_url": "https://github.com/langflow-ai/langflow",
+      "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+      "language": "Python",
+      "stargazers_count": 145936,
+      "forks_count": 8618,
+      "topics": [
+        "agents",
+        "chatgpt",
+        "generative-ai",
+        "large-language-models",
+        "multiagent",
+        "react-flow"
+      ],
+      "updated_at": "2026-03-20T10:18:06Z",
+      "created_at": "2023-02-08T22:28:03Z"
+    },
+    {
+      "id": 626805178,
+      "name": "dify",
+      "full_name": "langgenius/dify",
+      "html_url": "https://github.com/langgenius/dify",
+      "description": "Production-ready platform for agentic workflow development.",
+      "language": "TypeScript",
+      "stargazers_count": 133689,
+      "forks_count": 20828,
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai",
+        "automation"
+      ],
+      "updated_at": "2026-03-20T10:15:18Z",
+      "created_at": "2023-04-12T07:40:24Z"
+    },
+    {
+      "id": 943398999,
+      "name": "system-prompts-and-models-of-ai-tools",
+      "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+      "language": null,
+      "stargazers_count": 132322,
+      "forks_count": 33502,
+      "topics": [
+        "ai",
+        "bolt",
+        "cluely",
+        "copilot",
+        "cursor",
+        "cursorai"
+      ],
+      "updated_at": "2026-03-20T10:17:03Z",
+      "created_at": "2025-03-05T16:38:29Z"
+    },
+    {
+      "id": 552661142,
+      "name": "langchain",
+      "full_name": "langchain-ai/langchain",
+      "html_url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform",
+      "language": "Python",
+      "stargazers_count": 130347,
+      "forks_count": 21495,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents"
+      ],
+      "updated_at": "2026-03-20T10:07:51Z",
+      "created_at": "2022-10-17T02:58:36Z"
+    },
+    {
+      "id": 701547123,
+      "name": "open-webui",
+      "full_name": "open-webui/open-webui",
+      "html_url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Python",
+      "stargazers_count": 127962,
+      "forks_count": 18081,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp"
+      ],
+      "updated_at": "2026-03-20T10:09:35Z",
+      "created_at": "2023-10-06T22:08:27Z"
+    },
+    {
+      "id": 655806940,
+      "name": "generative-ai-for-beginners",
+      "full_name": "microsoft/generative-ai-for-beginners",
+      "html_url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "description": "21 Lessons, Get Started Building with Generative AI ",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 108284,
+      "forks_count": 58037,
+      "topics": [
+        "ai",
+        "azure",
+        "chatgpt",
+        "dall-e",
+        "generative-ai",
+        "generativeai"
+      ],
+      "updated_at": "2026-03-20T10:07:57Z",
+      "created_at": "2023-06-19T16:28:59Z"
+    },
+    {
+      "id": 589831718,
+      "name": "ComfyUI",
+      "full_name": "Comfy-Org/ComfyUI",
+      "html_url": "https://github.com/Comfy-Org/ComfyUI",
+      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "language": "Python",
+      "stargazers_count": 106431,
+      "forks_count": 12254,
+      "topics": [
+        "ai",
+        "comfy",
+        "comfyui",
+        "python",
+        "pytorch",
+        "stable-diffusion"
+      ],
+      "updated_at": "2026-03-20T10:00:36Z",
+      "created_at": "2023-01-17T03:15:56Z"
+    },
+    {
+      "id": 793375104,
+      "name": "awesome-llm-apps",
+      "full_name": "Shubhamsaboo/awesome-llm-apps",
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+      "language": "Python",
+      "stargazers_count": 102925,
+      "forks_count": 15000,
+      "topics": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "updated_at": "2026-03-20T10:08:33Z",
+      "created_at": "2024-04-29T05:30:25Z"
+    },
+    {
+      "id": 214587193,
+      "name": "supabase",
+      "full_name": "supabase/supabase",
+      "html_url": "https://github.com/supabase/supabase",
+      "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "language": "TypeScript",
+      "stargazers_count": 99318,
+      "forks_count": 11837,
+      "topics": [
+        "ai",
+        "alternative",
+        "auth",
+        "database",
+        "deno",
+        "embeddings"
+      ],
+      "updated_at": "2026-03-20T09:50:24Z",
+      "created_at": "2019-10-12T05:56:49Z"
+    },
+    {
+      "id": 612354784,
+      "name": "llama.cpp",
+      "full_name": "ggml-org/llama.cpp",
+      "html_url": "https://github.com/ggml-org/llama.cpp",
+      "description": "LLM inference in C/C++",
+      "language": "C++",
+      "stargazers_count": 98702,
+      "forks_count": 15647,
+      "topics": [
+        "ggml"
+      ],
+      "updated_at": "2026-03-20T10:06:10Z",
+      "created_at": "2023-03-10T18:58:00Z"
+    },
+    {
+      "id": 968197216,
+      "name": "gemini-cli",
+      "full_name": "google-gemini/gemini-cli",
+      "html_url": "https://github.com/google-gemini/gemini-cli",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "language": "TypeScript",
+      "stargazers_count": 98463,
+      "forks_count": 12452,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "cli",
+        "gemini",
+        "gemini-api",
+        "mcp-client"
+      ],
+      "updated_at": "2026-03-20T10:18:01Z",
+      "created_at": "2025-04-17T17:04:31Z"
+    },
+    {
+      "id": 65600975,
+      "name": "pytorch",
+      "full_name": "pytorch/pytorch",
+      "html_url": "https://github.com/pytorch/pytorch",
+      "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+      "language": "Python",
+      "stargazers_count": 98443,
+      "forks_count": 27258,
+      "topics": [
+        "autograd",
+        "deep-learning",
+        "gpu",
+        "machine-learning",
+        "neural-network",
+        "numpy"
+      ],
+      "updated_at": "2026-03-20T10:08:43Z",
+      "created_at": "2016-08-13T05:26:41Z"
+    },
+    {
+      "id": 787076358,
+      "name": "firecrawl",
+      "full_name": "firecrawl/firecrawl",
+      "html_url": "https://github.com/firecrawl/firecrawl",
+      "description": "🔥 The Web Data API for AI - Turn entire websites into LLM-ready markdown or structured data",
+      "language": "TypeScript",
+      "stargazers_count": 95504,
+      "forks_count": 6524,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler"
+      ],
+      "updated_at": "2026-03-20T10:14:42Z",
+      "created_at": "2024-04-15T21:02:29Z"
+    },
+    {
+      "id": 1136590548,
+      "name": "everything-claude-code",
+      "full_name": "affaan-m/everything-claude-code",
+      "html_url": "https://github.com/affaan-m/everything-claude-code",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stargazers_count": 89296,
+      "forks_count": 11698,
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm"
+      ],
+      "updated_at": "2026-03-20T10:18:13Z",
+      "created_at": "2026-01-18T00:51:51Z"
+    },
+    {
+      "id": 669879380,
+      "name": "LLMs-from-scratch",
+      "full_name": "rasbt/LLMs-from-scratch",
+      "html_url": "https://github.com/rasbt/LLMs-from-scratch",
+      "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 88804,
+      "forks_count": 13569,
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "chatbot",
+        "chatgpt",
+        "deep-learning",
+        "from-scratch"
+      ],
+      "updated_at": "2026-03-20T09:59:29Z",
+      "created_at": "2023-07-23T18:15:57Z"
+    },
+    {
+      "id": 612344730,
+      "name": "NextChat",
+      "full_name": "ChatGPTNextWeb/NextChat",
+      "html_url": "https://github.com/ChatGPTNextWeb/NextChat",
+      "description": "✨ Light and Fast AI Assistant. Support: Web | iOS | MacOS | Android |  Linux | Windows",
+      "language": "TypeScript",
+      "stargazers_count": 87562,
+      "forks_count": 60135,
+      "topics": [
+        "calclaude",
+        "chatgpt",
+        "claude",
+        "cross-platform",
+        "desktop",
+        "fe"
+      ],
+      "updated_at": "2026-03-20T09:56:57Z",
+      "created_at": "2023-03-10T18:27:54Z"
+    },
+    {
+      "id": 343965132,
+      "name": "ML-For-Beginners",
+      "full_name": "microsoft/ML-For-Beginners",
+      "html_url": "https://github.com/microsoft/ML-For-Beginners",
+      "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 84598,
+      "forks_count": 20337,
+      "topics": [
+        "data-science",
+        "education",
+        "machine-learning",
+        "machine-learning-algorithms",
+        "machinelearning",
+        "machinelearning-python"
+      ],
+      "updated_at": "2026-03-20T09:59:26Z",
+      "created_at": "2021-03-03T01:34:05Z"
+    },
+    {
+      "id": 896335270,
+      "name": "awesome-mcp-servers",
+      "full_name": "punkpeye/awesome-mcp-servers",
+      "html_url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "description": "A collection of MCP servers.",
+      "language": null,
+      "stargazers_count": 83632,
+      "forks_count": 8398,
+      "topics": [
+        "ai",
+        "mcp"
+      ],
+      "updated_at": "2026-03-20T10:16:06Z",
+      "created_at": "2024-11-30T04:49:10Z"
+    },
+    {
+      "id": 881458615,
+      "name": "browser-use",
+      "full_name": "browser-use/browser-use",
+      "html_url": "https://github.com/browser-use/browser-use",
+      "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "language": "Python",
+      "stargazers_count": 81374,
+      "forks_count": 9612,
+      "topics": [
+        "ai-agents",
+        "ai-tools",
+        "browser-automation",
+        "browser-use",
+        "llm",
+        "playwright"
+      ],
+      "updated_at": "2026-03-20T10:07:04Z",
+      "created_at": "2024-10-31T16:00:56Z"
+    },
+    {
+      "id": 695864515,
+      "name": "Deep-Live-Cam",
+      "full_name": "hacksider/Deep-Live-Cam",
+      "html_url": "https://github.com/hacksider/Deep-Live-Cam",
+      "description": "real time face swap and one-click video deepfake with only a single image",
+      "language": "Python",
+      "stargazers_count": 80200,
+      "forks_count": 11707,
+      "topics": [
+        "ai",
+        "ai-deep-fake",
+        "ai-face",
+        "ai-webcam",
+        "artificial-intelligence",
+        "deep-fake"
+      ],
+      "updated_at": "2026-03-20T09:57:15Z",
+      "created_at": "2023-09-24T13:19:31Z"
+    },
+    {
+      "id": 145553672,
+      "name": "funNLP",
+      "full_name": "fighting41love/funNLP",
+      "html_url": "https://github.com/fighting41love/funNLP",
+      "description": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取工具、国内电话号码正则匹配、清华大学XLORE:中英文跨语言百科知识图谱、清华大学人工智能技术系列报告、自然语言生成、NLU太难了系列、自动对联数据及机器人、用户名黑名单列表、罪名法务名词及分类模型、微信公众号语料、cs224n深度学习自然语言处理课程、中文手写汉字识别、中文自然语言处理 语料/数据集、变量命名神器、分词语料库+代码、任务型对话英文数据集、ASR 语音数据集 + 基于深度学习的中文语音识别系统、笑声检测器、Microsoft多语言数字/单位/如日期时间识别包、中华新华字典数据库及api(包括常用歇后语、成语、词语和汉字)、文档图谱自动生成、SpaCy 中文模型、Common Voice语音识别数据集新版、神经网络关系抽取、基于bert的命名实体识别、关键词(Keyphrase)抽取包pke、基于医疗领域知识图谱的问答系统、基于依存句法与语义角色标注的事件三元组抽取、依存句法分析4万句高质量标注数据、cnocr：用来做中文OCR的Python3包、中文人物关系知识图谱项目、中文nlp竞赛项目及代码汇总、中文字符数据、speech-aligner: 从“人声语音”及其“语言文本”产生音素级别时间对齐标注的工具、AmpliGraph: 知识图谱表示学习(Python)库：知识图谱概念链接预测、Scattertext 文本可视化(python)、语言/知识表示工具：BERT & ERNIE、中文对比英文自然语言处理NLP的区别综述、Synonyms中文近义词工具包、HarvestText领域自适应文本挖掘工具（新词发现-情感分析-实体链接等）、word2word：(Python)方便易用的多语言词-词对集：62种语言/3,564个多语言对、语音识别语料生成工具：从具有音频/字幕的在线视频创建自动语音识别(ASR)语料库、构建医疗实体识别的模型（包含词典和语料标注）、单文档非监督的关键词抽取、Kashgari中使用gpt-2语言模型、开源的金融投资数据提取工具、文本自动摘要库TextTeaser: 仅支持英文、人民日报语料处理工具集、一些关于自然语言的基本模型、基于14W歌曲知识库的问答尝试--功能包括歌词接龙and已知歌词找歌曲以及歌曲歌手歌词三角关系的问答、基于Siamese bilstm模型的相似句子判定模型并提供训练数据集和测试数据集、用Transformer编解码模型实现的根据Hacker News文章标题自动生成评论、用BERT进行序列标记和文本分类的模板代码、LitBank：NLP数据集——支持自然语言处理和计算人文学科任务的100部带标记英文小说语料、百度开源的基准信息抽取系统、虚假新闻数据集、Facebook: LAMA语言模型分析，提供Transformer-XL/BERT/ELMo/GPT预训练语言模型的统一访问接口、CommonsenseQA：面向常识的英文QA挑战、中文知识图谱资料、数据及工具、各大公司内部里大牛分享的技术文档 PDF 或者 PPT、自然语言生成SQL语句（英文）、中文NLP数据增强（EDA）工具、英文NLP数据增强工具 、基于医药知识图谱的智能问答系统、京东商品知识图谱、基于mongodb存储的军事领域知识图谱问答项目、基于远监督的中文关系抽取、语音情感分析、中文ULMFiT-情感分析-文本分类-语料及模型、一个拍照做题程序、世界各国大规模人名库、一个利用有趣中文语料库 qingyun 训练出来的中文聊天机器人、中文聊天机器人seqGAN、省市区镇行政区划数据带拼音标注、教育行业新闻语料库包含自动文摘功能、开放了对话机器人-知识图谱-语义理解-自然语言处理工具及数据、中文知识图谱：基于百度百科中文页面-抽取三元组信息-构建中文知识图谱、masr: 中文语音识别-提供预训练模型-高识别率、Python音频数据增广库、中文全词覆盖BERT及两份阅读理解数据、ConvLab：开源多域端到端对话系统平台、中文自然语言处理数据集、基于最新版本rasa搭建的对话系统、基于TensorFlow和BERT的管道式实体及关系抽取、一个小型的证券知识图谱/知识库、复盘所有NLP比赛的TOP方案、OpenCLaP：多领域开源中文预训练语言模型仓库、UER：基于不同语料+编码器+目标任务的中文预训练模型仓库、中文自然语言处理向量合集、基于金融-司法领域(兼有闲聊性质)的聊天机器人、g2pC：基于上下文的汉语读音自动标记模块、Zincbase 知识图谱构建工具包、诗歌质量评价/细粒度情感诗歌语料库、快速转化「中文数字」和「阿拉伯数字」、百度知道问答语料库、基于知识图谱的问答系统、jieba_fast 加速版的jieba、正则表达式教程、中文阅读理解数据集、基于BERT等最新语言模型的抽取式摘要提取、Python利用深度学习进行文本摘要的综合指南、知识图谱深度学习相关资料整理、维基大规模平行文本语料、StanfordNLP 0.2.0：纯Python版自然语言处理包、NeuralNLP-NeuralClassifier：腾讯开源深度学习文本分类工具、端到端的封闭域对话系统、中文命名实体识别：NeuroNER vs. BertNER、新闻事件线索抽取、2019年百度的三元组抽取比赛：“科学空间队”源码、基于依存句法的开放域文本知识三元组抽取和知识库构建、中文的GPT2训练代码、ML-NLP - 机器学习(Machine Learning)NLP面试中常考到的知识点和代码实现、nlp4han:中文自然语言处理工具集(断句/分词/词性标注/组块/句法分析/语义分析/NER/N元语法/HMM/代词消解/情感分析/拼写检查、XLM：Facebook的跨语言预训练语言模型、用基于BERT的微调和特征提取方法来进行知识图谱百度百科人物词条属性抽取、中文自然语言处理相关的开放任务-数据集-当前最佳结果、CoupletAI - 基于CNN+Bi-LSTM+Attention 的自动对对联系统、抽象知识图谱、MiningZhiDaoQACorpus - 580万百度知道问答数据挖掘项目、brat rapid annotation tool: 序列标注工具、大规模中文知识图谱数据：1.4亿实体、数据增强在机器翻译及其他nlp任务中的应用及效果、allennlp阅读理解:支持多种数据和模型、PDF表格数据提取工具 、 Graphbrain：AI开源软件库和科研工具，目的是促进自动意义提取和文本理解以及知识的探索和推断、简历自动筛选系统、基于命名实体识别的简历自动摘要、中文语言理解测评基准，包括代表性的数据集&基准模型&语料库&排行榜、树洞 OCR 文字识别 、从包含表格的扫描图片中识别表格和文字、语声迁移、Python口语自然语言处理工具集(英文)、 similarity：相似度计算工具包，java编写、海量中文预训练ALBERT模型 、Transformers 2.0 、基于大规模音频数据集Audioset的音频增强 、Poplar：网页版自然语言标注工具、图片文字去除，可用于漫画翻译 、186种语言的数字叫法库、Amazon发布基于知识的人-人开放领域对话数据集 、中文文本纠错模块代码、繁简体转换 、 Python实现的多种文本可读性评价指标、类似于人名/地名/组织机构名的命名体识别数据集 、东南大学《知识图谱》研究生课程(资料)、. 英文拼写检查库 、 wwsearch是企业微信后台自研的全文检索引擎、CHAMELEON：深度学习新闻推荐系统元架构 、 8篇论文梳理BERT相关模型进展与反思、DocSearch：免费文档搜索引擎、 LIDA：轻量交互式对话标注工具 、aili - the fastest in-memory index in the East 东半球最快并发索引 、知识图谱车音工作项目、自然语言生成资源大全 、中日韩分词库mecab的Python接口库、中文文本摘要/关键词提取、汉字字符特征提取器 (featurizer)，提取汉字的特征（发音特征、字形特征）用做深度学习的特征、中文生成任务基准测评 、中文缩写数据集、中文任务基准测评 - 代表性的数据集-基准(预训练)模型-语料库-baseline-工具包-排行榜、PySS3：面向可解释AI的SS3文本分类器机器可视化工具 、中文NLP数据集列表、COPE - 格律诗编辑程序、doccano：基于网页的开源协同多语言文本标注工具 、PreNLP：自然语言预处理库、简单的简历解析器，用来从简历中提取关键信息、用于中文闲聊的GPT2模型：GPT2-chitchat、基于检索聊天机器人多轮响应选择相关资源列表(Leaderboards、Datasets、Papers)、(Colab)抽象文本摘要实现集锦(教程 、词语拼音数据、高效模糊搜索工具、NLP数据增广资源集、微软对话机器人框架 、 GitHub Typo Corpus：大规模GitHub多语言拼写错误/语法错误数据集、TextCluster：短文本聚类预处理模块 Short text cluster、面向语音识别的中文文本规范化、BLINK：最先进的实体链接库、BertPunc：基于BERT的最先进标点修复模型、Tokenizer：快速、可定制的文本词条化库、中文语言理解测评基准，包括代表性的数据集、基准(预训练)模型、语料库、排行榜、spaCy 医学文本挖掘与信息提取 、 NLP任务示例项目代码集、 python拼写检查库、chatbot-list - 行业内关于智能客服、聊天机器人的应用和架构、算法分享和介绍、语音质量评价指标(MOSNet, BSSEval, STOI, PESQ, SRMR)、 用138GB语料训练的法文RoBERTa预训练语言模型 、BERT-NER-Pytorch：三种不同模式的BERT中文NER实验、无道词典 - 有道词典的命令行版本，支持英汉互查和在线查询、2019年NLP亮点回顾、 Chinese medical dialogue data 中文医疗对话数据集 、最好的汉字数字(中文数字)-阿拉伯数字转换工具、 基于百科知识库的中文词语多词义/义项获取与特定句子词语语义消歧、awesome-nlp-sentiment-analysis - 情感分析、情绪原因识别、评价对象和评价词抽取、LineFlow：面向所有深度学习框架的NLP数据高效加载器、中文医学NLP公开资源整理 、MedQuAD：(英文)医学问答数据集、将自然语言数字串解析转换为整数和浮点数、Transfer Learning in Natural Language Processing (NLP) 、面向语音识别的中文/英文发音辞典、Tokenizers：注重性能与多功能性的最先进分词器、CLUENER 细粒度命名实体识别 Fine Grained Named Entity Recognition、 基于BERT的中文命名实体识别、中文谣言数据库、NLP数据集/基准任务大列表、nlp相关的一些论文及代码, 包括主题模型、词向量(Word Embedding)、命名实体识别(NER)、文本分类(Text Classificatin)、文本生成(Text Generation)、文本相似性(Text Similarity)计算等，涉及到各种与nlp相关的算法，基于keras和tensorflow 、Python文本挖掘/NLP实战示例、 Blackstone：面向非结构化法律文本的spaCy pipeline和NLP模型通过同义词替换实现文本“变脸” 、中文 预训练 ELECTREA 模型: 基于对抗学习 pretrain Chinese Model 、albert-chinese-ner - 用预训练语言模型ALBERT做中文NER 、基于GPT2的特定主题文本生成/文本增广、开源预训练语言模型合集、多语言句向量包、编码、标记和实现：一种可控高效的文本生成方法、 英文脏话大列表 、attnvis：GPT2、BERT等transformer语言模型注意力交互可视化、CoVoST：Facebook发布的多语种语音-文本翻译语料库，包括11种语言(法语、德语、荷兰语、俄语、西班牙语、意大利语、土耳其语、波斯语、瑞典语、蒙古语和中文)的语音、文字转录及英文译文、Jiagu自然语言处理工具 - 以BiLSTM等模型为基础，提供知识图谱关系抽取 中文分词 词性标注 命名实体识别 情感分析 新词发现 关键词 文本摘要 文本聚类等功能、用unet实现对文档表格的自动检测，表格重建、NLP事件提取文献资源列表 、 金融领域自然语言处理研究资源大列表、CLUEDatasetSearch - 中英文NLP数据集：搜索所有中文NLP数据集，附常用英文NLP数据集 、medical_NER - 中文医学知识图谱命名实体识别 、(哈佛)讲因果推理的免费书、知识图谱相关学习资料/数据集/工具资源大列表、Forte：灵活强大的自然语言处理pipeline工具集 、Python字符串相似性算法库、PyLaia：面向手写文档分析的深度学习工具包、TextFooler：针对文本分类/推理的对抗文本生成模块、Haystack：灵活、强大的可扩展问答(QA)框架、中文关键短语抽取工具",
+      "language": "Python",
+      "stargazers_count": 79513,
+      "forks_count": 15151,
+      "topics": [],
+      "updated_at": "2026-03-20T09:47:47Z",
+      "created_at": "2018-08-21T11:20:39Z"
+    },
+    {
+      "id": 1042367133,
+      "name": "spec-kit",
+      "full_name": "github/spec-kit",
+      "html_url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with Spec-Driven Development",
+      "language": "Python",
+      "stargazers_count": 78779,
+      "forks_count": 6684,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec"
+      ],
+      "updated_at": "2026-03-20T10:18:32Z",
+      "created_at": "2025-08-21T22:54:31Z"
+    },
+    {
+      "id": 10744183,
+      "name": "netdata",
+      "full_name": "netdata/netdata",
+      "html_url": "https://github.com/netdata/netdata",
+      "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
+      "language": "C",
+      "stargazers_count": 78154,
+      "forks_count": 6389,
+      "topics": [
+        "ai",
+        "alerting",
+        "cncf",
+        "data-visualization",
+        "database",
+        "devops"
+      ],
+      "updated_at": "2026-03-20T09:55:08Z",
+      "created_at": "2013-06-17T18:39:10Z"
+    },
+    {
+      "id": 71583602,
+      "name": "cs-video-courses",
+      "full_name": "Developer-Y/cs-video-courses",
+      "html_url": "https://github.com/Developer-Y/cs-video-courses",
+      "description": "List of Computer Science courses with video lectures.",
+      "language": null,
+      "stargazers_count": 77365,
+      "forks_count": 10494,
+      "topics": [
+        "algorithms",
+        "bioinformatics",
+        "computational-biology",
+        "computational-physics",
+        "computer-architecture",
+        "computer-science"
+      ],
+      "updated_at": "2026-03-20T08:59:57Z",
+      "created_at": "2016-10-21T17:02:11Z"
+    },
+    {
+      "id": 619959033,
+      "name": "gpt4all",
+      "full_name": "nomic-ai/gpt4all",
+      "html_url": "https://github.com/nomic-ai/gpt4all",
+      "description": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+      "language": "C++",
+      "stargazers_count": 77235,
+      "forks_count": 8330,
+      "topics": [
+        "ai-chat",
+        "llm-inference"
+      ],
+      "updated_at": "2026-03-20T07:18:19Z",
+      "created_at": "2023-03-27T18:49:32Z"
+    },
+    {
+      "id": 655099582,
+      "name": "llm-course",
+      "full_name": "mlabonne/llm-course",
+      "html_url": "https://github.com/mlabonne/llm-course",
+      "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
+      "language": null,
+      "stargazers_count": 77102,
+      "forks_count": 8911,
+      "topics": [
+        "course",
+        "large-language-models",
+        "llm",
+        "machine-learning",
+        "roadmap"
+      ],
+      "updated_at": "2026-03-20T10:01:32Z",
+      "created_at": "2023-06-17T22:16:25Z"
+    },
+    {
+      "id": 101138315,
+      "name": "d2l-zh",
+      "full_name": "d2l-ai/d2l-zh",
+      "html_url": "https://github.com/d2l-ai/d2l-zh",
+      "description": "《动手学深度学习》：面向中文读者、能运行、可讨论。中英文版被70多个国家的500多所大学用于教学。",
+      "language": "Python",
+      "stargazers_count": 76337,
+      "forks_count": 12173,
+      "topics": [
+        "book",
+        "chinese",
+        "computer-vision",
+        "deep-learning",
+        "machine-learning",
+        "natural-language-processing"
+      ],
+      "updated_at": "2026-03-20T09:19:07Z",
+      "created_at": "2017-08-23T04:40:24Z"
+    },
+    {
+      "id": 730534580,
+      "name": "ragflow",
+      "full_name": "infiniflow/ragflow",
+      "html_url": "https://github.com/infiniflow/ragflow",
+      "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+      "language": "Python",
+      "stargazers_count": 75588,
+      "forks_count": 8468,
+      "topics": [
+        "agent",
+        "agentic",
+        "agentic-ai",
+        "agentic-workflow",
+        "ai",
+        "ai-search"
+      ],
+      "updated_at": "2026-03-20T10:17:08Z",
+      "created_at": "2023-12-12T06:13:13Z"
+    },
+    {
+      "id": 643445235,
+      "name": "lobehub",
+      "full_name": "lobehub/lobehub",
+      "html_url": "https://github.com/lobehub/lobehub",
+      "description": "The ultimate space for work and life — to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level — enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+      "language": "TypeScript",
+      "stargazers_count": 74013,
+      "forks_count": 14815,
+      "topics": [
+        "agent",
+        "agent-collaboration",
+        "agent-harness",
+        "ai",
+        "chatgpt",
+        "claude"
+      ],
+      "updated_at": "2026-03-20T10:14:42Z",
+      "created_at": "2023-05-21T07:19:12Z"
+    },
+    {
+      "id": 599547518,
+      "name": "vllm",
+      "full_name": "vllm-project/vllm",
+      "html_url": "https://github.com/vllm-project/vllm",
+      "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+      "language": "Python",
+      "stargazers_count": 73779,
+      "forks_count": 14570,
+      "topics": [
+        "amd",
+        "blackwell",
+        "cuda",
+        "deepseek",
+        "deepseek-v3",
+        "gpt"
+      ],
+      "updated_at": "2026-03-20T10:03:15Z",
+      "created_at": "2023-02-09T11:23:20Z"
+    },
+    {
+      "id": 22887094,
+      "name": "tesseract",
+      "full_name": "tesseract-ocr/tesseract",
+      "html_url": "https://github.com/tesseract-ocr/tesseract",
+      "description": "Tesseract Open Source OCR Engine (main repository)",
+      "language": "C++",
+      "stargazers_count": 73016,
+      "forks_count": 10554,
+      "topics": [
+        "hacktoberfest",
+        "lstm",
+        "machine-learning",
+        "ocr",
+        "ocr-engine",
+        "tesseract"
+      ],
+      "updated_at": "2026-03-20T10:04:23Z",
+      "created_at": "2014-08-12T18:04:59Z"
+    },
+    {
+      "id": 262296122,
+      "name": "PaddleOCR",
+      "full_name": "PaddlePaddle/PaddleOCR",
+      "html_url": "https://github.com/PaddlePaddle/PaddleOCR",
+      "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+      "language": "Python",
+      "stargazers_count": 72679,
+      "forks_count": 10004,
+      "topics": [
+        "ai4science",
+        "chineseocr",
+        "document-parsing",
+        "document-translation",
+        "kie",
+        "ocr"
+      ],
+      "updated_at": "2026-03-20T09:31:24Z",
+      "created_at": "2020-05-08T10:38:16Z"
+    },
+    {
+      "id": 21872392,
+      "name": "awesome-machine-learning",
+      "full_name": "josephmisiti/awesome-machine-learning",
+      "html_url": "https://github.com/josephmisiti/awesome-machine-learning",
+      "description": "A curated list of awesome Machine Learning frameworks, libraries and software.",
+      "language": "Python",
+      "stargazers_count": 72040,
+      "forks_count": 15341,
+      "topics": [],
+      "updated_at": "2026-03-20T03:34:41Z",
+      "created_at": "2014-07-15T19:11:19Z"
+    },
+    {
+      "id": 579082810,
+      "name": "Prompt-Engineering-Guide",
+      "full_name": "dair-ai/Prompt-Engineering-Guide",
+      "html_url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+      "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
+      "language": "MDX",
+      "stargazers_count": 71993,
+      "forks_count": 7686,
+      "topics": [
+        "agent",
+        "agents",
+        "ai-agents",
+        "chatgpt",
+        "deep-learning",
+        "generative-ai"
+      ],
+      "updated_at": "2026-03-20T10:17:21Z",
+      "created_at": "2022-12-16T16:04:50Z"
+    },
+    {
+      "id": 616372661,
+      "name": "gpt_academic",
+      "full_name": "binary-husky/gpt_academic",
+      "html_url": "https://github.com/binary-husky/gpt_academic",
+      "description": "为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。",
+      "language": "Python",
+      "stargazers_count": 70265,
+      "forks_count": 8397,
+      "topics": [
+        "academic",
+        "chatglm-6b",
+        "chatgpt",
+        "gpt-4",
+        "large-language-models"
+      ],
+      "updated_at": "2026-03-20T10:16:12Z",
+      "created_at": "2023-03-20T09:05:13Z"
+    },
+    {
+      "id": 115478820,
+      "name": "awesome-scalability",
+      "full_name": "binhnguyennus/awesome-scalability",
+      "html_url": "https://github.com/binhnguyennus/awesome-scalability",
+      "description": "The Patterns of Scalable, Reliable, and Performant Large-Scale Systems",
+      "language": null,
+      "stargazers_count": 69552,
+      "forks_count": 6903,
+      "topics": [
+        "architecture",
+        "awesome",
+        "awesome-list",
+        "backend",
+        "big-data",
+        "computer-science"
+      ],
+      "updated_at": "2026-03-20T08:59:12Z",
+      "created_at": "2017-12-27T03:46:40Z"
+    },
+    {
+      "id": 771302083,
+      "name": "OpenHands",
+      "full_name": "OpenHands/OpenHands",
+      "html_url": "https://github.com/OpenHands/OpenHands",
+      "description": "🙌 OpenHands: AI-Driven Development",
+      "language": "Python",
+      "stargazers_count": 69456,
+      "forks_count": 8712,
+      "topics": [
+        "agent",
+        "artificial-intelligence",
+        "chatgpt",
+        "claude-ai",
+        "cli",
+        "developer-tools"
+      ],
+      "updated_at": "2026-03-20T10:14:32Z",
+      "created_at": "2024-03-13T03:33:31Z"
+    },
+    {
+      "id": 646410686,
+      "name": "LlamaFactory",
+      "full_name": "hiyouga/LlamaFactory",
+      "html_url": "https://github.com/hiyouga/LlamaFactory",
+      "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
+      "language": "Python",
+      "stargazers_count": 68775,
+      "forks_count": 8385,
+      "topics": [
+        "agent",
+        "ai",
+        "deepseek",
+        "fine-tuning",
+        "gemma",
+        "gpt"
+      ],
+      "updated_at": "2026-03-20T10:10:50Z",
+      "created_at": "2023-05-28T10:09:12Z"
+    },
+    {
+      "id": 377496562,
+      "name": "AppFlowy",
+      "full_name": "AppFlowy-IO/AppFlowy",
+      "html_url": "https://github.com/AppFlowy-IO/AppFlowy",
+      "description": "Bring projects, wikis, and teams together with AI. AppFlowy is the AI collaborative workspace where you achieve more without losing control of your data. The leading open source Notion alternative.",
+      "language": "Dart",
+      "stargazers_count": 68677,
+      "forks_count": 4960,
+      "topics": [
+        "blog",
+        "confluence-alternative",
+        "content-management",
+        "content-services",
+        "documentation",
+        "flutter"
+      ],
+      "updated_at": "2026-03-20T08:59:37Z",
+      "created_at": "2021-06-16T12:56:48Z"
+    },
+    {
+      "id": 753490180,
+      "name": "daytona",
+      "full_name": "daytonaio/daytona",
+      "html_url": "https://github.com/daytonaio/daytona",
+      "description": "Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code",
+      "language": "TypeScript",
+      "stargazers_count": 68009,
+      "forks_count": 5190,
+      "topics": [
+        "agentic-workflow",
+        "ai",
+        "ai-agents",
+        "ai-runtime",
+        "ai-sandboxes",
+        "code-execution"
+      ],
+      "updated_at": "2026-03-20T10:16:31Z",
+      "created_at": "2024-02-06T08:21:20Z"
+    },
+    {
+      "id": 290091948,
+      "name": "annotated_deep_learning_paper_implementations",
+      "full_name": "labmlai/annotated_deep_learning_paper_implementations",
+      "html_url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+      "description": "🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠",
+      "language": "Python",
+      "stargazers_count": 66063,
+      "forks_count": 6650,
+      "topics": [
+        "attention",
+        "deep-learning",
+        "deep-learning-tutorial",
+        "gan",
+        "literate-programming",
+        "lora"
+      ],
+      "updated_at": "2026-03-20T09:23:46Z",
+      "created_at": "2020-08-25T02:29:34Z"
+    },
+    {
+      "id": 660551251,
+      "name": "MetaGPT",
+      "full_name": "FoundationAgents/MetaGPT",
+      "html_url": "https://github.com/FoundationAgents/MetaGPT",
+      "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "language": "Python",
+      "stargazers_count": 65652,
+      "forks_count": 8274,
+      "topics": [
+        "agent",
+        "gpt",
+        "llm",
+        "metagpt",
+        "multi-agent"
+      ],
+      "updated_at": "2026-03-20T09:54:06Z",
+      "created_at": "2023-06-30T09:04:55Z"
+    },
+    {
+      "id": 843222,
+      "name": "scikit-learn",
+      "full_name": "scikit-learn/scikit-learn",
+      "html_url": "https://github.com/scikit-learn/scikit-learn",
+      "description": "scikit-learn: machine learning in Python",
+      "language": "Python",
+      "stargazers_count": 65456,
+      "forks_count": 26826,
+      "topics": [
+        "data-analysis",
+        "data-science",
+        "machine-learning",
+        "python",
+        "statistics"
+      ],
+      "updated_at": "2026-03-20T09:43:21Z",
+      "created_at": "2010-08-17T09:43:38Z"
+    },
+    {
+      "id": 33015583,
+      "name": "keras",
+      "full_name": "keras-team/keras",
+      "html_url": "https://github.com/keras-team/keras",
+      "description": "Deep Learning for humans",
+      "language": "Python",
+      "stargazers_count": 63942,
+      "forks_count": 19749,
+      "topics": [
+        "data-science",
+        "deep-learning",
+        "jax",
+        "machine-learning",
+        "neural-networks",
+        "python"
+      ],
+      "updated_at": "2026-03-20T10:10:02Z",
+      "created_at": "2015-03-28T00:35:42Z"
+    },
+    {
+      "id": 323048702,
+      "name": "OpenBB",
+      "full_name": "OpenBB-finance/OpenBB",
+      "html_url": "https://github.com/OpenBB-finance/OpenBB",
+      "description": "Financial data platform for analysts, quants and AI agents.",
+      "language": "Python",
+      "stargazers_count": 63349,
+      "forks_count": 6235,
+      "topics": [
+        "ai",
+        "crypto",
+        "derivatives",
+        "economics",
+        "equity",
+        "finance"
+      ],
+      "updated_at": "2026-03-20T09:55:02Z",
+      "created_at": "2020-12-20T10:46:38Z"
+    },
+    {
+      "id": 798201435,
+      "name": "crawl4ai",
+      "full_name": "unclecode/crawl4ai",
+      "html_url": "https://github.com/unclecode/crawl4ai",
+      "description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+      "language": "Python",
+      "stargazers_count": 62280,
+      "forks_count": 6355,
+      "topics": [],
+      "updated_at": "2026-03-20T09:17:51Z",
+      "created_at": "2024-05-09T09:48:50Z"
+    },
+    {
+      "id": 571186647,
+      "name": "pathway",
+      "full_name": "pathwaycom/pathway",
+      "html_url": "https://github.com/pathwaycom/pathway",
+      "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
+      "language": "Python",
+      "stargazers_count": 61243,
+      "forks_count": 1610,
+      "topics": [
+        "batch-processing",
+        "data-analytics",
+        "data-pipelines",
+        "data-processing",
+        "dataflow",
+        "etl"
+      ],
+      "updated_at": "2026-03-20T10:15:58Z",
+      "created_at": "2022-11-27T13:01:14Z"
+    },
+    {
+      "id": 668195240,
+      "name": "llm-app",
+      "full_name": "pathwaycom/llm-app",
+      "html_url": "https://github.com/pathwaycom/llm-app",
+      "description": "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data. 🐳Docker-friendly.⚡Always in sync with Sharepoint, Google Drive, S3, Kafka, PostgreSQL, real-time data APIs, and more.",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 57902,
+      "forks_count": 1392,
+      "topics": [
+        "chatbot",
+        "hugging-face",
+        "llm",
+        "llm-local",
+        "llm-prompting",
+        "llm-security"
+      ],
+      "updated_at": "2026-03-20T10:16:30Z",
+      "created_at": "2023-07-19T08:43:37Z"
+    },
+    {
+      "id": 264818686,
+      "name": "yolov5",
+      "full_name": "ultralytics/yolov5",
+      "html_url": "https://github.com/ultralytics/yolov5",
+      "description": "YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite",
+      "language": "Python",
+      "stargazers_count": 57055,
+      "forks_count": 17444,
+      "topics": [
+        "coreml",
+        "deep-learning",
+        "ios",
+        "machine-learning",
+        "ml",
+        "object-detection"
+      ],
+      "updated_at": "2026-03-20T10:11:33Z",
+      "created_at": "2020-05-18T03:45:11Z"
+    },
+    {
+      "id": 725205304,
+      "name": "unsloth",
+      "full_name": "unslothai/unsloth",
+      "html_url": "https://github.com/unslothai/unsloth",
+      "description": "Unified web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.",
+      "language": "Python",
+      "stargazers_count": 56970,
+      "forks_count": 4783,
+      "topics": [
+        "agent",
+        "deepseek",
+        "deepseek-r1",
+        "fine-tuning",
+        "gemma",
+        "gemma3"
+      ],
+      "updated_at": "2026-03-20T10:08:44Z",
+      "created_at": "2023-11-29T16:50:09Z"
+    },
+    {
+      "id": 649170660,
+      "name": "anything-llm",
+      "full_name": "Mintplex-Labs/anything-llm",
+      "html_url": "https://github.com/Mintplex-Labs/anything-llm",
+      "description": "The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration.",
+      "language": "JavaScript",
+      "stargazers_count": 56501,
+      "forks_count": 6102,
+      "topics": [
+        "ai-agents",
+        "custom-ai-agents",
+        "deepseek",
+        "kimi",
+        "llama3",
+        "llm"
+      ],
+      "updated_at": "2026-03-20T10:02:39Z",
+      "created_at": "2023-06-04T02:29:14Z"
+    },
+    {
+      "id": 83844720,
+      "name": "face_recognition",
+      "full_name": "ageitgey/face_recognition",
+      "html_url": "https://github.com/ageitgey/face_recognition",
+      "description": "The world's simplest facial recognition api for Python and the command line",
+      "language": "Python",
+      "stargazers_count": 56221,
+      "forks_count": 13714,
+      "topics": [
+        "face-detection",
+        "face-recognition",
+        "machine-learning",
+        "python"
+      ],
+      "updated_at": "2026-03-20T10:03:26Z",
+      "created_at": "2017-03-03T21:52:39Z"
+    },
+    {
+      "id": 114747226,
+      "name": "faceswap",
+      "full_name": "deepfakes/faceswap",
+      "html_url": "https://github.com/deepfakes/faceswap",
+      "description": "Deepfakes Software For All",
+      "language": "Python",
+      "stargazers_count": 55058,
+      "forks_count": 13417,
+      "topics": [
+        "deep-face-swap",
+        "deep-learning",
+        "deep-neural-networks",
+        "deepface",
+        "deepfakes",
+        "deeplearning"
+      ],
+      "updated_at": "2026-03-20T07:29:42Z",
+      "created_at": "2017-12-19T09:44:13Z"
+    },
+    {
+      "id": 535360445,
+      "name": "ultralytics",
+      "full_name": "ultralytics/ultralytics",
+      "html_url": "https://github.com/ultralytics/ultralytics",
+      "description": "Ultralytics YOLO 🚀",
+      "language": "Python",
+      "stargazers_count": 54720,
+      "forks_count": 10526,
+      "topics": [
+        "cli",
+        "computer-vision",
+        "deep-learning",
+        "hub",
+        "image-classification",
+        "instance-segmentation"
+      ],
+      "updated_at": "2026-03-20T09:47:14Z",
+      "created_at": "2022-09-11T16:39:45Z"
+    },
+    {
+      "id": 895508656,
+      "name": "ai-agents-for-beginners",
+      "full_name": "microsoft/ai-agents-for-beginners",
+      "html_url": "https://github.com/microsoft/ai-agents-for-beginners",
+      "description": "12 Lessons to Get Started Building AI Agents",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 54523,
+      "forks_count": 18870,
+      "topics": [
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-rag",
+        "ai-agents",
+        "ai-agents-framework",
+        "autogen"
+      ],
+      "updated_at": "2026-03-20T10:06:57Z",
+      "created_at": "2024-11-28T10:42:52Z"
+    },
+    {
+      "id": 621803253,
+      "name": "Flowise",
+      "full_name": "FlowiseAI/Flowise",
+      "html_url": "https://github.com/FlowiseAI/Flowise",
+      "description": "Build AI Agents, Visually",
+      "language": "TypeScript",
+      "stargazers_count": 50926,
+      "forks_count": 23984,
+      "topics": [
+        "agentic-ai",
+        "agentic-workflow",
+        "agents",
+        "artificial-intelligence",
+        "chatbot",
+        "chatgpt"
+      ],
+      "updated_at": "2026-03-20T08:56:36Z",
+      "created_at": "2023-03-31T12:23:09Z"
+    },
+    {
+      "id": 656099147,
+      "name": "mem0",
+      "full_name": "mem0ai/mem0",
+      "html_url": "https://github.com/mem0ai/mem0",
+      "description": "Universal memory layer for AI Agents",
+      "language": "Python",
+      "stargazers_count": 50501,
+      "forks_count": 5628,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "application",
+        "chatbots",
+        "chatgpt"
+      ],
+      "updated_at": "2026-03-20T10:05:14Z",
+      "created_at": "2023-06-20T08:58:36Z"
+    },
+    {
+      "id": 139824423,
+      "name": "100-Days-Of-ML-Code",
+      "full_name": "Avik-Jain/100-Days-Of-ML-Code",
+      "html_url": "https://github.com/Avik-Jain/100-Days-Of-ML-Code",
+      "description": "100 Days of ML Coding",
+      "language": null,
+      "stargazers_count": 49991,
+      "forks_count": 11360,
+      "topics": [
+        "100-days-of-code-log",
+        "100daysofcode",
+        "deep-learning",
+        "implementation",
+        "infographics",
+        "linear-algebra"
+      ],
+      "updated_at": "2026-03-20T09:42:39Z",
+      "created_at": "2018-07-05T09:11:43Z"
+    },
+    {
+      "id": 955620917,
+      "name": "context7",
+      "full_name": "upstash/context7",
+      "html_url": "https://github.com/upstash/context7",
+      "description": "Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors",
+      "language": "TypeScript",
+      "stargazers_count": 49860,
+      "forks_count": 2352,
+      "topics": [
+        "llm",
+        "mcp",
+        "mcp-server",
+        "vibe-coding"
+      ],
+      "updated_at": "2026-03-20T10:17:25Z",
+      "created_at": "2025-03-26T23:40:39Z"
+    },
+    {
+      "id": 974186260,
+      "name": "TrendRadar",
+      "full_name": "sansan0/TrendRadar",
+      "html_url": "https://github.com/sansan0/TrendRadar",
+      "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
+      "language": "Python",
+      "stargazers_count": 49401,
+      "forks_count": 22720,
+      "topics": [
+        "ai",
+        "bark",
+        "data-analysis",
+        "docker",
+        "hot-news",
+        "llm"
+      ],
+      "updated_at": "2026-03-20T10:14:38Z",
+      "created_at": "2025-04-28T11:42:16Z"
+    },
+    {
+      "id": 1644196,
+      "name": "julia",
+      "full_name": "JuliaLang/julia",
+      "html_url": "https://github.com/JuliaLang/julia",
+      "description": "The Julia Programming Language",
+      "language": "Julia",
+      "stargazers_count": 48571,
+      "forks_count": 5751,
+      "topics": [
+        "hacktoberfest",
+        "hpc",
+        "julia",
+        "julia-language",
+        "julialang",
+        "machine-learning"
+      ],
+      "updated_at": "2026-03-20T08:46:32Z",
+      "created_at": "2011-04-21T07:01:50Z"
+    },
+    {
+      "id": 560704231,
+      "name": "llama_index",
+      "full_name": "run-llama/llama_index",
+      "html_url": "https://github.com/run-llama/llama_index",
+      "description": "LlamaIndex is the leading document agent and OCR platform",
+      "language": "Python",
+      "stargazers_count": 47813,
+      "forks_count": 7051,
+      "topics": [
+        "agents",
+        "application",
+        "data",
+        "fine-tuning",
+        "framework",
+        "llamaindex"
+      ],
+      "updated_at": "2026-03-20T09:31:59Z",
+      "created_at": "2022-11-02T04:24:54Z"
+    },
+    {
+      "id": 156157055,
+      "name": "Made-With-ML",
+      "full_name": "GokuMohandas/Made-With-ML",
+      "html_url": "https://github.com/GokuMohandas/Made-With-ML",
+      "description": "Learn how to develop, deploy and iterate on production-grade ML applications.",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 46883,
+      "forks_count": 7358,
+      "topics": [
+        "data-engineering",
+        "data-quality",
+        "data-science",
+        "deep-learning",
+        "distributed-ml",
+        "distributed-training"
+      ],
+      "updated_at": "2026-03-20T09:49:23Z",
+      "created_at": "2018-11-05T03:44:27Z"
+    },
+    {
+      "id": 344190478,
+      "name": "AI-For-Beginners",
+      "full_name": "microsoft/AI-For-Beginners",
+      "html_url": "https://github.com/microsoft/AI-For-Beginners",
+      "description": "12 Weeks, 24 Lessons, AI for All!",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 46153,
+      "forks_count": 9442,
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "cnn",
+        "computer-vision",
+        "deep-learning",
+        "gan"
+      ],
+      "updated_at": "2026-03-20T09:43:24Z",
+      "created_at": "2021-03-03T16:27:36Z"
+    },
+    {
+      "id": 159152904,
+      "name": "JeecgBoot",
+      "full_name": "jeecgboot/JeecgBoot",
+      "html_url": "https://github.com/jeecgboot/JeecgBoot",
+      "description": "一款 AI 驱动的低代码平台，提供\"零代码\"与\"代码生成\"双模式——零代码模式一句话搭建系统，代码生成模式自动输出前后端代码与建表 SQL，生成即可运行。平台内置 AI 聊天助手、AI大模型、知识库、AI流程编排、MCP 与插件体系，兼容主流大模型，支持一句话生成流程图、设计表单、聊天式业务操作，解决 Java 项目 80% 重复工作，高效且不失灵活。",
+      "language": "Java",
+      "stargazers_count": 45467,
+      "forks_count": 15842,
+      "topics": [
+        "activiti",
+        "agent",
+        "ai",
+        "aiflow",
+        "antd",
+        "codegenerator"
+      ],
+      "updated_at": "2026-03-20T08:28:00Z",
+      "created_at": "2018-11-26T10:40:00Z"
+    },
+    {
+      "id": 33884891,
+      "name": "airflow",
+      "full_name": "apache/airflow",
+      "html_url": "https://github.com/apache/airflow",
+      "description": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
+      "language": "Python",
+      "stargazers_count": 44707,
+      "forks_count": 16743,
+      "topics": [
+        "airflow",
+        "apache",
+        "apache-airflow",
+        "automation",
+        "dag",
+        "data-engineering"
+      ],
+      "updated_at": "2026-03-20T10:05:16Z",
+      "created_at": "2015-04-13T18:04:58Z"
+    },
+    {
+      "id": 615869301,
+      "name": "LocalAI",
+      "full_name": "mudler/LocalAI",
+      "html_url": "https://github.com/mudler/LocalAI",
+      "description": ":robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement,  running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, MCP, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference",
+      "language": "Go",
+      "stargazers_count": 44072,
+      "forks_count": 3760,
+      "topics": [
+        "agents",
+        "ai",
+        "api",
+        "audio-generation",
+        "decentralized",
+        "distributed"
+      ],
+      "updated_at": "2026-03-20T10:05:02Z",
+      "created_at": "2023-03-18T22:58:02Z"
+    },
+    {
+      "id": 204086862,
+      "name": "streamlit",
+      "full_name": "streamlit/streamlit",
+      "html_url": "https://github.com/streamlit/streamlit",
+      "description": "Streamlit — A faster way to build and share data apps.",
+      "language": "Python",
+      "stargazers_count": 43952,
+      "forks_count": 4150,
+      "topics": [
+        "data-analysis",
+        "data-science",
+        "data-visualization",
+        "deep-learning",
+        "developer-tools",
+        "machine-learning"
+      ],
+      "updated_at": "2026-03-20T09:26:34Z",
+      "created_at": "2019-08-24T00:14:52Z"
+    },
+    {
+      "id": 45986162,
+      "name": "TensorFlow-Examples",
+      "full_name": "aymericdamien/TensorFlow-Examples",
+      "html_url": "https://github.com/aymericdamien/TensorFlow-Examples",
+      "description": "TensorFlow Tutorial and Examples for Beginners (support TF v1 & v2)",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 43787,
+      "forks_count": 14788,
+      "topics": [
+        "deep-learning",
+        "examples",
+        "machine-learning",
+        "python",
+        "tensorflow",
+        "tutorial"
+      ],
+      "updated_at": "2026-03-20T04:27:49Z",
+      "created_at": "2015-11-11T14:21:19Z"
+    },
+    {
+      "id": 208728772,
+      "name": "milvus",
+      "full_name": "milvus-io/milvus",
+      "html_url": "https://github.com/milvus-io/milvus",
+      "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
+      "language": "Go",
+      "stargazers_count": 43414,
+      "forks_count": 3907,
+      "topics": [
+        "anns",
+        "cloud-native",
+        "diskann",
+        "distributed",
+        "embedding-database",
+        "embedding-similarity"
+      ],
+      "updated_at": "2026-03-20T09:48:16Z",
+      "created_at": "2019-09-16T06:43:43Z"
+    },
+    {
+      "id": 26783295,
+      "name": "kong",
+      "full_name": "Kong/kong",
+      "html_url": "https://github.com/Kong/kong",
+      "description": "🦍 The API and AI Gateway",
+      "language": "Lua",
+      "stargazers_count": 43000,
+      "forks_count": 5098,
+      "topics": [
+        "ai",
+        "ai-gateway",
+        "api-gateway",
+        "api-management",
+        "apis",
+        "artificial-intelligence"
+      ],
+      "updated_at": "2026-03-20T05:33:39Z",
+      "created_at": "2014-11-17T23:56:08Z"
+    },
+    {
+      "id": 522158088,
+      "name": "chatgpt-on-wechat",
+      "full_name": "zhayujie/chatgpt-on-wechat",
+      "html_url": "https://github.com/zhayujie/chatgpt-on-wechat",
+      "description": "CowAgent是基于大模型的超级AI助理，能主动思考和任务规划、访问操作系统和外部资源、创造和执行Skills、拥有长期记忆并不断成长。同时支持飞书、钉钉、企微、QQ、微信公众号、网页等接入，可选择OpenAI/Claude/Gemini/DeepSeek/ Qwen/GLM/Kimi/LinkAI，能处理文本、语音、图片和文件，可快速搭建个人AI助手和企业数字员工。",
+      "language": "Python",
+      "stargazers_count": 42321,
+      "forks_count": 9839,
+      "topics": [
+        "ai",
+        "ai-agent",
+        "chatgpt",
+        "claude",
+        "deepseek",
+        "dingtalk"
+      ],
+      "updated_at": "2026-03-20T10:07:52Z",
+      "created_at": "2022-08-07T08:33:41Z"
+    },
+    {
+      "id": 162405963,
+      "name": "gradio",
+      "full_name": "gradio-app/gradio",
+      "html_url": "https://github.com/gradio-app/gradio",
+      "description": "Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!",
+      "language": "Python",
+      "stargazers_count": 42076,
+      "forks_count": 3337,
+      "topics": [
+        "data-analysis",
+        "data-science",
+        "data-visualization",
+        "deep-learning",
+        "deploy",
+        "gradio"
+      ],
+      "updated_at": "2026-03-20T09:17:35Z",
+      "created_at": "2018-12-19T08:24:04Z"
+    },
+    {
+      "id": 235860204,
+      "name": "DeepSpeed",
+      "full_name": "deepspeedai/DeepSpeed",
+      "html_url": "https://github.com/deepspeedai/DeepSpeed",
+      "description": "DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.",
+      "language": "Python",
+      "stargazers_count": 41859,
+      "forks_count": 4756,
+      "topics": [
+        "billion-parameters",
+        "compression",
+        "data-parallelism",
+        "deep-learning",
+        "gpu",
+        "inference"
+      ],
+      "updated_at": "2026-03-20T06:32:14Z",
+      "created_at": "2020-01-23T18:35:18Z"
+    },
+    {
+      "id": 71932349,
+      "name": "ray",
+      "full_name": "ray-project/ray",
+      "html_url": "https://github.com/ray-project/ray",
+      "description": "Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.",
+      "language": "Python",
+      "stargazers_count": 41802,
+      "forks_count": 7367,
+      "topics": [
+        "data-science",
+        "deep-learning",
+        "deployment",
+        "distributed",
+        "hyperparameter-optimization",
+        "hyperparameter-search"
+      ],
+      "updated_at": "2026-03-20T09:40:37Z",
+      "created_at": "2016-10-25T19:38:30Z"
+    },
+    {
+      "id": 834369920,
+      "name": "minimind",
+      "full_name": "jingyaogong/minimind",
+      "html_url": "https://github.com/jingyaogong/minimind",
+      "description": "🚀🚀 「大模型」2小时完全从0训练26M的小参数GPT！🌏 Train a 26M-parameter GPT from scratch in just 2h!",
+      "language": "Python",
+      "stargazers_count": 41714,
+      "forks_count": 5035,
+      "topics": [
+        "artificial-intelligence",
+        "large-language-model"
+      ],
+      "updated_at": "2026-03-20T10:07:54Z",
+      "created_at": "2024-07-27T04:34:12Z"
+    },
+    {
+      "id": 679506386,
+      "name": "jan",
+      "full_name": "janhq/jan",
+      "html_url": "https://github.com/janhq/jan",
+      "description": "Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.",
+      "language": "TypeScript",
+      "stargazers_count": 41157,
+      "forks_count": 2608,
+      "topics": [
+        "chatgpt",
+        "gpt",
+        "llamacpp",
+        "llm",
+        "localai",
+        "open-source"
+      ],
+      "updated_at": "2026-03-20T10:08:22Z",
+      "created_at": "2023-08-17T02:17:10Z"
+    },
+    {
+      "id": 671269505,
+      "name": "litellm",
+      "full_name": "BerriAI/litellm",
+      "html_url": "https://github.com/BerriAI/litellm",
+      "description": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]",
+      "language": "Python",
+      "stargazers_count": 39737,
+      "forks_count": 6574,
+      "topics": [
+        "ai-gateway",
+        "anthropic",
+        "azure-openai",
+        "bedrock",
+        "gateway",
+        "langchain"
+      ],
+      "updated_at": "2026-03-20T10:10:38Z",
+      "created_at": "2023-07-27T00:09:52Z"
+    },
+    {
+      "id": 119160553,
+      "name": "photoprism",
+      "full_name": "photoprism/photoprism",
+      "html_url": "https://github.com/photoprism/photoprism",
+      "description": "AI-Powered Photos App for the Decentralized Web 🌈💎✨",
+      "language": "Go",
+      "stargazers_count": 39475,
+      "forks_count": 2227,
+      "topics": [
+        "ai",
+        "golang",
+        "google-photos",
+        "machine-learning",
+        "photography",
+        "private-cloud"
+      ],
+      "updated_at": "2026-03-20T09:02:58Z",
+      "created_at": "2018-01-27T12:00:15Z"
+    },
+    {
+      "id": 287463830,
+      "name": "qlib",
+      "full_name": "microsoft/qlib",
+      "html_url": "https://github.com/microsoft/qlib",
+      "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+      "language": "Python",
+      "stargazers_count": 39076,
+      "forks_count": 6089,
+      "topics": [
+        "algorithmic-trading",
+        "auto-quant",
+        "deep-learning",
+        "finance",
+        "fintech",
+        "investment"
+      ],
+      "updated_at": "2026-03-20T09:53:41Z",
+      "created_at": "2020-08-14T06:46:00Z"
+    },
+    {
+      "id": 640079149,
+      "name": "quivr",
+      "full_name": "QuivrHQ/quivr",
+      "html_url": "https://github.com/QuivrHQ/quivr",
+      "description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
+      "language": "Python",
+      "stargazers_count": 39044,
+      "forks_count": 3743,
+      "topics": [
+        "ai",
+        "api",
+        "chatbot",
+        "chatgpt",
+        "database",
+        "docker"
+      ],
+      "updated_at": "2026-03-20T09:25:37Z",
+      "created_at": "2023-05-12T23:53:30Z"
+    },
+    {
+      "id": 806709826,
+      "name": "ChatTTS",
+      "full_name": "2noise/ChatTTS",
+      "html_url": "https://github.com/2noise/ChatTTS",
+      "description": "A generative speech model for daily dialogue.",
+      "language": "Python",
+      "stargazers_count": 38953,
+      "forks_count": 4226,
+      "topics": [
+        "agent",
+        "chat",
+        "chatgpt",
+        "chattts",
+        "chinese",
+        "chinese-language"
+      ],
+      "updated_at": "2026-03-20T09:53:39Z",
+      "created_at": "2024-05-27T18:26:49Z"
+    },
+    {
+      "id": 1048065319,
+      "name": "claude-mem",
+      "full_name": "thedotmack/claude-mem",
+      "html_url": "https://github.com/thedotmack/claude-mem",
+      "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
+      "language": "JavaScript",
+      "stargazers_count": 38585,
+      "forks_count": 2794,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "anthropic",
+        "artificial-intelligence",
+        "chromadb"
+      ],
+      "updated_at": "2026-03-20T10:15:24Z",
+      "created_at": "2025-08-31T20:50:03Z"
+    },
+    {
+      "id": 621799276,
+      "name": "Langchain-Chatchat",
+      "full_name": "chatchat-space/Langchain-Chatchat",
+      "html_url": "https://github.com/chatchat-space/Langchain-Chatchat",
+      "description": "Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain ",
+      "language": "Python",
+      "stargazers_count": 37572,
+      "forks_count": 6185,
+      "topics": [
+        "chatbot",
+        "chatchat",
+        "chatglm",
+        "chatgpt",
+        "embedding",
+        "faiss"
+      ],
+      "updated_at": "2026-03-20T10:15:16Z",
+      "created_at": "2023-03-31T12:12:45Z"
+    },
+    {
+      "id": 458648791,
+      "name": "paperless-ngx",
+      "full_name": "paperless-ngx/paperless-ngx",
+      "html_url": "https://github.com/paperless-ngx/paperless-ngx",
+      "description": "A community-supported supercharged document management system: scan, index and archive all your documents",
+      "language": "Python",
+      "stargazers_count": 37505,
+      "forks_count": 2390,
+      "topics": [
+        "angular",
+        "archiving",
+        "django",
+        "dms",
+        "document-management",
+        "document-management-system"
+      ],
+      "updated_at": "2026-03-20T09:43:47Z",
+      "created_at": "2022-02-12T21:56:52Z"
+    },
+    {
+      "id": 151619717,
+      "name": "google-research",
+      "full_name": "google-research/google-research",
+      "html_url": "https://github.com/google-research/google-research",
+      "description": "Google Research",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 37494,
+      "forks_count": 8364,
+      "topics": [
+        "ai",
+        "machine-learning",
+        "research"
+      ],
+      "updated_at": "2026-03-20T04:48:08Z",
+      "created_at": "2018-10-04T18:42:48Z"
+    },
+    {
+      "id": 577603990,
+      "name": "Open-Assistant",
+      "full_name": "LAION-AI/Open-Assistant",
+      "html_url": "https://github.com/LAION-AI/Open-Assistant",
+      "description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+      "language": "Python",
+      "stargazers_count": 37438,
+      "forks_count": 3305,
+      "topics": [
+        "ai",
+        "assistant",
+        "chatgpt",
+        "discord-bot",
+        "language-model",
+        "machine-learning"
+      ],
+      "updated_at": "2026-03-20T09:45:34Z",
+      "created_at": "2022-12-13T05:24:17Z"
+    },
+    {
+      "id": 571613891,
+      "name": "supervision",
+      "full_name": "roboflow/supervision",
+      "html_url": "https://github.com/roboflow/supervision",
+      "description": "We write your reusable computer vision tools. 💜",
+      "language": "Python",
+      "stargazers_count": 36737,
+      "forks_count": 3146,
+      "topics": [
+        "classification",
+        "coco",
+        "computer-vision",
+        "deep-learning",
+        "hacktoberfest",
+        "image-processing"
+      ],
+      "updated_at": "2026-03-20T08:10:33Z",
+      "created_at": "2022-11-28T14:08:44Z"
+    },
+    {
+      "id": 109484365,
+      "name": "Coursera-ML-AndrewNg-Notes",
+      "full_name": "fengdu78/Coursera-ML-AndrewNg-Notes",
+      "html_url": "https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes",
+      "description": "吴恩达老师的机器学习课程个人笔记",
+      "language": "HTML",
+      "stargazers_count": 36531,
+      "forks_count": 11160,
+      "topics": [
+        "coursera",
+        "machine-learning"
+      ],
+      "updated_at": "2026-03-20T07:51:43Z",
+      "created_at": "2017-11-04T10:04:08Z"
+    },
+    {
+      "id": 642323624,
+      "name": "DragGAN",
+      "full_name": "XingangPan/DragGAN",
+      "html_url": "https://github.com/XingangPan/DragGAN",
+      "description": "Official Code for DragGAN (SIGGRAPH 2023)",
+      "language": "Python",
+      "stargazers_count": 35959,
+      "forks_count": 3439,
+      "topics": [
+        "artificial-intelligence",
+        "generative-adversarial-network",
+        "generative-models",
+        "image-manipulation"
+      ],
+      "updated_at": "2026-03-19T13:44:00Z",
+      "created_at": "2023-05-18T10:08:02Z"
+    },
+    {
+      "id": 624681066,
+      "name": "AgentGPT",
+      "full_name": "reworkd/AgentGPT",
+      "html_url": "https://github.com/reworkd/AgentGPT",
+      "description": "🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.",
+      "language": "TypeScript",
+      "stargazers_count": 35858,
+      "forks_count": 9427,
+      "topics": [
+        "agent",
+        "agentgpt",
+        "agents",
+        "agi",
+        "ai",
+        "ai-agents"
+      ],
+      "updated_at": "2026-03-20T08:24:10Z",
+      "created_at": "2023-04-07T02:29:19Z"
+    },
+    {
+      "id": 1016323751,
+      "name": "langextract",
+      "full_name": "google/langextract",
+      "html_url": "https://github.com/google/langextract",
+      "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.",
+      "language": "Python",
+      "stargazers_count": 34806,
+      "forks_count": 2335,
+      "topics": [
+        "gemini",
+        "gemini-ai",
+        "gemini-api",
+        "gemini-flash",
+        "gemini-pro",
+        "information-extration"
+      ],
+      "updated_at": "2026-03-20T10:07:43Z",
+      "created_at": "2025-07-08T20:46:06Z"
+    }
+  ]
+}
