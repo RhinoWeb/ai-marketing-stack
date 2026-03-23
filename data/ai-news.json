@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-03-20T10:23:42.835Z",
+  "updated_at": "2026-03-23T06:57:51.651Z",
   "articles": [
+    {
+      "objectID": "47435127",
+      "title": "I Reverse-Engineered the TiinyAI Pocket Lab from Marketing Photos",
+      "url": "https://bay41.com/posts/tiiny-ai-pocket-lab-review/",
+      "author": "davidklemke",
+      "points": 69,
+      "num_comments": 20,
+      "created_at_i": 1773896185,
+      "story_text": null
+    },
     {
       "objectID": "47321533",
       "title": "Yann LeCun's AI startup raises $1B in Europe's largest ever seed round",
@@ -513,15 +523,6 @@
       "num_comments": 482,
       "created_at_i": 1739850420,
       "story_text": null
-    },
-    {
-      "objectID": "42976766",
-      "title": "Show HN: Gumshoe.ai – SEO for AI",
-      "author": "sawickipedia",
-      "points": 36,
-      "num_comments": 21,
-      "created_at_i": 1738958172,
-      "story_text": "Hi HN,<p>We&#x27;re Todd and Patrick, the founders of Gumshoe (<a href=\"https:&#x2F;&#x2F;app.gumshoe.ai&#x2F;go\" rel=\"nofollow\">https:&#x2F;&#x2F;app.gumshoe.ai&#x2F;go</a>). Between us, we have like 50 years of experience in early-stage startups. For better or worse, I helped build one of the original meme sites (ICanHasCheezburger), so it’s partially my fault that there are so many cat photos on the internet. Around the same time, Patrick built Starwave (which is now ESPN Fantasy Sports) and later cofounded UrbanSpoon.<p>We’re now building Gumshoe to help companies understand how AI talks about their brand.<p>As AI search tools like ChatGPT and Perplexity have become more common, they’ve changed digital marketing. SEO used to be the primary focus, which led to the hyper-optimized kind of gobbledygook you see on the internet today. Now, marketers need to think about the broader context in which their brand is discussed. This shift is an opportunity for the internet to get better: results could be less &quot;optimized&quot;, more nuanced, and ultimately more useful. At the same time, it also introduces challenges. Marketers want to know what AI is saying about their brand and how they can influence it. We want to help marketers share their products through AI, without it feeling forced. Ultimately, everyone wins if the LLMs recommend the best product for you.<p>The idea for Gumshoe came from a conversation with a friend who founded a large consumer app (Rover, the dog-walking platform). They’ve spent years working on SEO, but when we asked ChatGPT about finding a dog walker, it listed his competitors in the same sentence as Rover. That set him off on a deep dive, trying different prompts to figure out when he was winning and when he wasn&#x27;t.<p>Gumshoe automates that process. We run hundreds of conversations with popular LLMs on behalf of our users. Given a brand and a list of relevant topics, we generate search personas, create questions they might ask, and analyze how different AI models respond. The result is a representative sample of what LLMs say about that brand.<p>What’s different about our approach? Traditional SEO is focused on individual pages, but AI search is more context-driven. While LLMs are trained on fixed data, many RAG implementations seem to prioritize high-quality, concise, and objective content. We’re still researching how LLMs weigh information and we’d love to hear from the HN community about your insights and experiences with AI-driven search. Ultimately, our goal is to make the internet better in the future, so would love your thoughts on how to make sure the best results get surfaced organically in AI search tools.<p>If you’re curious, we&#x27;d love for you to check out Gumshoe and share your feedback. We&#x27;re here to answer any questions and eager to learn from your perspectives!<p>Cheers, \nTodd (sawickipedia) &amp; Patrick (patricko)"
     },
     {
       "objectID": "42847834",
