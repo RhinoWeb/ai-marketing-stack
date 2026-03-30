@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-03-23T06:57:51.651Z",
+  "updated_at": "2026-03-30T07:15:12.739Z",
   "articles": [
     {
       "objectID": "47435127",
       "title": "I Reverse-Engineered the TiinyAI Pocket Lab from Marketing Photos",
       "url": "https://bay41.com/posts/tiiny-ai-pocket-lab-review/",
       "author": "davidklemke",
-      "points": 69,
-      "num_comments": 20,
+      "points": 80,
+      "num_comments": 26,
       "created_at_i": 1773896185,
       "story_text": null
     },
