@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-03-30T07:15:12.739Z",
+  "updated_at": "2026-04-06T07:17:04.278Z",
   "articles": [
+    {
+      "objectID": "47604218",
+      "title": "The AI Marketing BS Index",
+      "url": "https://bastian.rieck.me/blog/2026/bs/",
+      "author": "speckx",
+      "points": 108,
+      "num_comments": 21,
+      "created_at_i": 1775066112,
+      "story_text": null
+    },
     {
       "objectID": "47435127",
       "title": "I Reverse-Engineered the TiinyAI Pocket Lab from Marketing Photos",
@@ -179,16 +189,6 @@
       "num_comments": 77,
       "created_at_i": 1761685102,
       "story_text": null
-    },
-    {
-      "objectID": "45734696",
-      "title": "Show HN: Dexto – Connect your AI Agents with real-world tools and data",
-      "url": "https://github.com/truffle-ai/dexto",
-      "author": "shaunaks",
-      "points": 41,
-      "num_comments": 12,
-      "created_at_i": 1761667647,
-      "story_text": "Hi HN, we’re the team at Truffle AI (YC W25), and we’ve been working on Dexto (<a href=\"https:&#x2F;&#x2F;www.dexto.ai&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.dexto.ai&#x2F;</a>), a runtime and orchestration layer for AI Agents that lets you turn any app, service or tool into an AI assistant that can reason, think and act. Here&#x27;s a video walkthrough - <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=WJ1qbI6MU6g\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=WJ1qbI6MU6g</a><p>We started working on Dexto after helping clients setup agents for everyday marketing tasks like posting on LinkedIn, running Reddit searches, generating ad creatives, etc. We realized that the LLMs weren’t the issue. The real drag was the repetitive orchestration around them:<p>- wiring LLMs to tools\n- managing context and persistence\n- adding memory and approval flows\n- tailoring behavior per client&#x2F;use case<p>Each small project quietly ballooned into weeks of plumbing where each customer had mostly the same, but slightly custom requirement.<p>So instead of another framework where you write orchestration logic yourself, we built Dexto as a top-level orchestration layer where you declare an agent’s capabilities and behavior:<p>- which tools or MCPs the agent can use\n- which LLM powers it\n- how it should behave (system prompt, tone, approval rules)<p>Once configured, the agent runs as an event-driven loop - reasoning through steps, invoking tools, handling retries, and maintaining its own state and memory. Your app doesn’t manage orchestration, it just triggers and subscribes to the agent’s events and decides how to render or approve outcomes.<p>Agents can run locally, in the cloud, or hybrid. Dexto ships with a CLI, a web UI, and a few sample agents to get started.<p>To show its flexibility, we wrapped some OpenCV functions into an MCP server and connected it to Dexto (<a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;A0j61EIgWdI\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;A0j61EIgWdI</a>). Now, a non-technical user could detect faces in images or create custom photo collages by talking to the agent. The same approach works for coding agents, browser agents, multi-speaker podcast agents, and marketing assistants tuned to your data. <a href=\"https:&#x2F;&#x2F;docs.dexto.ai&#x2F;examples&#x2F;category&#x2F;agent-examples\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dexto.ai&#x2F;examples&#x2F;category&#x2F;agent-examples</a><p>Dexto is modular, composable and portable allowing you to plug in new tools or even re-expose an entire Dexto agent as an MCP Server and consume it from other apps like Cursor (<a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=_hZMFIO8KZM\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=_hZMFIO8KZM</a>). Because agents are defined through config and powered by a consistent runtime, they can run anywhere without code changes making cross-agent (A2A) interactions and reuse effortless.<p>In a way, we like to think of Dexto as a “meta-agent” or “agent harness” that can be customized into a specialized agent depending on its tools, data, and platform.<p>For the time being, we have opted for an Elastic V2 license to give maximum flexibility for the community to build with Dexto while preventing bigger players from taking over and monetizing our work.<p>We’d love your feedback:<p>- Try the quickstart and tell us what breaks\n- Share a use case you want to ship in a day, and we’ll suggest a minimal config<p>Repo: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;truffle-ai&#x2F;dexto\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;truffle-ai&#x2F;dexto</a><p>Docs: <a href=\"https:&#x2F;&#x2F;docs.dexto.ai&#x2F;docs&#x2F;category&#x2F;getting-started\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.dexto.ai&#x2F;docs&#x2F;category&#x2F;getting-started</a><p>Quickstart: npm i -g dexto"
     },
     {
       "objectID": "45723533",
