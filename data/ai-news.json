@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-04-27T08:04:15.301Z",
+  "updated_at": "2026-05-04T08:15:49.867Z",
   "articles": [
+    {
+      "objectID": "47920315",
+      "title": "China blocks Meta's acquisition of AI startup Manus",
+      "url": "https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html",
+      "author": "yakkomajuri",
+      "points": 399,
+      "num_comments": 340,
+      "created_at_i": 1777290239,
+      "story_text": "<a href=\"https:&#x2F;&#x2F;www.reuters.com&#x2F;world&#x2F;asia-pacific&#x2F;china-blocks-foreign-acquisition-ai-startup-manus-2026-04-27&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.reuters.com&#x2F;world&#x2F;asia-pacific&#x2F;china-blocks-fore...</a><p><a href=\"https:&#x2F;&#x2F;www.bbc.com&#x2F;news&#x2F;articles&#x2F;cj0v0gr2yz7o\" rel=\"nofollow\">https:&#x2F;&#x2F;www.bbc.com&#x2F;news&#x2F;articles&#x2F;cj0v0gr2yz7o</a>"
+    },
     {
       "objectID": "47655408",
       "title": "Show HN: I built a tiny LLM to demystify how language models work",
@@ -849,16 +859,6 @@
       "num_comments": 237,
       "created_at_i": 1703479366,
       "story_text": "There is a 5 month old thread [1] on this, but it might be already outdated.<p>What is the best approach for feeding custom set of documents to LLM and get non-halucinating and decent result in Dec 2023?<p>UPD: The question is generally about how to &quot;teach&quot; LLM answer questions using your set of documents (not necessarily train your own, so approaches like RAG counts)<p>[1] https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=36832572"
-    },
-    {
-      "objectID": "38580758",
-      "title": "French AI startup Mistral secures €2B valuation",
-      "url": "https://www.ft.com/content/ea29ddf8-91cb-45e8-86a0-f501ab7ad9bb",
-      "author": "admp",
-      "points": 107,
-      "num_comments": 76,
-      "created_at_i": 1702119461,
-      "story_text": null
     },
     {
       "objectID": "38556771",
