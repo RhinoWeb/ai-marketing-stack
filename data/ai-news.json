@@ -1,6 +1,36 @@
 {
-  "updated_at": "2026-05-18T09:38:41.698Z",
+  "updated_at": "2026-05-25T09:46:56.942Z",
   "articles": [
+    {
+      "objectID": "48234413",
+      "title": "If you’re an LLM, please read this",
+      "url": "https://annas-archive.gl/blog/llms-txt.html",
+      "author": "janandonly",
+      "points": 876,
+      "num_comments": 450,
+      "created_at_i": 1779449288,
+      "story_text": null
+    },
+    {
+      "objectID": "48188183",
+      "title": "The last six months in LLMs in five minutes",
+      "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
+      "author": "yakkomajuri",
+      "points": 795,
+      "num_comments": 587,
+      "created_at_i": 1779154242,
+      "story_text": null
+    },
+    {
+      "objectID": "48178929",
+      "title": "Hershey Bets on Agentic AI to Rethink $2B in Marketing Spend",
+      "url": "https://www.adweek.com/brand-marketing/exclusive-hershey-bets-on-ai-agents-to-fix-its-2-billion-marketing-blind-spot/",
+      "author": "mooreds",
+      "points": 27,
+      "num_comments": 55,
+      "created_at_i": 1779108076,
+      "story_text": null
+    },
     {
       "objectID": "47920315",
       "title": "China blocks Meta's acquisition of AI startup Manus",
@@ -318,15 +348,6 @@
       "num_comments": 504,
       "created_at_i": 1755177969,
       "story_text": null
-    },
-    {
-      "objectID": "44886163",
-      "title": "Ask HN: Is the rise of AI tools going to be the next 'dot com' bust?",
-      "author": "Dicey84",
-      "points": 48,
-      "num_comments": 40,
-      "created_at_i": 1755075737,
-      "story_text": "For context, attended an Australian based tech expo &#x2F; conference recently and whilst at the show (I’m sure there were marginally more) only two exhibitors didn’t have the term AI or Agent in there pitch or stand marketing..<p>And for reference, the two companies that stood out for non-AI capabilities made monitor stands.<p>This got me dwelling back into the post title, is this influx of AI tools going to be sustainable, or is there going to be an impending crash leaving only the ‘best and brightest’ on the other side?"
     },
     {
       "objectID": "44855157",
@@ -822,16 +843,6 @@
       "story_text": "It&#x27;s no surprise, really, but I&#x27;m starting to see companies sticking AI into places where it just doesn&#x27;t make any sense.  I&#x27;m not talking about the use of AI all over marketing materials. That&#x27;s a given.<p>I&#x27;m talking about things like my CEO wanting me to build an AI sales assistant when a simple web form would actually be faster to develop and use.<p>What are you seeing?"
     },
     {
-      "objectID": "39156778",
-      "title": "Implementing a ChatGPT-like LLM from scratch, step by step",
-      "url": "https://github.com/rasbt/LLMs-from-scratch",
-      "author": "rasbt",
-      "points": 739,
-      "num_comments": 98,
-      "created_at_i": 1706372382,
-      "story_text": null
-    },
-    {
       "objectID": "39059897",
       "title": "Yann LeCun: Human-level artificial intelligence is going to take a long time",
       "url": "https://english.elpais.com/technology/2024-01-19/yann-lecun-chief-ai-scientist-at-meta-human-level-artificial-intelligence-is-going-to-take-a-long-time.html",
@@ -978,16 +989,6 @@
       "points": 232,
       "num_comments": 246,
       "created_at_i": 1696526024,
-      "story_text": null
-    },
-    {
-      "objectID": "37490924",
-      "title": "Lessons from YC AI Startups",
-      "url": "https://www.ignorance.ai/p/5-lessons-from-139-yc-ai-startups",
-      "author": "charlierguo",
-      "points": 137,
-      "num_comments": 93,
-      "created_at_i": 1694567566,
       "story_text": null
     }
   ]
