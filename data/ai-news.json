@@ -1,13 +1,33 @@
 {
-  "updated_at": "2026-05-25T09:46:56.942Z",
+  "updated_at": "2026-06-01T11:07:25.627Z",
   "articles": [
+    {
+      "objectID": "48336233",
+      "title": "Anthropic surpasses OpenAI to become most valuable AI startup",
+      "url": "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
+      "author": "Bolat14",
+      "points": 419,
+      "num_comments": 471,
+      "created_at_i": 1780149394,
+      "story_text": null
+    },
+    {
+      "objectID": "48272938",
+      "title": "Cox Media fined after bragging it spied on users through their phones",
+      "url": "https://www.theverge.com/policy/937027/cox-media-marketing-ai-powered-phone-spying-ads-ftc-fine",
+      "author": "sbulaev",
+      "points": 23,
+      "num_comments": 1,
+      "created_at_i": 1779750605,
+      "story_text": null
+    },
     {
       "objectID": "48234413",
       "title": "If you’re an LLM, please read this",
       "url": "https://annas-archive.gl/blog/llms-txt.html",
       "author": "janandonly",
-      "points": 876,
-      "num_comments": 450,
+      "points": 890,
+      "num_comments": 453,
       "created_at_i": 1779449288,
       "story_text": null
     },
@@ -16,7 +36,7 @@
       "title": "The last six months in LLMs in five minutes",
       "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
       "author": "yakkomajuri",
-      "points": 795,
+      "points": 803,
       "num_comments": 587,
       "created_at_i": 1779154242,
       "story_text": null
@@ -969,26 +989,6 @@
       "points": 241,
       "num_comments": 334,
       "created_at_i": 1698658529,
-      "story_text": null
-    },
-    {
-      "objectID": "37966569",
-      "title": "The Pixel 8 Pro's Tensor G3 off-loads all generative AI tasks to the cloud",
-      "url": "https://www.notebookcheck.net/MrWhosetheboss-video-reveals-Google-s-Pixel-8-Pro-Tensor-G3-off-loads-all-generative-AI-tasks-to-the-cloud.760215.0.html",
-      "author": "redbell",
-      "points": 240,
-      "num_comments": 130,
-      "created_at_i": 1697894055,
-      "story_text": null
-    },
-    {
-      "objectID": "37781231",
-      "title": "Generative AI could make search harder to trust",
-      "url": "https://www.wired.com/story/fast-forward-chatbot-hallucinations-are-poisoning-web-search/",
-      "author": "jedwhite",
-      "points": 232,
-      "num_comments": 246,
-      "created_at_i": 1696526024,
       "story_text": null
     }
   ]
