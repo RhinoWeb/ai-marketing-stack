@@ -1,13 +1,43 @@
 {
-  "updated_at": "2026-06-01T11:07:25.627Z",
+  "updated_at": "2026-06-08T10:15:26.188Z",
   "articles": [
+    {
+      "objectID": "48434312",
+      "title": "LLMs are eroding my software engineering career and I don't know what to do",
+      "url": "https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/",
+      "author": "poisonfountain",
+      "points": 978,
+      "num_comments": 940,
+      "created_at_i": 1780836569,
+      "story_text": null
+    },
+    {
+      "objectID": "48389360",
+      "title": "How LLMs work",
+      "url": "https://www.0xkato.xyz/how-llms-actually-work/",
+      "author": "0xkato",
+      "points": 925,
+      "num_comments": 264,
+      "created_at_i": 1780517713,
+      "story_text": null
+    },
+    {
+      "objectID": "48387270",
+      "title": "Artificial intelligence is not conscious – Ted Chiang",
+      "url": "https://www.theatlantic.com/philosophy/2026/06/no-artificial-intelligence-is-not-conscious/687378/",
+      "author": "lordleft",
+      "points": 786,
+      "num_comments": 1372,
+      "created_at_i": 1780509097,
+      "story_text": "<a href=\"https:&#x2F;&#x2F;archive.is&#x2F;bcpZl\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.is&#x2F;bcpZl</a>"
+    },
     {
       "objectID": "48336233",
       "title": "Anthropic surpasses OpenAI to become most valuable AI startup",
       "url": "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
       "author": "Bolat14",
-      "points": 419,
-      "num_comments": 471,
+      "points": 422,
+      "num_comments": 472,
       "created_at_i": 1780149394,
       "story_text": null
     },
@@ -26,8 +56,8 @@
       "title": "If you’re an LLM, please read this",
       "url": "https://annas-archive.gl/blog/llms-txt.html",
       "author": "janandonly",
-      "points": 890,
-      "num_comments": 453,
+      "points": 891,
+      "num_comments": 454,
       "created_at_i": 1779449288,
       "story_text": null
     },
@@ -36,7 +66,7 @@
       "title": "The last six months in LLMs in five minutes",
       "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
       "author": "yakkomajuri",
-      "points": 803,
+      "points": 804,
       "num_comments": 587,
       "created_at_i": 1779154242,
       "story_text": null
@@ -228,16 +258,6 @@
       "points": 841,
       "num_comments": 653,
       "created_at_i": 1762932330,
-      "story_text": null
-    },
-    {
-      "objectID": "45733707",
-      "title": "EuroLLM: LLM made in Europe built to support all 24 official EU languages",
-      "url": "https://eurollm.io/",
-      "author": "NotInOurNames",
-      "points": 773,
-      "num_comments": 606,
-      "created_at_i": 1761663484,
       "story_text": null
     },
     {
@@ -969,26 +989,6 @@
       "points": 132,
       "num_comments": 82,
       "created_at_i": 1700338763,
-      "story_text": null
-    },
-    {
-      "objectID": "38245665",
-      "title": "Show HN: Interactive AI Resume/LinkedIn for better networking/job hunting",
-      "url": "https://www.protoconstruct.com/chat/652af6c4238991f5e5f2eb57",
-      "author": "anyeung",
-      "points": 66,
-      "num_comments": 50,
-      "created_at_i": 1699836269,
-      "story_text": "Generally, I found resumes too vague to get to know anyone (hence why no one networks with them), professional blogs too low ROI, walking up to people unscalable, and cold messaging fairly low success-rate.<p>I wanted the &#x27;marketing tool&#x27; of networking to get myself out there. Something that lets me:\n1) Draw people into a conversation before they&#x27;ve realized it\n2) Make them remember me and ultimately reach out to me\n3) See what people asked me so I can further refine my interactive profile and start the networking cycle again<p>So I built a website where anyone can create these interactive profiles starting with a resume import.<p>The one I linked is a test profile but on my personal one, I got:\n1) &gt;10x more people reaching out to me when I put myself out there to network (some were VCs actually; though I&#x27;m not fundraising right now)\n2) A bunch of engagement questions where I can see what people want to know about me so I can further enhance my profile and improve my own outreach<p>This is still in early stages, but if I go to a conference&#x2F;join a new team at a new job&#x2F;need to network for some other reason, I think I&#x27;ll put this on my LinkedIn&#x2F;business card&#x2F;etc.<p>The (limited) data so far suggests people are more willing to first talk to the interactive profile before reaching out to me. I guess that makes sense, it&#x27;s less commitment than emailing me. But ultimately, it does seem to increase the total number of people remembering&#x2F;messaging me (i.e. improving the professional networking funnel as it were).<p>I would love y&#x27;all&#x27;s thoughts on it<p>Edit: I can see some of you asking questions lol. Way more fun than LinkedIn&#x27;s &#x27;This random person looked at your profile but what did they want to know? We have no idea&#x27;."
-    },
-    {
-      "objectID": "38067314",
-      "title": "Executive Order on Safe, Secure, and Trustworthy Artificial Intelligence",
-      "url": "https://www.whitehouse.gov/briefing-room/statements-releases/2023/10/30/fact-sheet-president-biden-issues-executive-order-on-safe-secure-and-trustworthy-artificial-intelligence/",
-      "author": "Mandelmus",
-      "points": 241,
-      "num_comments": 334,
-      "created_at_i": 1698658529,
       "story_text": null
     }
   ]
