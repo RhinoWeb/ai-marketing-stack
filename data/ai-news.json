@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-07-20T08:38:16.680Z",
+  "updated_at": "2026-07-27T09:28:16.652Z",
   "articles": [
+    {
+      "objectID": "49040741",
+      "title": "Opus 5 is currently #1 on Artificial Analysis Intelligence Leaderboard",
+      "url": "https://artificialanalysis.ai/models",
+      "author": "aarondong",
+      "points": 371,
+      "num_comments": 229,
+      "created_at_i": 1784922310,
+      "story_text": null
+    },
     {
       "objectID": "48803711",
       "title": "The AI Marketing Backlash: Why 'AI-First' Brands Are Starting to Fall Flat",
@@ -980,16 +990,6 @@
       "points": 648,
       "num_comments": 92,
       "created_at_i": 1700844615,
-      "story_text": null
-    },
-    {
-      "objectID": "38323939",
-      "title": "Altman was raising billions from Middle East sovereign funds for AI chip startup",
-      "url": "https://twitter.com/unusual_whales/status/1725945364140986796?s=20",
-      "author": "A_Duck",
-      "points": 132,
-      "num_comments": 82,
-      "created_at_i": 1700338763,
       "story_text": null
     }
   ]
