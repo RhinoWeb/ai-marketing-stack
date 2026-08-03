@@ -1,13 +1,23 @@
 {
-  "updated_at": "2026-07-27T09:28:16.652Z",
+  "updated_at": "2026-08-03T09:19:20.135Z",
   "articles": [
+    {
+      "objectID": "49103285",
+      "title": "AI's top startups are barely publishing their research",
+      "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
+      "author": "YeGoblynQueenne",
+      "points": 616,
+      "num_comments": 318,
+      "created_at_i": 1785360340,
+      "story_text": null
+    },
     {
       "objectID": "49040741",
       "title": "Opus 5 is currently #1 on Artificial Analysis Intelligence Leaderboard",
       "url": "https://artificialanalysis.ai/models",
       "author": "aarondong",
-      "points": 371,
-      "num_comments": 229,
+      "points": 374,
+      "num_comments": 236,
       "created_at_i": 1784922310,
       "story_text": null
     },
@@ -980,16 +990,6 @@
       "points": 177,
       "num_comments": 132,
       "created_at_i": 1701199723,
-      "story_text": null
-    },
-    {
-      "objectID": "38405823",
-      "title": "Generative AI for Beginners",
-      "url": "https://microsoft.github.io/generative-ai-for-beginners/#/",
-      "author": "Anon84",
-      "points": 648,
-      "num_comments": 92,
-      "created_at_i": 1700844615,
       "story_text": null
     }
   ]
