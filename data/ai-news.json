@@ -1,12 +1,22 @@
 {
-  "updated_at": "2026-08-03T09:19:20.135Z",
+  "updated_at": "2026-08-10T07:08:32.216Z",
   "articles": [
+    {
+      "objectID": "49161518",
+      "title": "LLMs reward expertise",
+      "url": "https://www.seangoedecke.com/llms-reward-expertise/",
+      "author": "MaxMussio",
+      "points": 1411,
+      "num_comments": 572,
+      "created_at_i": 1785791633,
+      "story_text": null
+    },
     {
       "objectID": "49103285",
       "title": "AI's top startups are barely publishing their research",
       "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
       "author": "YeGoblynQueenne",
-      "points": 616,
+      "points": 618,
       "num_comments": 318,
       "created_at_i": 1785360340,
       "story_text": null
@@ -922,15 +932,6 @@
       "num_comments": 755,
       "created_at_i": 1703931430,
       "story_text": null
-    },
-    {
-      "objectID": "38759877",
-      "title": "Ask HN: How do I train a custom LLM/ChatGPT on my own documents in Dec 2023?",
-      "author": "divan",
-      "points": 800,
-      "num_comments": 237,
-      "created_at_i": 1703479366,
-      "story_text": "There is a 5 month old thread [1] on this, but it might be already outdated.<p>What is the best approach for feeding custom set of documents to LLM and get non-halucinating and decent result in Dec 2023?<p>UPD: The question is generally about how to &quot;teach&quot; LLM answer questions using your set of documents (not necessarily train your own, so approaches like RAG counts)<p>[1] https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=36832572"
     },
     {
       "objectID": "38556771",
