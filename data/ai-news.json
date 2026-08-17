@@ -1,13 +1,33 @@
 {
-  "updated_at": "2026-08-10T07:08:32.216Z",
+  "updated_at": "2026-08-17T06:31:51.956Z",
   "articles": [
+    {
+      "objectID": "49275385",
+      "title": "Grok 4.6 scores 61 on the Artificial Analysis Intelligence Index",
+      "url": "https://artificialanalysis.ai/articles/grok-4-6-benchmarks-and-analysis",
+      "author": "wertyk",
+      "points": 342,
+      "num_comments": 416,
+      "created_at_i": 1786553665,
+      "story_text": null
+    },
+    {
+      "objectID": "49234675",
+      "title": "How I use LLMs to learn complex topics",
+      "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/",
+      "author": "laurentiurad",
+      "points": 831,
+      "num_comments": 548,
+      "created_at_i": 1786303009,
+      "story_text": null
+    },
     {
       "objectID": "49161518",
       "title": "LLMs reward expertise",
       "url": "https://www.seangoedecke.com/llms-reward-expertise/",
       "author": "MaxMussio",
-      "points": 1411,
-      "num_comments": 572,
+      "points": 1416,
+      "num_comments": 573,
       "created_at_i": 1785791633,
       "story_text": null
     },
@@ -16,7 +36,7 @@
       "title": "AI's top startups are barely publishing their research",
       "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
       "author": "YeGoblynQueenne",
-      "points": 618,
+      "points": 619,
       "num_comments": 318,
       "created_at_i": 1785360340,
       "story_text": null
@@ -119,16 +139,6 @@
       "points": 891,
       "num_comments": 454,
       "created_at_i": 1779449288,
-      "story_text": null
-    },
-    {
-      "objectID": "48188183",
-      "title": "The last six months in LLMs in five minutes",
-      "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
-      "author": "yakkomajuri",
-      "points": 804,
-      "num_comments": 587,
-      "created_at_i": 1779154242,
       "story_text": null
     },
     {
@@ -981,16 +991,6 @@
       "points": 1075,
       "num_comments": 288,
       "created_at_i": 1701286189,
-      "story_text": null
-    },
-    {
-      "objectID": "38450087",
-      "title": "Most AI startups are doomed",
-      "url": "https://weightythoughts.com/p/most-ai-startups-are-doomed",
-      "author": "j-wang",
-      "points": 177,
-      "num_comments": 132,
-      "created_at_i": 1701199723,
       "story_text": null
     }
   ]
