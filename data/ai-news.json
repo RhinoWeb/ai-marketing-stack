@@ -1,13 +1,23 @@
 {
-  "updated_at": "2026-08-24T06:34:34.744Z",
+  "updated_at": "2026-08-31T12:05:30.883Z",
   "articles": [
+    {
+      "objectID": "49489982",
+      "title": "Debian votes to allow \"responsible use of generative AI\"",
+      "url": "https://lwn.net/Articles/1091231/",
+      "author": "pluc",
+      "points": 507,
+      "num_comments": 472,
+      "created_at_i": 1788012130,
+      "story_text": null
+    },
     {
       "objectID": "49275385",
       "title": "Grok 4.6 scores 61 on the Artificial Analysis Intelligence Index",
       "url": "https://artificialanalysis.ai/articles/grok-4-6-benchmarks-and-analysis",
       "author": "wertyk",
       "points": 343,
-      "num_comments": 416,
+      "num_comments": 417,
       "created_at_i": 1786553665,
       "story_text": null
     },
@@ -981,16 +991,6 @@
       "points": 306,
       "num_comments": 69,
       "created_at_i": 1701369300,
-      "story_text": null
-    },
-    {
-      "objectID": "38464057",
-      "title": "Llamafile lets you distribute and run LLMs with a single file",
-      "url": "https://github.com/Mozilla-Ocho/llamafile",
-      "author": "tfinch",
-      "points": 1075,
-      "num_comments": 288,
-      "created_at_i": 1701286189,
       "story_text": null
     }
   ]
