@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-08-31T12:05:30.883Z",
+  "updated_at": "2026-09-07T10:59:16.700Z",
   "articles": [
     {
-      "objectID": "49489982",
-      "title": "Debian votes to allow \"responsible use of generative AI\"",
-      "url": "https://lwn.net/Articles/1091231/",
-      "author": "pluc",
-      "points": 507,
-      "num_comments": 472,
-      "created_at_i": 1788012130,
-      "story_text": null
+      "objectID": "49511007",
+      "title": "Launch HN: Almanac (YC S26) – AI that knows your company",
+      "url": "https://usealmanac.com/",
+      "author": "kushagrchitkar",
+      "points": 59,
+      "num_comments": 48,
+      "created_at_i": 1788190474,
+      "story_text": "Hi HN, I&#x27;m Kushagra, one of three founders of Almanac, a Hermes with a brain that knows everything about your company.<p>We started our journey with setting up Hermes for our company, thinking it must be easy. We wanted an agent that would know every context about our company, so we could ask questions and get context-appropriate responses to.<p>This started a very annoying and difficult journey. Setting up Hermes, getting it to talk right, building OAuth apps for every connector myself, then feeding it context myself, and ultimately struggling with Hermes&#x27;s default memory. At the same time, we saw our YC batchmates struggling with the same problem, and we saw an opportunity.<p>So we built Almanac. This is how it works. You sign up, you get a Hermes agent straight out of the box. You have a one-click connect to any account (Gmail, Calendar, Granola, PostHog, etc). You have personal accounts (only accessible by you) and also shared accounts (accessible by everyone in the company). The consequence being I can never see my cofounders&#x27; accounts.<p>The “brain” of this agent is wikis. We pull in information from your connected sources, and start organizing this information in two wikis. A personal one, for you, which understands who you are, what your preferences are, the people in your life, and the things going on in your life. The second wiki is a company wiki, which includes what the company is, what you’re working on, what the roadmap is, and what the blockers of the company are. Your agent ultimately has access to these two wikis and the original accounts, which invoke the feeling of “it just knows you.”<p>Here’s a demo: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=ajXP5PHuK18\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=ajXP5PHuK18</a><p>We&#x27;re three cofounders, Rohan, Kushagra, and Divit, and we&#x27;ve been friends for 11 years, since studying for the IIT-JEE. We all did Electrical Engineering (Rohan at IIT Delhi, me at IIT Kharagpur, Divit at BITS Pilani, Hyderabad), and Rohan and I later went to Harvard, where this pre-compilation layer became our capstone thesis. We have built multiple products around the idea of a pre-compiled knowledge layer.<p>Our main differentiating point is the way we approach memory and context in general. Most AI assistant tools treat memory as an afterthought. We have worked on wikis for AI for more than a year now, building products for Harvard and NASA. The one thing we have learnt is that one needs to spend a lot more compute upfront, in the pre-compilation of this knowledge base, to get it right.<p>Having this pre-compiled knowledge base enables a lot of interesting ideas. First is a proactive agent. Since I have compiled what’s going on in both my company and my current life, Almanac can start completing tasks on its own. Concretely, we run a background worker which takes a look at tasks that could be completed, pings the main agent, who then pings me, suggesting which tasks it could automate. As a result, I wake up to proactive notifications which look like “I already prepared a draft of your fundraising pitch deck, want to take a look?”<p>Second, long-horizon tasks. In our wikis, we maintain a section on ongoing projects, so Almanac can pick a task back up days later without losing the thread. Most agents are session-bound: they run once, finish, and forget. But a lot of real work isn&#x27;t one shot; it plays out over hours and days with people in the loop. The clearest example is anything that involves waiting on a human, like scheduling a meeting, following up on a sales thread, or chasing a document. Almanac can send an email on your behalf, and because it&#x27;s always on and remembers the project, it notices the reply four hours later and drafts the right follow-up in context.<p>Since launching, we&#x27;ve seen a lot of use cases for Almanac. One person runs her dog-rescue operation through it: finding available fosters, tracking pickups, and sending reminders for consent forms. Another researches Polymarket strategies with Almanac, where its memory holds what past strategies were, proposes new ones, and compares them against what went right or wrong last time. Another builds marketing campaigns on it without having to re-explain the business and the whole campaign every single time.<p>Regarding privacy and security, Almanac only accesses accounts you explicitly connect. Your OAuth credentials are held by our connection provider, not in Almanac’s database. We only store the wiki and the source behind its citations. So an email used as a citation may be retained as Markdown.<p>We’re live: <a href=\"https:&#x2F;&#x2F;usealmanac.com\">https:&#x2F;&#x2F;usealmanac.com</a>. We have a 7-day trial on all of our plans. Happy to hear if people have done similar setups, and what new features they’d like in Almanac. If you’re a company that wants to get an agent that actually gets tasks done, I would love to talk: <a href=\"https:&#x2F;&#x2F;cal.com&#x2F;team&#x2F;almanac&#x2F;demo\" rel=\"nofollow\">https:&#x2F;&#x2F;cal.com&#x2F;team&#x2F;almanac&#x2F;demo</a>."
     },
     {
       "objectID": "49275385",
@@ -47,7 +47,7 @@
       "url": "https://www.science.org/content/article/ai-s-top-startups-are-barely-publishing-their-research",
       "author": "YeGoblynQueenne",
       "points": 619,
-      "num_comments": 318,
+      "num_comments": 317,
       "created_at_i": 1785360340,
       "story_text": null
     },
@@ -272,16 +272,6 @@
       "story_text": "Hey HN! This has been my project for a few years now. I recently brought it back to life after taking a pause to focus on my studies.<p>My goal with this project is to separate fluff from science when shopping for supplements. I am doing this in 3 steps:<p>1.) I index every supplement on the market (extract each ingredient, normalize by quantity)<p>2.) I index every research paper on supplementation (rank \nevery claim by effect type and effect size)<p>3.) I link data between supplements and research papers<p>Earlier last year, I took pause on a project because I&#x27;ve ran into a few issues:<p>Legal: Shady companies are sending C&amp;Ds letters demanding their products are taken down from the website. It is not something I had the mental capacity to respond to while also going through my studies. Not coincidentally, these are usually brands with big marketing budgets and poor ingredients to price ratio.<p>Technical: I started this project when the first LLMs came out. I&#x27;ve built extensive internal evals to understand how LLMs are performing. The hallucinations at the time were simply too frequent to passthrough this data to visitors. However, I recently re-ran my evals with Opus 4.5 and was very impressed. I am running out of scenarios that I can think&#x2F;find where LLMs are bad at interpreting data.<p>Business: I still haven&#x27;t figured out how to monetize it or even who the target customer is.<p>Despite these challenges, I decided to restart my journey.<p>My mission is to bring transparency (science and price) to the supplement market. My goal is NOT to increase the use of supplements, but rather to help consumers make informed decisions. Often times, supplementation is not necessary or there are natural ways to supplement (that&#x27;s my focus this quarter – better education about natural supplementation).<p>Some things that are helping my cause – Bryan Johnson&#x27;s journey has drawn a lot more attention to healthy supplementation (blueprint). Thanks to Bryan&#x27;s efforts, I had so many people in recent months reach out to ask about the state of the project – interest I&#x27;ve not had before.<p>I am excited to restart this journey and to share it with HN. Your comments on how to approach this would be massively appreciated.<p>Some key areas of the website:<p>* Example of navigating supplements by ingredient <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;search?q=%22Vitamin+D%22&amp;s=jho4espsuc\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;search?q=%22Vitamin+D%22&amp;s=jho4espsuc</a><p>* Example of research paper analyzed using AI <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;research-papers&#x2F;effect-of-lactobacillus-gasseri-pa-168-bifidobacterium-longum-sp-073-b-bifidum-mf-205-on-common-cold-episodes-a-double-blind-randomized-controlled-trial-767\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;research-papers&#x2F;effect-of-lactobacillus-...</a><p>* Example of looking for very specific strains or ingredients <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;probiotics&#x2F;bifidobacterium-bifidum\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;probiotics&#x2F;bifidobacterium-bifidum</a><p>* Example of navigating research by health-outcomes <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;health-outcomes&#x2F;improved-intestinal-barrier-function\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;health-outcomes&#x2F;improved-intestinal-barr...</a><p>* Example of product listing <a href=\"https:&#x2F;&#x2F;pillser.com&#x2F;supplements&#x2F;pb-8-probiotic-663\" rel=\"nofollow\">https:&#x2F;&#x2F;pillser.com&#x2F;supplements&#x2F;pb-8-probiotic-663</a>"
     },
     {
-      "objectID": "46605587",
-      "title": "Let's be honest, Generative AI isn't going all that well",
-      "url": "https://garymarcus.substack.com/p/lets-be-honest-generative-ai-isnt",
-      "author": "7777777phil",
-      "points": 232,
-      "num_comments": 334,
-      "created_at_i": 1768329475,
-      "story_text": null
-    },
-    {
       "objectID": "46512182",
       "title": "Show HN: Mantic.sh – A structural code search engine for AI agents",
       "url": "https://github.com/marcoaapfortes/Mantic.sh",
@@ -332,13 +322,13 @@
       "story_text": null
     },
     {
-      "objectID": "45739080",
-      "title": "Generative AI Image Editing Showdown",
-      "url": "https://genai-showdown.specr.net/image-editing",
-      "author": "gaws",
-      "points": 342,
-      "num_comments": 77,
-      "created_at_i": 1761685102,
+      "objectID": "45879793",
+      "title": "Using Generative AI in Content Production",
+      "url": "https://partnerhelp.netflixstudios.com/hc/en-us/articles/43393929218323-Using-Generative-AI-in-Content-Production",
+      "author": "CaRDiaK",
+      "points": 190,
+      "num_comments": 150,
+      "created_at_i": 1762802887,
       "story_text": null
     },
     {
@@ -372,13 +362,13 @@
       "story_text": null
     },
     {
-      "objectID": "45292648",
-      "title": "Learn Your Way: Reimagining Textbooks with Generative AI",
-      "url": "https://research.google/blog/learn-your-way-reimagining-textbooks-with-generative-ai/",
-      "author": "FromTheArchives",
-      "points": 359,
-      "num_comments": 236,
-      "created_at_i": 1758217376,
+      "objectID": "45388822",
+      "title": "Suno Studio, a Generative AI DAW",
+      "url": "https://suno.com/studio-welcome",
+      "author": "debrisapron",
+      "points": 208,
+      "num_comments": 303,
+      "created_at_i": 1758907074,
       "story_text": null
     },
     {
@@ -599,6 +589,16 @@
       "story_text": "Hey HN! I’m Dane, the creator of Plandex (<a href=\"https:&#x2F;&#x2F;github.com&#x2F;plandex-ai&#x2F;plandex\">https:&#x2F;&#x2F;github.com&#x2F;plandex-ai&#x2F;plandex</a>), an open source AI coding agent focused especially on tackling large tasks in real world software projects.<p>You can watch a 2 minute demo of Plandex in action here: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SFSu2vNmlLk\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=SFSu2vNmlLk</a><p>And here’s more of a tutorial style demo showing how Plandex can automatically debug a browser application: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=g-_76U_nK0Y\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=g-_76U_nK0Y</a>.<p>I launched Plandex v1 here on HN a little less than a year ago (<a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=39918500\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=39918500</a>).<p>Now I’m launching a major update, Plandex v2, which is the result of 8 months of heads down work, and is in effect a whole new project&#x2F;product.<p>In short, Plandex is now a top-tier coding agent with fully autonomous capabilities. It combines models from Anthropic, OpenAI, and Google to achieve better results, more reliable agent behavior, better cost efficiency, and better performance than is possible by using only a single provider’s models.<p>I believe it is now one of the best tools available for working on large tasks in real world codebases with AI. It has an effective context window of 2M tokens, and can index projects of 20M tokens and beyond using tree-sitter project maps (30+ languages are supported). It can effectively find relevant context in massive million-line projects like SQLite, Redis, and Git.<p>A bit more on some of Plandex’s key features:<p>- Plandex has a built-in diff review sandbox that helps you get the benefits of AI without leaving behind a mess in your project. By default, all changes accumulate in the sandbox until you approve them. The sandbox is version-controlled. You can rewind it to any previous point, and you can also create branches to try out alternative approaches.<p>- It offers a ‘full auto mode’ that can complete large tasks autonomously end-to-end, including high level planning, context loading, detailed planning, implementation, command execution (for dependencies, builds, tests, etc.), and debugging.<p>- The autonomy level is highly configurable. You can move up and down the ladder of autonomy depending on the task, your comfort level, and how you weigh cost optimization vs. effort and results.<p>- Models and model settings are also very configurable. There are built-in models and model packs for different use cases. You can also add custom models and model packs, and customize model settings like temperature or top-p. All model changes are version controlled, so you can use branches to try out the same task with different models. The newly released OpenAI models and the paid Gemini 2.5 Pro model will be integrated in the default model pack soon.<p>- It can be easily self-hosted, including a ‘local mode’ for a very fast local single-user setup with Docker.<p>- Cloud hosting is also available for added convenience with a couple of subscription tiers: an ‘Integrated Models’ mode that requires no other accounts or API keys and allows you to manage billing&#x2F;budgeting&#x2F;spending alerts and track usage centrally, and a ‘BYO API Key’ mode that allows you to use your own OpenAI&#x2F;OpenRouter accounts.<p>I’d love to get more HNers in the Plandex Discord (<a href=\"https:&#x2F;&#x2F;discord.gg&#x2F;plandex-ai\" rel=\"nofollow\">https:&#x2F;&#x2F;discord.gg&#x2F;plandex-ai</a>). Please join and say hi!<p>And of course I’d love to hear your feedback, whether positive or negative. Thanks so much!"
     },
     {
+      "objectID": "43484224",
+      "title": "The Impact of Generative AI on Critical Thinking [pdf]",
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf",
+      "author": "greybox",
+      "points": 203,
+      "num_comments": 138,
+      "created_at_i": 1743008091,
+      "story_text": null
+    },
+    {
       "objectID": "43334589",
       "title": "Launch HN: Sift Dev (YC W25) – AI-Powered Datadog Alternative",
       "author": "Akula112233",
@@ -776,6 +776,16 @@
       "story_text": null
     },
     {
+      "objectID": "41698361",
+      "title": "Liquid Foundation Models: Our First Series of Generative AI Models",
+      "url": "https://www.liquid.ai/liquid-foundation-models",
+      "author": "jasondavies",
+      "points": 183,
+      "num_comments": 152,
+      "created_at_i": 1727710410,
+      "story_text": null
+    },
+    {
       "objectID": "41523070",
       "title": "Learning to Reason with LLMs",
       "url": "https://openai.com/index/learning-to-reason-with-llms/",
@@ -865,16 +875,6 @@
       "story_text": null
     },
     {
-      "objectID": "40751020",
-      "title": "Testing Generative AI for Circuit Board Design",
-      "url": "https://blog.jitx.com/jitx-corporate-blog/testing-generative-ai-for-circuit-board-design",
-      "author": "DHaldane",
-      "points": 353,
-      "num_comments": 168,
-      "created_at_i": 1718986591,
-      "story_text": null
-    },
-    {
       "objectID": "40222051",
       "title": "Show HN: I'm 16 and building an AI based startup called Factful with friends",
       "url": "https://factful.io/",
@@ -944,26 +944,6 @@
       "story_text": null
     },
     {
-      "objectID": "38814093",
-      "title": "Things are about to get worse for generative AI",
-      "url": "https://garymarcus.substack.com/p/things-are-about-to-get-a-lot-worse",
-      "author": "eddyzh",
-      "points": 403,
-      "num_comments": 755,
-      "created_at_i": 1703931430,
-      "story_text": null
-    },
-    {
-      "objectID": "38556771",
-      "title": "Purple Llama: Towards open trust and safety in generative AI",
-      "url": "https://ai.meta.com/blog/purple-llama-open-trust-safety-generative-ai/",
-      "author": "amrrs",
-      "points": 337,
-      "num_comments": 320,
-      "created_at_i": 1701959747,
-      "story_text": null
-    },
-    {
       "objectID": "38505211",
       "title": "LLM Visualization",
       "url": "https://bbycroft.net/llm",
@@ -991,6 +971,26 @@
       "points": 306,
       "num_comments": 69,
       "created_at_i": 1701369300,
+      "story_text": null
+    },
+    {
+      "objectID": "38464057",
+      "title": "Llamafile lets you distribute and run LLMs with a single file",
+      "url": "https://github.com/Mozilla-Ocho/llamafile",
+      "author": "tfinch",
+      "points": 1075,
+      "num_comments": 288,
+      "created_at_i": 1701286189,
+      "story_text": null
+    },
+    {
+      "objectID": "38450087",
+      "title": "Most AI startups are doomed",
+      "url": "https://weightythoughts.com/p/most-ai-startups-are-doomed",
+      "author": "j-wang",
+      "points": 177,
+      "num_comments": 132,
+      "created_at_i": 1701199723,
       "story_text": null
     }
   ]
