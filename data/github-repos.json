@@ -1,6 +1,26 @@
 {
-  "updated_at": "2026-10-26T06:06:51.199Z",
+  "updated_at": "2026-11-02T06:04:35.081Z",
   "repos": [
+    {
+      "id": 1209966933,
+      "name": "rea",
+      "full_name": "morluto/rea",
+      "html_url": "https://github.com/morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stargazers_count": 419722,
+      "forks_count": 104825,
+      "topics": [
+        "agent-skills",
+        "ai",
+        "android",
+        "claude-code",
+        "cli",
+        "cpp"
+      ],
+      "updated_at": "2026-11-02T06:03:37Z",
+      "created_at": "2026-04-14T00:51:32Z"
+    },
     {
       "id": 1103012935,
       "name": "openclaw",
@@ -8,8 +28,8 @@
       "html_url": "https://github.com/openclaw/openclaw",
       "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
       "language": "TypeScript",
-      "stargazers_count": 393075,
-      "forks_count": 82621,
+      "stargazers_count": 393670,
+      "forks_count": 82736,
       "topics": [
         "ai",
         "assistant",
@@ -18,28 +38,8 @@
         "openclaw",
         "own-your-data"
       ],
-      "updated_at": "2026-10-26T06:05:47Z",
+      "updated_at": "2026-11-02T06:03:51Z",
       "created_at": "2025-11-24T10:16:47Z"
-    },
-    {
-      "id": 1209966933,
-      "name": "rea",
-      "full_name": "morluto/rea",
-      "html_url": "https://github.com/morluto/rea",
-      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-      "language": "TypeScript",
-      "stargazers_count": 386124,
-      "forks_count": 96716,
-      "topics": [
-        "agent-skills",
-        "ai-agents",
-        "binary-analysis",
-        "claude-code",
-        "cli",
-        "codex"
-      ],
-      "updated_at": "2026-10-26T06:06:46Z",
-      "created_at": "2026-04-14T00:51:32Z"
     },
     {
       "id": 1073224795,
@@ -48,8 +48,8 @@
       "html_url": "https://github.com/obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
       "language": "Shell",
-      "stargazers_count": 305174,
-      "forks_count": 27183,
+      "stargazers_count": 310768,
+      "forks_count": 27654,
       "topics": [
         "ai",
         "brainstorming",
@@ -58,7 +58,7 @@
         "sdlc",
         "skills"
       ],
-      "updated_at": "2026-10-26T06:06:43Z",
+      "updated_at": "2026-11-02T06:04:30Z",
       "created_at": "2025-10-09T19:45:18Z"
     },
     {
@@ -68,8 +68,8 @@
       "html_url": "https://github.com/affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "language": "JavaScript",
-      "stargazers_count": 289014,
-      "forks_count": 42836,
+      "stargazers_count": 294946,
+      "forks_count": 43656,
       "topics": [
         "ai-agents",
         "anthropic",
@@ -78,7 +78,7 @@
         "developer-tools",
         "llm"
       ],
-      "updated_at": "2026-10-26T06:06:49Z",
+      "updated_at": "2026-11-02T06:03:35Z",
       "created_at": "2026-01-18T00:51:51Z"
     },
     {
@@ -88,8 +88,8 @@
       "html_url": "https://github.com/NousResearch/hermes-agent",
       "description": "The agent that grows with you",
       "language": "Python",
-      "stargazers_count": 257124,
-      "forks_count": 56324,
+      "stargazers_count": 259579,
+      "forks_count": 57135,
       "topics": [
         "ai",
         "ai-agent",
@@ -98,7 +98,7 @@
         "chatgpt",
         "claude"
       ],
-      "updated_at": "2026-10-26T06:05:56Z",
+      "updated_at": "2026-11-02T06:04:28Z",
       "created_at": "2025-07-22T22:22:28Z"
     },
     {
@@ -108,10 +108,10 @@
       "html_url": "https://github.com/multica-ai/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "language": null,
-      "stargazers_count": 223978,
-      "forks_count": 22416,
+      "stargazers_count": 228131,
+      "forks_count": 22752,
       "topics": [],
-      "updated_at": "2026-10-26T06:05:56Z",
+      "updated_at": "2026-11-02T06:04:09Z",
       "created_at": "2026-01-27T03:53:13Z"
     },
     {
@@ -121,8 +121,8 @@
       "html_url": "https://github.com/n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
       "language": "TypeScript",
-      "stargazers_count": 208612,
-      "forks_count": 61255,
+      "stargazers_count": 209320,
+      "forks_count": 61352,
       "topics": [
         "ai",
         "apis",
@@ -131,7 +131,7 @@
         "data-flow",
         "development"
       ],
-      "updated_at": "2026-10-26T06:01:44Z",
+      "updated_at": "2026-11-02T06:00:01Z",
       "created_at": "2019-06-22T09:24:21Z"
     },
     {
@@ -141,8 +141,8 @@
       "html_url": "https://github.com/tensorflow/tensorflow",
       "description": "An Open Source Machine Learning Framework for Everyone",
       "language": "C++",
-      "stargazers_count": 201258,
-      "forks_count": 78687,
+      "stargazers_count": 201264,
+      "forks_count": 78176,
       "topics": [
         "deep-learning",
         "deep-neural-networks",
@@ -151,7 +151,7 @@
         "ml",
         "neural-network"
       ],
-      "updated_at": "2026-10-26T04:43:31Z",
+      "updated_at": "2026-11-02T05:59:14Z",
       "created_at": "2015-11-07T01:19:20Z"
     },
     {
@@ -161,8 +161,8 @@
       "html_url": "https://github.com/firecrawl/firecrawl",
       "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
       "language": "TypeScript",
-      "stargazers_count": 195395,
-      "forks_count": 10307,
+      "stargazers_count": 197741,
+      "forks_count": 10448,
       "topics": [
         "ai",
         "ai-agents",
@@ -171,7 +171,7 @@
         "ai-search",
         "crawler"
       ],
-      "updated_at": "2026-10-26T05:57:27Z",
+      "updated_at": "2026-11-02T06:04:00Z",
       "created_at": "2024-04-15T21:02:29Z"
     },
     {
@@ -181,8 +181,8 @@
       "html_url": "https://github.com/Significant-Gravitas/AutoGPT",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "language": "Python",
-      "stargazers_count": 187751,
-      "forks_count": 45897,
+      "stargazers_count": 187861,
+      "forks_count": 45901,
       "topics": [
         "agentic-ai",
         "agents",
@@ -191,7 +191,7 @@
         "autonomous-agents",
         "claude"
       ],
-      "updated_at": "2026-10-26T05:37:37Z",
+      "updated_at": "2026-11-02T06:02:25Z",
       "created_at": "2023-03-16T09:21:07Z"
     },
     {
@@ -201,17 +201,17 @@
       "html_url": "https://github.com/ollama/ollama",
       "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "language": "Go",
-      "stargazers_count": 184786,
-      "forks_count": 18584,
+      "stargazers_count": 185623,
+      "forks_count": 18859,
       "topics": [
         "deepseek",
         "gemma",
-        "gemma3",
         "glm",
         "go",
-        "golang"
+        "golang",
+        "gpt-oss"
       ],
-      "updated_at": "2026-10-26T06:06:42Z",
+      "updated_at": "2026-11-02T05:58:03Z",
       "created_at": "2023-06-26T19:39:32Z"
     },
     {
@@ -221,8 +221,8 @@
       "html_url": "https://github.com/DietrichGebert/ponytail",
       "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
       "language": "JavaScript",
-      "stargazers_count": 176336,
-      "forks_count": 9634,
+      "stargazers_count": 182294,
+      "forks_count": 10046,
       "topics": [
         "agent-skills",
         "ai-agents",
@@ -231,7 +231,7 @@
         "claude-code-plugin",
         "cursor-rules"
       ],
-      "updated_at": "2026-10-26T06:03:20Z",
+      "updated_at": "2026-11-02T06:03:48Z",
       "created_at": "2026-06-12T00:52:37Z"
     },
     {
@@ -240,9 +240,9 @@
       "full_name": "f/prompts.chat",
       "html_url": "https://github.com/f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "language": "HTML",
-      "stargazers_count": 174579,
-      "forks_count": 22302,
+      "language": "MDX",
+      "stargazers_count": 175563,
+      "forks_count": 22402,
       "topics": [
         "ai",
         "artificial-intelligence",
@@ -251,7 +251,7 @@
         "chatgpt-prompts",
         "claude"
       ],
-      "updated_at": "2026-10-26T05:56:10Z",
+      "updated_at": "2026-11-02T05:45:52Z",
       "created_at": "2022-12-05T13:54:13Z"
     },
     {
@@ -261,8 +261,8 @@
       "html_url": "https://github.com/huggingface/transformers",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "language": "Python",
-      "stargazers_count": 168168,
-      "forks_count": 34991,
+      "stargazers_count": 168431,
+      "forks_count": 35079,
       "topics": [
         "audio",
         "deep-learning",
@@ -271,28 +271,8 @@
         "glm",
         "hacktoberfest"
       ],
-      "updated_at": "2026-10-26T05:02:44Z",
+      "updated_at": "2026-11-02T05:41:05Z",
       "created_at": "2018-10-29T13:56:00Z"
-    },
-    {
-      "id": 527591471,
-      "name": "stable-diffusion-webui",
-      "full_name": "AUTOMATIC1111/stable-diffusion-webui",
-      "html_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-      "description": "Stable Diffusion web UI",
-      "language": "Python",
-      "stargazers_count": 165146,
-      "forks_count": 32513,
-      "topics": [
-        "ai",
-        "ai-art",
-        "deep-learning",
-        "diffusion",
-        "gradio",
-        "image-generation"
-      ],
-      "updated_at": "2026-10-26T05:46:49Z",
-      "created_at": "2022-08-22T14:05:26Z"
     },
     {
       "id": 1075372545,
@@ -301,11 +281,31 @@
       "html_url": "https://github.com/msitarzewski/agency-agents",
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "language": "Shell",
-      "stargazers_count": 164052,
-      "forks_count": 26477,
+      "stargazers_count": 165948,
+      "forks_count": 26884,
       "topics": [],
-      "updated_at": "2026-10-26T06:03:57Z",
+      "updated_at": "2026-11-02T06:02:50Z",
       "created_at": "2025-10-13T12:12:29Z"
+    },
+    {
+      "id": 527591471,
+      "name": "stable-diffusion-webui",
+      "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+      "html_url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "description": "Stable Diffusion web UI",
+      "language": "Python",
+      "stargazers_count": 165216,
+      "forks_count": 31916,
+      "topics": [
+        "ai",
+        "ai-art",
+        "deep-learning",
+        "diffusion",
+        "gradio",
+        "image-generation"
+      ],
+      "updated_at": "2026-11-02T06:02:14Z",
+      "created_at": "2022-08-22T14:05:26Z"
     },
     {
       "id": 626805178,
@@ -314,8 +314,8 @@
       "html_url": "https://github.com/langgenius/dify",
       "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
       "language": "Python",
-      "stargazers_count": 159550,
-      "forks_count": 25214,
+      "stargazers_count": 160192,
+      "forks_count": 25327,
       "topics": [
         "agent",
         "agentic-ai",
@@ -324,7 +324,7 @@
         "ai",
         "automation"
       ],
-      "updated_at": "2026-10-26T06:06:21Z",
+      "updated_at": "2026-11-02T06:01:50Z",
       "created_at": "2023-04-12T07:40:24Z"
     },
     {
@@ -334,8 +334,8 @@
       "html_url": "https://github.com/Snailclimb/JavaGuide",
       "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
       "language": "JavaScript",
-      "stargazers_count": 159257,
-      "forks_count": 46127,
+      "stargazers_count": 159373,
+      "forks_count": 46133,
       "topics": [
         "agent",
         "ai",
@@ -344,7 +344,7 @@
         "interview",
         "java"
       ],
-      "updated_at": "2026-10-26T05:48:36Z",
+      "updated_at": "2026-11-02T03:52:25Z",
       "created_at": "2018-05-07T13:27:00Z"
     },
     {
@@ -354,8 +354,8 @@
       "html_url": "https://github.com/open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "language": "Python",
-      "stargazers_count": 156768,
-      "forks_count": 22830,
+      "stargazers_count": 157501,
+      "forks_count": 22902,
       "topics": [
         "ai",
         "llm",
@@ -364,7 +364,7 @@
         "llms",
         "mcp"
       ],
-      "updated_at": "2026-10-26T06:04:47Z",
+      "updated_at": "2026-11-02T05:33:26Z",
       "created_at": "2023-10-06T22:08:27Z"
     },
     {
@@ -374,8 +374,8 @@
       "html_url": "https://github.com/langflow-ai/langflow",
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "language": "Python",
-      "stargazers_count": 156024,
-      "forks_count": 10246,
+      "stargazers_count": 156243,
+      "forks_count": 10309,
       "topics": [
         "agents",
         "chatgpt",
@@ -384,7 +384,7 @@
         "multiagent",
         "react-flow"
       ],
-      "updated_at": "2026-10-26T05:26:41Z",
+      "updated_at": "2026-11-02T05:56:25Z",
       "created_at": "2023-02-08T22:28:03Z"
     },
     {
@@ -394,8 +394,8 @@
       "html_url": "https://github.com/langchain-ai/langchain",
       "description": "The agent engineering platform.",
       "language": "Python",
-      "stargazers_count": 148470,
-      "forks_count": 24920,
+      "stargazers_count": 148854,
+      "forks_count": 25017,
       "topics": [
         "agents",
         "ai",
@@ -404,66 +404,8 @@
         "chatgpt",
         "deepagents"
       ],
-      "updated_at": "2026-10-26T05:53:52Z",
+      "updated_at": "2026-11-02T06:00:48Z",
       "created_at": "2022-10-17T02:58:36Z"
-    },
-    {
-      "id": 943398999,
-      "name": "system-prompts-and-models-of-ai-tools",
-      "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
-      "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
-      "language": null,
-      "stargazers_count": 144260,
-      "forks_count": 34703,
-      "topics": [
-        "ai",
-        "bolt",
-        "cluely",
-        "copilot",
-        "cursor",
-        "cursorai"
-      ],
-      "updated_at": "2026-10-26T05:30:58Z",
-      "created_at": "2025-03-05T16:38:29Z"
-    },
-    {
-      "id": 793375104,
-      "name": "awesome-llm-apps",
-      "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
-      "language": "Python",
-      "stargazers_count": 143071,
-      "forks_count": 21046,
-      "topics": [
-        "agents",
-        "llms",
-        "python",
-        "rag"
-      ],
-      "updated_at": "2026-10-26T05:39:10Z",
-      "created_at": "2024-04-29T05:30:25Z"
-    },
-    {
-      "id": 589831718,
-      "name": "ComfyUI",
-      "full_name": "Comfy-Org/ComfyUI",
-      "html_url": "https://github.com/Comfy-Org/ComfyUI",
-      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
-      "language": "Python",
-      "stargazers_count": 143018,
-      "forks_count": 16880,
-      "topics": [
-        "ai",
-        "comfy",
-        "comfyui",
-        "python",
-        "pytorch",
-        "stable-diffusion"
-      ],
-      "updated_at": "2026-10-26T05:59:34Z",
-      "created_at": "2023-01-17T03:15:56Z"
     },
     {
       "id": 1042367133,
@@ -472,8 +414,8 @@
       "html_url": "https://github.com/github/spec-kit",
       "description": "💫 Toolkit to help you get started with SDD or any other process!",
       "language": "Python",
-      "stargazers_count": 142904,
-      "forks_count": 12804,
+      "stargazers_count": 145089,
+      "forks_count": 13003,
       "topics": [
         "ai",
         "copilot",
@@ -482,8 +424,48 @@
         "prd",
         "spec"
       ],
-      "updated_at": "2026-10-26T05:43:51Z",
+      "updated_at": "2026-11-02T06:01:45Z",
       "created_at": "2025-08-21T22:54:31Z"
+    },
+    {
+      "id": 589831718,
+      "name": "ComfyUI",
+      "full_name": "Comfy-Org/ComfyUI",
+      "html_url": "https://github.com/Comfy-Org/ComfyUI",
+      "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
+      "language": "Python",
+      "stargazers_count": 144526,
+      "forks_count": 17225,
+      "topics": [
+        "ai",
+        "comfy",
+        "comfyui",
+        "python",
+        "pytorch",
+        "stable-diffusion"
+      ],
+      "updated_at": "2026-11-02T05:53:27Z",
+      "created_at": "2023-01-17T03:15:56Z"
+    },
+    {
+      "id": 943398999,
+      "name": "system-prompts-and-models-of-ai-tools",
+      "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "html_url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models",
+      "language": null,
+      "stargazers_count": 144412,
+      "forks_count": 34710,
+      "topics": [
+        "ai",
+        "bolt",
+        "cluely",
+        "copilot",
+        "cursor",
+        "cursorai"
+      ],
+      "updated_at": "2026-11-02T05:44:26Z",
+      "created_at": "2025-03-05T16:38:29Z"
     },
     {
       "id": 1106996539,
@@ -492,8 +474,8 @@
       "html_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
       "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
       "language": "Python",
-      "stargazers_count": 140483,
-      "forks_count": 14889,
+      "stargazers_count": 143925,
+      "forks_count": 15237,
       "topics": [
         "ai-skills",
         "antigravity",
@@ -502,8 +484,26 @@
         "codex",
         "command-line"
       ],
-      "updated_at": "2026-10-26T06:06:11Z",
+      "updated_at": "2026-11-02T05:54:29Z",
       "created_at": "2025-11-30T11:36:31Z"
+    },
+    {
+      "id": 793375104,
+      "name": "awesome-llm-apps",
+      "full_name": "Shubhamsaboo/awesome-llm-apps",
+      "html_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+      "language": "Python",
+      "stargazers_count": 143690,
+      "forks_count": 21143,
+      "topics": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "updated_at": "2026-11-02T05:35:40Z",
+      "created_at": "2024-04-29T05:30:25Z"
     },
     {
       "id": 1200597263,
@@ -512,8 +512,8 @@
       "html_url": "https://github.com/Graphify-Labs/graphify",
       "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
       "language": "Python",
-      "stargazers_count": 135468,
-      "forks_count": 12926,
+      "stargazers_count": 140676,
+      "forks_count": 13445,
       "topics": [
         "ai-agents",
         "antigravity",
@@ -522,7 +522,7 @@
         "code-analysis",
         "code-search"
       ],
-      "updated_at": "2026-10-26T06:05:44Z",
+      "updated_at": "2026-11-02T06:02:54Z",
       "created_at": "2026-04-03T15:49:07Z"
     },
     {
@@ -532,8 +532,8 @@
       "html_url": "https://github.com/harry0703/MoneyPrinterTurbo",
       "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
       "language": "Python",
-      "stargazers_count": 135182,
-      "forks_count": 21428,
+      "stargazers_count": 137230,
+      "forks_count": 21906,
       "topics": [
         "ai-video-generator",
         "content-creation",
@@ -542,7 +542,7 @@
         "llm",
         "python"
       ],
-      "updated_at": "2026-10-26T06:06:34Z",
+      "updated_at": "2026-11-02T05:58:46Z",
       "created_at": "2024-03-11T02:57:34Z"
     },
     {
@@ -552,12 +552,12 @@
       "html_url": "https://github.com/ggml-org/llama.cpp",
       "description": "LLM inference in C/C++",
       "language": "C++",
-      "stargazers_count": 132378,
-      "forks_count": 24824,
+      "stargazers_count": 133105,
+      "forks_count": 25043,
       "topics": [
         "ggml"
       ],
-      "updated_at": "2026-10-26T06:05:41Z",
+      "updated_at": "2026-11-02T06:01:44Z",
       "created_at": "2023-03-10T18:58:00Z"
     },
     {
@@ -567,8 +567,8 @@
       "html_url": "https://github.com/shadcn-ui/ui",
       "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
       "language": "TypeScript",
-      "stargazers_count": 126546,
-      "forks_count": 12530,
+      "stargazers_count": 127131,
+      "forks_count": 11991,
       "topics": [
         "ai",
         "base-ui",
@@ -577,7 +577,7 @@
         "generative-ai",
         "generative-ui"
       ],
-      "updated_at": "2026-10-26T06:03:13Z",
+      "updated_at": "2026-11-02T05:18:49Z",
       "created_at": "2023-01-04T12:43:27Z"
     },
     {
@@ -587,8 +587,8 @@
       "html_url": "https://github.com/microsoft/generative-ai-for-beginners",
       "description": "21 Lessons, Get Started Building with Generative AI ",
       "language": "Jupyter Notebook",
-      "stargazers_count": 122174,
-      "forks_count": 64877,
+      "stargazers_count": 122787,
+      "forks_count": 65651,
       "topics": [
         "ai",
         "azure",
@@ -597,7 +597,7 @@
         "generative-ai",
         "generativeai"
       ],
-      "updated_at": "2026-10-26T05:57:27Z",
+      "updated_at": "2026-11-02T06:03:39Z",
       "created_at": "2023-06-19T16:28:59Z"
     },
     {
@@ -607,8 +607,8 @@
       "html_url": "https://github.com/browser-use/browser-use",
       "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
       "language": "Python",
-      "stargazers_count": 119142,
-      "forks_count": 13241,
+      "stargazers_count": 119790,
+      "forks_count": 13348,
       "topics": [
         "ai-agents",
         "ai-tools",
@@ -617,8 +617,27 @@
         "browser-use",
         "cdp"
       ],
-      "updated_at": "2026-10-26T05:31:00Z",
+      "updated_at": "2026-11-02T06:02:43Z",
       "created_at": "2024-10-31T16:00:56Z"
+    },
+    {
+      "id": 909213664,
+      "name": "TradingAgents",
+      "full_name": "TauricResearch/TradingAgents",
+      "html_url": "https://github.com/TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stargazers_count": 119655,
+      "forks_count": 22886,
+      "topics": [
+        "agent",
+        "finance",
+        "llm",
+        "multiagent",
+        "trading"
+      ],
+      "updated_at": "2026-11-02T06:00:58Z",
+      "created_at": "2024-12-28T03:31:08Z"
     },
     {
       "id": 1035029907,
@@ -627,10 +646,10 @@
       "html_url": "https://github.com/earendil-works/pi",
       "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
       "language": "TypeScript",
-      "stargazers_count": 117838,
-      "forks_count": 15093,
+      "stargazers_count": 119405,
+      "forks_count": 15328,
       "topics": [],
-      "updated_at": "2026-10-26T06:06:26Z",
+      "updated_at": "2026-11-02T06:00:43Z",
       "created_at": "2025-08-09T14:03:50Z"
     },
     {
@@ -640,8 +659,8 @@
       "html_url": "https://github.com/JuliusBrussee/caveman",
       "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
       "language": "Go",
-      "stargazers_count": 115099,
-      "forks_count": 6638,
+      "stargazers_count": 116760,
+      "forks_count": 6775,
       "topics": [
         "ai",
         "anthropic",
@@ -650,27 +669,8 @@
         "claude-code",
         "llm"
       ],
-      "updated_at": "2026-10-26T05:57:55Z",
+      "updated_at": "2026-11-02T05:58:38Z",
       "created_at": "2026-04-04T10:03:00Z"
-    },
-    {
-      "id": 909213664,
-      "name": "TradingAgents",
-      "full_name": "TauricResearch/TradingAgents",
-      "html_url": "https://github.com/TauricResearch/TradingAgents",
-      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "language": "Python",
-      "stargazers_count": 114900,
-      "forks_count": 22156,
-      "topics": [
-        "agent",
-        "finance",
-        "llm",
-        "multiagent",
-        "trading"
-      ],
-      "updated_at": "2026-10-26T06:05:42Z",
-      "created_at": "2024-12-28T03:31:08Z"
     },
     {
       "id": 214587193,
@@ -679,8 +679,8 @@
       "html_url": "https://github.com/supabase/supabase",
       "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
       "language": "TypeScript",
-      "stargazers_count": 113938,
-      "forks_count": 16306,
+      "stargazers_count": 114421,
+      "forks_count": 15760,
       "topics": [
         "ai",
         "alternative",
@@ -689,7 +689,7 @@
         "deno",
         "embeddings"
       ],
-      "updated_at": "2026-10-26T06:04:13Z",
+      "updated_at": "2026-11-02T05:53:11Z",
       "created_at": "2019-10-12T05:56:49Z"
     },
     {
@@ -699,8 +699,8 @@
       "html_url": "https://github.com/addyosmani/agent-skills",
       "description": "Production-grade engineering skills for AI coding agents.",
       "language": "JavaScript",
-      "stargazers_count": 110563,
-      "forks_count": 11547,
+      "stargazers_count": 112606,
+      "forks_count": 11786,
       "topics": [
         "agent-skills",
         "antigravity",
@@ -709,28 +709,8 @@
         "cursor",
         "skills"
       ],
-      "updated_at": "2026-10-26T06:03:47Z",
+      "updated_at": "2026-11-02T05:52:04Z",
       "created_at": "2026-02-15T20:20:26Z"
-    },
-    {
-      "id": 968197216,
-      "name": "gemini-cli",
-      "full_name": "google-gemini/gemini-cli",
-      "html_url": "https://github.com/google-gemini/gemini-cli",
-      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
-      "language": "TypeScript",
-      "stargazers_count": 108389,
-      "forks_count": 14838,
-      "topics": [
-        "ai",
-        "ai-agents",
-        "cli",
-        "gemini",
-        "gemini-api",
-        "mcp-client"
-      ],
-      "updated_at": "2026-10-26T05:54:43Z",
-      "created_at": "2025-04-17T17:04:31Z"
     },
     {
       "id": 1170821064,
@@ -739,8 +719,8 @@
       "html_url": "https://github.com/paperclipai/paperclip",
       "description": "The open-source app everyone uses to manage agents at work",
       "language": "TypeScript",
-      "stargazers_count": 107382,
-      "forks_count": 17837,
+      "stargazers_count": 110006,
+      "forks_count": 18237,
       "topics": [
         "acpx",
         "agent-orchestration",
@@ -749,68 +729,8 @@
         "ai-agents",
         "ai-engineering"
       ],
-      "updated_at": "2026-10-26T06:01:42Z",
+      "updated_at": "2026-11-02T06:02:40Z",
       "created_at": "2026-03-02T15:01:51Z"
-    },
-    {
-      "id": 669879380,
-      "name": "LLMs-from-scratch",
-      "full_name": "rasbt/LLMs-from-scratch",
-      "html_url": "https://github.com/rasbt/LLMs-from-scratch",
-      "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
-      "language": "Jupyter Notebook",
-      "stargazers_count": 107289,
-      "forks_count": 16527,
-      "topics": [
-        "ai",
-        "artificial-intelligence",
-        "attention-mechanism",
-        "deep-learning",
-        "finetuning",
-        "from-scratch"
-      ],
-      "updated_at": "2026-10-26T05:43:18Z",
-      "created_at": "2023-07-23T18:15:57Z"
-    },
-    {
-      "id": 65600975,
-      "name": "pytorch",
-      "full_name": "pytorch/pytorch",
-      "html_url": "https://github.com/pytorch/pytorch",
-      "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
-      "language": "Python",
-      "stargazers_count": 105080,
-      "forks_count": 31766,
-      "topics": [
-        "autograd",
-        "deep-learning",
-        "gpu",
-        "machine-learning",
-        "neural-network",
-        "numpy"
-      ],
-      "updated_at": "2026-10-26T04:57:03Z",
-      "created_at": "2016-08-13T05:26:41Z"
-    },
-    {
-      "id": 1223170290,
-      "name": "open-design",
-      "full_name": "nexu-io/open-design",
-      "html_url": "https://github.com/nexu-io/open-design",
-      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
-      "language": "TypeScript",
-      "stargazers_count": 104006,
-      "forks_count": 11889,
-      "topics": [
-        "agent-skills",
-        "ai-design",
-        "byok",
-        "claude-code-for-design",
-        "claude-design",
-        "codex-design"
-      ],
-      "updated_at": "2026-10-26T06:06:26Z",
-      "created_at": "2026-04-28T04:25:20Z"
     },
     {
       "id": 1048065319,
@@ -819,8 +739,8 @@
       "html_url": "https://github.com/thedotmack/claude-mem",
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "language": "TypeScript",
-      "stargazers_count": 103181,
-      "forks_count": 9110,
+      "stargazers_count": 109721,
+      "forks_count": 9585,
       "topics": [
         "ai",
         "ai-agents",
@@ -829,28 +749,28 @@
         "artificial-intelligence",
         "chromadb"
       ],
-      "updated_at": "2026-10-26T06:04:09Z",
+      "updated_at": "2026-11-02T06:03:40Z",
       "created_at": "2025-08-31T20:50:03Z"
     },
     {
-      "id": 1165277268,
-      "name": "Agent-Reach",
-      "full_name": "Panniantong/Agent-Reach",
-      "html_url": "https://github.com/Panniantong/Agent-Reach",
-      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-      "language": "Python",
-      "stargazers_count": 102624,
-      "forks_count": 9103,
+      "id": 968197216,
+      "name": "gemini-cli",
+      "full_name": "google-gemini/gemini-cli",
+      "html_url": "https://github.com/google-gemini/gemini-cli",
+      "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+      "language": "TypeScript",
+      "stargazers_count": 108661,
+      "forks_count": 14909,
       "topics": [
-        "agent-infrastructure",
-        "ai-agent",
-        "ai-search",
-        "automation",
-        "bilibili",
-        "claude-code"
+        "ai",
+        "ai-agents",
+        "cli",
+        "gemini",
+        "gemini-api",
+        "mcp-client"
       ],
-      "updated_at": "2026-10-26T06:05:05Z",
-      "created_at": "2026-02-24T02:10:24Z"
+      "updated_at": "2026-11-02T05:03:30Z",
+      "created_at": "2025-04-17T17:04:31Z"
     },
     {
       "id": 1162099055,
@@ -859,8 +779,8 @@
       "html_url": "https://github.com/Leonxlnx/taste-skill",
       "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
       "language": "JavaScript",
-      "stargazers_count": 102602,
-      "forks_count": 6935,
+      "stargazers_count": 108021,
+      "forks_count": 7291,
       "topics": [
         "agent-skills",
         "ai-agents",
@@ -869,8 +789,107 @@
         "codex",
         "cursor"
       ],
-      "updated_at": "2026-10-26T06:05:02Z",
+      "updated_at": "2026-11-02T06:02:25Z",
       "created_at": "2026-02-19T21:44:05Z"
+    },
+    {
+      "id": 1165277268,
+      "name": "Agent-Reach",
+      "full_name": "Panniantong/Agent-Reach",
+      "html_url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stargazers_count": 107747,
+      "forks_count": 9609,
+      "topics": [
+        "agent-infrastructure",
+        "ai-agent",
+        "ai-search",
+        "automation",
+        "bilibili",
+        "claude-code"
+      ],
+      "updated_at": "2026-11-02T06:02:02Z",
+      "created_at": "2026-02-24T02:10:24Z"
+    },
+    {
+      "id": 669879380,
+      "name": "LLMs-from-scratch",
+      "full_name": "rasbt/LLMs-from-scratch",
+      "html_url": "https://github.com/rasbt/LLMs-from-scratch",
+      "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 107670,
+      "forks_count": 16620,
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "attention-mechanism",
+        "deep-learning",
+        "finetuning",
+        "from-scratch"
+      ],
+      "updated_at": "2026-11-02T06:00:14Z",
+      "created_at": "2023-07-23T18:15:57Z"
+    },
+    {
+      "id": 1223170290,
+      "name": "open-design",
+      "full_name": "nexu-io/open-design",
+      "html_url": "https://github.com/nexu-io/open-design",
+      "description": "The 1st Collaborative AI Design Agent Workspace. Local-first and open source. Create motion, prototypes, websites, apps, dashboards, presentations, images, and videos with your team and AI agents. Share work, exchange feedback, and iterate together in one workspace.",
+      "language": "TypeScript",
+      "stargazers_count": 105388,
+      "forks_count": 12016,
+      "topics": [
+        "agent-skills",
+        "ai-design",
+        "byok",
+        "claude-code-for-design",
+        "claude-design",
+        "codex-design"
+      ],
+      "updated_at": "2026-11-02T06:02:12Z",
+      "created_at": "2026-04-28T04:25:20Z"
+    },
+    {
+      "id": 65600975,
+      "name": "pytorch",
+      "full_name": "pytorch/pytorch",
+      "html_url": "https://github.com/pytorch/pytorch",
+      "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+      "language": "Python",
+      "stargazers_count": 105071,
+      "forks_count": 31307,
+      "topics": [
+        "autograd",
+        "deep-learning",
+        "gpu",
+        "machine-learning",
+        "neural-network",
+        "numpy"
+      ],
+      "updated_at": "2026-11-02T05:33:30Z",
+      "created_at": "2016-08-13T05:26:41Z"
+    },
+    {
+      "id": 1097346685,
+      "name": "impeccable",
+      "full_name": "pbakaus/impeccable",
+      "html_url": "https://github.com/pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stargazers_count": 99636,
+      "forks_count": 5895,
+      "topics": [
+        "agent-skills",
+        "ai",
+        "anti-slop",
+        "design",
+        "slop"
+      ],
+      "updated_at": "2026-11-02T06:04:16Z",
+      "created_at": "2025-11-16T01:52:04Z"
     },
     {
       "id": 1174820787,
@@ -879,11 +898,31 @@
       "html_url": "https://github.com/karpathy/autoresearch",
       "description": "AI agents running research on single-GPU nanochat training automatically",
       "language": "Python",
-      "stargazers_count": 98586,
-      "forks_count": 13613,
+      "stargazers_count": 99037,
+      "forks_count": 13670,
       "topics": [],
-      "updated_at": "2026-10-26T05:56:32Z",
+      "updated_at": "2026-11-02T05:56:45Z",
       "created_at": "2026-03-06T22:00:43Z"
+    },
+    {
+      "id": 1206390571,
+      "name": "VoiceStudio",
+      "full_name": "debpalash/VoiceStudio",
+      "html_url": "https://github.com/debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stargazers_count": 98185,
+      "forks_count": 10909,
+      "topics": [
+        "ai",
+        "audiobook",
+        "cuda",
+        "dubbing",
+        "elevenlabs-alternative",
+        "huggingface"
+      ],
+      "updated_at": "2026-11-02T06:02:57Z",
+      "created_at": "2026-04-09T21:40:26Z"
     },
     {
       "id": 695864515,
@@ -892,8 +931,8 @@
       "html_url": "https://github.com/hacksider/Deep-Live-Cam",
       "description": "real time face swap and one-click video deepfake with only a single image",
       "language": "Python",
-      "stargazers_count": 97225,
-      "forks_count": 14154,
+      "stargazers_count": 97518,
+      "forks_count": 14220,
       "topics": [
         "ai",
         "ai-deep-fake",
@@ -902,7 +941,7 @@
         "artificial-intelligence",
         "deep-fake"
       ],
-      "updated_at": "2026-10-26T05:43:31Z",
+      "updated_at": "2026-11-02T05:59:31Z",
       "created_at": "2023-09-24T13:19:31Z"
     },
     {
@@ -912,13 +951,13 @@
       "html_url": "https://github.com/punkpeye/awesome-mcp-servers",
       "description": "A collection of MCP servers.",
       "language": null,
-      "stargazers_count": 96873,
-      "forks_count": 18487,
+      "stargazers_count": 97179,
+      "forks_count": 18986,
       "topics": [
         "ai",
         "mcp"
       ],
-      "updated_at": "2026-10-26T04:51:27Z",
+      "updated_at": "2026-11-02T05:52:50Z",
       "created_at": "2024-11-30T04:49:10Z"
     },
     {
@@ -928,8 +967,8 @@
       "html_url": "https://github.com/vllm-project/vllm",
       "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
       "language": "Python",
-      "stargazers_count": 95531,
-      "forks_count": 23956,
+      "stargazers_count": 96100,
+      "forks_count": 24281,
       "topics": [
         "amd",
         "blackwell",
@@ -938,41 +977,28 @@
         "deepseek-v3",
         "gpt"
       ],
-      "updated_at": "2026-10-26T05:59:49Z",
+      "updated_at": "2026-11-02T05:45:47Z",
       "created_at": "2023-02-09T11:23:20Z"
     },
     {
-      "id": 1255180606,
-      "name": "odysseus",
-      "full_name": "odysseus-dev/odysseus",
-      "html_url": "https://github.com/odysseus-dev/odysseus",
-      "description": "Self-hosted AI workspace. ",
-      "language": "Python",
-      "stargazers_count": 94452,
-      "forks_count": 1759,
-      "topics": [],
-      "updated_at": "2026-10-26T05:41:17Z",
-      "created_at": "2026-05-31T14:05:51Z"
-    },
-    {
-      "id": 730534580,
-      "name": "ragflow",
-      "full_name": "infiniflow/ragflow",
-      "html_url": "https://github.com/infiniflow/ragflow",
-      "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
-      "language": "Go",
-      "stargazers_count": 92871,
-      "forks_count": 11114,
+      "id": 1211139949,
+      "name": "archify",
+      "full_name": "tt-a1i/archify",
+      "html_url": "https://github.com/tt-a1i/archify",
+      "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
+      "language": "JavaScript",
+      "stargazers_count": 92482,
+      "forks_count": 6311,
       "topics": [
-        "agent-harness",
-        "agentic-ai",
-        "agentic-nagive",
-        "agentic-retrieval",
-        "agentic-search",
-        "ai"
+        "agent-skills",
+        "ai-agents",
+        "architecture-diagram",
+        "claude-code",
+        "claude-skills",
+        "codex"
       ],
-      "updated_at": "2026-10-26T06:03:45Z",
-      "created_at": "2023-12-12T06:13:13Z"
+      "updated_at": "2026-11-02T06:04:33Z",
+      "created_at": "2026-04-15T05:27:37Z"
     },
     {
       "id": 771302083,
@@ -981,8 +1007,8 @@
       "html_url": "https://github.com/OpenHands/OpenHands",
       "description": "🙌 OpenHands: AI-Driven Development",
       "language": "TypeScript",
-      "stargazers_count": 91860,
-      "forks_count": 12201,
+      "stargazers_count": 92466,
+      "forks_count": 12320,
       "topics": [
         "agent",
         "artificial-intelligence",
@@ -991,7 +1017,7 @@
         "cli",
         "developer-tools"
       ],
-      "updated_at": "2026-10-26T05:59:21Z",
+      "updated_at": "2026-11-02T06:03:02Z",
       "created_at": "2024-03-13T03:33:31Z"
     },
     {
@@ -1001,8 +1027,8 @@
       "html_url": "https://github.com/microsoft/ML-For-Beginners",
       "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
       "language": "Jupyter Notebook",
-      "stargazers_count": 91750,
-      "forks_count": 22728,
+      "stargazers_count": 91935,
+      "forks_count": 22820,
       "topics": [
         "data-science",
         "education",
@@ -1011,28 +1037,8 @@
         "machinelearning",
         "machinelearning-python"
       ],
-      "updated_at": "2026-10-26T05:34:02Z",
+      "updated_at": "2026-11-02T04:01:50Z",
       "created_at": "2021-03-03T01:34:05Z"
-    },
-    {
-      "id": 1211139949,
-      "name": "archify",
-      "full_name": "tt-a1i/archify",
-      "html_url": "https://github.com/tt-a1i/archify",
-      "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-      "language": "JavaScript",
-      "stargazers_count": 89343,
-      "forks_count": 6044,
-      "topics": [
-        "agent-skills",
-        "ai-agents",
-        "architecture-diagram",
-        "claude-code",
-        "claude-skills",
-        "codex"
-      ],
-      "updated_at": "2026-10-26T06:06:44Z",
-      "created_at": "2026-04-15T05:27:37Z"
     },
     {
       "id": 798201435,
@@ -1041,8 +1047,8 @@
       "html_url": "https://github.com/unclecode/crawl4ai",
       "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key. Join our Discord https://discord.gg/VuxzM8mtf",
       "language": "Python",
-      "stargazers_count": 86275,
-      "forks_count": 8977,
+      "stargazers_count": 86743,
+      "forks_count": 9039,
       "topics": [
         "ai",
         "ai-agents",
@@ -1051,27 +1057,8 @@
         "llm",
         "markdown"
       ],
-      "updated_at": "2026-10-26T05:49:25Z",
+      "updated_at": "2026-11-02T05:56:59Z",
       "created_at": "2024-05-09T09:48:50Z"
-    },
-    {
-      "id": 655099582,
-      "name": "llm-course",
-      "full_name": "mlabonne/llm-course",
-      "html_url": "https://github.com/mlabonne/llm-course",
-      "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
-      "language": null,
-      "stargazers_count": 84702,
-      "forks_count": 9840,
-      "topics": [
-        "course",
-        "large-language-models",
-        "llm",
-        "machine-learning",
-        "roadmap"
-      ],
-      "updated_at": "2026-10-26T05:46:27Z",
-      "created_at": "2023-06-17T22:16:25Z"
     },
     {
       "id": 1052050442,
@@ -1080,15 +1067,15 @@
       "html_url": "https://github.com/datawhalechina/hello-agents",
       "description": "📚 《从零开始构建智能体》——从零开始的智能体原理与实践教程",
       "language": "Python",
-      "stargazers_count": 84613,
-      "forks_count": 10501,
+      "stargazers_count": 85677,
+      "forks_count": 10662,
       "topics": [
         "agent",
         "llm",
         "rag",
         "tutorial"
       ],
-      "updated_at": "2026-10-26T06:06:25Z",
+      "updated_at": "2026-11-02T06:02:31Z",
       "created_at": "2025-09-07T09:50:24Z"
     },
     {
@@ -1098,8 +1085,8 @@
       "html_url": "https://github.com/rtk-ai/rtk",
       "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
       "language": "Rust",
-      "stargazers_count": 84565,
-      "forks_count": 5376,
+      "stargazers_count": 85255,
+      "forks_count": 5455,
       "topics": [
         "agentic-coding",
         "ai-coding",
@@ -1108,8 +1095,27 @@
         "cli",
         "command-line-tool"
       ],
-      "updated_at": "2026-10-26T06:05:57Z",
+      "updated_at": "2026-11-02T05:53:33Z",
       "created_at": "2026-01-22T16:54:16Z"
+    },
+    {
+      "id": 655099582,
+      "name": "llm-course",
+      "full_name": "mlabonne/llm-course",
+      "html_url": "https://github.com/mlabonne/llm-course",
+      "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
+      "language": null,
+      "stargazers_count": 84853,
+      "forks_count": 9868,
+      "topics": [
+        "course",
+        "large-language-models",
+        "llm",
+        "machine-learning",
+        "roadmap"
+      ],
+      "updated_at": "2026-11-02T03:51:42Z",
+      "created_at": "2023-06-17T22:16:25Z"
     },
     {
       "id": 979115477,
@@ -1118,8 +1124,8 @@
       "html_url": "https://github.com/bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "language": "Python",
-      "stargazers_count": 84428,
-      "forks_count": 11812,
+      "stargazers_count": 84853,
+      "forks_count": 11924,
       "topics": [
         "agent",
         "agentic",
@@ -1128,7 +1134,7 @@
         "ai",
         "ai-agents"
       ],
-      "updated_at": "2026-10-26T06:00:44Z",
+      "updated_at": "2026-11-02T05:38:11Z",
       "created_at": "2025-05-07T02:50:19Z"
     },
     {
@@ -1138,8 +1144,8 @@
       "html_url": "https://github.com/Developer-Y/cs-video-courses",
       "description": "List of Computer Science courses with video lectures.",
       "language": null,
-      "stargazers_count": 83768,
-      "forks_count": 11480,
+      "stargazers_count": 84489,
+      "forks_count": 11604,
       "topics": [
         "algorithms",
         "bioinformatics",
@@ -1148,7 +1154,7 @@
         "computer-architecture",
         "computer-science"
       ],
-      "updated_at": "2026-10-26T05:25:57Z",
+      "updated_at": "2026-11-02T05:59:25Z",
       "created_at": "2016-10-21T17:02:11Z"
     },
     {
@@ -1158,8 +1164,8 @@
       "html_url": "https://github.com/d2l-ai/d2l-zh",
       "description": "《动手学深度学习》：面向中文读者、能运行、可讨论。中英文版被70多个国家的500多所大学用于教学。",
       "language": "Python",
-      "stargazers_count": 82103,
-      "forks_count": 12450,
+      "stargazers_count": 82201,
+      "forks_count": 12474,
       "topics": [
         "book",
         "chinese",
@@ -1168,7 +1174,7 @@
         "machine-learning",
         "natural-language-processing"
       ],
-      "updated_at": "2026-10-26T05:18:28Z",
+      "updated_at": "2026-11-02T04:31:48Z",
       "created_at": "2017-08-23T04:40:24Z"
     },
     {
@@ -1178,8 +1184,8 @@
       "html_url": "https://github.com/netdata/netdata",
       "description": "The fastest path to AI-powered full stack observability, even for lean teams.",
       "language": "Go",
-      "stargazers_count": 81132,
-      "forks_count": 6695,
+      "stargazers_count": 81247,
+      "forks_count": 6715,
       "topics": [
         "ai",
         "alerting",
@@ -1188,7 +1194,7 @@
         "database",
         "devops"
       ],
-      "updated_at": "2026-10-26T06:04:18Z",
+      "updated_at": "2026-11-02T05:23:23Z",
       "created_at": "2013-06-17T18:39:10Z"
     },
     {
@@ -1198,8 +1204,8 @@
       "html_url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
       "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
       "language": "MDX",
-      "stargazers_count": 79530,
-      "forks_count": 8721,
+      "stargazers_count": 79751,
+      "forks_count": 8759,
       "topics": [
         "agent",
         "agents",
@@ -1208,7 +1214,7 @@
         "deep-learning",
         "generative-ai"
       ],
-      "updated_at": "2026-10-26T05:36:39Z",
+      "updated_at": "2026-11-02T04:26:36Z",
       "created_at": "2022-12-16T16:04:50Z"
     },
     {
@@ -1218,8 +1224,8 @@
       "html_url": "https://github.com/shareAI-lab/learn-claude-code",
       "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1",
       "language": "Python",
-      "stargazers_count": 79233,
-      "forks_count": 12671,
+      "stargazers_count": 79715,
+      "forks_count": 12754,
       "topics": [
         "agent",
         "agent-development",
@@ -1228,7 +1234,7 @@
         "claude-code",
         "educational"
       ],
-      "updated_at": "2026-10-26T06:05:57Z",
+      "updated_at": "2026-11-02T06:03:09Z",
       "created_at": "2025-06-29T15:34:15Z"
     },
     {
@@ -1238,8 +1244,8 @@
       "html_url": "https://github.com/unslothai/unsloth",
       "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.",
       "language": "Python",
-      "stargazers_count": 78571,
-      "forks_count": 7291,
+      "stargazers_count": 78936,
+      "forks_count": 7354,
       "topics": [
         "agent",
         "ai",
@@ -1248,7 +1254,7 @@
         "fine-tuning",
         "gemma"
       ],
-      "updated_at": "2026-10-26T05:58:14Z",
+      "updated_at": "2026-11-02T06:02:36Z",
       "created_at": "2023-11-29T16:50:09Z"
     },
     {
@@ -1258,8 +1264,8 @@
       "html_url": "https://github.com/microsoft/ai-agents-for-beginners",
       "description": "18 Lessons to Get Started Building AI Agents",
       "language": "Jupyter Notebook",
-      "stargazers_count": 77882,
-      "forks_count": 25544,
+      "stargazers_count": 78653,
+      "forks_count": 25753,
       "topics": [
         "agentic-ai",
         "agentic-framework",
@@ -1268,7 +1274,7 @@
         "ai-agents-framework",
         "autogen"
       ],
-      "updated_at": "2026-10-26T06:06:46Z",
+      "updated_at": "2026-11-02T05:56:54Z",
       "created_at": "2024-11-28T10:42:52Z"
     },
     {
@@ -1278,8 +1284,8 @@
       "html_url": "https://github.com/headroomlabs-ai/headroom",
       "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
       "language": "Python",
-      "stargazers_count": 77838,
-      "forks_count": 6048,
+      "stargazers_count": 78586,
+      "forks_count": 6135,
       "topics": [
         "agent",
         "ai",
@@ -1288,7 +1294,7 @@
         "compression",
         "context-engineering"
       ],
-      "updated_at": "2026-10-26T05:53:28Z",
+      "updated_at": "2026-11-02T05:40:21Z",
       "created_at": "2026-01-07T19:58:51Z"
     },
     {
@@ -1298,8 +1304,8 @@
       "html_url": "https://github.com/tesseract-ocr/tesseract",
       "description": "Tesseract Open Source OCR Engine (main repository)",
       "language": "C++",
-      "stargazers_count": 77168,
-      "forks_count": 10855,
+      "stargazers_count": 77292,
+      "forks_count": 10890,
       "topics": [
         "hacktoberfest",
         "lstm",
@@ -1308,8 +1314,28 @@
         "ocr-engine",
         "tesseract"
       ],
-      "updated_at": "2026-10-26T03:39:26Z",
+      "updated_at": "2026-11-02T05:55:08Z",
       "created_at": "2014-08-12T18:04:59Z"
+    },
+    {
+      "id": 1185590488,
+      "name": "ai-engineering-from-scratch",
+      "full_name": "rohitg00/ai-engineering-from-scratch",
+      "html_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stargazers_count": 76292,
+      "forks_count": 13500,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "ai-engineering",
+        "computer-vision",
+        "course"
+      ],
+      "updated_at": "2026-11-02T06:04:12Z",
+      "created_at": "2026-03-18T18:38:02Z"
     },
     {
       "id": 646410686,
@@ -1318,8 +1344,8 @@
       "html_url": "https://github.com/hiyouga/LlamaFactory",
       "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
       "language": "Python",
-      "stargazers_count": 75734,
-      "forks_count": 9296,
+      "stargazers_count": 75831,
+      "forks_count": 9334,
       "topics": [
         "agent",
         "ai",
@@ -1328,7 +1354,7 @@
         "gemma",
         "gpt"
       ],
-      "updated_at": "2026-10-26T06:05:38Z",
+      "updated_at": "2026-11-02T04:21:42Z",
       "created_at": "2023-05-28T10:09:12Z"
     },
     {
@@ -1338,8 +1364,8 @@
       "html_url": "https://github.com/binhnguyennus/awesome-scalability",
       "description": "The Patterns of Scalable, Reliable, and Performant Large-Scale Systems",
       "language": null,
-      "stargazers_count": 75096,
-      "forks_count": 7197,
+      "stargazers_count": 75286,
+      "forks_count": 7220,
       "topics": [
         "architecture",
         "awesome",
@@ -1348,7 +1374,7 @@
         "big-data",
         "computer-science"
       ],
-      "updated_at": "2026-10-26T05:55:14Z",
+      "updated_at": "2026-11-02T05:35:01Z",
       "created_at": "2017-12-27T03:46:40Z"
     },
     {
@@ -1358,8 +1384,8 @@
       "html_url": "https://github.com/openbq-org/OpenBB",
       "description": "Open Data Platform for analysts, quants and AI agents.",
       "language": "Python",
-      "stargazers_count": 74719,
-      "forks_count": 7769,
+      "stargazers_count": 75010,
+      "forks_count": 7832,
       "topics": [
         "ai",
         "crypto",
@@ -1368,28 +1394,8 @@
         "equity",
         "finance"
       ],
-      "updated_at": "2026-10-26T05:04:12Z",
+      "updated_at": "2026-11-02T05:12:09Z",
       "created_at": "2020-12-20T10:46:38Z"
-    },
-    {
-      "id": 1185590488,
-      "name": "ai-engineering-from-scratch",
-      "full_name": "rohitg00/ai-engineering-from-scratch",
-      "html_url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
-      "language": "Python",
-      "stargazers_count": 73928,
-      "forks_count": 12956,
-      "topics": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "ai-engineering",
-        "computer-vision",
-        "course"
-      ],
-      "updated_at": "2026-10-26T06:05:12Z",
-      "created_at": "2026-03-18T18:38:02Z"
     },
     {
       "id": 1032808806,
@@ -1398,8 +1404,8 @@
       "html_url": "https://github.com/usestrix/strix",
       "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
       "language": "Python",
-      "stargazers_count": 71935,
-      "forks_count": 8039,
+      "stargazers_count": 73270,
+      "forks_count": 8254,
       "topics": [
         "agents",
         "ai-hacking",
@@ -1408,7 +1414,7 @@
         "ai-security",
         "artificial-intelligence"
       ],
-      "updated_at": "2026-10-26T06:04:18Z",
+      "updated_at": "2026-11-02T05:44:52Z",
       "created_at": "2025-08-05T21:28:30Z"
     },
     {
@@ -1418,8 +1424,8 @@
       "html_url": "https://github.com/FoundationAgents/MetaGPT",
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
       "language": "Python",
-      "stargazers_count": 71018,
-      "forks_count": 9048,
+      "stargazers_count": 71129,
+      "forks_count": 9084,
       "topics": [
         "agent",
         "gpt",
@@ -1427,28 +1433,8 @@
         "metagpt",
         "multi-agent"
       ],
-      "updated_at": "2026-10-26T05:28:37Z",
+      "updated_at": "2026-11-02T04:52:15Z",
       "created_at": "2023-06-30T09:04:55Z"
-    },
-    {
-      "id": 344190478,
-      "name": "AI-For-Beginners",
-      "full_name": "microsoft/AI-For-Beginners",
-      "html_url": "https://github.com/microsoft/AI-For-Beginners",
-      "description": "12 Weeks, 24 Lessons, AI for All!",
-      "language": "Jupyter Notebook",
-      "stargazers_count": 70258,
-      "forks_count": 13633,
-      "topics": [
-        "ai",
-        "artificial-intelligence",
-        "cnn",
-        "computer-vision",
-        "deep-learning",
-        "gan"
-      ],
-      "updated_at": "2026-10-26T05:52:18Z",
-      "created_at": "2021-03-03T16:27:36Z"
     },
     {
       "id": 976921297,
@@ -1457,8 +1443,8 @@
       "html_url": "https://github.com/asgeirtj/system_prompts_leaks",
       "description": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
       "language": "Python",
-      "stargazers_count": 70219,
-      "forks_count": 11379,
+      "stargazers_count": 70614,
+      "forks_count": 11441,
       "topics": [
         "ai",
         "ai-agents",
@@ -1467,27 +1453,28 @@
         "chatbot",
         "chatgpt"
       ],
-      "updated_at": "2026-10-26T05:56:54Z",
+      "updated_at": "2026-11-02T06:00:23Z",
       "created_at": "2025-05-03T02:43:56Z"
     },
     {
-      "id": 843222,
-      "name": "scikit-learn",
-      "full_name": "scikit-learn/scikit-learn",
-      "html_url": "https://github.com/scikit-learn/scikit-learn",
-      "description": "scikit-learn: machine learning in Python",
-      "language": "Python",
-      "stargazers_count": 67918,
-      "forks_count": 27583,
+      "id": 344190478,
+      "name": "AI-For-Beginners",
+      "full_name": "microsoft/AI-For-Beginners",
+      "html_url": "https://github.com/microsoft/AI-For-Beginners",
+      "description": "12 Weeks, 24 Lessons, AI for All!",
+      "language": "Jupyter Notebook",
+      "stargazers_count": 70447,
+      "forks_count": 13706,
       "topics": [
-        "data-analysis",
-        "data-science",
-        "machine-learning",
-        "python",
-        "statistics"
+        "ai",
+        "artificial-intelligence",
+        "cnn",
+        "computer-vision",
+        "deep-learning",
+        "gan"
       ],
-      "updated_at": "2026-10-26T05:31:10Z",
-      "created_at": "2010-08-17T09:43:38Z"
+      "updated_at": "2026-11-02T05:58:59Z",
+      "created_at": "2021-03-03T16:27:36Z"
     },
     {
       "id": 656099147,
@@ -1496,8 +1483,8 @@
       "html_url": "https://github.com/mem0ai/mem0",
       "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
       "language": "Python",
-      "stargazers_count": 67817,
-      "forks_count": 8018,
+      "stargazers_count": 68259,
+      "forks_count": 8099,
       "topics": [
         "agentic-memory",
         "agentic-memory-system",
@@ -1506,28 +1493,27 @@
         "ai-agents",
         "chatgpt"
       ],
-      "updated_at": "2026-10-26T05:33:13Z",
+      "updated_at": "2026-11-02T05:32:29Z",
       "created_at": "2023-06-20T08:58:36Z"
     },
     {
-      "id": 290091948,
-      "name": "annotated_deep_learning_paper_implementations",
-      "full_name": "labmlai/annotated_deep_learning_paper_implementations",
-      "html_url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
-      "description": "🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠",
+      "id": 843222,
+      "name": "scikit-learn",
+      "full_name": "scikit-learn/scikit-learn",
+      "html_url": "https://github.com/scikit-learn/scikit-learn",
+      "description": "scikit-learn: machine learning in Python",
       "language": "Python",
-      "stargazers_count": 67600,
-      "forks_count": 6760,
+      "stargazers_count": 67967,
+      "forks_count": 27622,
       "topics": [
-        "attention",
-        "deep-learning",
-        "deep-learning-tutorial",
-        "gan",
-        "literate-programming",
-        "lora"
+        "data-analysis",
+        "data-science",
+        "machine-learning",
+        "python",
+        "statistics"
       ],
-      "updated_at": "2026-10-26T02:09:51Z",
-      "created_at": "2020-08-25T02:29:34Z"
+      "updated_at": "2026-11-02T02:38:28Z",
+      "created_at": "2010-08-17T09:43:38Z"
     },
     {
       "id": 649170660,
@@ -1536,8 +1522,8 @@
       "html_url": "https://github.com/Mintplex-Labs/anything-llm",
       "description": "Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent experience ",
       "language": "JavaScript",
-      "stargazers_count": 67565,
-      "forks_count": 7587,
+      "stargazers_count": 67838,
+      "forks_count": 7652,
       "topics": [
         "agent-computer",
         "agent-harness",
@@ -1546,8 +1532,28 @@
         "agentic-workflow",
         "ai-agents"
       ],
-      "updated_at": "2026-10-26T05:42:41Z",
+      "updated_at": "2026-11-02T06:02:31Z",
       "created_at": "2023-06-04T02:29:14Z"
+    },
+    {
+      "id": 290091948,
+      "name": "annotated_deep_learning_paper_implementations",
+      "full_name": "labmlai/annotated_deep_learning_paper_implementations",
+      "html_url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+      "description": "🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠",
+      "language": "Python",
+      "stargazers_count": 67640,
+      "forks_count": 6785,
+      "topics": [
+        "attention",
+        "deep-learning",
+        "deep-learning-tutorial",
+        "gan",
+        "literate-programming",
+        "lora"
+      ],
+      "updated_at": "2026-11-02T05:57:47Z",
+      "created_at": "2020-08-25T02:29:34Z"
     },
     {
       "id": 1131513930,
@@ -1556,8 +1562,8 @@
       "html_url": "https://github.com/ZhuLinsen/daily_stock_analysis",
       "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
       "language": "Python",
-      "stargazers_count": 67067,
-      "forks_count": 55633,
+      "stargazers_count": 67406,
+      "forks_count": 55820,
       "topics": [
         "a-stock",
         "ai-agent",
@@ -1566,7 +1572,7 @@
         "quant",
         "quantitative-finance"
       ],
-      "updated_at": "2026-10-26T06:05:22Z",
+      "updated_at": "2026-11-02T05:27:25Z",
       "created_at": "2026-01-10T06:43:20Z"
     },
     {
@@ -1576,13 +1582,13 @@
       "html_url": "https://github.com/jingyaogong/minimind",
       "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
       "language": "Python",
-      "stargazers_count": 64421,
-      "forks_count": 8394,
+      "stargazers_count": 64749,
+      "forks_count": 8471,
       "topics": [
         "artificial-intelligence",
         "large-language-model"
       ],
-      "updated_at": "2026-10-26T05:43:41Z",
+      "updated_at": "2026-11-02T05:35:01Z",
       "created_at": "2024-07-27T04:34:12Z"
     },
     {
@@ -1592,8 +1598,8 @@
       "html_url": "https://github.com/keras-team/keras",
       "description": "Deep Learning for humans",
       "language": "Python",
-      "stargazers_count": 64389,
-      "forks_count": 19798,
+      "stargazers_count": 64412,
+      "forks_count": 19820,
       "topics": [
         "data-science",
         "deep-learning",
@@ -1602,7 +1608,7 @@
         "neural-networks",
         "python"
       ],
-      "updated_at": "2026-10-26T01:18:55Z",
+      "updated_at": "2026-11-02T01:42:22Z",
       "created_at": "2015-03-28T00:35:42Z"
     },
     {
@@ -1612,16 +1618,36 @@
       "html_url": "https://github.com/upstash/context7",
       "description": "Context7 Platform -- Up-to-date docs for AI agents",
       "language": "TypeScript",
-      "stargazers_count": 63690,
-      "forks_count": 3140,
+      "stargazers_count": 64060,
+      "forks_count": 3198,
       "topics": [
         "llm",
         "mcp",
         "mcp-server",
         "vibe-coding"
       ],
-      "updated_at": "2026-10-26T05:38:00Z",
+      "updated_at": "2026-11-02T05:24:49Z",
       "created_at": "2025-03-26T23:40:39Z"
+    },
+    {
+      "id": 1136666433,
+      "name": "humanizer",
+      "full_name": "blader/humanizer",
+      "html_url": "https://github.com/blader/humanizer",
+      "description": "Agent skill that removes signs of AI-generated writing from text",
+      "language": "Python",
+      "stargazers_count": 63599,
+      "forks_count": 5032,
+      "topics": [
+        "agent-skills",
+        "ai-humanizer",
+        "ai-writing",
+        "chatgpt",
+        "claude",
+        "claude-code"
+      ],
+      "updated_at": "2026-11-02T06:04:08Z",
+      "created_at": "2026-01-18T05:30:15Z"
     },
     {
       "id": 974186260,
@@ -1630,8 +1656,8 @@
       "html_url": "https://github.com/sansan0/TrendRadar",
       "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
       "language": "Python",
-      "stargazers_count": 63182,
-      "forks_count": 24900,
+      "stargazers_count": 63355,
+      "forks_count": 24923,
       "topics": [
         "ai",
         "bark",
@@ -1640,7 +1666,7 @@
         "hot-news",
         "llm"
       ],
-      "updated_at": "2026-10-26T06:05:32Z",
+      "updated_at": "2026-11-02T05:48:03Z",
       "created_at": "2025-04-28T11:42:16Z"
     },
     {
@@ -1650,8 +1676,8 @@
       "html_url": "https://github.com/ultralytics/ultralytics",
       "description": "Ultralytics YOLO27, YOLO26, YOLO11, YOLOv8 — object detection, instance segmentation, semantic segmentation, image classification, pose estimation, object tracking",
       "language": "Python",
-      "stargazers_count": 62838,
-      "forks_count": 11906,
+      "stargazers_count": 63026,
+      "forks_count": 11957,
       "topics": [
         "computer-vision",
         "deep-learning",
@@ -1660,7 +1686,7 @@
         "machine-learning",
         "object-detection"
       ],
-      "updated_at": "2026-10-26T05:43:01Z",
+      "updated_at": "2026-11-02T05:56:56Z",
       "created_at": "2022-09-11T16:39:45Z"
     },
     {
@@ -1670,8 +1696,8 @@
       "html_url": "https://github.com/BerriAI/litellm",
       "description": "The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI, vLLM, Nvidia NIM]",
       "language": "Python",
-      "stargazers_count": 62040,
-      "forks_count": 12674,
+      "stargazers_count": 62513,
+      "forks_count": 12915,
       "topics": [
         "ai-gateway",
         "anthropic",
@@ -1680,28 +1706,8 @@
         "gateway",
         "langchain"
       ],
-      "updated_at": "2026-10-26T06:00:40Z",
+      "updated_at": "2026-11-02T05:50:14Z",
       "created_at": "2023-07-27T00:09:52Z"
-    },
-    {
-      "id": 1136666433,
-      "name": "humanizer",
-      "full_name": "blader/humanizer",
-      "html_url": "https://github.com/blader/humanizer",
-      "description": "Agent skill that removes signs of AI-generated writing from text",
-      "language": "Python",
-      "stargazers_count": 60676,
-      "forks_count": 4819,
-      "topics": [
-        "agent-skills",
-        "ai-humanizer",
-        "ai-writing",
-        "chatgpt",
-        "claude",
-        "claude-code"
-      ],
-      "updated_at": "2026-10-26T06:06:19Z",
-      "created_at": "2026-01-18T05:30:15Z"
     },
     {
       "id": 1201656210,
@@ -1710,8 +1716,8 @@
       "html_url": "https://github.com/MemPalace/mempalace",
       "description": "The best-benchmarked open-source AI memory system. And it's free.",
       "language": "Python",
-      "stargazers_count": 59737,
-      "forks_count": 7580,
+      "stargazers_count": 60233,
+      "forks_count": 7635,
       "topics": [
         "ai",
         "chromadb",
@@ -1720,7 +1726,7 @@
         "memory",
         "python"
       ],
-      "updated_at": "2026-10-26T03:27:24Z",
+      "updated_at": "2026-11-02T05:09:03Z",
       "created_at": "2026-04-05T01:12:07Z"
     },
     {
@@ -1730,8 +1736,8 @@
       "html_url": "https://github.com/pathwaycom/serviette",
       "description": "A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.",
       "language": "Python",
-      "stargazers_count": 58764,
-      "forks_count": 1521,
+      "stargazers_count": 58735,
+      "forks_count": 1543,
       "topics": [
         "chromadb",
         "document-qa",
@@ -1740,7 +1746,7 @@
         "live-data",
         "llm"
       ],
-      "updated_at": "2026-10-26T03:59:02Z",
+      "updated_at": "2026-11-02T03:35:33Z",
       "created_at": "2023-07-19T08:43:37Z"
     },
     {
@@ -1750,8 +1756,8 @@
       "html_url": "https://github.com/deepfakes/faceswap",
       "description": "Deepfakes Software For All",
       "language": "Python",
-      "stargazers_count": 57595,
-      "forks_count": 13443,
+      "stargazers_count": 57598,
+      "forks_count": 13432,
       "topics": [
         "deep-face-swap",
         "deep-learning",
@@ -1760,26 +1766,8 @@
         "deepfakes",
         "deeplearning"
       ],
-      "updated_at": "2026-10-26T02:53:32Z",
+      "updated_at": "2026-11-02T05:59:39Z",
       "created_at": "2017-12-19T09:44:13Z"
-    },
-    {
-      "id": 83844720,
-      "name": "face_recognition",
-      "full_name": "ageitgey/face_recognition",
-      "html_url": "https://github.com/ageitgey/face_recognition",
-      "description": "The world's simplest facial recognition api for Python and the command line",
-      "language": "Python",
-      "stargazers_count": 56856,
-      "forks_count": 13676,
-      "topics": [
-        "face-detection",
-        "face-recognition",
-        "machine-learning",
-        "python"
-      ],
-      "updated_at": "2026-10-25T20:30:02Z",
-      "created_at": "2017-03-03T21:52:39Z"
     },
     {
       "id": 969302809,
@@ -1788,8 +1776,8 @@
       "html_url": "https://github.com/hesreallyhim/awesome-claude-code",
       "description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC (no affiliation). A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
       "language": "Python",
-      "stargazers_count": 56558,
-      "forks_count": 4872,
+      "stargazers_count": 57072,
+      "forks_count": 4903,
       "topics": [
         "agent-skills",
         "agentic-code",
@@ -1798,7 +1786,7 @@
         "ai-workflows",
         "anthropic"
       ],
-      "updated_at": "2026-10-26T05:50:49Z",
+      "updated_at": "2026-11-02T05:49:21Z",
       "created_at": "2025-04-19T20:55:59Z"
     },
     {
@@ -1808,8 +1796,8 @@
       "html_url": "https://github.com/bojieli/ai-agent-book",
       "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
       "language": "Python",
-      "stargazers_count": 55887,
-      "forks_count": 6407,
+      "stargazers_count": 56881,
+      "forks_count": 6561,
       "topics": [
         "agent",
         "agent-memory",
@@ -1818,8 +1806,46 @@
         "coding-agent",
         "context-engineering"
       ],
-      "updated_at": "2026-10-26T06:01:12Z",
+      "updated_at": "2026-11-02T06:03:02Z",
       "created_at": "2025-09-09T02:41:44Z"
+    },
+    {
+      "id": 83844720,
+      "name": "face_recognition",
+      "full_name": "ageitgey/face_recognition",
+      "html_url": "https://github.com/ageitgey/face_recognition",
+      "description": "The world's simplest facial recognition api for Python and the command line",
+      "language": "Python",
+      "stargazers_count": 56863,
+      "forks_count": 13667,
+      "topics": [
+        "face-detection",
+        "face-recognition",
+        "machine-learning",
+        "python"
+      ],
+      "updated_at": "2026-11-02T01:50:15Z",
+      "created_at": "2017-03-03T21:52:39Z"
+    },
+    {
+      "id": 1385896447,
+      "name": "dsh-our-free-model",
+      "full_name": "Ebony-Vinyl/dsh-our-free-model",
+      "html_url": "https://github.com/Ebony-Vinyl/dsh-our-free-model",
+      "description": "在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型——完全免费，不限量。 All you do is install this plugin in dsh: no login, no sign-up, no API key — the frontier models are just there, DeepSeek V4.1 Flash and Kimi K3 among them. Completely free, with no usage cap.",
+      "language": "JavaScript",
+      "stargazers_count": 56147,
+      "forks_count": 1538,
+      "topics": [
+        "ai-agents",
+        "deepseek",
+        "deepseek-harness",
+        "developer-tools",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "updated_at": "2026-11-02T06:04:20Z",
+      "created_at": "2026-09-24T16:17:19Z"
     },
     {
       "id": 621803253,
@@ -1828,8 +1854,8 @@
       "html_url": "https://github.com/FlowiseAI/Flowise",
       "description": "Build AI Agents, Visually",
       "language": "TypeScript",
-      "stargazers_count": 55528,
-      "forks_count": 25086,
+      "stargazers_count": 55543,
+      "forks_count": 25089,
       "topics": [
         "agentic-ai",
         "agentic-workflow",
@@ -1838,8 +1864,28 @@
         "chatbot",
         "chatgpt"
       ],
-      "updated_at": "2026-10-26T04:14:45Z",
+      "updated_at": "2026-11-02T01:48:01Z",
       "created_at": "2023-03-31T12:23:09Z"
+    },
+    {
+      "id": 805155266,
+      "name": "cherry-studio",
+      "full_name": "CherryHQ/cherry-studio",
+      "html_url": "https://github.com/CherryHQ/cherry-studio",
+      "description": "Your AI workspace for models, agents, and productivity.",
+      "language": "TypeScript",
+      "stargazers_count": 53177,
+      "forks_count": 5157,
+      "topics": [
+        "agent-skills",
+        "agent-workspace",
+        "agentic-workspace",
+        "ai-agents",
+        "ai-models",
+        "ai-productivity"
+      ],
+      "updated_at": "2026-11-02T06:01:20Z",
+      "created_at": "2024-05-24T01:56:26Z"
     },
     {
       "id": 560704231,
@@ -1848,8 +1894,8 @@
       "html_url": "https://github.com/run-llama/llama_index",
       "description": "LlamaIndex is the document processing platform for AI",
       "language": "Python",
-      "stargazers_count": 52668,
-      "forks_count": 8432,
+      "stargazers_count": 52777,
+      "forks_count": 8495,
       "topics": [
         "agents",
         "application",
@@ -1858,7 +1904,7 @@
         "framework",
         "llamaindex"
       ],
-      "updated_at": "2026-10-26T06:02:42Z",
+      "updated_at": "2026-11-02T05:21:27Z",
       "created_at": "2022-11-02T04:24:54Z"
     },
     {
@@ -1868,8 +1914,8 @@
       "html_url": "https://github.com/Avik-Jain/100-Days-Of-ML-Code",
       "description": "100 Days of ML Coding",
       "language": null,
-      "stargazers_count": 51962,
-      "forks_count": 11635,
+      "stargazers_count": 52023,
+      "forks_count": 11631,
       "topics": [
         "100-days-of-code-log",
         "100daysofcode",
@@ -1878,7 +1924,7 @@
         "infographics",
         "linear-algebra"
       ],
-      "updated_at": "2026-10-26T01:48:03Z",
+      "updated_at": "2026-11-02T05:02:13Z",
       "created_at": "2018-07-05T09:11:43Z"
     },
     {
@@ -1888,8 +1934,8 @@
       "html_url": "https://github.com/roboflow/supervision",
       "description": "We write your reusable computer vision tools. 💜",
       "language": "Python",
-      "stargazers_count": 51367,
-      "forks_count": 4880,
+      "stargazers_count": 51457,
+      "forks_count": 4903,
       "topics": [
         "classification",
         "coco",
@@ -1898,48 +1944,8 @@
         "hacktoberfest",
         "image-processing"
       ],
-      "updated_at": "2026-10-26T05:42:57Z",
+      "updated_at": "2026-11-02T06:02:18Z",
       "created_at": "2022-11-28T14:08:44Z"
-    },
-    {
-      "id": 615869301,
-      "name": "LocalAI",
-      "full_name": "mudler/LocalAI",
-      "html_url": "https://github.com/mudler/LocalAI",
-      "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
-      "language": "Go",
-      "stargazers_count": 49960,
-      "forks_count": 4546,
-      "topics": [
-        "agents",
-        "ai",
-        "api",
-        "audio-generation",
-        "decentralized",
-        "distributed"
-      ],
-      "updated_at": "2026-10-26T04:15:38Z",
-      "created_at": "2023-03-18T22:58:02Z"
-    },
-    {
-      "id": 156157055,
-      "name": "Made-With-ML",
-      "full_name": "GokuMohandas/Made-With-ML",
-      "html_url": "https://github.com/GokuMohandas/Made-With-ML",
-      "description": "Learn how to develop, deploy and iterate on production-grade ML applications.",
-      "language": "Jupyter Notebook",
-      "stargazers_count": 49826,
-      "forks_count": 7813,
-      "topics": [
-        "data-engineering",
-        "data-quality",
-        "data-science",
-        "deep-learning",
-        "distributed-ml",
-        "distributed-training"
-      ],
-      "updated_at": "2026-10-26T05:09:39Z",
-      "created_at": "2018-11-05T03:44:27Z"
     }
   ]
 }

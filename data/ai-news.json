@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-10-26T06:06:52.008Z",
+  "updated_at": "2026-11-02T06:04:36.677Z",
   "articles": [
+    {
+      "objectID": "50288019",
+      "title": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
+      "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+      "author": "theHocineSaad",
+      "points": 338,
+      "num_comments": 245,
+      "created_at_i": 1793277716,
+      "story_text": null
+    },
     {
       "objectID": "49991218",
       "title": "LLMs and Data Poisoning Are Weaponized to Manufacture Consensus",
@@ -963,16 +973,6 @@
       "num_comments": 44,
       "created_at_i": 1706732685,
       "story_text": "It&#x27;s no surprise, really, but I&#x27;m starting to see companies sticking AI into places where it just doesn&#x27;t make any sense.  I&#x27;m not talking about the use of AI all over marketing materials. That&#x27;s a given.<p>I&#x27;m talking about things like my CEO wanting me to build an AI sales assistant when a simple web form would actually be faster to develop and use.<p>What are you seeing?"
-    },
-    {
-      "objectID": "39059897",
-      "title": "Yann LeCun: Human-level artificial intelligence is going to take a long time",
-      "url": "https://english.elpais.com/technology/2024-01-19/yann-lecun-chief-ai-scientist-at-meta-human-level-artificial-intelligence-is-going-to-take-a-long-time.html",
-      "author": "belter",
-      "points": 228,
-      "num_comments": 344,
-      "created_at_i": 1705692496,
-      "story_text": null
     },
     {
       "objectID": "38814093",
