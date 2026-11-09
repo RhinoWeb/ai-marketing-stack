@@ -1,13 +1,23 @@
 {
-  "updated_at": "2026-11-02T06:04:36.677Z",
+  "updated_at": "2026-11-09T06:04:53.792Z",
   "articles": [
+    {
+      "objectID": "50358582",
+      "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+      "url": "https://arxiv.org/abs/2605.29713",
+      "author": "ibobev",
+      "points": 394,
+      "num_comments": 60,
+      "created_at_i": 1793742053,
+      "story_text": null
+    },
     {
       "objectID": "50288019",
       "title": "Gemini 4 Carbon is the new #1 on the Artificial Analysis Intelligence Index v5",
       "url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
       "author": "theHocineSaad",
-      "points": 338,
-      "num_comments": 245,
+      "points": 339,
+      "num_comments": 248,
       "created_at_i": 1793277716,
       "story_text": null
     },
@@ -893,16 +903,6 @@
       "points": 192,
       "num_comments": 181,
       "created_at_i": 1719976558,
-      "story_text": null
-    },
-    {
-      "objectID": "40835588",
-      "title": "Rodney Brooks on limitations of generative AI",
-      "url": "https://techcrunch.com/2024/06/29/mit-robotics-pioneer-rodney-brooks-thinks-people-are-vastly-overestimating-generative-ai/",
-      "author": "doener",
-      "points": 213,
-      "num_comments": 193,
-      "created_at_i": 1719730946,
       "story_text": null
     },
     {
